@@ -12,6 +12,10 @@ export default function Home() {
         ></Image>
       </div>
       <h1>Malik Abdul Rehman Khursheed</h1>
+      <h1>My projects:</h1>
+      <div>bazaartech.com</div>
+      <div>bazaarpartnerportal.com</div>
+      <div>orcalo.com</div>
     </main>
   );
 }
