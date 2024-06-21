@@ -4,7 +4,7 @@ import ProjectElementComponent from "./project-element.component";
 
 const ProjectSection = () => {
   return (
-    <div className="p-24 ">
+    <div className="p-8 md:p-24 ">
       <h1 className={syne.className} style={{ fontSize: "40px" }}>
         My projects:
       </h1>

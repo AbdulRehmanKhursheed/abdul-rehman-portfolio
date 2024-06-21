@@ -15,16 +15,20 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       <div
-        className="flex flex-row gap-3 p-24"
+        className="flex flex-col md:flex-row gap-3 p-8 md:p-24"
         style={{ backgroundColor: "rgb(255 233 217)" }}
       >
-        <div className="w-3/5">
+        <div className="block md:hidden">
+          <DisplayPictureComponent />
+        </div>
+
+        <div className="md:w-3/5">
           <GreetingsComponent />
           <NameComponent />
           <ProfessionalTagLineComponent />
         </div>
 
-        <div className="w-2/5 hidden md:block ">
+        <div className="hidden md:block w-2/5">
           <DisplayPictureComponent />
         </div>
       </div>

@@ -10,7 +10,6 @@ const GreetingsComponent = () => {
         height="2"
         viewBox="0 0 65 2"
         fill="none"
-        className="mt-2"
       >
         <path d="M0 1H65" stroke="#080808"></path>
       </svg>
