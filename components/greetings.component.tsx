@@ -1,5 +1,10 @@
-import { syne } from "@/app/page";
+import { Syne } from "next/font/google";
 import Image from "next/image";
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 const GreetingsComponent = () => {
   return (

@@ -1,4 +1,3 @@
-import { Syne } from "next/font/google";
 import "@/../styles/page.scss";
 import DisplayPictureComponent from "../../components/display-picture.component";
 import NameComponent from "../../components/name.component";
@@ -6,10 +5,7 @@ import GreetingsComponent from "../../components/greetings.component";
 import ProfessionalTagLineComponent from "../../components/professional-tagline.component";
 import ProjectSection from "../../components/projects-section.component";
 
-export const syne = Syne({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
+
 
 export default function Home() {
   return (

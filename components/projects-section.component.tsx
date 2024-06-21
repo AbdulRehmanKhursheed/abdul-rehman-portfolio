@@ -1,6 +1,11 @@
-import { syne } from "@/app/page";
+import { Syne } from "next/font/google";
 import projects from "../data/projects";
 import ProjectElementComponent from "./project-element.component";
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 const ProjectSection = () => {
   return (
