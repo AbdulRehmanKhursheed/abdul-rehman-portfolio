@@ -26,7 +26,7 @@ export default function Home() {
               className={`ml-2 ${syne.className}`}
               style={{ fontSize: "32px" }}
             >
-              Hello, I'm{" "}
+              Hello, I&apos;m{" "}
             </span>
             <span>
               <Image
@@ -58,7 +58,9 @@ export default function Home() {
         </div>
       </div>
 
-      <h1 className={syne.className} style={{fontSize:"40px"}}>My projects:</h1>
+      <h1 className={syne.className} style={{ fontSize: "40px" }}>
+        My projects:
+      </h1>
       <div className="projects">bazaartech.com</div>
       <div className="projects">bazaarpartnerportal.com</div>
       <div className="projects">orcalo.com</div>
