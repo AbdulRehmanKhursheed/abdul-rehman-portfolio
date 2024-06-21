@@ -10,8 +10,9 @@ const ProjectSection = () => {
       </h1>
 
       <div className="flex flex-col gap-3">
-        {projects.map((project: ProjectElementProps) => (
+        {projects.map((project: ProjectElementProps, index: number) => (
           <ProjectElementComponent
+            key={index}
             projectName={project.projectName}
             link={project.link}
           />
