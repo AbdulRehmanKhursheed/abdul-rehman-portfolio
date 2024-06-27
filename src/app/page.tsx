@@ -1,6 +1,4 @@
-
-'use client'
-
+"use client";
 
 import "@/../styles/page.scss";
 import DisplayPictureComponent from "../../components/display-picture.component";
@@ -8,30 +6,29 @@ import NameComponent from "../../components/name.component";
 import GreetingsComponent from "../../components/greetings.component";
 import ProfessionalTagLineComponent from "../../components/professional-tagline.component";
 import ProjectSection from "../../components/projects-section.component";
-
-import { useEffect } from 'react';
-import { NextPage } from 'next';
-import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function Home() {
-  // pages/index.tsx
-  const router = useRouter();
-  const { code } = router.query;
-
   useEffect(() => {
-    // Handle logic to pass `code` to Android app
-    if (typeof window !== 'undefined' && code) {
-      // Replace with your Android app's package name
-      const packageName = 'com.your.android.app.package';
+    if (typeof window !== "undefined") {
+      const packageName = "com.your.android.app.package";
 
-      // Construct your custom intent URI with referral code
-      const intentUri = `intent://example.com/?referralCode=${code}#Intent;scheme=https;package=${packageName};end`;
+      const urlString = window.location.href;
 
-      // Redirect to the Android app with the custom intent URI
-      console.log("Redirecting to Android app with referral code:", code);
-      window.location.href = intentUri;
+      const urlParams = new URLSearchParams(urlString);
+
+      const userAgent = navigator.userAgent || navigator.vendor;
+      const referralCode = urlParams.get("referralCode");
+
+      const androidAppLink = `intent://abdul-rehman-portfolio-ecru.vercel.app?referralCode=${referralCode}/#Intent;scheme=https;package=bazaar.tech.com;end`;
+
+      // Check if the user is on an Android device
+      if (/android/i.test(userAgent)) {
+        console.log("Android device detected, redirecting to app...");
+        window.location.href = androidAppLink;
+      }
     }
-  }, [code]);
+  }, []);
 
   return (
     <main className="flex min-h-screen flex-col">
