@@ -11,22 +11,27 @@ import ProjectSection from "../../components/projects-section.component";
 
 import { useEffect } from 'react';
 import { NextPage } from 'next';
+import { useRouter } from "next/router";
 
 export default function Home() {
   // pages/index.tsx
+  const router = useRouter();
+  const { code } = router.query;
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const userAgent = navigator.userAgent || navigator.vendor;
-      const androidAppLink = 'intent://abdul-rehman-portfolio-ecru.vercel.app/#Intent;scheme=https;package=bazaar.tech.com;end';
+    // Handle logic to pass `code` to Android app
+    if (typeof window !== 'undefined' && code) {
+      // Replace with your Android app's package name
+      const packageName = 'com.your.android.app.package';
 
-      // Check if the user is on an Android device
-      if (/android/i.test(userAgent)) {
-        console.log("Android device detected, redirecting to app...");
-        window.location.href = androidAppLink;
-      }
+      // Construct your custom intent URI with referral code
+      const intentUri = `intent://example.com/?referralCode=${code}#Intent;scheme=https;package=${packageName};end`;
+
+      // Redirect to the Android app with the custom intent URI
+      console.log("Redirecting to Android app with referral code:", code);
+      window.location.href = intentUri;
     }
-  }, []);
+  }, [code]);
 
   return (
     <main className="flex min-h-screen flex-col">
