@@ -1,4 +1,5 @@
-[{
+[
+  {
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
@@ -6,4 +7,14 @@
       "sha256_cert_fingerprints":
       ["BA:AC:E6:57:DC:35:50:F2:18:63:27:F9:78:4E:EA:E9:77:7A:6F:E2:ED:69:D5:AC:F8:CB:78:11:56:4C:56:4D"]
     }
-  }]
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "bazaar.tech.com",
+      "sha256_cert_fingerprints":
+      ["3B:74:7F:05:CD:33:5A:67:3C:D5:13:0C:5A:AC:4F:35:0A:00:AC:43:48:FE:F2:FE:11:9F:D9:F9:A8:E2:85:19"]
+    }
+  }
+]
