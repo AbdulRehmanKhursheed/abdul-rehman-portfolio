@@ -19,7 +19,7 @@ export default function Home() {
         </div>
 
         <div className="md:w-3/5">
-          <GreetingsComponent />
+          {/* <GreetingsComponent /> */}
           <NameComponent />
           {/* <ProfessionalTagLineComponent /> */}
         </div>
