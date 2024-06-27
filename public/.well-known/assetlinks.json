@@ -1,0 +1,9 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "bazaar.tech.com",
+      "sha256_cert_fingerprints":
+      ["BA:AC:E6:57:DC:35:50:F2:18:63:27:F9:78:4E:EA:E9:77:7A:6F:E2:ED:69:D5:AC:F8:CB:78:11:56:4C:56:4D"]
+    }
+  }]
