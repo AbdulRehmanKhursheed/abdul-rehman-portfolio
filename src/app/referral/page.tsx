@@ -25,6 +25,6 @@ const Referral = () => {
     }
   }, []);
 
-  return <p>Referral Page</p>;
+  return <p>Refresh the page if it doesn't take you to the Bazaar App.</p>;
 };
 export default Referral;
