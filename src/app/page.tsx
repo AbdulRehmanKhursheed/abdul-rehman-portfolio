@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 import "@/../styles/page.scss";
 import DisplayPictureComponent from "../../components/display-picture.component";
