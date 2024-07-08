@@ -4,8 +4,8 @@ const DisplayPictureComponent = () => {
   return (
     <Image
       src={DisplayPicture}
-      height={770}
-      width={450}
+      height={780}
+      width={500}
       alt="Display Picture"
       priority
     />

@@ -13,21 +13,21 @@ export default function Home() {
         style={{ backgroundColor: "rgb(255 233 217)" }}
       >
         <div className="block md:hidden">
-          {/* <DisplayPictureComponent /> */}
+          <DisplayPictureComponent />
         </div>
 
         <div className="md:w-3/5">
-          {/* <GreetingsComponent /> */}
+          <GreetingsComponent />
           <NameComponent />
-          {/* <ProfessionalTagLineComponent /> */}
+          <ProfessionalTagLineComponent />
         </div>
 
         <div className="hidden md:block w-2/5">
-          {/* <DisplayPictureComponent /> */}
+          <DisplayPictureComponent />
         </div>
       </div>
 
-      {/* <ProjectSection /> */}
+      <ProjectSection />
     </main>
   );
 }
