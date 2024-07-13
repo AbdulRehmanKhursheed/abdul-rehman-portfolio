@@ -8,8 +8,7 @@ const syne = Syne({
 const NameComponent = () => {
   return (
     <h1
-      className={`${syne.className} py-6 text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-6xl leading-tight`}
-      style={{fontSize:"100px", fontWeight:"700"}}
+      className={`${syne.className} py-6 text-[48px] sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl leading-tight font-bold`}
     >
       Malik Abdul Rehman Khursheed
     </h1>

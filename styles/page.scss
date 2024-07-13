@@ -8,3 +8,12 @@
 .grey-color {
   color: rgba(8, 8, 8, 0.6);
 }
+.max-width-class {
+  max-width: 1536px;
+}
+
+@media screen and (max-width: 653px) {
+  .fancy-text-size {
+    font-size: 2rem !important;
+  }
+}

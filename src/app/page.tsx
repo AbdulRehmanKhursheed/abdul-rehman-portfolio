@@ -9,14 +9,14 @@ import DownloadMyResumeSection from "../../components/download-my-resume.compone
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col pb-8 md:pb-24">
+    <main className="flex min-h-screen flex-col pb-8 md:pb-24 max-width-class mx-auto">
       <div
         className="flex flex-col md:flex-row gap-3 p-8 md:p-24"
-        style={{ backgroundColor: "rgb(255 233 217)", minHeight: "100vh" }}
+        style={{ backgroundColor: "rgb(255 233 217)"}}
       >
-        <div className="block md:hidden">
+        {/* <div className="block md:hidden mb-5">
           <DisplayPictureComponent />
-        </div>
+        </div> */}
 
         <div className="md:w-3/5">
           <GreetingsComponent />
