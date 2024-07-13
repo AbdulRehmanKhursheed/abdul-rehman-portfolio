@@ -4,10 +4,11 @@ import NameComponent from "../../components/name.component";
 import GreetingsComponent from "../../components/greetings.component";
 import ProfessionalTagLineComponent from "../../components/professional-tagline.component";
 import ProjectSection from "../../components/projects-section.component";
+import AboutMe from "../../components/about-me.component";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col pb-8 md:pb-24">
       <div
         className="flex flex-col md:flex-row gap-3 p-8 md:p-24"
         style={{ backgroundColor: "rgb(255 233 217)" }}
@@ -26,8 +27,10 @@ export default function Home() {
           <DisplayPictureComponent />
         </div>
       </div>
-
-      <ProjectSection />
+      <div className="px-8 md:px-24 ">
+        <AboutMe />
+        <ProjectSection />
+      </div>
     </main>
   );
 }

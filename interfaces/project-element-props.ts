@@ -1,4 +1,5 @@
 interface ProjectElementProps {
-    projectName: string;
-    link: string;
-  }
+  projectName: string;
+  description: string;
+  link: string;
+}
