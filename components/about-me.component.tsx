@@ -4,9 +4,9 @@ const AboutMe = () => {
   return (
     <div className="mt-20">
       <Heading title="About Me" />
-      <p
-        className="grey-color"
-        style={{ fontSize: "1.25rem", fontFamily: "Inter, sans-serif" }}
+      <h5
+        className="grey-color regular-text-size"
+        style={{ fontFamily: "Inter, sans-serif" }}
       >
         Highly motivated and results-oriented Front-End Developer with 3.5+
         years of experience crafting user-centric experiences and driving
@@ -16,7 +16,7 @@ const AboutMe = () => {
         ability to lead and mentor junior developers, implement best practices
         and principles such as Single Responsibility Principle (SRP), clean
         code, and deliver high-quality, scalable solutions.
-      </p>
+      </h5>
     </div>
   );
 };

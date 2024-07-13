@@ -1,12 +1,13 @@
 import BigButton from "../elements/button.element";
-import FancyTexts from "./fancy-texts";
+import ExperienceYearsNumbers from "./experience-years-number.component";
+import FancyTexts from "../elements/fancy-texts-with-background";
 
 const DownloadMyResumeSection = () => {
   return (
     <div className="mt-20">
       <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0 lg:space-x-4">
         <div className="w-full lg:w-auto">
-          <FancyTexts boldText="3.5+" normalText=" years of experience" />
+          <ExperienceYearsNumbers />
         </div>
         <div className="w-full lg:w-auto">
           <BigButton />
@@ -14,6 +15,5 @@ const DownloadMyResumeSection = () => {
       </div>
     </div>
   );
-  
-  };
+};
 export default DownloadMyResumeSection;

@@ -1,4 +1,5 @@
 import { Syne } from "next/font/google";
+import ShadowText from "./shadow-text.component";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -20,16 +21,6 @@ const FancyTexts = (textToBeHighlighted: HighlightedTextProps) => {
           </span>
         </h1>
       </div>
-      <h1
-        style={{
-          fontSize: "3rem",
-          textShadow:
-            "1px 1px 0 rgba(8, 8, 8, 0.4), -1px -1px 0 rgba(8, 8, 8, 0.4), 1px -1px 0 rgba(8, 8, 8, 0.4), -1px 1px 0 rgba(8, 8, 8, 0.4), 1px 1px 0 rgba(8, 8, 8, 0.4)",
-        }}
-        className={`${syne.className} ml-6 text-white font-extrabold fancy-text-size`}
-      >
-        {textToBeHighlighted.normalText}
-      </h1>
     </div>
   );
 };
