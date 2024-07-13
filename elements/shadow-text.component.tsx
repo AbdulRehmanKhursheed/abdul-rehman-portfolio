@@ -7,17 +7,18 @@ interface ShadowText {
   text: string;
 }
 
-const ShadowText = (shadowText: ShadowText) => {
+const ShadowText = ({ text }: ShadowText) => {
   return (
     <h1
       style={{
         fontSize: "3rem",
+        color:'white',
         textShadow:
-          "1px 1px 0 rgba(8, 8, 8, 0.4), -1px -1px 0 rgba(8, 8, 8, 0.4), 1px -1px 0 rgba(8, 8, 8, 0.4), -1px 1px 0 rgba(8, 8, 8, 0.4), 1px 1px 0 rgba(8, 8, 8, 0.4)",
+          "1px 1px 0 rgba(8, 8, 8, 0.4), -1px -1px 0 rgba(8, 8, 8, 0.4), 1px -1px 0 rgba(8, 8, 8, 0.4), -1px 1px 0 rgba(8, 8, 8, 0.4), 1px 1px 0 rgba(8, 8, 8, 0.4);",
       }}
       className={`${syne.className} ml-6 text-white font-extrabold fancy-text-size`}
     >
-      {shadowText.text}
+      {text}
     </h1>
   );
 };

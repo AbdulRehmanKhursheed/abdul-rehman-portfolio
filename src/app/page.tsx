@@ -1,4 +1,4 @@
-import "@/../styles/page.scss";
+import "@/styles/page.scss";
 import DisplayPictureComponent from "../../components/display-picture.component";
 import NameComponent from "../../components/name.component";
 import GreetingsComponent from "../../components/greetings.component";
