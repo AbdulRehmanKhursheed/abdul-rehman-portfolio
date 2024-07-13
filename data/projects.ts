@@ -12,9 +12,10 @@ const projects = [
     link: "https://partners.bazaar.technology/",
   },
   {
-    projectName: "Orcalo.com",
-    description: "",
-    link: "https://orcalo.com",
+    projectName: "Orcalo Holdings (now Outfit Consultancy) Main Website",
+    description:
+      "Orcalo is a UK based Company that has an offshore Company registered as Oufit Consultancy.",
+    link: "www.consultancyoutfit.co.uk",
   },
 ];
 

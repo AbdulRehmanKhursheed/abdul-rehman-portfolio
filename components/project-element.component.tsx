@@ -21,16 +21,21 @@ const ProjectElementComponent = ({
             {" "}
             {projectName}
           </h1>
-          <h5 style={{ fontSize: "20x" }} className="grey-color">
+          <h5
+            style={{ fontSize: "20x", maxWidth: "80%" }}
+            className="grey-color"
+          >
             {description}
           </h5>
         </div>
-        
-        <FontAwesomeIcon
-          style={{ width: "18px" }}
-          fade={true}
-          icon={faUpRightFromSquare}
-        />
+
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <FontAwesomeIcon
+            style={{ width: "18px" }}
+            fade={true}
+            icon={faUpRightFromSquare}
+          />
+        </div>
       </div>
     </Link>
   );
