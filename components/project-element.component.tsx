@@ -17,7 +17,7 @@ const ProjectElementComponent = ({
     <Link href={link} className="projects">
       <div className="w-full flex justify-between">
         <div>
-          <h1 className={syne.className} style={{ fontSize: "24px" }}>
+          <h1 className={syne.className} style={{ fontSize: "24px" , color:"rgb(255 147 48)"}}>
             {" "}
             {projectName}
           </h1>
