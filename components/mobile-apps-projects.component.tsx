@@ -16,7 +16,7 @@ const MobileAppsProjects = ({ title, image }: MobileAppProjectProps) => {
       <div className="flex flex-col items-center justify-center space-y-16">
         <Image
           src={`/images/${image}`}
-          alt="My Animated GIF"
+          alt="projects image"
           width={100}
           height={100}
           className="rounded-full"
