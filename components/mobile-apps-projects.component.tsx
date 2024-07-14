@@ -15,7 +15,7 @@ const MobileAppsProjects = ({ title, image }: MobileAppProjectProps) => {
     <div className=" bg-gray-100 shadow rounded-lg p-5 w-full h-[250px]">
       <div className="flex flex-col items-center justify-center space-y-16">
         <Image
-          src={`/images/${image} `}
+          src={`/images/${image}`}
           alt="My Animated GIF"
           width={100}
           height={100}
