@@ -17,7 +17,7 @@ const AboutMe = () => {
           <h3>
             <span>Hello, </span>
             <span className={` font-semibold`}>
-              I'm Malik Abdul Rehman Khursheed
+              I&apos;m Malik Abdul Rehman Khursheed
             </span>
           </h3>
           <p>
@@ -134,8 +134,8 @@ const AboutMe = () => {
             I believe that the key to becoming a competent developer lies in
             continuous learning and improvement. I am passionate about keeping
             up with the latest technologies and best practices in the industry.
-            I strive to understand the "big picture" while also being meticulous
-            about the details. Whether it's front-end or back-end development, I
+            I strive to understand the &quot;big picture&quot; while also being meticulous
+            about the details. Whether it&apos;s front-end or back-end development, I
             am committed to delivering high-quality, scalable solutions that
             drive success for the projects I work on.
           </p>
@@ -144,7 +144,7 @@ const AboutMe = () => {
         <div>
           <h3>Personal Interests</h3>
           <p>
-            When I'm not coding, I enjoy exploring new tech trends,
+            When I&apos;m not coding, I enjoy exploring new tech trends,
             participating in hackathons, and engaging with the developer
             community. I also love mentoring junior developers and sharing my
             knowledge to help them grow in their careers. Outside of tech, I am
@@ -154,7 +154,7 @@ const AboutMe = () => {
         </div>
 
         <div>
-          <h3>Let's Connect</h3>
+          <h3>Let&apos;s Connect</h3>
           <p>
             I am always open to new opportunities and collaborations. Feel free
             to reach out to me via email at{" "}
@@ -163,7 +163,7 @@ const AboutMe = () => {
             <a href="https://www.linkedin.com/in/malik-abdul-rehman/">
               LinkedIn
             </a>
-            . Let's build something amazing together!
+            . Let&apos;s build something amazing together!
           </p>
         </div>
       </div>

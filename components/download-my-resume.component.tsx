@@ -1,6 +1,5 @@
 import BigButton from "../elements/button.element";
 import ExperienceYearsNumbers from "./experience-years-number.component";
-import FancyTexts from "../elements/fancy-texts-with-background";
 
 const DownloadMyResumeSection = () => {
   return (

@@ -19,7 +19,7 @@ const mobileProjects = () => {
         As part of my role as a Software Engineer, I have gained significant
         experience in developing mobile applications. My work has primarily
         focused on creating seamless, user-friendly experiences for both
-        customers and agents. Below are some of the key projects I've worked on:
+        customers and agents. Below are some of the key projects I&apos;ve worked on:
       </p>
 
       <h5 className={`${syne.className}  font-semibold`}>
