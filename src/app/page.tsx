@@ -6,12 +6,10 @@ import ProfessionalTagLineComponent from "../../components/professional-tagline.
 import ProjectSection from "../../components/projects-section.component";
 import AboutMe from "../../components/about-me.component";
 import DownloadMyResumeSection from "../../components/download-my-resume.component";
-import Header from "../../components/header.component";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col pb-12 md:pb-24 max-width-class mx-auto">
-      <Header />
       <div
         className="flex flex-col md:flex-row gap-3 p-8 md:p-24"
         style={{ backgroundColor: "rgb(255 233 217)" }}
@@ -26,7 +24,7 @@ export default function Home() {
           <DisplayPictureComponent />
         </div>
       </div>
-      <div className="px-8 md:px-24 ">
+      <div className="px-8 md:px-24 bg-white">
         <AboutMe />
         <ProjectSection />
         <DownloadMyResumeSection />

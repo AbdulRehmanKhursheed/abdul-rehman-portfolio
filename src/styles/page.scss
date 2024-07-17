@@ -19,6 +19,14 @@
 .regular-text-size {
   font-size: 1.25rem;
 }
+.header-item-bg {
+  background-color: #ecdbaa;
+}
+
+.header-item-bg:hover {
+  color: rgb(255, 147, 48);
+  background-color: #E6D6A7;
+}
 
 @media screen and (max-width: 653px) {
   .fancy-text-size {

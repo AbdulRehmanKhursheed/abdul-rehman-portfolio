@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Syne } from "next/font/google";
 import { useState } from "react";
+import Link from "next/link";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -19,14 +20,34 @@ const Header = () => {
   return (
     <header>
       <nav
-        className={`hidden md:flex ${syne.className} flex justify-between  py-4 px-24 text-xl font-semibold`}
+        className={`hidden md:flex ${syne.className} flex justify-between py-4 px-24 text-xl font-semibold`}
         style={{ backgroundColor: "rgb(255 233 217)" }}
       >
-        <a href="/">Home</a>
-        <div className="flex gap-7">
-          <a href="">About Me</a>
-          <a href="">Web Apps</a>
-          <a href="">Mobile Apps</a>
+        <a
+          href="/"
+          className="px-4 py-2 header-item-bg rounded-lg  text-lg font-regular"
+        >
+          Home
+        </a>
+        <div className="flex gap-2">
+          <Link
+            href="/about-me"
+            className="px-4 py-2 header-item-bg rounded-lg "
+          >
+            About Me
+          </Link>
+          <Link
+            href="/web-projects"
+            className="px-4 py-2 header-item-bg rounded-lg "
+          >
+            Web Apps
+          </Link>
+          <Link
+            href="/mobile-projects"
+            className="px-4 py-2 header-item-bg rounded-lg "
+          >
+            Mobile Apps
+          </Link>
         </div>
       </nav>
       <nav

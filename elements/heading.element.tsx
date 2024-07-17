@@ -5,7 +5,7 @@ const syne = Syne({
   weight: ["400", "700"],
 });
 
-const Heading = (props: any) => {
+const Heading = (props: HeadingProps) => {
   return (
     <h3 className={`${syne.className} heading-size font-bold`}>
       {props.title}:

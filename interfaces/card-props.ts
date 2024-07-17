@@ -1,6 +1,7 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-export interface CardInput {
+export interface MyProjectsCardInput {
   icon: IconProp;
   title: string;
+  link: string;
 }

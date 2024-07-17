@@ -10,13 +10,13 @@ interface MobileAppProjectProps {
   title: string;
   image: string;
 }
-const MobileAppsProjects = ({ title, image }: MobileAppProjectProps) => {
+const MobileAppsProjectsCards = ({ title, image }: MobileAppProjectProps) => {
   return (
-    <div className=" bg-gray-100 shadow rounded-lg p-5 w-full h-[250px]">
+    <div className=" bg-gray-100 shadow rounded-lg p-5 w-full h-[250px] hover:cursor-pointer">
       <div className="flex flex-col items-center justify-center space-y-16">
         <Image
           src={`/images/${image}`}
-          alt="projects image"
+          alt="project logos"
           width={100}
           height={100}
           className="rounded-full"
@@ -34,4 +34,4 @@ const MobileAppsProjects = ({ title, image }: MobileAppProjectProps) => {
     </div>
   );
 };
-export default MobileAppsProjects;
+export default MobileAppsProjectsCards;
