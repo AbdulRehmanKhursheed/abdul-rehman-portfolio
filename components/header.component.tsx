@@ -78,16 +78,22 @@ const Header = () => {
           </svg>
         </button>
         {isDropdownOpen && (
-          <div className="absolute top-16 right-4 bg-white shadow-md rounded-md">
-            <a href="#about-me" className="block px-4 py-2">
+          <div
+            className="absolute top-16 right-4  shadow-md rounded-md p-2" 
+            style={{
+              backdropFilter: "blur(10%)",
+              backgroundColor:"rgba(241, 192, 138, 0.4)"
+            }}
+          >
+            <Link href="about-me" className="block px-7 py-2 text-lg">
               About Me
-            </a>
-            <a href="#web-apps" className="block px-4 py-2">
+            </Link>
+            <Link href="#web-projects" className="block px-7 py-2 text-lg">
               Web Apps
-            </a>
-            <a href="#mobile-apps" className="block px-4 py-2">
+            </Link>
+            <Link href="mobile-projects" className="block px-7 py-2 text-lg">
               Mobile Apps
-            </a>
+            </Link>
           </div>
         )}
       </nav>
