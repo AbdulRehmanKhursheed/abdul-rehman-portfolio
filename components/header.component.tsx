@@ -79,10 +79,9 @@ const Header = () => {
         </button>
         {isDropdownOpen && (
           <div
-            className="absolute top-16 right-4  shadow-md rounded-md p-2" 
+            className="absolute top-16 right-4  shadow-md rounded-md p-" 
             style={{
-              backdropFilter: "blur(10%)",
-              backgroundColor:"rgba(241, 192, 138, 0.4)"
+              backgroundColor:"rgba(241, 192, 138, 0.9)"
             }}
           >
             <Link href="about-me" className="block px-7 py-2 text-lg">
