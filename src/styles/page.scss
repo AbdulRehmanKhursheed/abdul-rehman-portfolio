@@ -16,8 +16,16 @@
   font-size: 64px;
 }
 
+.heading-size-middle {
+  font-size: 32px;
+}
+
+.heading-size-small {
+  font-size: 18px;
+}
+
 .regular-text-size {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 .header-item-bg {
   background-color: #ecdbaa;
@@ -25,7 +33,7 @@
 
 .header-item-bg:hover {
   color: rgb(255, 147, 48);
-  background-color: #E6D6A7;
+  background-color: #e6d6a7;
 }
 
 @media screen and (max-width: 653px) {

@@ -12,6 +12,7 @@ const ProjectElementComponent = ({
   projectName,
   description,
   link,
+  index,
 }: ProjectElementProps) => {
   return (
     <Link href={link} className="projects">
@@ -22,7 +23,15 @@ const ProjectElementComponent = ({
             style={{ fontSize: "24px", color: "rgb(255 147 48)" }}
           >
             {" "}
-            {projectName}
+            {projectName}{" "}
+            {index == 0 ? (
+              <span style={{ color: "#FF6F61" }}>
+                {" "}
+                - This app is under development
+              </span>
+            ) : (
+              ""
+            )}
           </h1>
           <h5
             style={{ maxWidth: "80%" }}

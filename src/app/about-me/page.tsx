@@ -8,167 +8,172 @@ const syne = Syne({
 
 const AboutMe = () => {
   return (
-    <div className={`container sm:p-2 p-3 mx-auto my-7 ${syne.className}`}>
-      <h1 className={` font-semibold text-center`} style={{ fontSize: "32px" }}>
-        About Me
-      </h1>
-      <div>
-        <div>
-          <h3>
-            <span>Hello, </span>
-            <span className={` font-semibold`}>
-              I&apos;m Malik Abdul Rehman Khursheed
-            </span>
-          </h3>
+    <div style={{ backgroundColor: "#f8fafd" }} className="pb-4">
+      <div className={`container sm:p-2 p-3 mx-auto py-7 ${syne.className}`}>
+        <h1 className="text-center heading-size font-bold">About Me</h1>
+        <h2 className="text-center heading-size-middle ">
+          Malik Abdul Rehman Khursheed
+        </h2>
+        <h3 className="text-center heading-size-small ">
+          Software Engineer | Full-Stack Developer
+        </h3>
+        <p>
+          Hello! 👋👋, I’m Abdul Rehman, a passionate software
+          engineer with over 3.5 years of experience in full-stack development.
+          I specialize in creating robust, scalable web applications, leveraging
+          technologies such as React, Angular, Node.js, and Spring Boot.
+        </p>
+        <p>
+          My journey began with a Bachelor’s degree in Computer Science from
+          Hitec University. Since then, I’ve immersed myself in the tech world,
+          honing my skills in both front-end and back-end development. I pride
+          myself on employing agile methodologies, Test-Driven Development
+          (TDD), and SOLID principles in my work, which not only improves code
+          quality but also enhances team collaboration and efficiency.
+        </p>
+
+        <div
+          style={{
+            marginTop: "10px",
+            marginBottom: "10px",
+            paddingTop: "15px",
+            paddingBottom: "15px",
+            paddingLeft: "10px",
+            paddingRight: "10px",
+            border: "1px solid transparent",
+            borderRadius: "12px",
+            backgroundColor: "#edf2fa",
+          }}
+        >
+          <h4 className="heading-size-small font-bold">
+            Professional Experience 🚀:
+          </h4>
           <p>
-            I am a highly motivated and results-oriented Full-Stack JavaScript
-            Developer with nearly <b>4</b> years of experience crafting
-            user-centric experiences and driving business growth through
-            innovative mobile and web applications. My journey in the tech
-            industry has been fueled by a deep passion for coding, a relentless
-            pursuit of excellence, and a commitment to continuous learning and
-            improvement.
+            Currently, I work at Bazaar Technologies as a Software Engineer -
+            II, where I lead the development of a React web portal for our
+            partners, significantly improving user engagement and experience.
+            One of my proudest achievements here was automating invoice
+            generation, which streamlined our internal processes and reduced
+            manual workload. I also enjoy mentoring junior developers, guiding
+            them through best practices and fostering their growth.
+          </p>
+        </div>
+        <p>
+          Previously, I held the role of Front End Engineer at Orcalo Holdings,
+          where I managed a team of 24 junior developers. I introduced effective
+          design patterns and improved our client-server communication layer,
+          ensuring timely project delivery and high-quality results.
+        </p>
+        <div
+          style={{
+            marginTop: "10px",
+            marginBottom: "10px",
+            paddingTop: "15px",
+            paddingBottom: "15px",
+            paddingLeft: "10px",
+            paddingRight: "10px",
+            border: "1px solid transparent",
+            borderRadius: "12px",
+            backgroundColor: "#edf2fa",
+          }}
+        >
+          <h4 className="heading-size-small font-bold">Technical Skills 🛠️:</h4>
+          <p>
+            I have a strong foundation in several programming languages
+            including TypeScript, JavaScript, and Kotlin, and I'm proficient in
+            both front-end technologies (React, Next.js, Angular) and back-end
+            frameworks (Spring Boot, Node.js). My expertise extends to cloud
+            services like AWS, and I have experience with tools such as Docker,
+            Git, and Postman.
+          </p>
+        </div>
+        <div
+          style={{
+            marginTop: "10px",
+            marginBottom: "10px",
+            paddingTop: "15px",
+            paddingBottom: "15px",
+            paddingLeft: "10px",
+            paddingRight: "10px",
+            border: "1px solid transparent",
+            borderRadius: "12px",
+            backgroundColor: "#edf2fa",
+          }}
+        >
+          <h4 className="heading-size-small font-bold">
+            Professional Projects 📂:
+          </h4>
+          <p>
+            Some of my notable projects include the{" "}
+            <strong>Bazaar Partner Portal</strong>, a dynamic React application
+            that provides partners with valuable insights, and{" "}
+            <strong>Bazaar Customer Web App</strong>, which is designed to
+            provide a comprehensive and intuitive shopping experience for Bazaar
+            customers (B2B & B2C both now). This application allows users to
+            browse products, make purchases, and manage their orders
+            efficiently. developed using Next.js and TypeScript.
+          </p>
+        </div>
+        <div
+          style={{
+            marginTop: "10px",
+            marginBottom: "10px",
+            paddingTop: "15px",
+            paddingBottom: "15px",
+            paddingLeft: "10px",
+            paddingRight: "10px",
+            border: "1px solid transparent",
+            borderRadius: "12px",
+            backgroundColor: "#edf2fa",
+          }}
+        >
+          <h4 className="heading-size-small font-bold">
+            Continuous Learning 📚:
+          </h4>
+          <p>
+            I am dedicated to lifelong learning, holding certifications in
+            React, Angular, Node.js, and AWS. I believe that staying updated
+            with the latest technologies is crucial for delivering innovative
+            solutions that drive business success.
+          </p>
+        </div>
+        <div
+          style={{
+            marginTop: "10px",
+            marginBottom: "10px",
+            paddingTop: "15px",
+            paddingBottom: "15px",
+            paddingLeft: "10px",
+            paddingRight: "10px",
+            border: "1px solid transparent",
+            borderRadius: "12px",
+            backgroundColor: "#edf2fa",
+          }}
+        >
+          <h4 className="heading-size-small font-bold">
+            Community Engagement 🌍:
+          </h4>
+          <p>
+            I actively participate in hackathons and coding competitions, where
+            I’ve had the pleasure of collaborating with other talented
+            developers and sharing ideas. I was proud to be recognized as a
+            runner-up in an internal hackathon at Bazaar Technologies for my
+            innovative contributions.
           </p>
         </div>
 
-        <div className="my-4">
-          <hr />
-          <h3 className={` font-semibold `} style={{ fontSize: "24px" }}>
-            My Journey {"=>"}
-          </h3>
-          <hr />
-          <p>
-            <strong>Education and Early Career</strong>
-            <br />I graduated from Hitec University in Taxila with a Bachelor of
-            Science in Computer Science. My academic journey laid a solid
-            foundation in computer science principles, and I graduated with a
-            GPA of 3.29/4.00. During my time at university, I developed a keen
-            interest in Web Development and began exploring various technologies
-            that would later define my career.
-          </p>
-
-          <strong>Professional Experience</strong>
-          <br />
-          <ul>
-            <li>
-              <strong>Bazaar Technologies (March 2023 – Present)</strong>
-              <br />
-              As a Software Engineer II at Bazaar Technologies, I led a team of
-              non-front-end developers in building a React web app portal for
-              Bazaar partners. My role involved providing front-end development
-              expertise, ensuring design consistency, and implementing Test
-              Driven Development and Micro Front-ends. I contributed to customer
-              loyalty programs by designing user-friendly, operationally
-              functional, and visually appealing GUIs, which led to a 47%
-              increase in customer orders value. My efforts were recognized when
-              I became a Hackathon runner-up in an internal Bazaar Technologies
-              event.
-            </li>
-
-            <li>
-              <strong>Orcalo Holdings (Oct 2021 – March 2023)</strong>
-              <br />
-              At Orcalo Holdings, I served as a Front-End Engineer and Junior
-              Front-End Team Lead. Leading a team of 24 newly hired front-end
-              developers, I ensured project completion as per requirements and
-              integrated third-party tools. I developed feature-rich
-              applications using React, Angular, and TypeScript, handling logic
-              implementation, client-server communication, and UI development.
-              My implementation of the Component-Container design pattern
-              ensured a clear separation of concerns and enhanced the
-              maintainability of the codebase.
-            </li>
-
-            <li>
-              <strong>Orcalo Holdings (August 2021 – Oct 2021)</strong>
-              <br />
-              As a Junior Node.js Developer at Orcalo Holdings, I developed and
-              maintained server-side components and APIs for services including
-              Airtable, Twilio SMS, and Twilio SendGrid. I documented the
-              TypeScript process, including database schemas, to ensure smooth
-              development and integration.
-            </li>
-
-            <li>
-              <strong>Web Mekanics (Nov 2020 – Jun 2021)</strong>
-              <br />
-              During my internship at Web Mekanics, I developed responsive
-              front-end designs for automobile-related products and built REST
-              APIs using Django to retrieve and present real-time data insights.
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h3>My Skills</h3>
-          <strong>Front-End Development:</strong>
-          <ul>
-            <li>Languages: TypeScript, HTML/CSS, JavaScript</li>
-            <li>Technologies: React.js, Next.js, Angular, Redux, SCSS, MUI</li>
-            <li>Tools: VS Code, npm, Git, Visual Studio</li>
-          </ul>
-
-          <strong>Back-End Development:</strong>
-          <ul>
-            <li>Technologies: Node.js, Nest.js, Express.js, Spring Boot</li>
-            <li>Databases: MongoDB, PostgreSQL</li>
-            <li>
-              Tools: Swagger, Nodemon, AWS (S3, CloudFront, Route53), Airtable,
-              noCodeAPI
-            </li>
-          </ul>
-
-          <strong>Other Skills:</strong>
-          <ul>
-            <li>
-              Development Practices: Test Driven Development (TDD), SOLID
-              Principles, Component-Container Design Pattern, Agile Practices
-            </li>
-            <li>DevOps: Docker, Jenkins, CI/CD</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3>My Philosophy</h3>
-          <p>
-            I believe that the key to becoming a competent developer lies in
-            continuous learning and improvement. I am passionate about keeping
-            up with the latest technologies and best practices in the industry.
-            I strive to understand the &quot;big picture&quot; while also being meticulous
-            about the details. Whether it&apos;s front-end or back-end development, I
-            am committed to delivering high-quality, scalable solutions that
-            drive success for the projects I work on.
-          </p>
-        </div>
-
-        <div>
-          <h3>Personal Interests</h3>
-          <p>
-            When I&apos;m not coding, I enjoy exploring new tech trends,
-            participating in hackathons, and engaging with the developer
-            community. I also love mentoring junior developers and sharing my
-            knowledge to help them grow in their careers. Outside of tech, I am
-            a fitness enthusiast and enjoy spending time outdoors, hiking, and
-            playing sports.
-          </p>
-        </div>
-
-        <div>
-          <h3>Let&apos;s Connect</h3>
-          <p>
-            I am always open to new opportunities and collaborations. Feel free
-            to reach out to me via email at{" "}
-            <a href="mailto:malik.ali5560@gmail.com">malik.ali5560@gmail.com</a>{" "}
-            or connect with me on{" "}
-            <a href="https://www.linkedin.com/in/malik-abdul-rehman/">
-              LinkedIn
-            </a>
-            . Let&apos;s build something amazing together!
-          </p>
-        </div>
+        <h4 className=" heading-size-middle ">Let’s Connect! 🤝</h4>
+        <p>
+          I’m always eager to connect with fellow professionals and explore new
+          opportunities. Feel free to reach out via{" "}
+          <a href="https://www.linkedin.com/in/malik-abdul-rehman/">LinkedIn</a>{" "}
+          or email me at{" "}
+          <a href="mailto:malik.ali5560@gmail.com">malik.ali5560@gmail.com</a>.
+          Let’s build something great together!
+        </p>
       </div>
     </div>
   );
 };
+
 export default AboutMe;
-import React from "react";

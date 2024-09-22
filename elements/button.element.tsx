@@ -19,7 +19,7 @@ const BigButton = () => {
         alignItems: "center",
       }}
       className="flex justify-between gap-3 items-center"
-      href="/pdf/Front_End_Dev_AbdulRehman_Resume.pdf"
+      href="/pdf/FullStack_Dev_AbdulRehman_Resume.pdf"
       download="Malik_Abdul_Rehman_Resume.pdf"
     >
       <h2 className={syne.className}>Download My Resume</h2>

@@ -54,13 +54,16 @@ const Header = () => {
         className={`flex md:hidden ${syne.className} justify-between py-4 px-8 text-xl font-semibold`}
         style={{ backgroundColor: "rgb(255 233 217)" }}
       >
-        <Image
-          src="/abdulrehman.png"
-          alt="My Image"
-          width={40}
-          height={40}
-          className="rounded-full"
-        />
+        <a href="/">
+          <Image
+            src="/abdulrehman.png"
+            alt="My Image"
+            width={40}
+            height={40}
+            className="rounded-full"
+          />
+        </a>
+
         <button onClick={toggleDropdown} className="focus:outline-none">
           <svg
             className="w-6 h-6"
@@ -79,18 +82,30 @@ const Header = () => {
         </button>
         {isDropdownOpen && (
           <div
-            className="absolute top-16 right-4  shadow-md rounded-md p-" 
+            className="absolute top-16 right-4  shadow-md rounded-md p-"
             style={{
-              backgroundColor:"rgba(241, 192, 138, 0.9)"
+              backgroundColor: "rgba(241, 192, 138, 0.9)",
             }}
           >
-            <Link href="about-me" className="block px-7 py-2 text-lg">
+            <Link
+              href="about-me"
+              className="block px-7 py-2 text-lg"
+              onClick={toggleDropdown}
+            >
               About Me
             </Link>
-            <Link href="#web-projects" className="block px-7 py-2 text-lg">
+            <Link
+              href="#web-projects"
+              className="block px-7 py-2 text-lg"
+              onClick={toggleDropdown}
+            >
               Web Apps
             </Link>
-            <Link href="mobile-projects" className="block px-7 py-2 text-lg">
+            <Link
+              href="mobile-projects"
+              className="block px-7 py-2 text-lg"
+              onClick={toggleDropdown}
+            >
               Mobile Apps
             </Link>
           </div>

@@ -24,6 +24,7 @@ const webProjects = () => {
             projectName={project.projectName}
             description={project.description}
             link={project.link}
+            index= {index}
           />
         ))}
       </div>
