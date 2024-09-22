@@ -10,7 +10,7 @@ const syne = Syne({
 });
 const webProjects = () => {
   return (
-    <div className="container mx-auto my-7">
+    <div className="container mx-auto my-7 px-3 sm:px-0">
       <h1
         className={`${syne.className} font-semibold text-center`}
         style={{ fontSize: "1.25rem" }}

@@ -95,7 +95,7 @@ const Header = () => {
               About Me
             </Link>
             <Link
-              href="#web-projects"
+              href="web-projects"
               className="block px-7 py-2 text-lg"
               onClick={toggleDropdown}
             >

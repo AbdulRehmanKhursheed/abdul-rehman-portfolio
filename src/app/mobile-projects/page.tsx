@@ -8,10 +8,10 @@ const syne = Syne({
 });
 const mobileProjects = () => {
   return (
-    <div className="container mx-auto my-7 pb-4 px-2 sm:px-0">
+    <div className="container mx-auto my-7 pb-4 px-3 sm:px-0">
       <h1
         className={`${syne.className}  font-semibold text-center`}
-        style={{ fontSize: "32px" }}
+        style={{ fontSize: "1.25rem" }}
       >
         Mobile Application Development
       </h1>
@@ -19,7 +19,8 @@ const mobileProjects = () => {
         As part of my role as a Software Engineer, I have gained significant
         experience in developing mobile applications. My work has primarily
         focused on creating seamless, user-friendly experiences for both
-        customers and agents. Below are some of the key projects I&apos;ve worked on:
+        customers and agents. Below are some of the key projects I&apos;ve
+        worked on:
       </p>
 
       <h5 className={`${syne.className}  font-semibold`}>
