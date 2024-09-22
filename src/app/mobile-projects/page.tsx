@@ -8,7 +8,7 @@ const syne = Syne({
 });
 const mobileProjects = () => {
   return (
-    <div className="container mx-auto my-7">
+    <div className="container mx-auto my-7 pb-4 px-2 sm:px-0">
       <h1
         className={`${syne.className}  font-semibold text-center`}
         style={{ fontSize: "32px" }}
