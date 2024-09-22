@@ -80,7 +80,7 @@ const AboutMe = () => {
           <h4 className="heading-size-small font-bold">Technical Skills 🛠️:</h4>
           <p>
             I have a strong foundation in several programming languages
-            including TypeScript, JavaScript, and Kotlin, and I'm proficient in
+            including TypeScript, JavaScript, and Kotlin, and I&apos;m proficient in
             both front-end technologies (React, Next.js, Angular) and back-end
             frameworks (Spring Boot, Node.js). My expertise extends to cloud
             services like AWS, and I have experience with tools such as Docker,
