@@ -155,7 +155,7 @@ const AboutMe = () => {
           </h4>
           <p>
             I actively participate in hackathons and coding competitions, where
-            I’ve had the pleasure of collaborating with other talented
+            I&apos;ve had the pleasure of collaborating with other talented
             developers and sharing ideas. I was proud to be recognized as a
             runner-up in an internal hackathon at Bazaar Technologies for my
             innovative contributions.
@@ -164,12 +164,12 @@ const AboutMe = () => {
 
         <h4 className=" heading-size-middle ">Let’s Connect! 🤝</h4>
         <p>
-          I’m always eager to connect with fellow professionals and explore new
+          I&apos;m always eager to connect with fellow professionals and explore new
           opportunities. Feel free to reach out via{" "}
           <a href="https://www.linkedin.com/in/malik-abdul-rehman/">LinkedIn</a>{" "}
           or email me at{" "}
           <a href="mailto:malik.ali5560@gmail.com">malik.ali5560@gmail.com</a>.
-          Let’s build something great together!
+          Let&apos;s build something great together!
         </p>
       </div>
     </div>
