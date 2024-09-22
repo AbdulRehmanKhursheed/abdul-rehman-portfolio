@@ -18,14 +18,14 @@ const AboutMe = () => {
           Software Engineer | Full-Stack Developer
         </h3>
         <p>
-          Hello! 👋👋, I’m Abdul Rehman, a passionate software
+          Hello! 👋👋, I&apos;m Abdul Rehman, a passionate software
           engineer with over 3.5 years of experience in full-stack development.
           I specialize in creating robust, scalable web applications, leveraging
           technologies such as React, Angular, Node.js, and Spring Boot.
         </p>
         <p>
-          My journey began with a Bachelor’s degree in Computer Science from
-          Hitec University. Since then, I’ve immersed myself in the tech world,
+          My journey began with a Bachelor&apos;s degree in Computer Science from
+          Hitec University. Since then, I&apos;ve immersed myself in the tech world,
           honing my skills in both front-end and back-end development. I pride
           myself on employing agile methodologies, Test-Driven Development
           (TDD), and SOLID principles in my work, which not only improves code
