@@ -13,11 +13,11 @@ const webProjects = () => {
     <div className="container mx-auto my-7">
       <h1
         className={`${syne.className} font-semibold text-center`}
-        style={{ fontSize: "32px" }}
+        style={{ fontSize: "1.25rem" }}
       >
-        Web App Development
+        Web Applications
       </h1>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 px-2 sm:px-0">
         {projects.map((project: ProjectElementProps, index: number) => (
           <ProjectElementComponent
             key={index}
