@@ -8,7 +8,7 @@ const syne = Syne({
 
 const AboutMe = () => {
   return (
-    <div style={{ backgroundColor: "#f8fafd" }} className="pb-4">
+    <div style={{ backgroundColor: "#f8fafd" }} className="pb-4 px-2 sm:px-0">
       <div className={`container sm:p-2 p-3 mx-auto py-7 ${syne.className}`}>
         <h1 className="text-center heading-size font-bold">About Me</h1>
         <h2 className="text-center heading-size-middle ">
