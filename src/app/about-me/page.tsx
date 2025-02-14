@@ -21,16 +21,16 @@ const ContentBox = ({
 );
 
 // Move date calculation outside component to avoid recalculation on each render
-export const calculateExperience = () => {
-  const startDate = new Date("2020-11-01");
-  const currentDate = new Date();
-  const diffInYears =
-    (currentDate.getTime() - startDate.getTime()) /
-    (1000 * 60 * 60 * 24 * 365.25);
-  return diffInYears.toFixed(1);
-};
 
 const AboutMe = () => {
+  const calculateExperience = () => {
+    const startDate = new Date("2020-11-01");
+    const currentDate = new Date();
+    const diffInYears =
+      (currentDate.getTime() - startDate.getTime()) /
+      (1000 * 60 * 60 * 24 * 365.25);
+    return diffInYears.toFixed(1);
+  };
   return (
     <div className="bg-[#f8fafd] pb-4 px-3 sm:px-0">
       <div className={`container sm:p-2 p-3 mx-auto py-7 ${syne.className}`}>
