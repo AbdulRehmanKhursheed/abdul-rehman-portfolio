@@ -1,9 +1,9 @@
 const projects = [
   {
-    projectName: "Bazaar Customer Web App",
+    projectName: "Bazaar Web App",
     description:
       " The Bazaar Customer Web App is basically web version of android bazaar app which is designed to provide a comprehensive and intuitive shopping experience for Bazaar customers (B2B & B2C both now). This application allows users to browse products, make purchases, and manage their orders efficiently.",
-    link: "",
+    link: "https://www.bazaarapp.com/",
   },
 
   {

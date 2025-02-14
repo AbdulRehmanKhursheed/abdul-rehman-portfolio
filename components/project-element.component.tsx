@@ -12,10 +12,14 @@ const ProjectElementComponent = ({
   projectName,
   description,
   link,
-  index,
 }: ProjectElementProps) => {
   return (
-    <Link href={link} className="projects">
+    <Link
+      href={link}
+      className="projects"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div className="w-full flex justify-between">
         <div>
           <h1
@@ -24,14 +28,6 @@ const ProjectElementComponent = ({
           >
             {" "}
             {projectName}{" "}
-            {index == 0 ? (
-              <span style={{ color: "#FF6F61" }}>
-                {" "}
-                - This app is under development
-              </span>
-            ) : (
-              ""
-            )}
           </h1>
           <h5
             style={{ maxWidth: "80%" }}
