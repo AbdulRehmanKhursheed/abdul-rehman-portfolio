@@ -21,7 +21,7 @@ const ContentBox = ({
 );
 
 // Move date calculation outside component to avoid recalculation on each render
-const calculateExperience = () => {
+export const calculateExperience = () => {
   const startDate = new Date("2020-11-01");
   const currentDate = new Date();
   const diffInYears =
