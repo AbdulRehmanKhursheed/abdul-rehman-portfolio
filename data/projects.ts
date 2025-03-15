@@ -1,5 +1,11 @@
 const projects = [
   {
+    projectName: "MYSITE main website",
+    description:
+      "MYSITE is a platform that simplifies reality capture and collaboration for construction projects, enabling users to document sites visually, manage projects remotely, and resolve disputes efficiently.",
+    link: "https://mysitetech.com/",
+  },
+  {
     projectName: "Bazaar Web App",
     description:
       " The Bazaar Customer Web App is basically web version of android bazaar app which is designed to provide a comprehensive and intuitive shopping experience for Bazaar customers (B2B & B2C both now). This application allows users to browse products, make purchases, and manage their orders efficiently.",
