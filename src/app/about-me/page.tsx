@@ -20,8 +20,6 @@ const ContentBox = ({
   </div>
 );
 
-// Move date calculation outside component to avoid recalculation on each render
-
 const AboutMe = () => {
   const calculateExperience = () => {
     const startDate = new Date("2020-11-01");
@@ -64,31 +62,31 @@ const AboutMe = () => {
 
         <ContentBox title="Professional Experience 🚀">
           <p>
-            Currently, I work at Bazaar Technologies as a Software Engineer -
-            II, where I lead the development of a React web portal for our
-            partners, significantly improving user engagement and experience.
-            One of my proudest achievements here was automating invoice
-            generation, which streamlined our internal processes and reduced
-            manual workload. I also enjoy mentoring junior developers, guiding
-            them through best practices and fostering their growth.
+            Currently, I work at Bazaar Technologies as a Senior Software
+            Engineer - I, where I lead the development of Bazaar Web App, React
+            web portal for our partners, significantly improving user engagement
+            and experience. One of my proudest achievements here was automating
+            invoice generation, which streamlined our internal processes and
+            reduced manual workload. I also enjoy mentoring junior developers,
+            guiding them through best practices and fostering their growth.
           </p>
         </ContentBox>
 
         <p>
-          Previously, I held the role of Front End Engineer at Orcalo Holdings,
-          where I managed a team of 24 junior developers. I introduced effective
-          design patterns and improved our client-server communication layer,
-          ensuring timely project delivery and high-quality results.
+          Previously, I held the role of junior front End lead at Orcalo
+          Holdings, where I managed a team of 24 junior developers. I introduced
+          effective design patterns and improved our client-server communication
+          layer, ensuring timely project delivery and high-quality results.
         </p>
 
         <ContentBox title="Technical Skills 🛠️">
           <p>
             I have a strong foundation in several programming languages
-            including TypeScript, JavaScript, and Kotlin, and I&apos;m
-            proficient in both front-end technologies (React, Next.js, Angular)
-            and back-end frameworks (Spring Boot, Node.js). My expertise extends
-            to cloud services like AWS, and I have experience with tools such as
-            Docker, Git, and Postman.
+            including TypeScript, JavaScript, and Kotlin (intermediate), and
+            I&apos;m proficient in both front-end technologies (React, Next.js,
+            Angular) and back-end frameworks (Spring Boot, Node.js). My
+            expertise extends to cloud services like AWS, and I have experience
+            with tools such as Docker, Git, and Postman.
           </p>
         </ContentBox>
 
