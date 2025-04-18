@@ -37,7 +37,7 @@ const Header = () => {
             About Me
           </Link>
           <Link
-            href="/web-projects"
+            href="/web"
             className="px-4 py-2 header-item-bg rounded-lg "
           >
             Web Apps

@@ -1,7 +1,6 @@
-export const dynamic = "force-dynamic";
-export const fetchCache = "force-no-store";
-export const revalidate = 0;
+"use client";
 
+import { useEffect } from "react";
 import ProjectElementComponent from "../../../components/project-element.component";
 import projects from "../../../data/projects";
 import "@/styles/page.scss";
@@ -11,7 +10,14 @@ const syne = Syne({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
-const webProjects = () => {
+function WebProjects() {
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        registrations.forEach((reg) => reg.unregister());
+      });
+    }
+  }, []);
   return (
     <div className="container mx-auto my-7 px-3 sm:px-0">
       <h1
@@ -33,5 +39,5 @@ const webProjects = () => {
       </div>
     </div>
   );
-};
-export default webProjects;
+}
+export default WebProjects;
