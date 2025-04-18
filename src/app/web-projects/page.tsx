@@ -1,4 +1,6 @@
 export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+export const revalidate = 0;
 
 import ProjectElementComponent from "../../../components/project-element.component";
 import projects from "../../../data/projects";
