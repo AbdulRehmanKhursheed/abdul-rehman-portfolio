@@ -24,7 +24,7 @@ const ProjectElementComponent = ({
         <div>
           <h1
             className={syne.className}
-            style={{ fontSize: "24px", color: "rgb(255 147 48)" }}
+            style={{ fontSize: "24px", color: "rgb(161 101 27)" }}
           >
             {" "}
             {projectName}{" "}
