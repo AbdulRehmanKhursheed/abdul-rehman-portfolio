@@ -1,8 +1,9 @@
+export const revalidate = 0;
+
 import ProjectElementComponent from "../../../components/project-element.component";
 import projects from "../../../data/projects";
 import "@/styles/page.scss";
 import { Syne } from "next/font/google";
-
 
 const syne = Syne({
   subsets: ["latin"],
@@ -24,7 +25,7 @@ const webProjects = () => {
             projectName={project.projectName}
             description={project.description}
             link={project.link}
-            index= {index}
+            index={index}
           />
         ))}
       </div>
