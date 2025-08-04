@@ -43,13 +43,13 @@ const HeroSection = () => {
       />
 
       <div className="container-max section-padding relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-6 lg:space-y-8 order-2 lg:order-1"
           >
             {/* Greeting */}
             <motion.div
@@ -59,9 +59,7 @@ const HeroSection = () => {
               className="flex items-center space-x-3"
             >
               <div className="w-12 h-0.5 bg-gradient-to-r from-primary-600 to-secondary-600" />
-              <span className="text-lg font-medium text-dark-600">
-                Hello, I&apos;m
-              </span>
+              <span className="text-lg font-medium text-dark-600">Hello, I&apos;m</span>
             </motion.div>
 
             {/* Name */}
@@ -69,7 +67,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-5xl lg:text-7xl font-display font-bold leading-tight"
+              className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold leading-tight"
             >
               <span className="gradient-text">Abdul Rehman</span>
             </motion.h1>
@@ -79,9 +77,9 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="text-2xl lg:text-3xl font-medium text-dark-600"
+              className="text-xl sm:text-2xl lg:text-3xl font-medium text-dark-600"
             >
-              Full Stack Developer
+              Full Stack Developer & Cloud Engineer
             </motion.h2>
 
             {/* Description */}
@@ -89,12 +87,11 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="text-lg text-dark-500 leading-relaxed max-w-lg"
+              className="text-base sm:text-lg text-dark-500 leading-relaxed max-w-lg"
             >
-              Crafting exceptional digital experiences with modern technologies.
-              Specialized in React, Next.js, Nest.js, AWS, and cloud
-              infrastructure. Passionate about performance, security, and
-              scalable solutions.
+              Crafting exceptional digital experiences with modern technologies. 
+              Specialized in React, Next.js, AWS, and cloud infrastructure. 
+              Passionate about performance, security, and scalable solutions.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -107,17 +104,17 @@ const HeroSection = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection("projects")}
+                onClick={() => scrollToSection('projects')}
                 className="button-primary flex items-center justify-center space-x-2"
               >
                 <span>View My Work</span>
                 <ArrowDown size={16} />
               </motion.button>
-
+              
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection("contact")}
+                onClick={() => scrollToSection('contact')}
                 className="button-secondary flex items-center justify-center space-x-2"
               >
                 <Mail size={16} />
@@ -153,7 +150,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center lg:justify-end order-1 lg:order-2"
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full blur-2xl opacity-30 animate-pulse" />

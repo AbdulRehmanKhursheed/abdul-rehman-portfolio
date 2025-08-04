@@ -32,7 +32,7 @@ const AboutMe = () => {
     {
       name: "Backend Development",
       icon: Zap,
-      description: "Node.js, Spring Boot, APIs",
+      description: "Nest.js, Node.js, Spring Boot, APIs",
     },
     {
       name: "Team Leadership",

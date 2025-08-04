@@ -11,7 +11,7 @@ const projects: Project[] = [
   {
     projectName: "Bazaar Web App",
     description:
-      "Built a React/Next.js front-end (with MUI, SSR, and SWR caching) for an end-to-end B2B & B2C shopping experience. Features include product catalog, cart, checkout, payment gateway integration, and user profile management with Test-Driven Development (Jest/RTL) achieving 99% coverage for front-end and 100% for backend.",
+      "Built a React/Next.js front-end (with MUI, SSR, and SWR caching) for an end-to-end B2B & B2C shopping experience. Features include product catalog, cart, checkout, payment gateway integration, and user profile management with Test-Driven Development (Jest/RTL) achieving 99% coverage for front-end and 100% for backend. Implemented AWS WAF for security and traffic filtering, and image optimization with Lambda & CloudFront reducing costs from $350 to $150 per month while improving web vitals.",
     link: "https://www.bazaarapp.com",
     technologies: [
       "React",
@@ -23,35 +23,16 @@ const projects: Project[] = [
       "SpringBoot",
       "Jest",
       "RTL",
+      "AWS WAF",
+      "CloudFront",
+      "AWS Lambda",
+      "Image Optimization",
     ],
     category: "Web App",
     featured: true,
   },
   {
-    projectName: "AWS WAF & Security Implementation",
-    description:
-      "Implemented AWS WAF for Bazaar app to block traffic based on categories and nature of incoming traffic, keeping in mind SEO and security. Configured custom rules for traffic filtering for bots and seo and other traffic.",
-    link: "#",
-    technologies: ["AWS WAF", "CloudFront", "Security", "Optimization"],
-    category: "Infrastructure",
-    featured: true,
-  },
-  {
-    projectName: "Image Optimization with Lambda & CloudFront",
-    description:
-      "Implemented image resize functionality by attaching Lambda with CloudFront for web app. This improved costs from $350 per month to around $150 by decreasing image sizes and improved overall web vitals and network bandwidth.",
-    link: "#",
-    technologies: [
-      "AWS Lambda",
-      "CloudFront",
-      "Image Optimization",
-      "Cost Optimization",
-    ],
-    category: "Infrastructure",
-    featured: true,
-  },
-  {
-    projectName: "Bazaar Main Website",
+    projectName: "Bazaar Website",
     description:
       "Though this app is built using WebFlow, I integrated fully dynamic job postings in careers page using HTML, CSS, and Vanilla JavaScript.",
     link: "https://bazaartech.com",

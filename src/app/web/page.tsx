@@ -5,6 +5,7 @@ import ProjectElementComponent from "../../../components/project-element.compone
 import projects from "../../../data/projects";
 import "@/styles/page.scss";
 import { Syne } from "next/font/google";
+import Link from "next/link";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -28,13 +29,21 @@ function WebProjects() {
       </h1>
       <div className="flex flex-col gap-3 px-2 sm:px-0">
         {projects.map((project: ProjectElementProps, index: number) => (
-          <ProjectElementComponent
+          <div
+            className="projects"
             key={index}
-            projectName={project.projectName}
-            description={project.description}
-            link={project.link}
-            index={index}
-          />
+            onClick={() => {
+              window.open(project.link, "_blank");
+            }}
+          >
+            <ProjectElementComponent
+              key={index}
+              projectName={project.projectName}
+              description={project.description}
+              link={project.link}
+              index={index}
+            />
+          </div>
         ))}
       </div>
     </div>
