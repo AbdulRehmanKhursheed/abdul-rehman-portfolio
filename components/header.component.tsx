@@ -43,7 +43,6 @@ const Header = () => {
   return (
     <motion.header
       initial={{ y: -100 }}
-    
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
@@ -68,7 +67,7 @@ const Header = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <motion.button
                 key={item.name}
@@ -83,7 +82,7 @@ const Header = () => {
           </nav>
 
           {/* Social Links & CTA */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-3">
               <motion.a
                 href="https://github.com"
@@ -118,6 +117,7 @@ const Header = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection("contact")}
+              style={{ fontSize: "12px" }}
               className="button-primary flex items-center space-x-2"
             >
               <Mail size={16} />
@@ -129,7 +129,7 @@ const Header = () => {
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </motion.button>
@@ -141,7 +141,7 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-gray-200 bg-white/95 backdrop-blur-md"
+            className="lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-md"
           >
             <div className="py-4 space-y-4">
               {navItems.map((item) => (
