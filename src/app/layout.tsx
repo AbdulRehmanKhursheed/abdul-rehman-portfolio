@@ -26,7 +26,6 @@ export default function RootLayout({
         <meta name="theme-color" content="#0070f3" />
       </head>
       <body className={inter.className}>
-        {/* <RegisterSW /> */}
         <Header />
         {children}
       </body>
