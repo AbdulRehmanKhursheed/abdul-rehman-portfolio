@@ -16,9 +16,12 @@ const MobileProjectsPage = () => {
         "A comprehensive B2B & B2C shopping experience for Bazaar customers. Features product browsing, cart management, secure checkout, payment integration, and order tracking. Built with React Native for cross-platform compatibility.",
       image: "/images/bazaar-customer-app.png",
       technologies: [
-        "React Native",
-        "TypeScript",
-        "Redux",
+        "Kotlin/Java",
+        "Coroutines",
+        "MVVM",
+        "Jetpack Compose",
+        "Kotlin Multiplatform - KMP",
+        "Material Design",
         "Payment Gateway",
         "Push Notifications",
       ],
@@ -36,28 +39,20 @@ const MobileProjectsPage = () => {
       description:
         "Empowering Bazaar agents with tools for daily operations, customer management, and order processing. Streamlines agent workflows and enhances customer service capabilities.",
       image: "/images/bazaar-agent-image.png",
-      technologies: [
-        "React Native",
-        "TypeScript",
-        "Redux",
-        "Real-time Updates",
-        "Offline Support",
-      ],
+      technologies: ["Kotlin/Java", "Coroutines", "MVVM", "Material Design"],
       features: [
-        "Customer Management",
+        "Agent Management",
         "Order Processing",
         "Inventory Tracking",
         "Performance Analytics",
-        "Communication Tools",
       ],
-      platform: "iOS & Android",
+      platform: "Android",
     },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Header */}
         <div className="mb-8">
           <Link
             href="/"
@@ -85,14 +80,12 @@ const MobileProjectsPage = () => {
           </div>
         </div>
 
-        {/* Mobile Apps Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           {mobileApps.map((app, index) => (
             <div
               key={index}
               className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300"
             >
-              {/* App Image */}
               <div className="h-48 bg-gradient-to-br from-blue-100 to-purple-100 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20" />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -102,7 +95,6 @@ const MobileProjectsPage = () => {
                 </div>
               </div>
 
-              {/* App Content */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-2xl font-bold text-gray-800">
@@ -117,7 +109,6 @@ const MobileProjectsPage = () => {
                   {app.description}
                 </p>
 
-                {/* Technologies */}
                 <div className="mb-6">
                   <h4 className="text-sm font-semibold text-gray-700 mb-3 flex items-center">
                     <Code className="w-4 h-4 mr-2" />
@@ -135,7 +126,6 @@ const MobileProjectsPage = () => {
                   </div>
                 </div>
 
-                {/* Features */}
                 <div>
                   <h4 className="text-sm font-semibold text-gray-700 mb-3 flex items-center">
                     <Users className="w-4 h-4 mr-2" />
@@ -158,7 +148,6 @@ const MobileProjectsPage = () => {
           ))}
         </div>
 
-        {/* Development Approach */}
         <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
             Development Approach
