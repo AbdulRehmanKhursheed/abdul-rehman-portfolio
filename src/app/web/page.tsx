@@ -5,7 +5,6 @@ import ProjectElementComponent from "../../../components/project-element.compone
 import projects from "../../../data/projects";
 import "@/styles/page.scss";
 import { Syne } from "next/font/google";
-import Link from "next/link";
 
 const syne = Syne({
   subsets: ["latin"],
