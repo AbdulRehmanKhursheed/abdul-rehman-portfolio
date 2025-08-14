@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import {
   Mail,
   Phone,
@@ -10,7 +9,6 @@ import {
   Download,
   Github,
   Linkedin,
-  Twitter,
 } from "lucide-react";
 
 const ContactSection = () => {
@@ -36,7 +34,7 @@ const ContactSection = () => {
     setFormData({ name: "", email: "", subject: "", message: "" });
 
     // Show success message (you can implement a toast notification here)
-    alert("Thank you for your message! I&apos;ll get back to you soon.");
+    alert("Thank you for your message! I'll get back to you soon.");
   };
 
   const handleInputChange = (
@@ -59,7 +57,7 @@ const ContactSection = () => {
       icon: Phone,
       title: "Phone",
       value: "+92 304 5919 454",
-      link: "tel:+15551234567",
+      link: "tel:+923045919454",
     },
     {
       icon: MapPin,
@@ -70,9 +68,16 @@ const ContactSection = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    {
+      icon: Github,
+      href: "https://github.com/AbdulRehmanKhursheed",
+      label: "GitHub",
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/malik-abdul-rehman/",
+      label: "LinkedIn",
+    },
   ];
 
   return (
@@ -80,125 +85,93 @@ const ContactSection = () => {
       id="contact"
       className="py-20 bg-gradient-to-b from-gray-50 to-white"
     >
-      <div className="container-max section-padding">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl lg:text-5xl font-display font-bold mb-6">
-            Get In <span className="gradient-text">Touch</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            Get In{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Touch
+            </span>
           </h2>
-          <p className="text-lg text-dark-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Ready to start your next project? Let&apos;s discuss how I can help
             bring your ideas to life with modern technology and best practices.
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary-600 to-secondary-600 mx-auto rounded-full mt-6" />
-        </motion.div>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mt-6" />
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
-          >
+          <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-dark-800 mb-6">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">
                 Let&apos;s Connect
               </h3>
-              <p className="text-lg text-dark-600 leading-relaxed mb-8">
+              <p className="text-lg text-gray-600 leading-relaxed mb-8">
                 I&apos;m always interested in new opportunities and exciting
                 projects. Whether you have a question or just want to say hi,
                 feel free to reach out!
               </p>
             </div>
 
-            {/* Contact Info Cards */}
             <div className="space-y-4">
-              {contactInfo.map((info, index) => (
-                <motion.a
+              {contactInfo.map((info) => (
+                <a
                   key={info.title}
                   href={info.link}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.02 }}
                   className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="p-3 bg-gradient-to-r from-primary-100 to-secondary-100 rounded-lg">
-                    <info.icon className="w-6 h-6 text-primary-600" />
+                  <div className="p-3 bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg">
+                    <info.icon className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-dark-800">
+                    <h4 className="font-semibold text-gray-800">
                       {info.title}
                     </h4>
-                    <p className="text-dark-600">{info.value}</p>
+                    <p className="text-gray-600">{info.value}</p>
                   </div>
-                </motion.a>
+                </a>
               ))}
             </div>
 
-            {/* Social Links */}
             <div>
-              <h4 className="text-lg font-semibold text-dark-800 mb-4">
+              <h4 className="text-lg font-semibold text-gray-800 mb-4">
                 Follow Me
               </h4>
               <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
-                  <motion.a
+                {socialLinks.map((social) => (
+                  <a
                     key={social.label}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="p-3 bg-white rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 text-dark-400 hover:text-primary-600"
+                    className="p-3 bg-white rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 text-gray-400 hover:text-blue-600"
                   >
                     <social.icon size={24} />
-                  </motion.a>
+                  </a>
                 ))}
               </div>
             </div>
 
-            {/* Resume Download */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <a
-                href="/pdf/Fullstack_Dev_AbdulRehman_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="button-secondary flex items-center justify-center space-x-2 w-full"
+            <div>
+              <button
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "/pdf/Fullstack_Dev_AbdulRehman_Resume.pdf";
+                  link.download = "Abdul_Rehman_Resume.pdf";
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+                className="w-full px-6 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <Download size={16} />
                 <span>Download Resume</span>
-              </a>
-            </motion.div>
-          </motion.div>
+              </button>
+            </div>
+          </div>
 
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-white rounded-xl shadow-lg border border-gray-100 p-8"
-          >
-            <h3 className="text-2xl font-bold text-dark-800 mb-6">
+          <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">
               Send Message
             </h3>
 
@@ -207,7 +180,7 @@ const ContactSection = () => {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-dark-700 mb-2"
+                    className="block text-sm font-medium text-gray-700 mb-2"
                   >
                     Name *
                   </label>
@@ -218,7 +191,7 @@ const ContactSection = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                     placeholder="Your name"
                   />
                 </div>
@@ -226,7 +199,7 @@ const ContactSection = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-dark-700 mb-2"
+                    className="block text-sm font-medium text-gray-700 mb-2"
                   >
                     Email *
                   </label>
@@ -237,7 +210,7 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -246,7 +219,7 @@ const ContactSection = () => {
               <div>
                 <label
                   htmlFor="subject"
-                  className="block text-sm font-medium text-dark-700 mb-2"
+                  className="block text-sm font-medium text-gray-700 mb-2"
                 >
                   Subject *
                 </label>
@@ -257,7 +230,7 @@ const ContactSection = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                   placeholder="Project inquiry"
                 />
               </div>
@@ -265,7 +238,7 @@ const ContactSection = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-dark-700 mb-2"
+                  className="block text-sm font-medium text-gray-700 mb-2"
                 >
                   Message *
                 </label>
@@ -276,17 +249,15 @@ const ContactSection = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
 
-              <motion.button
+              <button
                 type="submit"
                 disabled={isSubmitting}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full button-primary flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>
@@ -299,9 +270,9 @@ const ContactSection = () => {
                     <span>Send Message</span>
                   </>
                 )}
-              </motion.button>
+              </button>
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

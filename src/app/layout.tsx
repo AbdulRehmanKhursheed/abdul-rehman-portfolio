@@ -10,8 +10,38 @@ import Header from "../../components/header.component";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Abdul Rehman's portfolio",
-  description: "Abdul Rehman Portfolio WebApp.",
+  title: "Abdul Rehman - Full Stack Developer & Cloud Engineer",
+  description:
+    "Full Stack Developer & Cloud Engineer specializing in React, Next.js, AWS, and enterprise applications. Based in Pakistan.",
+  keywords: [
+    "Full Stack Developer",
+    "React",
+    "Next.js",
+    "AWS",
+    "Cloud Engineer",
+    "Pakistan",
+  ],
+  authors: [{ name: "Abdul Rehman" }],
+  creator: "Abdul Rehman",
+  openGraph: {
+    title: "Abdul Rehman - Full Stack Developer & Cloud Engineer",
+    description:
+      "Full Stack Developer & Cloud Engineer specializing in React, Next.js, AWS, and enterprise applications.",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Abdul Rehman - Full Stack Developer & Cloud Engineer",
+    description:
+      "Full Stack Developer & Cloud Engineer specializing in React, Next.js, AWS, and enterprise applications.",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -23,7 +53,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#0070f3" />
+        <meta name="theme-color" content="#3B82F6" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={inter.className}>
         <Header />

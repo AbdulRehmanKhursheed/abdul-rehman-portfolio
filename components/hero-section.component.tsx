@@ -1,14 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import {
-  ArrowDown,
-  Download,
-  Mail,
-  Github,
-  Linkedin,
-  Twitter,
-} from "lucide-react";
+import { ArrowDown, Download, Mail, Github, Linkedin, Twitter } from "lucide-react";
 import DisplayPictureComponent from "./display-picture.component";
 
 const HeroSection = () => {
@@ -31,152 +23,95 @@ const HeroSection = () => {
       className="min-h-screen pt-20 flex items-center relative overflow-hidden"
     >
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-secondary-50" />
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" />
-      <div
-        className="absolute top-40 right-10 w-72 h-72 bg-secondary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float"
-        style={{ animationDelay: "2s" }}
-      />
-      <div
-        className="absolute -bottom-8 left-20 w-72 h-72 bg-accent-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float"
-        style={{ animationDelay: "4s" }}
-      />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70" />
+      <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70" />
+      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-70" />
 
-      <div className="container-max section-padding relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-6 lg:space-y-8 order-2 lg:order-1"
-          >
+          <div className="space-y-6 lg:space-y-8 order-2 lg:order-1">
             {/* Greeting */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="flex items-center space-x-3"
-            >
-              <div className="w-12 h-0.5 bg-gradient-to-r from-primary-600 to-secondary-600" />
-              <span className="text-lg font-medium text-dark-600">Hello, I&apos;m</span>
-            </motion.div>
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600" />
+              <span className="text-lg font-medium text-gray-600">Hello, I&apos;m</span>
+            </div>
 
             {/* Name */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold leading-tight"
-            >
-              <span className="gradient-text">Abdul Rehman</span>
-            </motion.h1>
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Abdul Rehman
+              </span>
+            </h1>
 
             {/* Title */}
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="text-xl sm:text-2xl lg:text-3xl font-medium text-dark-600"
-            >
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-gray-600">
               Full Stack Developer & Cloud Engineer
-            </motion.h2>
+            </h2>
 
             {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              className="text-base sm:text-lg text-dark-500 leading-relaxed max-w-lg"
-            >
+            <p className="text-base sm:text-lg text-gray-500 leading-relaxed max-w-lg">
               Crafting exceptional digital experiences with modern technologies. 
               Specialized in React, Next.js, AWS, and cloud infrastructure. 
               Passionate about performance, security, and scalable solutions.
-            </motion.p>
+            </p>
 
             {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button
                 onClick={() => scrollToSection('projects')}
-                className="button-primary flex items-center justify-center space-x-2"
+                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <span>View My Work</span>
                 <ArrowDown size={16} />
-              </motion.button>
+              </button>
               
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <button
                 onClick={() => scrollToSection('contact')}
-                className="button-secondary flex items-center justify-center space-x-2"
+                className="px-6 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <Mail size={16} />
                 <span>Get in Touch</span>
-              </motion.button>
-            </motion.div>
+              </button>
+            </div>
 
             {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.6 }}
-              className="flex items-center space-x-6"
-            >
-              {socialLinks.map((social, index) => (
-                <motion.a
+            <div className="flex items-center space-x-6">
+              {socialLinks.map((social) => (
+                <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="text-dark-400 hover:text-primary-600 transition-colors duration-200"
+                  className="text-gray-400 hover:text-blue-600 transition-colors duration-200"
                 >
                   <social.icon size={24} />
-                </motion.a>
+                </a>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Profile Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="flex justify-center lg:justify-end order-1 lg:order-2"
-          >
+          <div className="flex justify-center lg:justify-end order-1 lg:order-2">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full blur-2xl opacity-30 animate-pulse" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-2xl opacity-30" />
               <div className="relative">
                 <DisplayPictureComponent />
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.6 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.button
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <button
             onClick={() => scrollToSection("about")}
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="text-dark-400 hover:text-primary-600 transition-colors duration-200"
+            className="text-gray-400 hover:text-blue-600 transition-colors duration-200 animate-bounce"
           >
             <ArrowDown size={24} />
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
       </div>
     </section>
   );

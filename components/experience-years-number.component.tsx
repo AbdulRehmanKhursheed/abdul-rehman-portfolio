@@ -10,14 +10,17 @@ const ExperienceYearsNumbers = () => {
       (1000 * 60 * 60 * 24 * 365.25);
     return diffInYears.toFixed(1);
   };
+  
   return (
-    <div className="flex gap-5">
-      <FancyTexts
-        boldText={calculateExperience()}
-        normalText=" years of experience"
-      />
-      <ShadowText text="years of experience" />
+    <div className="flex items-center space-x-4">
+      <div className="bg-orange-500 text-white px-4 py-2 rounded-lg font-bold text-2xl">
+        {calculateExperience()}+
+      </div>
+      <span className="text-gray-600 font-medium text-lg">
+        Years of Experience
+      </span>
     </div>
   );
 };
+
 export default ExperienceYearsNumbers;

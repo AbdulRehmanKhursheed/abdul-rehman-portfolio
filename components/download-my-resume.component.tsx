@@ -1,4 +1,4 @@
-import BigButton from "../elements/button.element";
+import DownloadResumeButton from "../elements/button.element";
 import ExperienceYearsNumbers from "./experience-years-number.component";
 
 const DownloadMyResumeSection = () => {
@@ -9,10 +9,11 @@ const DownloadMyResumeSection = () => {
           <ExperienceYearsNumbers />
         </div>
         <div className="w-full lg:w-auto">
-          <BigButton />
+          <DownloadResumeButton />
         </div>
       </div>
     </div>
   );
 };
+
 export default DownloadMyResumeSection;

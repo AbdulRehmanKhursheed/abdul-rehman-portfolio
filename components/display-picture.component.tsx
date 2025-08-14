@@ -1,17 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 const DisplayPictureComponent = () => {
   return (
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      className="relative"
-    >
+    <div className="relative">
       <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
         {/* Background gradient ring */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 rounded-full blur-xl opacity-30 animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-orange-400 rounded-full blur-xl opacity-30" />
         
         {/* Main image container */}
         <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl">
@@ -26,38 +22,15 @@ const DisplayPictureComponent = () => {
         </div>
         
         {/* Floating elements - smaller on mobile */}
-        <motion.div
-          animate={{ 
-            y: [0, -10, 0],
-            rotate: [0, 5, 0]
-          }}
-          transition={{ 
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute -top-2 -right-2 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center shadow-lg"
-        >
+        <div className="absolute -top-2 -right-2 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
           <span className="text-white font-bold text-xs sm:text-sm">AR</span>
-        </motion.div>
+        </div>
         
-        <motion.div
-          animate={{ 
-            y: [0, 10, 0],
-            rotate: [0, -5, 0]
-          }}
-          transition={{ 
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-          className="absolute -bottom-2 -left-2 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-accent-500 to-primary-500 rounded-full flex items-center justify-center shadow-lg"
-        >
+        <div className="absolute -bottom-2 -left-2 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-orange-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
           <span className="text-white font-bold text-xs">JS</span>
-        </motion.div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

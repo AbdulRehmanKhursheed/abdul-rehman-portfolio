@@ -1,34 +1,25 @@
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Syne } from "next/font/google";
 
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-const BigButton = () => {
+const DownloadResumeButton = () => {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/pdf/Fullstack_Dev_AbdulRehman_Resume.pdf";
+    link.download = "Abdul_Rehman_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
-    <a
-      style={{
-        paddingLeft: "15px",
-        paddingRight: "15px",
-        color: "white",
-        backgroundColor: "black",
-        borderRadius: "12px",
-        height: "50px",
-        alignItems: "center",
-      }}
-      className="flex justify-between gap-3 items-center"
-      href="/pdf/FullStack_Dev_AbdulRehman_Resume.pdf"
-      download="Malik_Abdul_Rehman_Resume.pdf"
+    <button
+      onClick={handleDownload}
+      className="px-6 py-3 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition-all duration-300 flex items-center justify-center space-x-3"
     >
-      <h2 className={syne.className}>Download My Resume</h2>
-      <FontAwesomeIcon
-        style={{ width: "18px" }}
-        fade={true}
-        icon={faDownload}
-      />
-    </a>
+      <span>Download My Resume</span>
+      <FontAwesomeIcon icon={faDownload} className="w-4 h-4" />
+    </button>
   );
 };
-export default BigButton;
+
+export default DownloadResumeButton;
