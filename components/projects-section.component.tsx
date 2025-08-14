@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ExternalLink, Filter, Award, Globe } from "lucide-react";
 import projects from "../data/projects";
+import Image from "next/image";
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState<
@@ -48,7 +49,6 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             Featured{" "}
@@ -64,7 +64,6 @@ const ProjectsSection = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mt-6" />
         </div>
 
-        {/* Filters */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {filters.map((filter) => (
             <button
@@ -82,7 +81,6 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
             <div
@@ -92,7 +90,6 @@ const ProjectsSection = () => {
               }`}
             >
               <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300 h-full relative">
-                {/* Featured Badge */}
                 {project.featured && (
                   <div className="absolute top-4 left-4 z-10">
                     <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center space-x-1">
@@ -102,18 +99,19 @@ const ProjectsSection = () => {
                   </div>
                 )}
 
-                {/* Project Image with Favicon */}
                 <div className="h-48 bg-gradient-to-br from-blue-100 to-purple-100 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     {project.link !== "#" ? (
                       <div className="relative">
-                        <img
-                          src={getFaviconUrl(project.link)}
+                        <Image
+                          src={
+                            getFaviconUrl(project.link) ||
+                            "https://www.google.com/url?sa=i&url=https%3A%2F%2Fthenounproject.com%2Fbrowse%2Ficons%2Fterm%2Fplaceholder%2F&psig=AOvVaw1U3QJ3yYAj6wgwhElQ6k0v&ust=1755253169867000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCOij3OiJio8DFQAAAAAdAAAAABAM"
+                          }
                           alt={`${project.projectName} favicon`}
                           className="w-16 h-16 rounded-lg shadow-lg bg-white p-2"
                           onError={(e) => {
-                            // Fallback to icon if favicon fails to load
                             const target = e.target as HTMLImageElement;
                             target.style.display = "none";
                             target.nextElementSibling?.classList.remove(
@@ -133,7 +131,6 @@ const ProjectsSection = () => {
                   </div>
                 </div>
 
-                {/* Project Content */}
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <h3 className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
@@ -153,7 +150,6 @@ const ProjectsSection = () => {
                     {project.description}
                   </p>
 
-                  {/* Technologies */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.slice(0, 4).map((tech) => (
                       <span
@@ -170,7 +166,6 @@ const ProjectsSection = () => {
                     )}
                   </div>
 
-                  {/* Category Badge */}
                   <div className="flex items-center justify-between">
                     <span
                       className={`px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(
@@ -183,7 +178,6 @@ const ProjectsSection = () => {
                   </div>
                 </div>
 
-                {/* Clickable Link Overlay */}
                 <Link
                   href={project.link}
                   target="_blank"
@@ -196,7 +190,6 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
         <div className="text-center mt-16">
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <Link
