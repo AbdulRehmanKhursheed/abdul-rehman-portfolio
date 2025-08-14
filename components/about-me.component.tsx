@@ -73,8 +73,9 @@ const AboutMe = () => {
             </p>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              Skilled in front-end development (React, Next.js, Angular),
-              back-end development (Spring Boot, Node.js) with a strong focus on
+              Skilled in front-end development (React, Next.js, Html, CSS,
+              Bootstrap, MUI, Tailwind, Ant Design, Angular), back-end
+              development (Nest.js, Node.js, Spring Boot) with a strong focus on
               performance and maintainability. Proven ability to lead and mentor
               junior developers, implement best practices and principles such as
               Single Responsibility Principle (SRP), clean code, and deliver

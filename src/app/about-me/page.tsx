@@ -84,9 +84,9 @@ const AboutMe = () => {
             I have a strong foundation in several programming languages
             including TypeScript, JavaScript, and Kotlin (intermediate), and
             I&apos;m proficient in both front-end technologies (React, Next.js,
-            Angular) and back-end frameworks (Spring Boot, Node.js). My
-            expertise extends to cloud services like AWS, and I have experience
-            with tools such as Docker, Git, and Postman.
+            Angular) and back-end frameworks (Nest.js, Node.js, Spring Boot).
+            My expertise extends to cloud services like AWS, and I have
+            experience with tools such as Docker, Git, and Postman.
           </p>
         </ContentBox>
 
