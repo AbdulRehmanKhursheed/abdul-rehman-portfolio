@@ -16,7 +16,6 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      // Update active section based on scroll position
       const sections = ["hero", "about", "projects", "contact"];
       const current = sections.find(section => {
         const element = document.getElementById(section);
@@ -57,10 +56,7 @@ const Header = () => {
     visible: { 
       y: 0, 
       opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
+      transition: { duration: 0.6, ease: "easeOut" }
     }
   };
 
@@ -68,18 +64,12 @@ const Header = () => {
     closed: {
       opacity: 0,
       height: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut"
-      }
+      transition: { duration: 0.3, ease: "easeInOut" }
     },
     open: {
       opacity: 1,
       height: "auto",
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut"
-      }
+      transition: { duration: 0.3, ease: "easeInOut" }
     }
   };
 
@@ -87,7 +77,7 @@ const Header = () => {
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-lg border-b border-slate-200/50 dark:bg-slate-900/95 dark:border-slate-700/50"
+          ? "bg-slate-900/95 backdrop-blur-xl shadow-lg border-b border-slate-800/50 light:bg-white/95 light:border-slate-200/50"
           : "bg-transparent"
       }`}
       variants={headerVariants}
@@ -104,7 +94,7 @@ const Header = () => {
             whileTap={{ scale: 0.95 }}
           >
             <motion.div 
-              className="w-10 h-10 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300"
+              className="w-10 h-10 bg-gradient-to-r from-indigo-500 via-cyan-400 to-purple-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300"
               whileHover={{ rotate: 5 }}
             >
               <span className="text-white font-bold text-sm">AR</span>
@@ -140,7 +130,7 @@ const Header = () => {
                 href="https://github.com/AbdulRehmanKhursheed"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
+                className="p-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-all duration-200 light:text-slate-600 light:hover:text-slate-900 light:hover:bg-slate-100"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -150,7 +140,7 @@ const Header = () => {
                 href="https://www.linkedin.com/in/malik-abdul-rehman/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
+                className="p-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-all duration-200 light:text-slate-600 light:hover:text-slate-900 light:hover:bg-slate-100"
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -160,7 +150,7 @@ const Header = () => {
                 href="/pdf/Fullstack_Dev_AbdulRehman_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
+                className="p-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-all duration-200 light:text-slate-600 light:hover:text-slate-900 light:hover:bg-slate-100"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -171,7 +161,7 @@ const Header = () => {
 
             <motion.button
               onClick={() => scrollToSection("contact")}
-              className="px-6 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2 group"
+              className="px-6 py-3 bg-gradient-to-r from-indigo-500 via-cyan-400 to-purple-500 text-white font-semibold rounded-xl hover:from-indigo-600 hover:via-cyan-500 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2 group"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -183,7 +173,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors duration-200 dark:hover:bg-slate-800"
+            className="lg:hidden p-2 rounded-lg hover:bg-slate-800 transition-colors duration-200 light:hover:bg-slate-100"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -217,7 +207,7 @@ const Header = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              className="lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl dark:border-slate-700 dark:bg-slate-900/95"
+              className="lg:hidden border-t border-slate-800 bg-slate-900/95 backdrop-blur-xl light:border-slate-200 light:bg-white/95"
               variants={menuVariants}
               initial="closed"
               animate="open"
@@ -228,8 +218,8 @@ const Header = () => {
                   <motion.button
                     key={item.name}
                     onClick={() => scrollToSection(item.id!)}
-                    className={`block w-full text-left px-4 py-3 text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-xl transition-all duration-200 font-medium dark:text-slate-300 dark:hover:text-slate-100 dark:hover:bg-slate-800 ${
-                      activeSection === item.id ? "text-blue-600 bg-blue-50 dark:text-blue-400 dark:bg-blue-900/20" : ""
+                    className={`block w-full text-left px-4 py-3 text-slate-300 hover:text-slate-100 hover:bg-slate-800 rounded-xl transition-all duration-200 font-medium light:text-slate-700 light:hover:text-slate-900 light:hover:bg-slate-50 ${
+                      activeSection === item.id ? "text-indigo-400 bg-indigo-900/20 light:text-indigo-600 light:bg-indigo-50" : ""
                     }`}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -241,13 +231,13 @@ const Header = () => {
                   </motion.button>
                 ))}
 
-                <div className="px-4 pt-6 border-t border-slate-200 dark:border-slate-700">
+                <div className="px-4 pt-6 border-t border-slate-800 light:border-slate-200">
                   <div className="flex items-center justify-center space-x-4 mb-6">
                     <motion.a
                       href="https://github.com/AbdulRehmanKhursheed"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
+                      className="p-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-xl transition-all duration-200 light:text-slate-600 light:hover:text-slate-900 light:hover:bg-slate-100"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -257,7 +247,7 @@ const Header = () => {
                       href="https://www.linkedin.com/in/malik-abdul-rehman/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
+                      className="p-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-xl transition-all duration-200 light:text-slate-600 light:hover:text-slate-900 light:hover:bg-slate-100"
                       whileHover={{ scale: 1.1, rotate: -5 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -267,7 +257,7 @@ const Header = () => {
                       href="/pdf/Fullstack_Dev_AbdulRehman_Resume.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
+                      className="p-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-xl transition-all duration-200 light:text-slate-600 light:hover:text-slate-900 light:hover:bg-slate-100"
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -278,7 +268,7 @@ const Header = () => {
 
                   <motion.button
                     onClick={() => scrollToSection("contact")}
-                    className="w-full px-6 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+                    className="w-full px-6 py-4 bg-gradient-to-r from-indigo-500 via-cyan-400 to-purple-500 text-white font-semibold rounded-xl hover:from-indigo-600 hover:via-cyan-500 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >

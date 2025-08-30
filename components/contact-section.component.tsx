@@ -23,9 +23,13 @@ const ContactSection = () => {
     email: "",
     message: "",
   });
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -35,7 +39,7 @@ const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitStatus("success");
-    
+
     // Simulate form submission
     setTimeout(() => {
       setSubmitStatus("idle");
@@ -47,16 +51,16 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "abdulrehman.dev@gmail.com",
+      value: "malik.ali5560@gmail.com",
       description: "I&apos;ll respond within 24 hours",
-      link: "mailto:abdulrehman.dev@gmail.com",
+      link: "mailto:malik.ali5560@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+92 300 1234567",
+      value: "+92 304 5919 454",
       description: "Available for urgent calls",
-      link: "tel:+923001234567",
+      link: "tel:+923045919454",
     },
     {
       icon: MapPin,
@@ -119,7 +123,10 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-slate-50 dark:bg-slate-900 relative overflow-hidden">
+    <section
+      id="contact"
+      className="section-padding bg-slate-50 dark:bg-slate-900 relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-radial opacity-30" />
       <div className="absolute top-20 left-20 w-64 h-64 bg-blue-100/20 dark:bg-blue-900/20 rounded-full blur-3xl" />
@@ -143,14 +150,15 @@ const ContactSection = () => {
               <MessageSquare className="w-4 h-4" />
               <span>Get In Touch</span>
             </motion.div>
-            
+
             <h2 className="text-4xl lg:text-5xl font-bold heading-gradient mb-6">
               Let&apos;s Work Together
             </h2>
-            
+
             <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
-              I&apos;m always open to discussing new opportunities, interesting projects, 
-              or just having a chat about technology. Feel free to reach out!
+              I&apos;m always open to discussing new opportunities, interesting
+              projects, or just having a chat about technology. Feel free to
+              reach out!
             </p>
           </motion.div>
 
@@ -260,7 +268,10 @@ const ContactSection = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4 }}
                   >
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                    >
                       Name
                     </label>
                     <input
@@ -280,7 +291,10 @@ const ContactSection = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.5 }}
                   >
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                    >
                       Email
                     </label>
                     <input
@@ -300,7 +314,10 @@ const ContactSection = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.6 }}
                   >
-                    <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                    >
                       Message
                     </label>
                     <textarea
