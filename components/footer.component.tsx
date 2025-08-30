@@ -61,11 +61,11 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-slate-900 dark:bg-slate-950 text-white">
+    <footer className="relative overflow-hidden bg-slate-950 text-white">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-radial opacity-50" />
-      <div className="absolute top-20 left-20 w-64 h-64 bg-blue-900/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-20 w-64 h-64 bg-purple-900/20 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-20 w-64 h-64 bg-indigo-900/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-64 h-64 bg-cyan-900/20 rounded-full blur-3xl" />
 
       <div className="container-custom relative z-10">
         <motion.div
@@ -83,7 +83,7 @@ const Footer = () => {
                   className="flex items-center space-x-3 mb-6"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-xl flex items-center justify-center">
                     <span className="text-white font-bold text-lg">AR</span>
                   </div>
                   <div>
@@ -177,7 +177,7 @@ const Footer = () => {
       {/* Scroll to Top Button */}
       <motion.button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 p-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50"
+        className="fixed bottom-8 right-8 p-3 bg-gradient-to-r from-indigo-500 to-cyan-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50"
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.9 }}
         initial={{ opacity: 0, scale: 0.8 }}

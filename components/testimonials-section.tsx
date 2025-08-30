@@ -79,11 +79,11 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="section-padding bg-white dark:bg-slate-900 relative overflow-hidden">
+    <section className="section-padding bg-slate-800 light:bg-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-radial opacity-50" />
-      <div className="absolute top-20 left-20 w-64 h-64 bg-blue-100/30 dark:bg-blue-900/30 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-20 w-64 h-64 bg-purple-100/30 dark:bg-purple-900/30 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-20 w-64 h-64 bg-indigo-500/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-64 h-64 bg-cyan-500/30 rounded-full blur-3xl" />
 
       <div className="container-custom relative z-10">
         <motion.div
@@ -95,7 +95,7 @@ const TestimonialsSection = () => {
           {/* Section Header */}
           <motion.div className="text-center mb-16" variants={itemVariants}>
             <motion.div
-              className="inline-flex items-center space-x-2 px-4 py-2 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-full text-emerald-700 dark:text-emerald-300 font-medium mb-6"
+              className="inline-flex items-center space-x-2 px-4 py-2 bg-emerald-900/20 border border-emerald-800 rounded-full text-emerald-300 font-medium mb-6 light:bg-emerald-50 light:border-emerald-200 light:text-emerald-700"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
@@ -108,7 +108,7 @@ const TestimonialsSection = () => {
               What Clients Say
             </h2>
             
-            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed light:text-slate-600">
               Don&apos;t just take my word for it. Here&apos;s what clients and colleagues 
               have to say about working with me on their projects.
             </p>
@@ -122,7 +122,7 @@ const TestimonialsSection = () => {
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.name}
-                className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                className="bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 light:bg-white/60 light:border-slate-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -141,23 +141,23 @@ const TestimonialsSection = () => {
                 </div>
 
                 {/* Content */}
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-6">
+                <p className="text-slate-400 leading-relaxed mb-6 line-clamp-6 light:text-slate-600">
                   &quot;{testimonial.content}&quot;
                 </p>
 
                 {/* Author */}
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm">{testimonial.image}</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-slate-100">
+                    <h4 className="font-semibold text-slate-100 light:text-slate-900">
                       {testimonial.name}
                     </h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                    <p className="text-sm text-slate-400 light:text-slate-600">
                       {testimonial.role}
                     </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-500">
+                    <p className="text-xs text-slate-500 light:text-slate-500">
                       {testimonial.company}
                     </p>
                   </div>
@@ -186,7 +186,7 @@ const TestimonialsSection = () => {
               >
                 <div className="text-3xl mb-2">{stat.icon}</div>
                 <div className="text-2xl font-bold gradient-text mb-1">{stat.value}</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">{stat.label}</div>
+                <div className="text-sm text-slate-400 light:text-slate-600">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>

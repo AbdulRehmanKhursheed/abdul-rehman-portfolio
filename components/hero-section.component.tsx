@@ -66,30 +66,30 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen pt-20 pb-5 flex items-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 dark:from-slate-900 dark:via-blue-900/10 dark:to-purple-900/10"
+      className="min-h-screen pt-20 pb-5 flex items-center relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 light:from-slate-50 light:via-blue-50/30 light:to-purple-50/30"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 bg-gradient-radial" />
 
       {/* Floating Orbs */}
       <motion.div
-        className="absolute top-20 left-10 w-72 h-72 bg-blue-200/30 dark:bg-blue-800/20 rounded-full mix-blend-multiply filter blur-3xl"
+        className="absolute top-20 left-10 w-72 h-72 bg-indigo-500/20 rounded-full mix-blend-multiply filter blur-3xl"
         animate={{ y: [-20, 20, -20], x: [-10, 10, -10] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute top-40 right-10 w-72 h-72 bg-purple-200/30 dark:bg-purple-800/20 rounded-full mix-blend-multiply filter blur-3xl"
+        className="absolute top-40 right-10 w-72 h-72 bg-cyan-500/20 rounded-full mix-blend-multiply filter blur-3xl"
         animate={{ y: [20, -20, 20], x: [10, -10, 10] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute -bottom-8 left-20 w-72 h-72 bg-orange-200/30 dark:bg-orange-800/20 rounded-full mix-blend-multiply filter blur-3xl"
+        className="absolute -bottom-8 left-20 w-72 h-72 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl"
         animate={{ y: [-15, 15, -15], x: [-5, 5, -5] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
 
       {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:50px_50px] dark:bg-[linear-gradient(rgba(59,130,246,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.1)_1px,transparent_1px)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.1)_1px,transparent_1px)] bg-[size:50px_50px] light:bg-[linear-gradient(rgba(99,102,241,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.05)_1px,transparent_1px)]" />
 
       <div className="container-custom relative z-10">
         <motion.div
@@ -105,11 +105,11 @@ const HeroSection = () => {
           >
             {/* Badge */}
             <motion.div
-              className="inline-flex items-center space-x-2 px-4 py-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-full shadow-lg"
+              className="inline-flex items-center space-x-2 px-4 py-2 bg-slate-800/80 backdrop-blur-sm border border-slate-700 rounded-full shadow-lg light:bg-white/80 light:border-slate-200"
               variants={itemVariants}
             >
-              <Sparkles className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+              <Sparkles className="w-4 h-4 text-indigo-400" />
+              <span className="text-sm font-medium text-slate-300 light:text-slate-700">
                 Available for new opportunities
               </span>
             </motion.div>
@@ -125,10 +125,10 @@ const HeroSection = () => {
 
             {/* Subtitle */}
             <motion.div variants={itemVariants}>
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-600 dark:text-slate-400 mb-4">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-400 mb-4 light:text-slate-600">
                 Full Stack Developer & Cloud Engineer
               </h2>
-              <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed max-w-lg">
+              <p className="text-lg text-slate-400 leading-relaxed max-w-lg light:text-slate-500">
                 Crafting exceptional digital experiences with modern
                 technologies. Specialized in React, Next.js, AWS, and cloud
                 infrastructure. Passionate about performance, security, and
@@ -144,7 +144,7 @@ const HeroSection = () => {
               {technologies.map((tech, index) => (
                 <motion.span
                   key={tech}
-                  className="px-3 py-1 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-full text-sm font-medium text-slate-700 dark:text-slate-300"
+                  className="px-3 py-1 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-full text-sm font-medium text-slate-300 light:bg-white/60 light:border-slate-200 light:text-slate-700"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5 + index * 0.1 }}
@@ -189,31 +189,31 @@ const HeroSection = () => {
                 href="https://github.com/AbdulRehmanKhursheed"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg transition-all duration-300 group"
+                className="p-3 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-xl hover:bg-slate-800 hover:shadow-lg transition-all duration-300 group light:bg-white/60 light:border-slate-200 light:hover:bg-white"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Github className="w-5 h-5 text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-slate-100" />
+                <Github className="w-5 h-5 text-slate-300 group-hover:text-slate-100 light:text-slate-700 light:group-hover:text-slate-900" />
               </motion.a>
               <motion.a
                 href="https://www.linkedin.com/in/malik-abdul-rehman/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg transition-all duration-300 group"
+                className="p-3 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-xl hover:bg-slate-800 hover:shadow-lg transition-all duration-300 group light:bg-white/60 light:border-slate-200 light:hover:bg-white"
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Linkedin className="w-5 h-5 text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-slate-100" />
+                <Linkedin className="w-5 h-5 text-slate-300 group-hover:text-slate-100 light:text-slate-700 light:group-hover:text-slate-900" />
               </motion.a>
               <motion.a
                 href="/pdf/Fullstack_Dev_AbdulRehman_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg transition-all duration-300 group"
+                className="p-3 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-xl hover:bg-slate-800 hover:shadow-lg transition-all duration-300 group light:bg-white/60 light:border-slate-200 light:hover:bg-white"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Download className="w-5 h-5 text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-slate-100" />
+                <Download className="w-5 h-5 text-slate-300 group-hover:text-slate-100 light:text-slate-700 light:group-hover:text-slate-900" />
               </motion.a>
             </motion.div>
           </motion.div>
@@ -229,16 +229,16 @@ const HeroSection = () => {
               variants={floatingVariants}
             >
               {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 rounded-full blur-3xl opacity-30 animate-pulse" />
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-400 via-cyan-400 to-purple-400 rounded-full blur-3xl opacity-30 animate-pulse" />
 
               {/* Profile Picture Container */}
-              <div className="relative bg-white/20 dark:bg-slate-800/20 backdrop-blur-sm border border-white/30 dark:border-slate-700/30 rounded-full p-2 shadow-2xl">
+              <div className="relative bg-slate-800/20 backdrop-blur-sm border border-slate-700/30 rounded-full p-2 shadow-2xl light:bg-white/20 light:border-slate-200/30">
                 <DisplayPictureComponent />
               </div>
 
               {/* Floating Elements */}
               <motion.div
-                className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center shadow-lg"
+                className="absolute -top-4 -right-4 w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center shadow-lg"
                 animate={{ y: [-5, 5, -5], rotate: [0, 180, 360] }}
                 transition={{
                   duration: 4,
@@ -250,7 +250,7 @@ const HeroSection = () => {
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-500 rounded-full shadow-lg"
+                className="absolute -bottom-4 -left-4 w-6 h-6 bg-cyan-500 rounded-full shadow-lg"
                 animate={{ y: [5, -5, 5], scale: [1, 1.2, 1] }}
                 transition={{
                   duration: 3,
@@ -271,13 +271,13 @@ const HeroSection = () => {
         >
           <motion.button
             onClick={() => scrollToSection("about")}
-            className="p-3 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-full shadow-lg hover:bg-white dark:hover:bg-slate-800 hover:shadow-xl transition-all duration-300 group"
+            className="p-3 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-full shadow-lg hover:bg-slate-800 hover:shadow-xl transition-all duration-300 group light:bg-white/60 light:border-slate-200 light:hover:bg-white"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <ArrowDown className="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-100" />
+            <ArrowDown className="w-5 h-5 text-slate-400 group-hover:text-slate-100 light:text-slate-600 light:group-hover:text-slate-900" />
           </motion.button>
         </motion.div>
       </div>

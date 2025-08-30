@@ -18,12 +18,12 @@ import {
 
 const AboutMe = () => {
   const skills = [
-    { name: "React", level: 95, icon: Code, color: "from-blue-500 to-cyan-500" },
+    { name: "React", level: 95, icon: Code, color: "from-indigo-500 to-cyan-500" },
     { name: "Next.js", level: 90, icon: Code, color: "from-purple-500 to-pink-500" },
-    { name: "TypeScript", level: 92, icon: Code, color: "from-blue-600 to-indigo-600" },
-    { name: "Node.js", level: 88, icon: Server, color: "from-green-500 to-emerald-500" },
+    { name: "TypeScript", level: 92, icon: Code, color: "from-indigo-600 to-purple-600" },
+    { name: "Node.js", level: 88, icon: Server, color: "from-cyan-500 to-emerald-500" },
     { name: "AWS", level: 85, icon: Cloud, color: "from-orange-500 to-red-500" },
-    { name: "PostgreSQL", level: 87, icon: Database, color: "from-blue-500 to-purple-500" },
+    { name: "PostgreSQL", level: 87, icon: Database, color: "from-indigo-500 to-purple-500" },
   ];
 
   const experiences = [
@@ -78,11 +78,11 @@ const AboutMe = () => {
   };
 
   return (
-    <section id="about" className="section-padding bg-white dark:bg-slate-900 relative overflow-hidden">
+    <section id="about" className="section-padding bg-slate-800 light:bg-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-radial opacity-30" />
-      <div className="absolute top-20 left-20 w-64 h-64 bg-blue-100/20 dark:bg-blue-900/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-20 w-64 h-64 bg-purple-100/20 dark:bg-purple-900/20 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-20 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl" />
 
       <div className="container-custom relative z-10">
         <motion.div
@@ -94,7 +94,7 @@ const AboutMe = () => {
           {/* Section Header */}
           <motion.div className="text-center mb-16" variants={itemVariants}>
             <motion.div
-              className="inline-flex items-center space-x-2 px-4 py-2 bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-full text-purple-700 dark:text-purple-300 font-medium mb-6"
+              className="inline-flex items-center space-x-2 px-4 py-2 bg-purple-900/20 border border-purple-800 rounded-full text-purple-300 font-medium mb-6 light:bg-purple-50 light:border-purple-200 light:text-purple-700"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
@@ -107,7 +107,7 @@ const AboutMe = () => {
               Crafting Digital Excellence
             </h2>
             
-            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed light:text-slate-600">
               I&apos;m a passionate Full Stack Developer and Cloud Engineer with expertise in modern web technologies, 
               cloud infrastructure, and mobile development. I love turning complex problems into elegant solutions.
             </p>
@@ -121,17 +121,17 @@ const AboutMe = () => {
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                className="text-center p-6 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                className="text-center p-6 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 light:bg-white/60 light:border-slate-200"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="text-2xl font-bold gradient-text mb-2">{stat.value}</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">{stat.label}</div>
+                <div className="text-sm text-slate-400 light:text-slate-600">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -144,13 +144,13 @@ const AboutMe = () => {
                 <h3 className="text-2xl font-bold heading-gradient mb-4">
                   My Journey
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                <p className="text-slate-400 leading-relaxed mb-6 light:text-slate-600">
                   I&apos;ve spent the last 3+ years immersed in the world of software development, 
                   working on projects that range from small business websites to enterprise-scale applications. 
                   My passion lies in creating solutions that not only work flawlessly but also provide 
                   exceptional user experiences.
                 </p>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                <p className="text-slate-400 leading-relaxed light:text-slate-600">
                   I specialize in React, Next.js, TypeScript, and AWS, with a strong focus on 
                   performance optimization, security, and scalable architecture. I believe in writing 
                   clean, maintainable code and staying up-to-date with the latest industry trends.
@@ -171,15 +171,15 @@ const AboutMe = () => {
                   ].map((strength, index) => (
                     <motion.div
                       key={strength.label}
-                      className="flex items-center space-x-3 p-3 bg-white/40 dark:bg-slate-800/40 rounded-xl"
+                      className="flex items-center space-x-3 p-3 bg-slate-800/40 rounded-xl light:bg-slate-100/40"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.4 + index * 0.1 }}
                     >
-                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+                      <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-lg flex items-center justify-center">
                         <strength.icon className="w-4 h-4 text-white" />
                       </div>
-                      <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                      <span className="text-sm font-medium text-slate-300 light:text-slate-700">
                         {strength.label}
                       </span>
                     </motion.div>
@@ -209,15 +209,15 @@ const AboutMe = () => {
                           <div className={`w-6 h-6 bg-gradient-to-r ${skill.color} rounded flex items-center justify-center`}>
                             <skill.icon className="w-3 h-3 text-white" />
                           </div>
-                          <span className="font-medium text-slate-700 dark:text-slate-300">
+                          <span className="font-medium text-slate-300 light:text-slate-700">
                             {skill.name}
                           </span>
                         </div>
-                        <span className="text-sm text-slate-500 dark:text-slate-400">
+                        <span className="text-sm text-slate-400 light:text-slate-500">
                           {skill.level}%
                         </span>
                       </div>
-                      <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                      <div className="w-full bg-slate-700 rounded-full h-2 light:bg-slate-200">
                         <motion.div
                           className={`h-2 bg-gradient-to-r ${skill.color} rounded-full`}
                           initial={{ width: 0 }}
@@ -246,17 +246,17 @@ const AboutMe = () => {
                     >
                       <div className="space-y-2">
                         <div className="flex items-center space-x-2">
-                          <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                          <span className="text-sm font-medium text-indigo-400 light:text-indigo-600">
                             {exp.year}
                           </span>
                         </div>
-                        <h4 className="font-semibold text-slate-900 dark:text-slate-100">
+                        <h4 className="font-semibold text-slate-100 light:text-slate-900">
                           {exp.title}
                         </h4>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 font-medium">
+                        <p className="text-sm text-slate-400 font-medium light:text-slate-600">
                           {exp.company}
                         </p>
-                        <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        <p className="text-slate-400 text-sm leading-relaxed light:text-slate-600">
                           {exp.description}
                         </p>
                       </div>

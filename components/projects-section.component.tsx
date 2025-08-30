@@ -90,11 +90,11 @@ const ProjectsSection = () => {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case "Web App":
-        return "from-blue-500 to-cyan-500";
+        return "from-indigo-500 to-cyan-500";
       case "Mobile App":
         return "from-purple-500 to-pink-500";
       case "Infrastructure":
-        return "from-emerald-500 to-teal-500";
+        return "from-cyan-500 to-emerald-500";
       default:
         return "from-orange-500 to-red-500";
     }
@@ -110,11 +110,11 @@ const ProjectsSection = () => {
 
   return (
     <>
-      <section id="projects" className="section-padding bg-slate-50 dark:bg-slate-900 relative overflow-hidden">
+      <section id="projects" className="section-padding bg-slate-900 light:bg-slate-50 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-radial opacity-30" />
-        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-100/20 dark:bg-blue-900/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-64 h-64 bg-purple-100/20 dark:bg-purple-900/20 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-20 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl" />
 
         <div className="container-custom relative z-10">
           <motion.div
@@ -126,7 +126,7 @@ const ProjectsSection = () => {
             {/* Section Header */}
             <motion.div className="text-center mb-16" variants={itemVariants}>
               <motion.div
-                className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-full text-blue-700 dark:text-blue-300 font-medium mb-6"
+                className="inline-flex items-center space-x-2 px-4 py-2 bg-indigo-900/20 border border-indigo-800 rounded-full text-indigo-300 font-medium mb-6 light:bg-indigo-50 light:border-indigo-200 light:text-indigo-700"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 }}
@@ -139,7 +139,7 @@ const ProjectsSection = () => {
                 Featured Projects
               </h2>
               
-              <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed light:text-slate-600">
                 Here are some of my recent projects that showcase my expertise in full-stack development, 
                 cloud infrastructure, and mobile applications. Each project demonstrates different aspects 
                 of modern software development.
@@ -157,8 +157,8 @@ const ProjectsSection = () => {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center space-x-2 ${
                     selectedCategory === category
-                      ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                      : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700"
+                      ? "bg-gradient-to-r from-indigo-500 to-cyan-500 text-white shadow-lg"
+                      : "bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700 light:bg-white light:text-slate-600 light:hover:bg-slate-100 light:border-slate-200"
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -207,23 +207,23 @@ const ProjectsSection = () => {
                     )}
 
                     {/* Project Image Placeholder */}
-                    <div className="relative h-48 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 rounded-xl mb-6 overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10" />
+                    <div className="relative h-48 bg-gradient-to-br from-slate-800 to-slate-700 rounded-xl mb-6 overflow-hidden light:from-slate-100 light:to-slate-200">
+                      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-cyan-500/10" />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center">
-                          <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                          <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3">
                             {React.createElement(getCategoryIcon(project.category), { 
                               size: 24, 
                               className: "text-white" 
                             })}
                           </div>
-                          <h3 className="font-semibold text-slate-700 dark:text-slate-300">{project.projectName}</h3>
+                          <h3 className="font-semibold text-slate-300 light:text-slate-700">{project.projectName}</h3>
                         </div>
                       </div>
                       
                       {/* Hover Overlay */}
                       <motion.div
-                        className="absolute inset-0 bg-gradient-to-br from-blue-600/90 to-purple-600/90 flex items-center justify-center"
+                        className="absolute inset-0 bg-gradient-to-br from-indigo-600/90 to-cyan-600/90 flex items-center justify-center"
                         initial={{ opacity: 0 }}
                         animate={{ 
                           opacity: hoveredProject === project.projectName ? 1 : 0 
@@ -248,7 +248,7 @@ const ProjectsSection = () => {
                         {project.projectName}
                       </h3>
                       
-                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3">
+                      <p className="text-slate-400 leading-relaxed line-clamp-3 light:text-slate-600">
                         {project.description}
                       </p>
 
@@ -257,7 +257,7 @@ const ProjectsSection = () => {
                         {project.technologies.slice(0, 6).map((tech, idx) => (
                           <motion.span
                             key={tech}
-                            className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium"
+                            className="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm font-medium light:bg-slate-100 light:text-slate-700"
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.1 + idx * 0.05 }}
@@ -266,15 +266,15 @@ const ProjectsSection = () => {
                           </motion.span>
                         ))}
                         {project.technologies.length > 6 && (
-                          <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium">
+                          <span className="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm font-medium light:bg-slate-100 light:text-slate-700">
                             +{project.technologies.length - 6} more
                           </span>
                         )}
                       </div>
 
                       {/* Project Stats */}
-                      <div className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-700">
-                        <div className="flex items-center space-x-4 text-sm text-slate-500 dark:text-slate-400">
+                      <div className="flex items-center justify-between pt-4 border-t border-slate-700 light:border-slate-200">
+                        <div className="flex items-center space-x-4 text-sm text-slate-400 light:text-slate-500">
                           <div className="flex items-center space-x-1">
                             <Users size={14} />
                             <span>Enterprise</span>
@@ -286,7 +286,7 @@ const ProjectsSection = () => {
                         </div>
                         
                         <motion.div
-                          className="flex items-center space-x-1 text-blue-600 dark:text-blue-400 font-medium group/link"
+                          className="flex items-center space-x-1 text-indigo-400 font-medium group/link light:text-indigo-600"
                           whileHover={{ x: 5 }}
                         >
                           <span>View Details</span>
@@ -305,12 +305,12 @@ const ProjectsSection = () => {
               variants={itemVariants}
             >
               <motion.div
-                className="inline-flex items-center space-x-2 px-6 py-3 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                className="inline-flex items-center space-x-2 px-6 py-3 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group light:bg-white/60 light:border-slate-200"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Eye className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                <span className="font-medium text-slate-700 dark:text-slate-300">View All Projects</span>
+                <Eye className="w-5 h-5 text-indigo-400 light:text-indigo-600" />
+                <span className="font-medium text-slate-300 light:text-slate-700">View All Projects</span>
               </motion.div>
             </motion.div>
           </motion.div>
