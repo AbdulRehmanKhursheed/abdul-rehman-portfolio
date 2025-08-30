@@ -1,19 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Code, 
-  Cloud, 
-  Database, 
-  Smartphone, 
-  Zap, 
-  Shield, 
-  Users, 
+import {
+  Code,
+  Cloud,
+  Database,
+  Smartphone,
+  Zap,
+  Shield,
+  Users,
   TrendingUp,
   Award,
   Clock,
   Globe,
-  Cpu
+  Cpu,
 } from "lucide-react";
 
 const AboutMe = () => {
@@ -56,23 +56,38 @@ const AboutMe = () => {
       title: "Senior Full Stack Developer",
       company: "Bazaar Technologies",
       period: "2023 - Present",
-      description: "Leading development of enterprise-grade B2B & B2C platforms with React, Next.js, and AWS infrastructure.",
-      achievements: ["Reduced cloud costs by 57%", "Achieved 99% test coverage", "Improved web vitals by 40%"]
+      description:
+        "Leading development of enterprise-grade B2B & B2C platforms with React, Next.js, and AWS infrastructure.",
+      achievements: [
+        "Reduced cloud costs by 57%",
+        "Achieved 99% test coverage",
+        "Improved web vitals by 40%",
+      ],
     },
     {
       title: "Full Stack Developer",
       company: "Various Companies",
       period: "2021 - 2023",
-      description: "Built scalable web applications and mobile apps for multiple clients across different industries.",
-      achievements: ["Delivered 15+ projects", "Mentored junior developers", "Implemented CI/CD pipelines"]
+      description:
+        "Built scalable web applications and mobile apps for multiple clients across different industries.",
+      achievements: [
+        "Delivered 15+ projects",
+        "Mentored junior developers",
+        "Implemented CI/CD pipelines",
+      ],
     },
     {
       title: "Software Engineer",
       company: "Freelance & Startups",
       period: "2019 - 2021",
-      description: "Developed full-stack solutions and contributed to open-source projects while learning modern technologies.",
-      achievements: ["Built 20+ applications", "Contributed to open source", "Learned cloud technologies"]
-    }
+      description:
+        "Developed full-stack solutions and contributed to open-source projects while learning modern technologies.",
+      achievements: [
+        "Built 20+ applications",
+        "Contributed to open source",
+        "Learned cloud technologies",
+      ],
+    },
   ];
 
   const stats = [
@@ -83,7 +98,10 @@ const AboutMe = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-white relative overflow-hidden">
+    <section
+      id="about"
+      className="section-padding bg-white relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-radial opacity-50" />
       <div className="absolute top-20 right-20 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl" />
@@ -107,20 +125,21 @@ const AboutMe = () => {
               <Code className="w-4 h-4" />
               <span>About Me</span>
             </motion.div>
-            
+
             <h2 className="text-4xl lg:text-5xl font-bold heading-gradient mb-6">
               Crafting Digital Excellence
             </h2>
-            
+
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                             I&apos;m a passionate Full Stack Developer and Cloud Engineer with 5+ years of experience 
-              building scalable, high-performance applications. I specialize in modern web technologies 
-              and cloud infrastructure, delivering exceptional user experiences.
+              I&apos;m a passionate Full Stack Developer and Cloud Engineer with
+              4.5+ years of experience building scalable, high-performance
+              applications. I specialize in modern web technologies and cloud
+              infrastructure, delivering exceptional user experiences.
             </p>
           </motion.div>
 
           {/* Stats Section */}
-          <motion.div 
+          <motion.div
             className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
             variants={itemVariants}
           >
@@ -134,7 +153,9 @@ const AboutMe = () => {
                 transition={{ delay: index * 0.1 }}
               >
                 <stat.icon className="w-8 h-8 text-blue-600 mx-auto mb-3" />
-                <div className="text-3xl font-bold gradient-text mb-1">{stat.value}</div>
+                <div className="text-3xl font-bold gradient-text mb-1">
+                  {stat.value}
+                </div>
                 <div className="text-slate-600 font-medium">{stat.label}</div>
               </motion.div>
             ))}
@@ -147,31 +168,39 @@ const AboutMe = () => {
               <h3 className="text-2xl font-bold heading-gradient mb-6">
                 My Journey in Tech
               </h3>
-              
+
               <div className="space-y-6 text-slate-600 leading-relaxed">
                 <p>
-                  I started my journey in web development with a passion for creating meaningful digital experiences. 
-                  Over the years, I&apos;ve evolved from building simple websites to architecting complex enterprise solutions 
-                  that serve thousands of users daily.
+                  I started my journey in web development with a passion for
+                  creating meaningful digital experiences. Over the years,
+                  I&apos;ve evolved from building simple websites to
+                  architecting complex enterprise solutions that serve thousands
+                  of users daily.
                 </p>
-                
+
                 <p>
-                  My expertise spans the entire development stack - from crafting responsive user interfaces with React 
-                  and Next.js to designing scalable backend architectures with Node.js and cloud services. I&apos;m particularly 
-                  passionate about cloud infrastructure and have helped organizations optimize their AWS deployments, 
-                  reducing costs while improving performance.
+                  My expertise spans the entire development stack - from
+                  crafting responsive user interfaces with React and Next.js to
+                  designing scalable backend architectures with Node.js and
+                  cloud services. I&apos;m particularly passionate about cloud
+                  infrastructure and have helped organizations optimize their
+                  AWS deployments, reducing costs while improving performance.
                 </p>
-                
+
                 <p>
-                  I believe in writing clean, maintainable code and following best practices. Test-driven development, 
-                  continuous integration, and performance optimization are core principles in my work. I&apos;m always eager 
-                  to learn new technologies and share knowledge with the developer community.
+                  I believe in writing clean, maintainable code and following
+                  best practices. Test-driven development, continuous
+                  integration, and performance optimization are core principles
+                  in my work. I&apos;m always eager to learn new technologies
+                  and share knowledge with the developer community.
                 </p>
               </div>
 
               {/* Key Strengths */}
               <div className="mt-8">
-                <h4 className="text-xl font-semibold heading-gradient mb-4">Key Strengths</h4>
+                <h4 className="text-xl font-semibold heading-gradient mb-4">
+                  Key Strengths
+                </h4>
                 <div className="grid grid-cols-2 gap-4">
                   {[
                     { icon: Zap, text: "Performance Optimization" },
@@ -187,7 +216,9 @@ const AboutMe = () => {
                       transition={{ delay: 0.3 + index * 0.1 }}
                     >
                       <strength.icon className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                      <span className="text-slate-700 font-medium">{strength.text}</span>
+                      <span className="text-slate-700 font-medium">
+                        {strength.text}
+                      </span>
                     </motion.div>
                   ))}
                 </div>
@@ -198,7 +229,9 @@ const AboutMe = () => {
             <motion.div variants={itemVariants}>
               {/* Skills Section */}
               <div className="mb-12">
-                <h3 className="text-2xl font-bold heading-gradient mb-6">Technical Skills</h3>
+                <h3 className="text-2xl font-bold heading-gradient mb-6">
+                  Technical Skills
+                </h3>
                 <div className="space-y-4">
                   {skills.map((skill, index) => (
                     <motion.div
@@ -211,9 +244,13 @@ const AboutMe = () => {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-2">
                           <skill.icon className="w-4 h-4 text-blue-600" />
-                          <span className="font-medium text-slate-700">{skill.name}</span>
+                          <span className="font-medium text-slate-700">
+                            {skill.name}
+                          </span>
                         </div>
-                        <span className="text-sm text-slate-500">{skill.level}%</span>
+                        <span className="text-sm text-slate-500">
+                          {skill.level}%
+                        </span>
                       </div>
                       <div className="w-full bg-slate-200 rounded-full h-2">
                         <motion.div
@@ -230,7 +267,9 @@ const AboutMe = () => {
 
               {/* Experience Timeline */}
               <div>
-                <h3 className="text-2xl font-bold heading-gradient mb-6">Experience</h3>
+                <h3 className="text-2xl font-bold heading-gradient mb-6">
+                  Experience
+                </h3>
                 <div className="space-y-6">
                   {experiences.map((exp, index) => (
                     <motion.div
@@ -243,8 +282,12 @@ const AboutMe = () => {
                       <div className="bg-white/60 backdrop-blur-sm border border-slate-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                         <div className="flex items-start justify-between mb-3">
                           <div>
-                            <h4 className="font-bold text-slate-900 text-lg">{exp.title}</h4>
-                            <p className="text-blue-600 font-medium">{exp.company}</p>
+                            <h4 className="font-bold text-slate-900 text-lg">
+                              {exp.title}
+                            </h4>
+                            <p className="text-blue-600 font-medium">
+                              {exp.company}
+                            </p>
                           </div>
                           <span className="text-sm text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
                             {exp.period}
@@ -253,7 +296,10 @@ const AboutMe = () => {
                         <p className="text-slate-600 mb-3">{exp.description}</p>
                         <ul className="space-y-1">
                           {exp.achievements.map((achievement, idx) => (
-                            <li key={idx} className="flex items-center space-x-2 text-sm text-slate-600">
+                            <li
+                              key={idx}
+                              className="flex items-center space-x-2 text-sm text-slate-600"
+                            >
                               <div className="w-1.5 h-1.5 bg-blue-600 rounded-full" />
                               <span>{achievement}</span>
                             </li>

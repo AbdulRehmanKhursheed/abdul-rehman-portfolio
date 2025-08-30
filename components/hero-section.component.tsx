@@ -1,9 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Mail, Github, Linkedin, Download, Sparkles } from "lucide-react";
+import {
+  ArrowDown,
+  Mail,
+  Github,
+  Linkedin,
+  Download,
+  Sparkles,
+} from "lucide-react";
 import DisplayPictureComponent from "./display-picture.component";
 
+const technologies = [
+  "TypeScript",
+  "JavaScript",
+  "React",
+  "Next.js",
+  "Nest.js",
+  "AWS",
+  "Node.js",
+];
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -49,11 +65,11 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen pt-20 flex items-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30"
+      className="min-h-screen pt-20 pb-5 flex items-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 bg-gradient-radial" />
-      
+
       {/* Floating Orbs */}
       <motion.div
         className="absolute top-20 left-10 w-72 h-72 bg-blue-200/30 rounded-full mix-blend-multiply filter blur-3xl"
@@ -82,14 +98,19 @@ const HeroSection = () => {
           animate="visible"
         >
           {/* Left Content */}
-          <motion.div className="space-y-8 lg:space-y-10 order-2 lg:order-1" variants={itemVariants}>
+          <motion.div
+            className="space-y-8 lg:space-y-10 order-2 lg:order-1"
+            variants={itemVariants}
+          >
             {/* Badge */}
             <motion.div
               className="inline-flex items-center space-x-2 px-4 py-2 bg-white/80 backdrop-blur-sm border border-slate-200 rounded-full shadow-lg"
               variants={itemVariants}
             >
               <Sparkles className="w-4 h-4 text-blue-600" />
-              <span className="text-sm font-medium text-slate-700">Available for new opportunities</span>
+              <span className="text-sm font-medium text-slate-700">
+                Available for new opportunities
+              </span>
             </motion.div>
 
             {/* Main Heading */}
@@ -107,15 +128,19 @@ const HeroSection = () => {
                 Full Stack Developer & Cloud Engineer
               </h2>
               <p className="text-lg text-slate-500 leading-relaxed max-w-lg">
-                Crafting exceptional digital experiences with modern technologies. 
-                Specialized in React, Next.js, AWS, and cloud infrastructure. 
-                Passionate about performance, security, and scalable solutions.
+                Crafting exceptional digital experiences with modern
+                technologies. Specialized in React, Next.js, AWS, and cloud
+                infrastructure. Passionate about performance, security, and
+                scalable solutions.
               </p>
             </motion.div>
 
             {/* Tech Stack Preview */}
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-2">
-              {["React", "Next.js", "AWS", "TypeScript", "Node.js"].map((tech, index) => (
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-wrap gap-2"
+            >
+              {technologies.map((tech, index) => (
                 <motion.span
                   key={tech}
                   className="px-3 py-1 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-full text-sm font-medium text-slate-700"
@@ -129,7 +154,10 @@ const HeroSection = () => {
             </motion.div>
 
             {/* CTA Buttons */}
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row gap-4"
+            >
               <motion.button
                 onClick={() => scrollToSection("projects")}
                 className="button-primary flex items-center justify-center space-x-2 group"
@@ -152,7 +180,10 @@ const HeroSection = () => {
             </motion.div>
 
             {/* Social Links */}
-            <motion.div variants={itemVariants} className="flex items-center space-x-6">
+            <motion.div
+              variants={itemVariants}
+              className="flex items-center space-x-6"
+            >
               <motion.a
                 href="https://github.com/AbdulRehmanKhursheed"
                 target="_blank"
@@ -187,18 +218,18 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Right Content - Profile Picture */}
-          <motion.div 
+          <motion.div
             className="flex justify-center lg:justify-end order-1 lg:order-2"
             variants={itemVariants}
           >
-            <motion.div 
+            <motion.div
               className="relative"
               animate="animate"
               variants={floatingVariants}
             >
               {/* Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 rounded-full blur-3xl opacity-30 animate-pulse" />
-              
+
               {/* Profile Picture Container */}
               <div className="relative bg-white/20 backdrop-blur-sm border border-white/30 rounded-full p-2 shadow-2xl">
                 <DisplayPictureComponent />
@@ -208,7 +239,11 @@ const HeroSection = () => {
               <motion.div
                 className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center shadow-lg"
                 animate={{ y: [-5, 5, -5], rotate: [0, 180, 360] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 <span className="text-white text-xs font-bold">AR</span>
               </motion.div>
@@ -216,7 +251,11 @@ const HeroSection = () => {
               <motion.div
                 className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-500 rounded-full shadow-lg"
                 animate={{ y: [5, -5, 5], scale: [1, 1.2, 1] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               />
             </motion.div>
           </motion.div>
