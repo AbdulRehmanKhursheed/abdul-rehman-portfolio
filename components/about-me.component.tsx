@@ -3,20 +3,57 @@
 import { motion } from "framer-motion";
 import {
   Code,
-  Cloud,
   Database,
-  Smartphone,
+  Cloud,
   Zap,
-  Shield,
   Users,
-  TrendingUp,
+  Globe,
   Award,
   Clock,
-  Globe,
-  Cpu,
+  TrendingUp,
+  Shield,
+  Smartphone,
+  Server,
 } from "lucide-react";
 
 const AboutMe = () => {
+  const skills = [
+    { name: "React", level: 95, icon: Code, color: "from-blue-500 to-cyan-500" },
+    { name: "Next.js", level: 90, icon: Code, color: "from-purple-500 to-pink-500" },
+    { name: "TypeScript", level: 92, icon: Code, color: "from-blue-600 to-indigo-600" },
+    { name: "Node.js", level: 88, icon: Server, color: "from-green-500 to-emerald-500" },
+    { name: "AWS", level: 85, icon: Cloud, color: "from-orange-500 to-red-500" },
+    { name: "PostgreSQL", level: 87, icon: Database, color: "from-blue-500 to-purple-500" },
+  ];
+
+  const experiences = [
+    {
+      year: "2023 - Present",
+      title: "Senior Full Stack Developer",
+      company: "TechCorp Solutions",
+      description: "Led development of enterprise-scale applications using React, Next.js, and AWS. Implemented CI/CD pipelines and mentored junior developers.",
+    },
+    {
+      year: "2022 - 2023",
+      title: "Full Stack Developer",
+      company: "InnovateLabs",
+      description: "Built scalable web applications and mobile apps. Optimized performance and reduced loading times by 60%.",
+    },
+    {
+      year: "2021 - 2022",
+      title: "Frontend Developer",
+      company: "CodeCraft",
+      description: "Developed responsive user interfaces and implemented modern design patterns. Collaborated with UX/UI teams.",
+    },
+  ];
+
+  const stats = [
+    { label: "Years Experience", value: "3+", icon: Clock },
+    { label: "Projects Delivered", value: "50+", icon: Award },
+    { label: "Happy Clients", value: "30+", icon: Users },
+    { label: "Countries Served", value: "5+", icon: Globe },
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -40,72 +77,12 @@ const AboutMe = () => {
     },
   };
 
-  const skills = [
-    { name: "React", level: 95, category: "Frontend", icon: Code },
-    { name: "Next.js", level: 90, category: "Frontend", icon: Code },
-    { name: "TypeScript", level: 88, category: "Language", icon: Code },
-    { name: "Node.js", level: 85, category: "Backend", icon: Database },
-    { name: "AWS", level: 82, category: "Cloud", icon: Cloud },
-    { name: "Docker", level: 80, category: "DevOps", icon: Cpu },
-    { name: "MongoDB", level: 78, category: "Database", icon: Database },
-    { name: "React Native", level: 75, category: "Mobile", icon: Smartphone },
-  ];
-
-  const experiences = [
-    {
-      title: "Senior Full Stack Developer",
-      company: "Bazaar Technologies",
-      period: "2023 - Present",
-      description:
-        "Leading development of enterprise-grade B2B & B2C platforms with React, Next.js, and AWS infrastructure.",
-      achievements: [
-        "Reduced cloud costs by 57%",
-        "Achieved 99% test coverage",
-        "Improved web vitals by 40%",
-      ],
-    },
-    {
-      title: "Full Stack Developer",
-      company: "Various Companies",
-      period: "2021 - 2023",
-      description:
-        "Built scalable web applications and mobile apps for multiple clients across different industries.",
-      achievements: [
-        "Delivered 15+ projects",
-        "Mentored junior developers",
-        "Implemented CI/CD pipelines",
-      ],
-    },
-    {
-      title: "Software Engineer",
-      company: "Freelance & Startups",
-      period: "2019 - 2021",
-      description:
-        "Developed full-stack solutions and contributed to open-source projects while learning modern technologies.",
-      achievements: [
-        "Built 20+ applications",
-        "Contributed to open source",
-        "Learned cloud technologies",
-      ],
-    },
-  ];
-
-  const stats = [
-    { label: "Years Experience", value: "5+", icon: Clock },
-    { label: "Projects Delivered", value: "50+", icon: Award },
-    { label: "Happy Clients", value: "30+", icon: Users },
-    { label: "Countries Served", value: "10+", icon: Globe },
-  ];
-
   return (
-    <section
-      id="about"
-      className="section-padding bg-white relative overflow-hidden"
-    >
+    <section id="about" className="section-padding bg-white dark:bg-slate-900 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-radial opacity-50" />
-      <div className="absolute top-20 right-20 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-20 w-64 h-64 bg-purple-100/30 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-radial opacity-30" />
+      <div className="absolute top-20 left-20 w-64 h-64 bg-blue-100/20 dark:bg-blue-900/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-64 h-64 bg-purple-100/20 dark:bg-purple-900/20 rounded-full blur-3xl" />
 
       <div className="container-custom relative z-10">
         <motion.div
@@ -117,7 +94,7 @@ const AboutMe = () => {
           {/* Section Header */}
           <motion.div className="text-center mb-16" variants={itemVariants}>
             <motion.div
-              className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 font-medium mb-6"
+              className="inline-flex items-center space-x-2 px-4 py-2 bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-full text-purple-700 dark:text-purple-300 font-medium mb-6"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
@@ -125,99 +102,85 @@ const AboutMe = () => {
               <Code className="w-4 h-4" />
               <span>About Me</span>
             </motion.div>
-
+            
             <h2 className="text-4xl lg:text-5xl font-bold heading-gradient mb-6">
               Crafting Digital Excellence
             </h2>
-
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              I&apos;m a passionate Full Stack Developer and Cloud Engineer with
-              4.5+ years of experience building scalable, high-performance
-              applications. I specialize in modern web technologies and cloud
-              infrastructure, delivering exceptional user experiences.
+            
+            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+              I&apos;m a passionate Full Stack Developer and Cloud Engineer with expertise in modern web technologies, 
+              cloud infrastructure, and mobile development. I love turning complex problems into elegant solutions.
             </p>
           </motion.div>
 
           {/* Stats Section */}
-          <motion.div
-            className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
             variants={itemVariants}
           >
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                className="text-center p-6 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-                whileHover={{ y: -5, scale: 1.02 }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                className="text-center p-6 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3 + index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
               >
-                <stat.icon className="w-8 h-8 text-blue-600 mx-auto mb-3" />
-                <div className="text-3xl font-bold gradient-text mb-1">
-                  {stat.value}
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-slate-600 font-medium">{stat.label}</div>
+                <div className="text-2xl font-bold gradient-text mb-2">{stat.value}</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
 
-          {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* Left Column - About Text */}
-            <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-bold heading-gradient mb-6">
-                My Journey in Tech
-              </h3>
-
-              <div className="space-y-6 text-slate-600 leading-relaxed">
-                <p>
-                  I started my journey in web development with a passion for
-                  creating meaningful digital experiences. Over the years,
-                  I&apos;ve evolved from building simple websites to
-                  architecting complex enterprise solutions that serve thousands
-                  of users daily.
+          {/* Main Content */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* Left Column */}
+            <motion.div className="space-y-8" variants={itemVariants}>
+              <div>
+                <h3 className="text-2xl font-bold heading-gradient mb-4">
+                  My Journey
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                  I&apos;ve spent the last 3+ years immersed in the world of software development, 
+                  working on projects that range from small business websites to enterprise-scale applications. 
+                  My passion lies in creating solutions that not only work flawlessly but also provide 
+                  exceptional user experiences.
                 </p>
-
-                <p>
-                  My expertise spans the entire development stack - from
-                  crafting responsive user interfaces with React and Next.js to
-                  designing scalable backend architectures with Node.js and
-                  cloud services. I&apos;m particularly passionate about cloud
-                  infrastructure and have helped organizations optimize their
-                  AWS deployments, reducing costs while improving performance.
-                </p>
-
-                <p>
-                  I believe in writing clean, maintainable code and following
-                  best practices. Test-driven development, continuous
-                  integration, and performance optimization are core principles
-                  in my work. I&apos;m always eager to learn new technologies
-                  and share knowledge with the developer community.
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  I specialize in React, Next.js, TypeScript, and AWS, with a strong focus on 
+                  performance optimization, security, and scalable architecture. I believe in writing 
+                  clean, maintainable code and staying up-to-date with the latest industry trends.
                 </p>
               </div>
 
               {/* Key Strengths */}
-              <div className="mt-8">
-                <h4 className="text-xl font-semibold heading-gradient mb-4">
+              <div>
+                <h3 className="text-2xl font-bold heading-gradient mb-6">
                   Key Strengths
-                </h4>
+                </h3>
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { icon: Zap, text: "Performance Optimization" },
-                    { icon: Shield, text: "Security Best Practices" },
-                    { icon: Users, text: "Team Collaboration" },
-                    { icon: TrendingUp, text: "Scalable Architecture" },
+                    { icon: Zap, label: "Performance Optimization" },
+                    { icon: Shield, label: "Security Best Practices" },
+                    { icon: TrendingUp, label: "Scalable Architecture" },
+                    { icon: Smartphone, label: "Mobile-First Design" },
                   ].map((strength, index) => (
                     <motion.div
-                      key={strength.text}
-                      className="flex items-center space-x-3 p-3 bg-slate-50 rounded-lg"
+                      key={strength.label}
+                      className="flex items-center space-x-3 p-3 bg-white/40 dark:bg-slate-800/40 rounded-xl"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 + index * 0.1 }}
+                      transition={{ delay: 0.4 + index * 0.1 }}
                     >
-                      <strength.icon className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                      <span className="text-slate-700 font-medium">
-                        {strength.text}
+                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+                        <strength.icon className="w-4 h-4 text-white" />
+                      </div>
+                      <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                        {strength.label}
                       </span>
                     </motion.div>
                   ))}
@@ -225,10 +188,10 @@ const AboutMe = () => {
               </div>
             </motion.div>
 
-            {/* Right Column - Skills & Experience */}
-            <motion.div variants={itemVariants}>
-              {/* Skills Section */}
-              <div className="mb-12">
+            {/* Right Column */}
+            <motion.div className="space-y-8" variants={itemVariants}>
+              {/* Technical Skills */}
+              <div>
                 <h3 className="text-2xl font-bold heading-gradient mb-6">
                   Technical Skills
                 </h3>
@@ -239,25 +202,27 @@ const AboutMe = () => {
                       className="space-y-2"
                       initial={{ opacity: 0, x: 20 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.4 + index * 0.1 }}
+                      transition={{ delay: 0.5 + index * 0.1 }}
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-2">
-                          <skill.icon className="w-4 h-4 text-blue-600" />
-                          <span className="font-medium text-slate-700">
+                          <div className={`w-6 h-6 bg-gradient-to-r ${skill.color} rounded flex items-center justify-center`}>
+                            <skill.icon className="w-3 h-3 text-white" />
+                          </div>
+                          <span className="font-medium text-slate-700 dark:text-slate-300">
                             {skill.name}
                           </span>
                         </div>
-                        <span className="text-sm text-slate-500">
+                        <span className="text-sm text-slate-500 dark:text-slate-400">
                           {skill.level}%
                         </span>
                       </div>
-                      <div className="w-full bg-slate-200 rounded-full h-2">
+                      <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
                         <motion.div
-                          className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full"
+                          className={`h-2 bg-gradient-to-r ${skill.color} rounded-full`}
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}
-                          transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
+                          transition={{ duration: 1, delay: 0.6 + index * 0.1 }}
                         />
                       </div>
                     </motion.div>
@@ -268,43 +233,32 @@ const AboutMe = () => {
               {/* Experience Timeline */}
               <div>
                 <h3 className="text-2xl font-bold heading-gradient mb-6">
-                  Experience
+                  Experience Timeline
                 </h3>
                 <div className="space-y-6">
                   {experiences.map((exp, index) => (
                     <motion.div
-                      key={exp.title}
+                      key={exp.year}
                       className="timeline-item"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.6 + index * 0.2 }}
+                      transition={{ delay: 0.7 + index * 0.1 }}
                     >
-                      <div className="bg-white/60 backdrop-blur-sm border border-slate-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div className="flex items-start justify-between mb-3">
-                          <div>
-                            <h4 className="font-bold text-slate-900 text-lg">
-                              {exp.title}
-                            </h4>
-                            <p className="text-blue-600 font-medium">
-                              {exp.company}
-                            </p>
-                          </div>
-                          <span className="text-sm text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
-                            {exp.period}
+                      <div className="space-y-2">
+                        <div className="flex items-center space-x-2">
+                          <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                            {exp.year}
                           </span>
                         </div>
-                        <p className="text-slate-600 mb-3">{exp.description}</p>
-                        <ul className="space-y-1">
-                          {exp.achievements.map((achievement, idx) => (
-                            <li
-                              key={idx}
-                              className="flex items-center space-x-2 text-sm text-slate-600"
-                            >
-                              <div className="w-1.5 h-1.5 bg-blue-600 rounded-full" />
-                              <span>{achievement}</span>
-                            </li>
-                          ))}
-                        </ul>
+                        <h4 className="font-semibold text-slate-900 dark:text-slate-100">
+                          {exp.title}
+                        </h4>
+                        <p className="text-sm text-slate-600 dark:text-slate-400 font-medium">
+                          {exp.company}
+                        </p>
+                        <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                          {exp.description}
+                        </p>
                       </div>
                     </motion.div>
                   ))}

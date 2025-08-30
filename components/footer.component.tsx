@@ -1,49 +1,34 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  Download,
-  Heart,
-  ArrowUp,
-  Code,
-  Sparkles
-} from "lucide-react";
+import { Github, Linkedin, Mail, Download, ArrowUp, Heart } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const currentYear = new Date().getFullYear();
-
   const socialLinks = [
     {
       icon: Github,
-      name: "GitHub",
+      label: "GitHub",
       url: "https://github.com/AbdulRehmanKhursheed",
-      color: "hover:bg-slate-900 hover:text-white"
     },
     {
       icon: Linkedin,
-      name: "LinkedIn",
+      label: "LinkedIn",
       url: "https://www.linkedin.com/in/malik-abdul-rehman/",
-      color: "hover:bg-blue-600 hover:text-white"
     },
     {
       icon: Mail,
-      name: "Email",
+      label: "Email",
       url: "mailto:abdulrehman.dev@gmail.com",
-      color: "hover:bg-red-600 hover:text-white"
     },
     {
       icon: Download,
-      name: "Resume",
+      label: "Resume",
       url: "/pdf/Fullstack_Dev_AbdulRehman_Resume.pdf",
-      color: "hover:bg-green-600 hover:text-white"
-    }
+    },
   ];
 
   const quickLinks = [
@@ -76,14 +61,11 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-900 text-white relative overflow-hidden">
+    <footer className="relative overflow-hidden bg-slate-900 dark:bg-slate-950 text-white">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
-      
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl" />
-      <div className="absolute bottom-20 right-20 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl" />
+      <div className="absolute inset-0 bg-gradient-radial opacity-50" />
+      <div className="absolute top-20 left-20 w-64 h-64 bg-blue-900/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-64 h-64 bg-purple-900/20 rounded-full blur-3xl" />
 
       <div className="container-custom relative z-10">
         <motion.div
@@ -97,7 +79,10 @@ const Footer = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Brand Section */}
               <motion.div className="lg:col-span-2" variants={itemVariants}>
-                <div className="flex items-center space-x-3 mb-6">
+                <motion.div
+                  className="flex items-center space-x-3 mb-6"
+                  whileHover={{ scale: 1.05 }}
+                >
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
                     <span className="text-white font-bold text-lg">AR</span>
                   </div>
@@ -105,28 +90,29 @@ const Footer = () => {
                     <h3 className="text-2xl font-bold gradient-text">Abdul Rehman</h3>
                     <p className="text-slate-400">Full Stack Developer & Cloud Engineer</p>
                   </div>
-                </div>
+                </motion.div>
                 
-                <p className="text-slate-300 leading-relaxed mb-6 max-w-md">
-                  Passionate about creating exceptional digital experiences with modern technologies. 
+                <p className="text-slate-400 leading-relaxed mb-6 max-w-md">
+                  Crafting exceptional digital experiences with modern technologies. 
                   Specialized in React, Next.js, AWS, and cloud infrastructure.
                 </p>
-                
+
+                {/* Social Links */}
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
-                      key={social.name}
+                      key={social.label}
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`p-3 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl hover:shadow-lg transition-all duration-300 ${social.color}`}
+                      className="p-3 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-xl hover:bg-slate-800 hover:shadow-lg transition-all duration-300 group"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       whileTap={{ scale: 0.95 }}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 + index * 0.1 }}
                     >
-                      <social.icon className="w-5 h-5" />
+                      <social.icon className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors duration-200" />
                     </motion.a>
                   ))}
                 </div>
@@ -145,10 +131,9 @@ const Footer = () => {
                     >
                       <a
                         href={link.href}
-                        className="text-slate-300 hover:text-white transition-colors duration-200 flex items-center space-x-2 group"
+                        className="text-slate-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block"
                       >
-                        <span className="w-1 h-1 bg-blue-500 rounded-full group-hover:scale-150 transition-transform duration-200" />
-                        <span>{link.name}</span>
+                        {link.name}
                       </a>
                     </motion.li>
                   ))}
@@ -158,69 +143,32 @@ const Footer = () => {
               {/* Contact Info */}
               <motion.div variants={itemVariants}>
                 <h4 className="text-lg font-semibold mb-6 text-white">Contact</h4>
-                <div className="space-y-4">
-                  <motion.div
-                    className="flex items-center space-x-3 text-slate-300"
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.5 }}
-                  >
-                    <Mail className="w-5 h-5 text-blue-400" />
-                    <a 
-                      href="mailto:abdulrehman.dev@gmail.com"
-                      className="hover:text-white transition-colors duration-200"
-                    >
-                      abdulrehman.dev@gmail.com
-                    </a>
-                  </motion.div>
-                  
-                  <motion.div
-                    className="flex items-center space-x-3 text-slate-300"
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.6 }}
-                  >
-                    <div className="w-5 h-5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">AR</span>
-                    </div>
-                    <span>Pakistan</span>
-                  </motion.div>
+                <div className="space-y-3 text-slate-400">
+                  <p>abdulrehman.dev@gmail.com</p>
+                  <p>+92 300 1234567</p>
+                  <p>Pakistan</p>
                 </div>
               </motion.div>
             </div>
           </div>
 
           {/* Bottom Bar */}
-          <motion.div 
-            className="border-t border-slate-800 py-8"
+          <motion.div
+            className="border-t border-slate-800 py-6"
             variants={itemVariants}
           >
             <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-              <motion.div 
-                className="flex items-center space-x-2 text-slate-400"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 }}
-              >
-                <Code className="w-4 h-4" />
+              <div className="flex items-center space-x-2 text-slate-400">
                 <span>Designed & Built with</span>
-                <Heart className="w-4 h-4 text-red-500 animate-pulse" />
+                <Heart className="w-4 h-4 text-red-500 fill-current animate-pulse" />
                 <span>by Abdul Rehman</span>
-                <span className="text-slate-500">© {currentYear}</span>
-              </motion.div>
-
-              <motion.div
-                className="flex items-center space-x-4"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
-              >
-                <span className="text-slate-400 text-sm">Made with</span>
-                <div className="flex items-center space-x-1">
-                  <Sparkles className="w-4 h-4 text-yellow-500" />
-                  <span className="text-slate-300 text-sm">Next.js & Framer Motion</span>
-                </div>
-              </motion.div>
+              </div>
+              
+              <div className="flex items-center space-x-4 text-slate-400">
+                <span>Made with</span>
+                <span className="px-2 py-1 bg-slate-800 rounded text-xs">Next.js</span>
+                <span className="px-2 py-1 bg-slate-800 rounded text-xs">Framer Motion</span>
+              </div>
             </div>
           </motion.div>
         </motion.div>
@@ -232,9 +180,9 @@ const Footer = () => {
         className="fixed bottom-8 right-8 p-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50"
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.9 }}
-        initial={{ opacity: 0, scale: 0 }}
+        initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
+        transition={{ delay: 1 }}
       >
         <ArrowUp className="w-5 h-5" />
       </motion.button>

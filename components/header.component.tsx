@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Mail, Github, Linkedin, Download } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { ThemeToggle } from "./theme-toggle";
 
 const Header = () => {
   const router = useRouter();
@@ -86,7 +87,7 @@ const Header = () => {
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-lg border-b border-slate-200/50"
+          ? "bg-white/95 backdrop-blur-xl shadow-lg border-b border-slate-200/50 dark:bg-slate-900/95 dark:border-slate-700/50"
           : "bg-transparent"
       }`}
       variants={headerVariants}
@@ -139,7 +140,7 @@ const Header = () => {
                 href="https://github.com/AbdulRehmanKhursheed"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all duration-200"
+                className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -149,7 +150,7 @@ const Header = () => {
                 href="https://www.linkedin.com/in/malik-abdul-rehman/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all duration-200"
+                className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -159,12 +160,13 @@ const Header = () => {
                 href="/pdf/Fullstack_Dev_AbdulRehman_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all duration-200"
+                className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Download size={20} />
               </motion.a>
+              <ThemeToggle />
             </div>
 
             <motion.button
@@ -181,7 +183,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors duration-200"
+            className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors duration-200 dark:hover:bg-slate-800"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -215,7 +217,7 @@ const Header = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              className="lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl"
+              className="lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl dark:border-slate-700 dark:bg-slate-900/95"
               variants={menuVariants}
               initial="closed"
               animate="open"
@@ -226,8 +228,8 @@ const Header = () => {
                   <motion.button
                     key={item.name}
                     onClick={() => scrollToSection(item.id!)}
-                    className={`block w-full text-left px-4 py-3 text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-xl transition-all duration-200 font-medium ${
-                      activeSection === item.id ? "text-blue-600 bg-blue-50" : ""
+                    className={`block w-full text-left px-4 py-3 text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-xl transition-all duration-200 font-medium dark:text-slate-300 dark:hover:text-slate-100 dark:hover:bg-slate-800 ${
+                      activeSection === item.id ? "text-blue-600 bg-blue-50 dark:text-blue-400 dark:bg-blue-900/20" : ""
                     }`}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -239,13 +241,13 @@ const Header = () => {
                   </motion.button>
                 ))}
 
-                <div className="px-4 pt-6 border-t border-slate-200">
+                <div className="px-4 pt-6 border-t border-slate-200 dark:border-slate-700">
                   <div className="flex items-center justify-center space-x-4 mb-6">
                     <motion.a
                       href="https://github.com/AbdulRehmanKhursheed"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all duration-200"
+                      className="p-3 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -255,7 +257,7 @@ const Header = () => {
                       href="https://www.linkedin.com/in/malik-abdul-rehman/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all duration-200"
+                      className="p-3 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
                       whileHover={{ scale: 1.1, rotate: -5 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -265,12 +267,13 @@ const Header = () => {
                       href="/pdf/Fullstack_Dev_AbdulRehman_Resume.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all duration-200"
+                      className="p-3 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       <Download size={20} />
                     </motion.a>
+                    <ThemeToggle />
                   </div>
 
                   <motion.button
