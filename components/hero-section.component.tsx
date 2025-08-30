@@ -1,6 +1,7 @@
 "use client";
 
-import { ArrowDown, Mail } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowDown, Mail, Github, Linkedin, Download, Sparkles } from "lucide-react";
 import DisplayPictureComponent from "./display-picture.component";
 
 const HeroSection = () => {
@@ -11,79 +12,234 @@ const HeroSection = () => {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const floatingVariants = {
+    animate: {
+      y: [-10, 10, -10],
+      transition: {
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <section
       id="hero"
-      className="min-h-screen pt-20 flex items-center relative overflow-hidden"
+      className="min-h-screen pt-20 flex items-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50" />
-      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70" />
-      <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70" />
-      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-70" />
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 bg-gradient-radial" />
+      
+      {/* Floating Orbs */}
+      <motion.div
+        className="absolute top-20 left-10 w-72 h-72 bg-blue-200/30 rounded-full mix-blend-multiply filter blur-3xl"
+        animate={{ y: [-20, 20, -20], x: [-10, 10, -10] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute top-40 right-10 w-72 h-72 bg-purple-200/30 rounded-full mix-blend-multiply filter blur-3xl"
+        animate={{ y: [20, -20, 20], x: [10, -10, 10] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute -bottom-8 left-20 w-72 h-72 bg-orange-200/30 rounded-full mix-blend-multiply filter blur-3xl"
+        animate={{ y: [-15, 15, -15], x: [-5, 5, -5] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="space-y-6 lg:space-y-8 order-2 lg:order-1">
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600" />
-              <span className="text-lg font-medium text-gray-600">
-                Hello, I&apos;m
-              </span>
-            </div>
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Abdul Rehman
-              </span>
-            </h1>
+      <div className="container-custom relative z-10">
+        <motion.div
+          className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Left Content */}
+          <motion.div className="space-y-8 lg:space-y-10 order-2 lg:order-1" variants={itemVariants}>
+            {/* Badge */}
+            <motion.div
+              className="inline-flex items-center space-x-2 px-4 py-2 bg-white/80 backdrop-blur-sm border border-slate-200 rounded-full shadow-lg"
+              variants={itemVariants}
+            >
+              <Sparkles className="w-4 h-4 text-blue-600" />
+              <span className="text-sm font-medium text-slate-700">Available for new opportunities</span>
+            </motion.div>
 
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-gray-600">
-              Full Stack Developer & Cloud Engineer
-            </h2>
+            {/* Main Heading */}
+            <motion.div variants={itemVariants}>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
+                <span className="gradient-text">Abdul</span>
+                <br />
+                <span className="heading-gradient">Rehman</span>
+              </h1>
+            </motion.div>
 
-            <p className="text-base sm:text-lg text-gray-500 leading-relaxed max-w-lg">
-              Crafting exceptional digital experiences with modern technologies.
-              Specialized in React, Next.js, AWS, and cloud infrastructure.
-              Passionate about performance, security, and scalable solutions.
-            </p>
+            {/* Subtitle */}
+            <motion.div variants={itemVariants}>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-600 mb-4">
+                Full Stack Developer & Cloud Engineer
+              </h2>
+              <p className="text-lg text-slate-500 leading-relaxed max-w-lg">
+                Crafting exceptional digital experiences with modern technologies. 
+                Specialized in React, Next.js, AWS, and cloud infrastructure. 
+                Passionate about performance, security, and scalable solutions.
+              </p>
+            </motion.div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
+            {/* Tech Stack Preview */}
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-2">
+              {["React", "Next.js", "AWS", "TypeScript", "Node.js"].map((tech, index) => (
+                <motion.span
+                  key={tech}
+                  className="px-3 py-1 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-full text-sm font-medium text-slate-700"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                >
+                  {tech}
+                </motion.span>
+              ))}
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
+              <motion.button
                 onClick={() => scrollToSection("projects")}
-                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center space-x-2"
+                className="button-primary flex items-center justify-center space-x-2 group"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <span>View My Work</span>
-                <ArrowDown size={16} />
-              </button>
+                <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-200" />
+              </motion.button>
 
-              <button
+              <motion.button
                 onClick={() => scrollToSection("contact")}
-                className="px-6 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 flex items-center justify-center space-x-2"
+                className="button-secondary flex items-center justify-center space-x-2 group"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <Mail size={16} />
+                <Mail className="w-4 h-4" />
                 <span>Get in Touch</span>
-              </button>
-            </div>
-          </div>
+              </motion.button>
+            </motion.div>
 
-          <div className="flex justify-center lg:justify-end order-1 lg:order-2">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-2xl opacity-30" />
-              <div className="relative">
+            {/* Social Links */}
+            <motion.div variants={itemVariants} className="flex items-center space-x-6">
+              <motion.a
+                href="https://github.com/AbdulRehmanKhursheed"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 group"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Github className="w-5 h-5 text-slate-700 group-hover:text-slate-900" />
+              </motion.a>
+              <motion.a
+                href="https://www.linkedin.com/in/malik-abdul-rehman/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 group"
+                whileHover={{ scale: 1.1, rotate: -5 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Linkedin className="w-5 h-5 text-slate-700 group-hover:text-slate-900" />
+              </motion.a>
+              <motion.a
+                href="/pdf/Fullstack_Dev_AbdulRehman_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 group"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Download className="w-5 h-5 text-slate-700 group-hover:text-slate-900" />
+              </motion.a>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Content - Profile Picture */}
+          <motion.div 
+            className="flex justify-center lg:justify-end order-1 lg:order-2"
+            variants={itemVariants}
+          >
+            <motion.div 
+              className="relative"
+              animate="animate"
+              variants={floatingVariants}
+            >
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 rounded-full blur-3xl opacity-30 animate-pulse" />
+              
+              {/* Profile Picture Container */}
+              <div className="relative bg-white/20 backdrop-blur-sm border border-white/30 rounded-full p-2 shadow-2xl">
                 <DisplayPictureComponent />
               </div>
-            </div>
-          </div>
-        </div>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <button
+              {/* Floating Elements */}
+              <motion.div
+                className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center shadow-lg"
+                animate={{ y: [-5, 5, -5], rotate: [0, 180, 360] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <span className="text-white text-xs font-bold">AR</span>
+              </motion.div>
+
+              <motion.div
+                className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-500 rounded-full shadow-lg"
+                animate={{ y: [5, -5, 5], scale: [1, 1.2, 1] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              />
+            </motion.div>
+          </motion.div>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.6 }}
+        >
+          <motion.button
             onClick={() => scrollToSection("about")}
-            className="text-gray-400 hover:text-blue-600 transition-colors duration-200 animate-bounce"
+            className="p-3 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-full shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 group"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
-            <ArrowDown size={24} />
-          </button>
-        </div>
+            <ArrowDown className="w-5 h-5 text-slate-600 group-hover:text-slate-900" />
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );
