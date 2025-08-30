@@ -22,7 +22,7 @@ const Footer = () => {
     {
       icon: Mail,
       label: "Email",
-      url: "mailto:abdulrehman.dev@gmail.com",
+      url: "mailto:mali.ali5560@gmail.com",
     },
     {
       icon: Download,
@@ -87,14 +87,19 @@ const Footer = () => {
                     <span className="text-white font-bold text-lg">AR</span>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold gradient-text">Abdul Rehman</h3>
-                    <p className="text-slate-400">Full Stack Developer & Cloud Engineer</p>
+                    <h3 className="text-2xl font-bold gradient-text">
+                      Abdul Rehman
+                    </h3>
+                    <p className="text-slate-400">
+                      Full Stack Developer & Cloud Engineer
+                    </p>
                   </div>
                 </motion.div>
-                
+
                 <p className="text-slate-400 leading-relaxed mb-6 max-w-md">
-                  Crafting exceptional digital experiences with modern technologies. 
-                  Specialized in React, Next.js, AWS, and cloud infrastructure.
+                  Crafting exceptional digital experiences with modern
+                  technologies. Specialized in React, Next.js, AWS, and cloud
+                  infrastructure.
                 </p>
 
                 {/* Social Links */}
@@ -120,7 +125,9 @@ const Footer = () => {
 
               {/* Quick Links */}
               <motion.div variants={itemVariants}>
-                <h4 className="text-lg font-semibold mb-6 text-white">Quick Links</h4>
+                <h4 className="text-lg font-semibold mb-6 text-white">
+                  Quick Links
+                </h4>
                 <ul className="space-y-3">
                   {quickLinks.map((link, index) => (
                     <motion.li
@@ -142,7 +149,9 @@ const Footer = () => {
 
               {/* Contact Info */}
               <motion.div variants={itemVariants}>
-                <h4 className="text-lg font-semibold mb-6 text-white">Contact</h4>
+                <h4 className="text-lg font-semibold mb-6 text-white">
+                  Contact
+                </h4>
                 <div className="space-y-3 text-slate-400">
                   <p>malik.ali5560@gmail.com</p>
                   <p>+92 304 5919 454</p>
@@ -163,11 +172,15 @@ const Footer = () => {
                 <Heart className="w-4 h-4 text-red-500 fill-current animate-pulse" />
                 <span>by Abdul Rehman</span>
               </div>
-              
+
               <div className="flex items-center space-x-4 text-slate-400">
                 <span>Made with</span>
-                <span className="px-2 py-1 bg-slate-800 rounded text-xs">Next.js</span>
-                <span className="px-2 py-1 bg-slate-800 rounded text-xs">Framer Motion</span>
+                <span className="px-2 py-1 bg-slate-800 rounded text-xs">
+                  Next.js
+                </span>
+                <span className="px-2 py-1 bg-slate-800 rounded text-xs">
+                  Framer Motion
+                </span>
               </div>
             </div>
           </motion.div>

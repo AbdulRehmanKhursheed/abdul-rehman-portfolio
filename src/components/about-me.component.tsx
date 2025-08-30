@@ -18,40 +18,71 @@ import {
 
 const AboutMe = () => {
   const skills = [
-    { name: "React", level: 95, icon: Code, color: "from-indigo-500 to-cyan-500" },
-    { name: "Next.js", level: 90, icon: Code, color: "from-purple-500 to-pink-500" },
-    { name: "TypeScript", level: 92, icon: Code, color: "from-indigo-600 to-purple-600" },
-    { name: "Node.js", level: 88, icon: Server, color: "from-cyan-500 to-emerald-500" },
-    { name: "AWS", level: 85, icon: Cloud, color: "from-orange-500 to-red-500" },
-    { name: "PostgreSQL", level: 87, icon: Database, color: "from-indigo-500 to-purple-500" },
+    {
+      name: "React",
+      level: 95,
+      icon: Code,
+      color: "from-indigo-500 to-cyan-500",
+    },
+    {
+      name: "Next.js",
+      level: 90,
+      icon: Code,
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      name: "TypeScript",
+      level: 92,
+      icon: Code,
+      color: "from-indigo-600 to-purple-600",
+    },
+    {
+      name: "Node.js",
+      level: 88,
+      icon: Server,
+      color: "from-cyan-500 to-emerald-500",
+    },
+    {
+      name: "AWS",
+      level: 85,
+      icon: Cloud,
+      color: "from-orange-500 to-red-500",
+    },
+    {
+      name: "PostgreSQL",
+      level: 87,
+      icon: Database,
+      color: "from-indigo-500 to-purple-500",
+    },
   ];
 
   const experiences = [
     {
       year: "2023 - Present",
-      title: "Senior Full Stack Developer",
-      company: "TechCorp Solutions",
-      description: "Led development of enterprise-scale applications using React, Next.js, and AWS. Implemented CI/CD pipelines and mentored junior developers.",
+      title: "Senior Software Engineer",
+      company: "Bazaar Technologies",
+      description:
+        "Led development of enterprise-scale applications using React, Next.js, and AWS. Implemented CI/CD pipelines and mentored junior developers.",
     },
     {
       year: "2022 - 2023",
-      title: "Full Stack Developer",
-      company: "InnovateLabs",
-      description: "Built scalable web applications and mobile apps. Optimized performance and reduced loading times by 60%.",
+      title: "Full Stack Developer - Junior Front-End Lead",
+      company: "Orcalo Holdings",
+      description:
+        "Built scalable web applications and mobile apps. Optimized performance and reduced loading times by 60%.",
     },
     {
       year: "2021 - 2022",
-      title: "Frontend Developer",
-      company: "CodeCraft",
-      description: "Developed responsive user interfaces and implemented modern design patterns. Collaborated with UX/UI teams.",
+      title: "Frontend Intern",
+      company: "Web Mechanics",
+      description:
+        "Developed responsive user interfaces and implemented modern design patterns. Collaborated with UX/UI teams.",
     },
   ];
 
   const stats = [
-    { label: "Years Experience", value: "3+", icon: Clock },
-    { label: "Projects Delivered", value: "50+", icon: Award },
-    { label: "Happy Clients", value: "30+", icon: Users },
-    { label: "Countries Served", value: "5+", icon: Globe },
+    { label: "Years Experience", value: "4.5+", icon: Clock },
+    { label: "Projects Delivered", value: "15+", icon: Award },
   ];
 
   const containerVariants = {
@@ -78,7 +109,10 @@ const AboutMe = () => {
   };
 
   return (
-    <section id="about" className="section-padding bg-slate-800 light:bg-white relative overflow-hidden">
+    <section
+      id="about"
+      className="section-padding bg-slate-800 light:bg-white relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-radial opacity-30" />
       <div className="absolute top-20 left-20 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl" />
@@ -102,19 +136,21 @@ const AboutMe = () => {
               <Code className="w-4 h-4" />
               <span>About Me</span>
             </motion.div>
-            
+
             <h2 className="text-4xl lg:text-5xl font-bold heading-gradient mb-6">
               Crafting Digital Excellence
             </h2>
-            
+
             <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed light:text-slate-600">
-              I&apos;m a passionate Full Stack Developer and Cloud Engineer with expertise in modern web technologies, 
-              cloud infrastructure, and mobile development. I love turning complex problems into elegant solutions.
+              I&apos;m a passionate Full Stack Developer and Cloud Engineer with
+              expertise in modern web technologies, cloud infrastructure, and
+              mobile development. I love turning complex problems into elegant
+              solutions.
             </p>
           </motion.div>
 
           {/* Stats Section */}
-          <motion.div 
+          <motion.div
             className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
             variants={itemVariants}
           >
@@ -130,8 +166,12 @@ const AboutMe = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-2xl font-bold gradient-text mb-2">{stat.value}</div>
-                <div className="text-sm text-slate-400 light:text-slate-600">{stat.label}</div>
+                <div className="text-2xl font-bold gradient-text mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-slate-400 light:text-slate-600">
+                  {stat.label}
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -145,15 +185,18 @@ const AboutMe = () => {
                   My Journey
                 </h3>
                 <p className="text-slate-400 leading-relaxed mb-6 light:text-slate-600">
-                  I&apos;ve spent the last 3+ years immersed in the world of software development, 
-                  working on projects that range from small business websites to enterprise-scale applications. 
-                  My passion lies in creating solutions that not only work flawlessly but also provide 
-                  exceptional user experiences.
+                  I&apos;ve spent the last 3+ years immersed in the world of
+                  software development, working on projects that range from
+                  small business websites to enterprise-scale applications. My
+                  passion lies in creating solutions that not only work
+                  flawlessly but also provide exceptional user experiences.
                 </p>
                 <p className="text-slate-400 leading-relaxed light:text-slate-600">
-                  I specialize in React, Next.js, TypeScript, and AWS, with a strong focus on 
-                  performance optimization, security, and scalable architecture. I believe in writing 
-                  clean, maintainable code and staying up-to-date with the latest industry trends.
+                  I specialize in React, Next.js, TypeScript, and AWS, with a
+                  strong focus on performance optimization, security, and
+                  scalable architecture. I believe in writing clean,
+                  maintainable code and staying up-to-date with the latest
+                  industry trends.
                 </p>
               </div>
 
@@ -206,7 +249,9 @@ const AboutMe = () => {
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-2">
-                          <div className={`w-6 h-6 bg-gradient-to-r ${skill.color} rounded flex items-center justify-center`}>
+                          <div
+                            className={`w-6 h-6 bg-gradient-to-r ${skill.color} rounded flex items-center justify-center`}
+                          >
                             <skill.icon className="w-3 h-3 text-white" />
                           </div>
                           <span className="font-medium text-slate-300 light:text-slate-700">
