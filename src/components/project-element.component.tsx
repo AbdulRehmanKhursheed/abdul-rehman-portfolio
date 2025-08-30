@@ -2,6 +2,7 @@ import Link from "next/link";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Syne } from "next/font/google";
+import { ProjectElementProps } from "../types/project-element-props";
 
 const syne = Syne({
   subsets: ["latin"],

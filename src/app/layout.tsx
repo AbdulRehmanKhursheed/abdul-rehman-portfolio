@@ -5,43 +5,31 @@ export const revalidate = 0;
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "../../components/header.component";
-import { ThemeProvider } from "../../components/theme-provider";
+import Header from "../components/header.component";
+import { ThemeProvider } from "../components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Abdul Rehman - Full Stack Developer & Cloud Engineer",
-  description:
-    "Full Stack Developer & Cloud Engineer specializing in React, Next.js, AWS, and enterprise applications. Based in Pakistan.",
-  keywords: [
-    "Full Stack Developer",
-    "React",
-    "Next.js",
-    "AWS",
-    "Cloud Engineer",
-    "Pakistan",
-  ],
+  description: "Professional portfolio of Abdul Rehman, a Full Stack Developer and Cloud Engineer specializing in React, Next.js, AWS, and modern web technologies.",
+  keywords: ["Full Stack Developer", "Cloud Engineer", "React", "Next.js", "AWS", "TypeScript", "Portfolio"],
   authors: [{ name: "Abdul Rehman" }],
   creator: "Abdul Rehman",
   openGraph: {
     title: "Abdul Rehman - Full Stack Developer & Cloud Engineer",
-    description:
-      "Full Stack Developer & Cloud Engineer specializing in React, Next.js, AWS, and enterprise applications.",
+    description: "Professional portfolio showcasing modern web development and cloud engineering expertise.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: "Abdul Rehman - Full Stack Developer & Cloud Engineer",
-    description:
-      "Full Stack Developer & Cloud Engineer specializing in React, Next.js, AWS, and enterprise applications.",
+    description: "Professional portfolio showcasing modern web development and cloud engineering expertise.",
   },
-  icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" },
-    ],
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

@@ -1,13 +1,13 @@
-import HeroSection from "../../components/hero-section.component";
-import AboutMe from "../../components/about-me.component";
-import ProjectsSection from "../../components/projects-section.component";
-import TestimonialsSection from "../../components/testimonials-section";
-import ContactSection from "../../components/contact-section.component";
-import Footer from "../../components/footer.component";
+import HeroSection from "../components/hero-section.component";
+import AboutMe from "../components/about-me.component";
+import ProjectsSection from "../components/projects-section.component";
+import TestimonialsSection from "../components/testimonials-section";
+import ContactSection from "../components/contact-section.component";
+import Footer from "../components/footer.component";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-900 light:bg-slate-50">
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-900">
       <HeroSection />
       <AboutMe />
       <ProjectsSection />
