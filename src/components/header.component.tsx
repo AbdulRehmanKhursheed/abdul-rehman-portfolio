@@ -161,7 +161,11 @@ const Header = () => {
 
             <motion.button
               onClick={() => scrollToSection("contact")}
-              className="px-6 py-3 bg-gradient-to-r from-indigo-500 via-cyan-400 to-purple-500 text-white font-semibold rounded-xl hover:from-indigo-600 hover:via-cyan-500 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2 group"
+              className="px-6 py-3 font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2 group"
+              style={{
+                background: `linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent-purple)))`,
+                color: `rgb(var(--primary-foreground))`
+              }}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -268,7 +272,11 @@ const Header = () => {
 
                   <motion.button
                     onClick={() => scrollToSection("contact")}
-                    className="w-full px-6 py-4 bg-gradient-to-r from-indigo-500 via-cyan-400 to-purple-500 text-white font-semibold rounded-xl hover:from-indigo-600 hover:via-cyan-500 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+                    className="w-full px-6 py-4 font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+                    style={{
+                      background: `linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent-purple)))`,
+                      color: `rgb(var(--primary-foreground))`
+                    }}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >

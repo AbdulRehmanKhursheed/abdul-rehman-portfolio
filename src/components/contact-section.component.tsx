@@ -139,7 +139,12 @@ const ContactSection = () => {
           {/* Section Header */}
           <motion.div className="text-center mb-16" variants={itemVariants}>
             <motion.div
-              className="inline-flex items-center space-x-2 px-4 py-2 bg-orange-900/20 border border-orange-800 rounded-full text-orange-300 font-medium mb-6 light:bg-orange-50 light:border-orange-200 light:text-orange-700"
+              className="inline-flex items-center space-x-2 px-4 py-2 rounded-full font-medium mb-6"
+              style={{
+                background: `rgb(var(--surface-secondary))`,
+                border: `1px solid rgb(var(--border))`,
+                color: `rgb(var(--text-primary))`
+              }}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
@@ -198,7 +203,11 @@ const ContactSection = () => {
               {/* Availability Cards */}
               <div className="grid grid-cols-2 gap-4">
                 <motion.div
-                  className="p-6 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-2xl text-center light:bg-white/60 light:border-slate-200"
+                  className="p-6 backdrop-blur-sm rounded-2xl text-center"
+                  style={{
+                    background: `rgb(var(--surface-primary))`,
+                    border: `1px solid rgb(var(--border))`
+                  }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7 }}
@@ -206,16 +215,26 @@ const ContactSection = () => {
                   <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-3">
                     <Zap className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="font-semibold text-slate-100 mb-1 light:text-slate-900">
+                  <h4 
+                    className="font-semibold mb-1"
+                    style={{ color: `rgb(var(--text-primary))` }}
+                  >
                     Available
                   </h4>
-                  <p className="text-sm text-slate-400 light:text-slate-500">
+                  <p 
+                    className="text-sm"
+                    style={{ color: `rgb(var(--text-secondary))` }}
+                  >
                     For new projects
                   </p>
                 </motion.div>
 
                 <motion.div
-                  className="p-6 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-2xl text-center light:bg-white/60 light:border-slate-200"
+                  className="p-6 backdrop-blur-sm rounded-2xl text-center"
+                  style={{
+                    background: `rgb(var(--surface-primary))`,
+                    border: `1px solid rgb(var(--border))`
+                  }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8 }}
@@ -223,10 +242,16 @@ const ContactSection = () => {
                   <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-xl flex items-center justify-center mx-auto mb-3">
                     <Clock className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="font-semibold text-slate-100 mb-1 light:text-slate-900">
+                  <h4 
+                    className="font-semibold mb-1"
+                    style={{ color: `rgb(var(--text-primary))` }}
+                  >
                     Response Time
                   </h4>
-                  <p className="text-sm text-slate-400 light:text-slate-500">
+                  <p 
+                    className="text-sm"
+                    style={{ color: `rgb(var(--text-secondary))` }}
+                  >
                     Within 24 hours
                   </p>
                 </motion.div>
@@ -245,11 +270,18 @@ const ContactSection = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-3 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-xl hover:bg-slate-800 hover:shadow-lg transition-all duration-300 ${social.color} light:bg-white/60 light:border-slate-200 light:hover:bg-white`}
+                    className="p-3 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300"
+                    style={{
+                      background: `rgb(var(--surface-secondary))`,
+                      border: `1px solid rgb(var(--border))`
+                    }}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <social.icon className="w-5 h-5 text-slate-400 light:text-slate-600" />
+                    <social.icon 
+                      className="w-5 h-5" 
+                      style={{ color: `rgb(var(--text-secondary))` }}
+                    />
                   </motion.a>
                 ))}
               </motion.div>
@@ -257,7 +289,13 @@ const ContactSection = () => {
 
             {/* Right Column - Contact Form */}
             <motion.div variants={itemVariants}>
-              <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 shadow-xl light:bg-white/60 light:border-slate-200">
+              <div 
+                className="backdrop-blur-sm rounded-2xl p-8 shadow-xl"
+                style={{
+                  background: `rgb(var(--surface-primary))`,
+                  border: `1px solid rgb(var(--border))`
+                }}
+              >
                 <h3 className="text-2xl font-bold heading-gradient mb-6">
                   Send a Message
                 </h3>
@@ -268,7 +306,11 @@ const ContactSection = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4 }}
                   >
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2 light:text-slate-700">
+                    <label 
+                      htmlFor="name" 
+                      className="block text-sm font-medium mb-2"
+                      style={{ color: `rgb(var(--text-primary))` }}
+                    >
                       Name
                     </label>
                     <input
@@ -278,7 +320,12 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 text-slate-100 placeholder-slate-400 light:bg-white light:border-slate-300 light:text-slate-900 light:placeholder-slate-500"
+                      className="w-full px-4 py-3 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
+                      style={{
+                        background: `rgb(var(--surface-secondary))`,
+                        border: `1px solid rgb(var(--border))`,
+                        color: `rgb(var(--text-primary))`
+                      }}
                       placeholder="Your name"
                     />
                   </motion.div>
@@ -288,7 +335,11 @@ const ContactSection = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.5 }}
                   >
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2 light:text-slate-700">
+                    <label 
+                      htmlFor="email" 
+                      className="block text-sm font-medium mb-2"
+                      style={{ color: `rgb(var(--text-primary))` }}
+                    >
                       Email
                     </label>
                     <input
@@ -298,7 +349,12 @@ const ContactSection = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 text-slate-100 placeholder-slate-400 light:bg-white light:border-slate-300 light:text-slate-900 light:placeholder-slate-500"
+                      className="w-full px-4 py-3 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
+                      style={{
+                        background: `rgb(var(--surface-secondary))`,
+                        border: `1px solid rgb(var(--border))`,
+                        color: `rgb(var(--text-primary))`
+                      }}
                       placeholder="your.email@example.com"
                     />
                   </motion.div>
@@ -308,7 +364,11 @@ const ContactSection = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.6 }}
                   >
-                    <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2 light:text-slate-700">
+                    <label 
+                      htmlFor="message" 
+                      className="block text-sm font-medium mb-2"
+                      style={{ color: `rgb(var(--text-primary))` }}
+                    >
                       Message
                     </label>
                     <textarea
@@ -318,7 +378,12 @@ const ContactSection = () => {
                       onChange={handleInputChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 text-slate-100 placeholder-slate-400 resize-none light:bg-white light:border-slate-300 light:text-slate-900 light:placeholder-slate-500"
+                      className="w-full px-4 py-3 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 resize-none"
+                      style={{
+                        background: `rgb(var(--surface-secondary))`,
+                        border: `1px solid rgb(var(--border))`,
+                        color: `rgb(var(--text-primary))`
+                      }}
                       placeholder="Tell me about your project..."
                     />
                   </motion.div>

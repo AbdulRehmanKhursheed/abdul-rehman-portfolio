@@ -302,7 +302,12 @@ const ProjectsSection = () => {
                     )}
 
                     {/* Project Image Placeholder */}
-                    <div className="relative h-40 bg-gradient-to-br from-slate-800 to-slate-700 rounded-xl mb-4 overflow-hidden light:from-slate-100 light:to-slate-200">
+                    <div 
+                      className="relative h-40 rounded-xl mb-4 overflow-hidden"
+                      style={{
+                        background: `linear-gradient(135deg, rgb(var(--surface-tertiary)), rgb(var(--surface-secondary)))`
+                      }}
+                    >
                       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-cyan-500/10" />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center">
@@ -313,7 +318,10 @@ const ProjectsSection = () => {
                               className=""
                             />
                           </div>
-                          <h3 className="font-semibold text-slate-300 light:text-slate-700">
+                          <h3 
+                            className="font-semibold"
+                            style={{ color: `rgb(var(--text-primary))` }}
+                          >
                             {project.projectName}
                           </h3>
                         </div>
@@ -398,12 +406,19 @@ const ProjectsSection = () => {
             {/* CTA Section */}
             <motion.div className="text-center mt-16" variants={itemVariants}>
               <motion.div
-                className="inline-flex items-center space-x-2 px-6 py-3 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group light:bg-white/60 light:border-slate-200"
+                className="inline-flex items-center space-x-2 px-6 py-3 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                style={{
+                  background: `rgb(var(--surface-primary))`,
+                  border: `1px solid rgb(var(--border))`
+                }}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Eye className="w-5 h-5 text-indigo-400 light:text-indigo-600" />
-                <span className="font-medium text-slate-300 light:text-slate-700">
+                <Eye className="w-5 h-5 text-indigo-500" />
+                <span 
+                  className="font-medium"
+                  style={{ color: `rgb(var(--text-primary))` }}
+                >
                   View All Projects
                 </span>
               </motion.div>
