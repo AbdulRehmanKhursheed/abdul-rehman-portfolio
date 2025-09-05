@@ -61,7 +61,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-slate-950 text-white">
+    <footer 
+      className="relative overflow-hidden"
+      style={{ 
+        background: `rgb(var(--surface-tertiary))`,
+        color: `rgb(var(--text-primary))`
+      }}
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-radial opacity-50" />
       <div className="absolute top-20 left-20 w-64 h-64 bg-indigo-900/20 rounded-full blur-3xl" />

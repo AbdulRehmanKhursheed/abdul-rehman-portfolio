@@ -119,7 +119,11 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-slate-900 light:bg-slate-50 relative overflow-hidden">
+    <section 
+      id="contact" 
+      className="section-padding relative overflow-hidden"
+      style={{ background: `rgb(var(--surface-secondary))` }}
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-radial opacity-30" />
       <div className="absolute top-20 left-20 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl" />

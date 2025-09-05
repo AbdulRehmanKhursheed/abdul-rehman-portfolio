@@ -199,7 +199,8 @@ const ProjectsSection = () => {
     <>
       <section
         id="projects"
-        className="section-padding bg-slate-900 light:bg-slate-50 relative overflow-hidden"
+        className="section-padding relative overflow-hidden"
+        style={{ background: `rgb(var(--surface-primary))` }}
       >
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-radial opacity-30" />

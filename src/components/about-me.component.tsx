@@ -113,7 +113,8 @@ const AboutMe = () => {
   return (
     <section
       id="about"
-      className="section-padding bg-slate-800 light:bg-white relative overflow-hidden"
+      className="section-padding relative overflow-hidden"
+      style={{ background: `rgb(var(--surface-secondary))` }}
     >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-radial opacity-30" />

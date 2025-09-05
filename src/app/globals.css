@@ -6,50 +6,72 @@
 
 @layer base {
   :root {
-    /* Light Theme (Default) */
-    --background: 255 255 255 ; /* #FFFFFF */
-    --foreground: 15 23 42; /* #0F172A */
-    --card: 255 255 255; /* #FFFFFF */
-    --card-foreground: 15 23 42; /* #0F172A */
-    --popover: 255 255 255; /* #FFFFFF */
-    --popover-foreground: 15 23 42; /* #0F172A */
-    --primary: 99 102 241; /* #6366F1 */
-    --primary-foreground: 248 250 252; /* #F8FAFC */
-    --secondary: 34 211 238; /* #22D3EE */
-    --secondary-foreground: 15 23 42; /* #0F172A */
-    --muted: 241 245 249; /* #F1F5F9 */
-    --muted-foreground: 100 116 139; /* #64748B */
-    --accent: 34 211 238; /* #22D3EE */
-    --accent-foreground: 15 23 42; /* #0F172A */
-    --destructive: 244 63 94; /* #F43F5E */
-    --destructive-foreground: 248 250 252; /* #F8FAFC */
-    --border: 226 232 240; /* #E2E8F0 */
-    --input: 226 232 240; /* #E2E8F0 */
-    --ring: 99 102 241; /* #6366F1 */
+    /* Josh-Inspired Light Theme */
+    --background: 255 255 255; /* Pure white */
+    --foreground: 28 25 23; /* Warm dark brown */
+    --card: 255 255 255; /* Pure white */
+    --card-foreground: 28 25 23; /* Warm dark brown */
+    --popover: 255 255 255; /* Pure white */
+    --popover-foreground: 28 25 23; /* Warm dark brown */
+    --primary: 79 70 229; /* Refined indigo */
+    --primary-foreground: 255 255 255; /* White */
+    --secondary: 245 158 11; /* Warm amber */
+    --secondary-foreground: 28 25 23; /* Warm dark brown */
+    --muted: 250 250 249; /* Warm off-white */
+    --muted-foreground: 120 113 108; /* Warm gray */
+    --accent: 245 158 11; /* Warm amber */
+    --accent-foreground: 28 25 23; /* Warm dark brown */
+    --destructive: 239 68 68; /* Soft red */
+    --destructive-foreground: 255 255 255; /* White */
+    --border: 231 229 228; /* Warm light gray */
+    --input: 250 250 249; /* Warm off-white */
+    --ring: 79 70 229; /* Refined indigo */
     --radius: 0.75rem;
+    
+    /* Custom Josh-inspired colors */
+    --text-primary: 28 25 23; /* Rich warm black */
+    --text-secondary: 87 83 78; /* Warm medium gray */
+    --text-tertiary: 168 162 158; /* Light warm gray */
+    --surface-primary: 255 255 255; /* Pure white */
+    --surface-secondary: 250 250 249; /* Warm off-white */
+    --surface-tertiary: 245 245 244; /* Light warm gray */
+    --accent-purple: 139 92 246; /* Soft purple */
+    --accent-blue: 59 130 246; /* Soft blue */
+    --accent-green: 34 197 94; /* Soft green */
   }
 
   .dark {
-    /* Neo-Aura Gradient Dark Theme */
-    --background: 15 23 42; /* #0F172A */
-    --foreground: 248 250 252; /* #F8FAFC */
-    --card: 15 23 42; /* #0F172A */
-    --card-foreground: 248 250 252; /* #F8FAFC */
-    --popover: 15 23 42; /* #0F172A */
-    --popover-foreground: 248 250 252; /* #F8FAFC */
-    --primary: 99 102 241; /* #6366F1 */
-    --primary-foreground: 248 250 252; /* #F8FAFC */
-    --secondary: 34 211 238; /* #22D3EE */
-    --secondary-foreground: 15 23 42; /* #0F172A */
-    --muted: 148 163 184; /* #94A3B8 */
-    --muted-foreground: 148 163 184; /* #94A3B8 */
-    --accent: 34 211 238; /* #22D3EE */
-    --accent-foreground: 15 23 42; /* #0F172A */
-    --destructive: 244 63 94; /* #F43F5E */
-    --destructive-foreground: 248 250 252; /* #F8FAFC */
-    --border: 30 41 59; /* #1E293B */
-    --input: 30 41 59; /* #1E293B */
-    --ring: 99 102 241; /* #6366F1 */
+    /* Josh-Inspired Dark Theme */
+    --background: 12 10 9; /* Rich warm black */
+    --foreground: 250 250 249; /* Warm off-white */
+    --card: 28 25 23; /* Dark warm brown */
+    --card-foreground: 250 250 249; /* Warm off-white */
+    --popover: 28 25 23; /* Dark warm brown */
+    --popover-foreground: 250 250 249; /* Warm off-white */
+    --primary: 129 140 248; /* Lighter indigo for dark mode */
+    --primary-foreground: 12 10 9; /* Rich warm black */
+    --secondary: 251 191 36; /* Brighter amber for dark mode */
+    --secondary-foreground: 12 10 9; /* Rich warm black */
+    --muted: 41 37 36; /* Dark warm gray */
+    --muted-foreground: 168 162 158; /* Light warm gray */
+    --accent: 251 191 36; /* Brighter amber */
+    --accent-foreground: 12 10 9; /* Rich warm black */
+    --destructive: 248 113 113; /* Lighter red for dark mode */
+    --destructive-foreground: 12 10 9; /* Rich warm black */
+    --border: 68 64 60; /* Medium warm gray */
+    --input: 41 37 36; /* Dark warm gray */
+    --ring: 129 140 248; /* Lighter indigo */
+    
+    /* Custom Josh-inspired dark colors */
+    --text-primary: 250 250 249; /* Warm off-white */
+    --text-secondary: 214 211 209; /* Light warm gray */
+    --text-tertiary: 120 113 108; /* Medium warm gray */
+    --surface-primary: 12 10 9; /* Rich warm black */
+    --surface-secondary: 28 25 23; /* Dark warm brown */
+    --surface-tertiary: 41 37 36; /* Medium warm gray */
+    --accent-purple: 167 139 250; /* Lighter purple */
+    --accent-blue: 96 165 250; /* Lighter blue */
+    --accent-green: 74 222 128; /* Lighter green */
   }
 
   html {
@@ -58,22 +80,14 @@
   }
   
   body {
-    @apply bg-slate-50 text-slate-900 font-sans antialiased transition-colors duration-300;
+    @apply font-sans antialiased transition-colors duration-500;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-    background: #F8FAFC;
-  }
-
-  .dark body {
-    @apply bg-slate-900 text-slate-50;
-    background: #0F172A;
+    background: rgb(var(--background));
+    color: rgb(var(--foreground));
   }
 
   * {
-    @apply border-slate-200;
-  }
-
-  .dark * {
-    @apply border-slate-800;
+    border-color: rgb(var(--border));
   }
 }
 
@@ -82,56 +96,91 @@
     text-wrap: balance;
   }
   
-  /* Neo-Aura Gradient Text */
+  /* Josh-Inspired Gradient Text */
   .gradient-text {
-    @apply bg-gradient-to-r from-indigo-500 via-cyan-400 to-purple-500 bg-clip-text text-transparent;
+    background: linear-gradient(135deg, rgb(var(--accent-purple)), rgb(var(--accent-blue)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .gradient-text-secondary {
-    @apply bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent;
+    background: linear-gradient(135deg, rgb(var(--accent-blue)), rgb(var(--accent-green)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
-  /* Glass Effect with Neo-Aura Theme */
+  /* Josh-Inspired Glass Effect */
   .glass-effect {
-    @apply backdrop-blur-xl bg-white/70 border border-slate-200/50 shadow-2xl;
-  }
-
-  .dark .glass-effect {
-    @apply bg-slate-900/70 border-slate-800/50;
-  }
-
-  .glass-effect-dark {
-    @apply backdrop-blur-xl bg-slate-900/80 border border-slate-800/50 shadow-2xl;
+    backdrop-filter: blur(20px);
+    background: rgba(var(--surface-primary), 0.8);
+    border: 1px solid rgb(var(--border));
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
   }
   
-  /* Enhanced Card Hover Effects */
+  /* Josh-Inspired Card Hover Effects */
   .card-hover {
-    @apply transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] hover:shadow-indigo-500/20;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(var(--accent-purple), 0.15);
   }
 
   .card-hover-subtle {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:shadow-indigo-500/10;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  /* Neo-Aura Button Styles */
+  .card-hover-subtle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Josh-Inspired Button Styles */
   .button-primary {
-    @apply px-8 py-4 bg-gradient-to-r from-indigo-500 via-cyan-400 to-purple-500 text-white font-semibold rounded-xl hover:from-indigo-600 hover:via-cyan-500 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-indigo-500/25 transform hover:-translate-y-1 hover:scale-105;
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent-purple)));
+    color: rgb(var(--primary-foreground));
+    font-weight: 600;
+    border-radius: 0.75rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 14px 0 rgba(var(--primary), 0.25);
+  }
+  
+  .button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px 0 rgba(var(--primary), 0.35);
   }
   
   .button-secondary {
-    @apply px-8 py-4 border-2 border-slate-300 text-slate-700 font-semibold rounded-xl hover:border-slate-400 hover:bg-slate-50 hover:text-slate-900 transition-all duration-300;
+    padding: 0.75rem 2rem;
+    border: 2px solid rgb(var(--border));
+    color: rgb(var(--text-primary));
+    font-weight: 600;
+    border-radius: 0.75rem;
+    background: rgb(var(--surface-primary));
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .dark .button-secondary {
-    @apply border-slate-700 text-slate-300 hover:border-slate-600 hover:bg-slate-800 hover:text-slate-100;
+  .button-secondary:hover {
+    border-color: rgb(var(--primary));
+    background: rgb(var(--surface-secondary));
+    transform: translateY(-1px);
   }
 
   .button-ghost {
-    @apply px-6 py-3 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all duration-200;
+    padding: 0.5rem 1rem;
+    color: rgb(var(--text-secondary));
+    border-radius: 0.5rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .dark .button-ghost {
-    @apply text-slate-400 hover:text-slate-100 hover:bg-slate-800;
+  .button-ghost:hover {
+    color: rgb(var(--text-primary));
+    background: rgb(var(--surface-secondary));
   }
 
   /* Layout Utilities */
@@ -143,30 +192,19 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Neo-Aura Heading Gradients */
+  /* Josh-Inspired Heading Gradients */
   .heading-gradient {
-    @apply bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent;
-  }
-
-  .dark .heading-gradient {
-    @apply from-slate-50 via-slate-100 to-slate-50;
+    color: rgb(var(--text-primary));
+    font-weight: 700;
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-slate-600 to-slate-500 bg-clip-text text-transparent;
+    color: rgb(var(--text-secondary));
   }
 
-  .dark .text-gradient {
-    @apply from-slate-400 to-slate-300;
-  }
-
-  /* Neo-Aura Background Gradients */
+  /* Josh-Inspired Background Gradients */
   .bg-gradient-radial {
-    background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.1) 0%, rgba(34, 211, 238, 0.05) 50%, transparent 100%);
-  }
-
-  .dark .bg-gradient-radial {
-    background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.15) 0%, rgba(34, 211, 238, 0.1) 50%, transparent 100%);
+    background: radial-gradient(ellipse at center, rgba(var(--accent-purple), 0.08) 0%, rgba(var(--accent-blue), 0.04) 50%, transparent 100%);
   }
 
   .bg-gradient-mesh {
@@ -249,13 +287,21 @@
     @apply bg-purple-900/50 text-purple-300 hover:bg-purple-900;
   }
 
-  /* Neo-Aura Project Cards */
+  /* Josh-Inspired Project Cards */
   .project-card {
-    @apply bg-white rounded-2xl p-6 shadow-lg border border-slate-200 hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-500 hover:-translate-y-2 min-h-[500px];
+    background: rgb(var(--surface-primary));
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid rgb(var(--border));
+    min-height: 500px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   }
 
-  .dark .project-card {
-    @apply bg-slate-800 border-slate-700;
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(var(--accent-purple), 0.15);
+    border-color: rgba(var(--accent-purple), 0.2);
   }
 
   /* Neo-Aura Timeline */
