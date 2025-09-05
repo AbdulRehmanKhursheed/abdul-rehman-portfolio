@@ -2,19 +2,19 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  ExternalLink, 
-  Github, 
-  Filter, 
-  Code, 
-  Smartphone, 
-  Cloud, 
+import {
+  ExternalLink,
+  Github,
+  Filter,
+  Code,
+  Smartphone,
+  Cloud,
   Database,
   Eye,
   ArrowRight,
   Star,
   Users,
-  Zap
+  Zap,
 } from "lucide-react";
 import projects from "../data/projects";
 import React from "react";
@@ -23,13 +23,22 @@ import { ProjectModal } from "./project-modal";
 const ProjectsSection = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
-  const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState<
+    number | null
+  >(null);
 
-  const categories = ["All", "Web App", "Mobile App", "Infrastructure", "Other"];
-  
-  const filteredProjects = selectedCategory === "All" 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+  const categories = [
+    "All",
+    "Web App",
+    "Mobile App",
+    "Infrastructure",
+    "Other",
+  ];
+
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -56,13 +65,13 @@ const ProjectsSection = () => {
 
   const cardVariants = {
     hidden: { opacity: 0, scale: 0.9 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
       transition: {
         duration: 0.5,
         ease: "easeOut",
-      }
+      },
     },
     hover: {
       y: -10,
@@ -70,8 +79,8 @@ const ProjectsSection = () => {
       transition: {
         duration: 0.3,
         ease: "easeOut",
-      }
-    }
+      },
+    },
   };
 
   const getCategoryIcon = (category: string) => {
@@ -110,7 +119,10 @@ const ProjectsSection = () => {
 
   return (
     <>
-      <section id="projects" className="section-padding bg-slate-900 light:bg-slate-50 relative overflow-hidden">
+      <section
+        id="projects"
+        className="section-padding bg-slate-900 light:bg-slate-50 relative overflow-hidden"
+      >
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-radial opacity-30" />
         <div className="absolute top-20 left-20 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl" />
@@ -134,20 +146,21 @@ const ProjectsSection = () => {
                 <Code className="w-4 h-4" />
                 <span>My Work</span>
               </motion.div>
-              
+
               <h2 className="text-4xl lg:text-5xl font-bold heading-gradient mb-6">
                 Featured Projects
               </h2>
-              
+
               <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed light:text-slate-600">
-                Here are some of my recent projects that showcase my expertise in full-stack development, 
-                cloud infrastructure, and mobile applications. Each project demonstrates different aspects 
-                of modern software development.
+                Here are some of my recent projects that showcase my expertise
+                in full-stack development, cloud infrastructure, and mobile
+                applications. Each project demonstrates different aspects of
+                modern software development.
               </p>
             </motion.div>
 
             {/* Filter Tabs */}
-            <motion.div 
+            <motion.div
               className="flex flex-wrap justify-center gap-4 mb-12"
               variants={itemVariants}
             >
@@ -170,7 +183,7 @@ const ProjectsSection = () => {
             </motion.div>
 
             {/* Projects Grid */}
-            <motion.div 
+            <motion.div
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
               variants={containerVariants}
             >
@@ -190,8 +203,15 @@ const ProjectsSection = () => {
                   >
                     {/* Category Badge */}
                     <div className="absolute top-4 right-4 z-10">
-                      <div className={`px-3 py-1 bg-gradient-to-r ${getCategoryColor(project.category)} text-white text-xs font-medium rounded-full flex items-center space-x-1`}>
-                        {React.createElement(getCategoryIcon(project.category), { size: 12 })}
+                      <div
+                        className={`px-3 py-1 bg-gradient-to-r ${getCategoryColor(
+                          project.category
+                        )} text-white text-xs font-medium rounded-full flex items-center space-x-1`}
+                      >
+                        {React.createElement(
+                          getCategoryIcon(project.category),
+                          { size: 12 }
+                        )}
                         <span>{project.category}</span>
                       </div>
                     </div>
@@ -212,21 +232,27 @@ const ProjectsSection = () => {
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center">
                           <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                            {React.createElement(getCategoryIcon(project.category), { 
-                              size: 24, 
-                              className: "text-white" 
-                            })}
+                            {React.createElement(
+                              getCategoryIcon(project.category),
+                              {
+                                size: 24,
+                                className: "text-white",
+                              }
+                            )}
                           </div>
-                          <h3 className="font-semibold text-slate-300 light:text-slate-700">{project.projectName}</h3>
+                          <h3 className="font-semibold text-slate-300 light:text-slate-700">
+                            {project.projectName}
+                          </h3>
                         </div>
                       </div>
-                      
+
                       {/* Hover Overlay */}
                       <motion.div
                         className="absolute inset-0 bg-gradient-to-br from-indigo-600/90 to-cyan-600/90 flex items-center justify-center"
                         initial={{ opacity: 0 }}
-                        animate={{ 
-                          opacity: hoveredProject === project.projectName ? 1 : 0 
+                        animate={{
+                          opacity:
+                            hoveredProject === project.projectName ? 1 : 0,
                         }}
                         transition={{ duration: 0.3 }}
                       >
@@ -247,7 +273,7 @@ const ProjectsSection = () => {
                       <h3 className="text-xl font-bold heading-gradient group-hover:gradient-text transition-all duration-300">
                         {project.projectName}
                       </h3>
-                      
+
                       <p className="text-slate-400 leading-relaxed line-clamp-3 light:text-slate-600">
                         {project.description}
                       </p>
@@ -276,17 +302,13 @@ const ProjectsSection = () => {
                       <div className="flex items-center justify-between pt-4 border-t border-slate-700 light:border-slate-200">
                         <div className="flex items-center space-x-4 text-sm text-slate-400 light:text-slate-500">
                           <div className="flex items-center space-x-1">
-                            <Users size={14} />
-                            <span>Enterprise</span>
-                          </div>
-                          <div className="flex items-center space-x-1">
                             <Zap size={14} />
                             <span>High Performance</span>
                           </div>
                         </div>
-                        
+
                         <motion.div
-                          className="flex items-center space-x-1 text-indigo-400 font-medium group/link light:text-indigo-600"
+                          className="flex items-center  text-white-400 font-small group/link light:text-indigo-400 bg-indigo-400 rounded-md px-2 py-1"
                           whileHover={{ x: 5 }}
                         >
                           <span>View Details</span>
@@ -300,17 +322,16 @@ const ProjectsSection = () => {
             </motion.div>
 
             {/* CTA Section */}
-            <motion.div 
-              className="text-center mt-16"
-              variants={itemVariants}
-            >
+            <motion.div className="text-center mt-16" variants={itemVariants}>
               <motion.div
                 className="inline-flex items-center space-x-2 px-6 py-3 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group light:bg-white/60 light:border-slate-200"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Eye className="w-5 h-5 text-indigo-400 light:text-indigo-600" />
-                <span className="font-medium text-slate-300 light:text-slate-700">View All Projects</span>
+                <span className="font-medium text-slate-300 light:text-slate-700">
+                  View All Projects
+                </span>
               </motion.div>
             </motion.div>
           </motion.div>
