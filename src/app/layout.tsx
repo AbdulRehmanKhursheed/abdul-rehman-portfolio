@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Abdul Rehman - Senior Software Engineer & Full Stack Developer",
-  description: "Professional portfolio of Abdul Rehman, a Senior Software Engineer with 4+ years of experience in full-stack development, mobile applications, and cloud infrastructure. Specializing in React, Next.js, Android, AWS, and modern web technologies.",
+  description: "Professional portfolio of Abdul Rehman, a Senior Software Engineer with 4.5+ years of experience in full-stack development, mobile applications, and cloud infrastructure. Specializing in React, Next.js, Android, AWS, and modern web technologies.",
   keywords: ["Senior Software Engineer", "Full Stack Developer", "React", "Next.js", "Android", "Kotlin", "AWS", "TypeScript", "Mobile Development", "Portfolio", "Pakistan"],
   authors: [{ name: "Abdul Rehman" }],
   creator: "Abdul Rehman",

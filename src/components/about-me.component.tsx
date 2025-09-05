@@ -81,7 +81,7 @@ const AboutMe = () => {
   ];
 
   const stats = [
-    { label: "Years Experience", value: "4+", icon: Clock },
+    { label: "Years Experience", value: "4.5+", icon: Clock },
     { label: "Projects Delivered", value: "20+", icon: Award },
     { label: "Technologies Mastered", value: "15+", icon: Code },
     { label: "Happy Clients", value: "50+", icon: Users },
@@ -187,7 +187,7 @@ const AboutMe = () => {
                   My Journey
                 </h3>
                 <p className="text-slate-400 leading-relaxed mb-6 light:text-slate-600">
-                  I&apos;ve spent the last 4+ years immersed in the world of
+                  I&apos;ve spent the last 4.5+ years immersed in the world of
                   software development, working on projects that range from
                   mobile applications to enterprise-scale web platforms. My
                   passion lies in creating solutions that not only work

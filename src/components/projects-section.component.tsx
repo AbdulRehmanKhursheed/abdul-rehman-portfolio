@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import {
   ExternalLink,
   Github,
@@ -19,6 +20,96 @@ import {
 import projects from "../data/projects";
 import React from "react";
 import { ProjectModal } from "./project-modal";
+
+// Helper functions
+const getCategoryIcon = (category: string) => {
+  switch (category) {
+    case "Web App":
+      return Code;
+    case "Mobile App":
+      return Smartphone;
+    case "Infrastructure":
+      return Cloud;
+    default:
+      return Database;
+  }
+};
+
+const getFaviconUrl = (url: string) => {
+  if (!url || url === "#") return null;
+  try {
+    const domain = new URL(url).hostname;
+    // Use multiple favicon services for better reliability
+    return `https://favicon.im/${domain}?larger=true`;
+  } catch {
+    return null;
+  }
+};
+
+// Project Icon Component with Local Icon and Favicon Support
+const ProjectIcon = ({
+  project,
+  size = 24,
+  className = "",
+}: {
+  project: any;
+  size?: number;
+  className?: string;
+}) => {
+  const [faviconError, setFaviconError] = useState(false);
+  const [faviconLoaded, setFaviconLoaded] = useState(false);
+  const CategoryIcon = getCategoryIcon(project.category);
+
+  // Use local icon if available
+  if (project.localIcon) {
+    return (
+      <Image
+        src={project.localIcon}
+        alt={`${project.projectName} icon`}
+        width={size}
+        height={size}
+        className={`rounded-sm ${className}`}
+      />
+    );
+  }
+
+  // Fallback to favicon
+  const faviconUrl = getFaviconUrl(project.link);
+  if (faviconUrl && !faviconError) {
+    return (
+      <div className="relative flex items-center justify-center">
+        <Image
+          src={faviconUrl}
+          alt={`${project.projectName} favicon`}
+          width={size}
+          height={size}
+          className={`rounded-sm transition-opacity duration-200 ${
+            faviconLoaded ? "opacity-100" : "opacity-0"
+          } ${className}`}
+          onError={() => setFaviconError(true)}
+          onLoad={(e) => {
+            const img = e.target as HTMLImageElement;
+            // Check if the image is actually loaded and not a tiny/broken icon
+            if (img.naturalWidth >= 16 && img.naturalHeight >= 16) {
+              setFaviconLoaded(true);
+            } else {
+              setFaviconError(true);
+            }
+          }}
+          unoptimized
+        />
+        {!faviconLoaded && !faviconError && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <CategoryIcon size={size} className={`text-white ${className}`} />
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // Final fallback to category icon
+  return <CategoryIcon size={size} className={`text-white ${className}`} />;
+};
 
 const ProjectsSection = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
@@ -81,19 +172,6 @@ const ProjectsSection = () => {
         ease: "easeOut",
       },
     },
-  };
-
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case "Web App":
-        return Code;
-      case "Mobile App":
-        return Smartphone;
-      case "Infrastructure":
-        return Cloud;
-      default:
-        return Database;
-    }
   };
 
   const getCategoryColor = (category: string) => {
@@ -208,10 +286,7 @@ const ProjectsSection = () => {
                           project.category
                         )} text-white text-xs font-medium rounded-full flex items-center space-x-1`}
                       >
-                        {React.createElement(
-                          getCategoryIcon(project.category),
-                          { size: 12 }
-                        )}
+                        <ProjectIcon project={project} size={12} className="" />
                         <span>{project.category}</span>
                       </div>
                     </div>
@@ -232,13 +307,11 @@ const ProjectsSection = () => {
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center">
                           <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                            {React.createElement(
-                              getCategoryIcon(project.category),
-                              {
-                                size: 24,
-                                className: "text-white",
-                              }
-                            )}
+                            <ProjectIcon
+                              project={project}
+                              size={24}
+                              className=""
+                            />
                           </div>
                           <h3 className="font-semibold text-slate-300 light:text-slate-700">
                             {project.projectName}
@@ -298,8 +371,6 @@ const ProjectsSection = () => {
                         )}
                       </div>
 
-                   
-                      
                       {/* View Details Button - Always at bottom */}
                       <motion.div
                         className="flex justify-center items-center text-white font-medium group/link bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-lg p-3 mt-auto"

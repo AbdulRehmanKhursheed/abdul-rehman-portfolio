@@ -5,6 +5,7 @@ export interface Project {
   technologies: string[];
   category: "Web App" | "Mobile App" | "Infrastructure" | "Other";
   featured?: boolean;
+  localIcon?: string;
 }
 
 const projects: Project[] = [
@@ -16,6 +17,7 @@ const projects: Project[] = [
     technologies: [
       "React",
       "Next.js",
+      "SSR",
       "TypeScript",
       "Node.js",
       "MUI",
@@ -25,16 +27,16 @@ const projects: Project[] = [
       "AWS",
       "CloudFront",
       "Lambda",
-      "PostgreSQL",
+      "WAF",
     ],
     category: "Web App",
     featured: true,
   },
   {
-    projectName: "Bazaar Customer Mobile App",
+    projectName: "Bazaar - Grocery Delivery App",
     description:
-      "Native Android application built with Kotlin for B2B & B2C customers. Features comprehensive product browsing, cart management, secure payment integration, and real-time order tracking. Implements MVVM architecture with Jetpack Compose UI, Room database, and Firebase integration. Serves thousands of daily active users with seamless performance.",
-    link: "https://play.google.com/store/apps/details?id=com.bazaar.customer",
+      "Pakistan's leading grocery delivery app serving 1M+ downloads with 4.3★ rating. Features next-day delivery, 3,000+ items across 30+ categories, real-time order tracking, and multiple payment options. Built with native Android architecture serving households and businesses in Karachi, Lahore, and Islamabad.",
+    link: "https://play.google.com/store/apps/details?id=bazaar.tech.com&hl=en",
     technologies: [
       "Android",
       "Kotlin",
@@ -48,13 +50,13 @@ const projects: Project[] = [
       "Dagger Hilt",
     ],
     category: "Mobile App",
-    featured: true,
+    localIcon: "/images/app-icons/bazaarapplogo.webp",
   },
   {
-    projectName: "Bazaar Agent Mobile App",
+    projectName: "Bazaar Agent App",
     description:
-      "Native Android application empowering field agents with comprehensive tools for daily operations, customer relationship management, and order processing. Features real-time analytics, performance tracking, inventory management, and offline capabilities. Built with modern Android architecture patterns for optimal performance.",
-    link: "https://play.google.com/store/apps/details?id=com.bazaar.agent",
+      "Professional mobile application designed for Bazaar field agents to streamline daily operations. Features comprehensive tools for customer management, order processing, inventory tracking, and performance analytics. Built with modern Android architecture to support agent workflows across Pakistan's major cities.",
+    link: "https://play.google.com/store/apps/details?id=com.tech.bazaar.agent&hl=en",
     technologies: [
       "Android",
       "Kotlin",
@@ -66,7 +68,7 @@ const projects: Project[] = [
       "Analytics",
     ],
     category: "Mobile App",
-    featured: true,
+    localIcon: "/images/app-icons/bazaaragent.webp",
   },
   {
     projectName: "Bazaar Website",
@@ -92,7 +94,6 @@ const projects: Project[] = [
       "PDF Generation",
     ],
     category: "Web App",
-    featured: true,
   },
   {
     projectName: "MYSITE Construction Platform",
@@ -114,56 +115,6 @@ const projects: Project[] = [
       "Remote Work",
     ],
     category: "Web App",
-  },
-  {
-    projectName: "Real-time Chat Application",
-    description:
-      "Scalable real-time messaging platform built with Socket.io, Redis, and React. Features include group chats, file sharing, message encryption, and presence indicators. Supports thousands of concurrent users with horizontal scaling and message persistence.",
-    link: "#",
-    technologies: [
-      "React",
-      "Node.js",
-      "Socket.io",
-      "Redis",
-      "MongoDB",
-      "JWT",
-      "File Upload",
-      "Encryption",
-    ],
-    category: "Web App",
-  },
-  {
-    projectName: "E-learning Management System",
-    description:
-      "Comprehensive learning management system with video streaming, progress tracking, and interactive assessments. Features include course creation tools, student analytics, payment integration, and mobile-responsive design. Serves educational institutions and corporate training programs.",
-    link: "#",
-    technologies: [
-      "React",
-      "Next.js",
-      "Node.js",
-      "MongoDB",
-      "Video Streaming",
-      "Payment Gateway",
-      "Analytics",
-      "PWA",
-    ],
-    category: "Web App",
-  },
-  {
-    projectName: "Task Management Mobile App",
-    description:
-      "Cross-platform task management application with offline synchronization, team collaboration, and advanced project tracking. Built with React Native, featuring push notifications, file attachments, and real-time updates across devices.",
-    link: "#",
-    technologies: [
-      "React Native",
-      "TypeScript",
-      "SQLite",
-      "Push Notifications",
-      "Offline Sync",
-      "File Upload",
-      "Real-time Updates",
-    ],
-    category: "Mobile App",
   },
 ];
 

@@ -91,7 +91,7 @@ const HeroSection = () => {
 
       {/* Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.1)_1px,transparent_1px)] bg-[size:50px_50px] light:bg-[linear-gradient(rgba(99,102,241,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.05)_1px,transparent_1px)]" />
-      
+
       {/* Animated Particles */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
@@ -155,9 +155,11 @@ const HeroSection = () => {
                 Senior Software Engineer & Full Stack Developer
               </h2>
               <p className="text-lg text-slate-400 leading-relaxed max-w-lg light:text-slate-500">
-                Passionate software engineer with 4+ years of experience building scalable web applications and mobile solutions. 
-                Expert in React, Next.js, Node.js, AWS, and modern development practices. 
-                Proven track record of delivering high-performance applications serving thousands of users.
+                Passionate software engineer with 4.5+ years of experience
+                building scalable web applications and mobile solutions. Expert
+                in React, Next.js, Node.js, AWS, and modern development
+                practices. Proven track record of delivering high-performance
+                applications serving thousands of users.
               </p>
             </motion.div>
 
