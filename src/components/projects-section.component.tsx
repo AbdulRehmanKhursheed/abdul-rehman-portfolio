@@ -217,7 +217,12 @@ const ProjectsSection = () => {
             {/* Section Header */}
             <motion.div className="text-center mb-16" variants={itemVariants}>
               <motion.div
-                className="inline-flex items-center space-x-2 px-4 py-2 bg-indigo-900/20 border border-indigo-800 rounded-full text-indigo-300 font-medium mb-6 light:bg-indigo-50 light:border-indigo-200 light:text-indigo-700"
+                className="inline-flex items-center space-x-2 px-4 py-2 rounded-full font-medium mb-6"
+                style={{
+                  background: `rgb(var(--surface-secondary))`,
+                  border: `1px solid rgb(var(--border))`,
+                  color: `rgb(var(--text-primary))`
+                }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 }}
