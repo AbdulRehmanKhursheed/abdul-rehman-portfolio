@@ -144,7 +144,7 @@ const AboutMe = () => {
               Crafting Digital Excellence
             </h2>
 
-            <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed light:text-slate-600">
+            <p className="text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: `rgb(var(--text-secondary))` }}>
               I&apos;m a passionate Senior Software Engineer with 4+ years of
               experience in full-stack development, mobile applications, and
               cloud infrastructure. I specialize in building scalable,
@@ -160,7 +160,11 @@ const AboutMe = () => {
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                className="text-center p-6 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 light:bg-white/60 light:border-slate-200"
+                className="text-center p-6 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                style={{ 
+                  background: `rgb(var(--surface-primary))`,
+                  border: `1px solid rgb(var(--border))`
+                }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
@@ -172,7 +176,7 @@ const AboutMe = () => {
                 <div className="text-2xl font-bold gradient-text mb-2">
                   {stat.value}
                 </div>
-                <div className="text-sm text-slate-400 light:text-slate-600">
+                <div className="text-sm" style={{ color: `rgb(var(--text-secondary))` }}>
                   {stat.label}
                 </div>
               </motion.div>
@@ -187,7 +191,7 @@ const AboutMe = () => {
                 <h3 className="text-2xl font-bold heading-gradient mb-4">
                   My Journey
                 </h3>
-                <p className="text-slate-400 leading-relaxed mb-6 light:text-slate-600">
+                <p className="leading-relaxed mb-6" style={{ color: `rgb(var(--text-secondary))` }}>
                   I&apos;ve spent the last 4.5+ years immersed in the world of
                   software development, working on projects that range from
                   mobile applications to enterprise-scale web platforms. My
@@ -195,7 +199,7 @@ const AboutMe = () => {
                   flawlessly but also provide exceptional user experiences and
                   drive business value.
                 </p>
-                <p className="text-slate-400 leading-relaxed light:text-slate-600">
+                <p className="leading-relaxed" style={{ color: `rgb(var(--text-secondary))` }}>
                   I specialize in React, Next.js, TypeScript, Node.js, Android
                   development with Kotlin, and AWS cloud infrastructure. With a
                   strong focus on performance optimization, security, and

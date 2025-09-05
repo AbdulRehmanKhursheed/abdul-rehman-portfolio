@@ -152,10 +152,10 @@ const HeroSection = () => {
 
             {/* Subtitle */}
             <motion.div variants={itemVariants}>
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-400 mb-4 light:text-slate-600">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4" style={{ color: `rgb(var(--text-secondary))` }}>
                 Senior Software Engineer & Full Stack Developer
               </h2>
-              <p className="text-lg text-slate-400 leading-relaxed max-w-lg light:text-slate-500">
+              <p className="text-lg leading-relaxed max-w-lg" style={{ color: `rgb(var(--text-secondary))` }}>
                 Passionate software engineer with 4.5+ years of experience
                 building scalable web applications and mobile solutions. Expert
                 in React, Next.js, Node.js, AWS, and modern development
@@ -172,7 +172,12 @@ const HeroSection = () => {
               {technologies.map((tech, index) => (
                 <motion.span
                   key={tech}
-                  className="px-3 py-1 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-full text-sm font-medium text-slate-300 light:bg-white/60 light:border-slate-200 light:text-slate-700"
+                  className="px-3 py-1 backdrop-blur-sm rounded-full text-sm font-medium"
+                  style={{ 
+                    background: `rgb(var(--surface-secondary))`,
+                    border: `1px solid rgb(var(--border))`,
+                    color: `rgb(var(--text-primary))`
+                  }}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5 + index * 0.1 }}

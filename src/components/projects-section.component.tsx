@@ -230,7 +230,7 @@ const ProjectsSection = () => {
                 Featured Projects
               </h2>
 
-              <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed light:text-slate-600">
+              <p className="text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: `rgb(var(--text-secondary))` }}>
                 Here are some of my recent projects that showcase my expertise
                 in full-stack development, cloud infrastructure, and mobile
                 applications. Each project demonstrates different aspects of
@@ -238,7 +238,6 @@ const ProjectsSection = () => {
               </p>
             </motion.div>
 
-            {/* Filter Tabs */}
             <motion.div
               className="flex flex-wrap justify-center gap-4 mb-12"
               variants={itemVariants}
@@ -348,7 +347,7 @@ const ProjectsSection = () => {
                         {project.projectName}
                       </h3>
 
-                      <p className="text-slate-400 leading-relaxed flex-grow light:text-slate-600 text-sm line-clamp-4">
+                      <p className="leading-relaxed flex-grow text-sm line-clamp-4" style={{ color: `rgb(var(--text-secondary))` }}>
                         {project.description}
                       </p>
 
@@ -357,7 +356,11 @@ const ProjectsSection = () => {
                         {project.technologies.slice(0, 4).map((tech, idx) => (
                           <motion.span
                             key={tech}
-                            className="px-2 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium light:bg-slate-100 light:text-slate-700"
+                            className="px-2 py-1 rounded-full text-xs font-medium"
+                            style={{ 
+                              background: `rgb(var(--surface-secondary))`,
+                              color: `rgb(var(--text-primary))`
+                            }}
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.1 + idx * 0.05 }}
@@ -366,7 +369,13 @@ const ProjectsSection = () => {
                           </motion.span>
                         ))}
                         {project.technologies.length > 4 && (
-                          <span className="px-2 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium light:bg-slate-100 light:text-slate-700">
+                          <span 
+                            className="px-2 py-1 rounded-full text-xs font-medium"
+                            style={{ 
+                              background: `rgb(var(--surface-secondary))`,
+                              color: `rgb(var(--text-primary))`
+                            }}
+                          >
                             +{project.technologies.length - 4}
                           </span>
                         )}

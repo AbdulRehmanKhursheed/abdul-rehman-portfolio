@@ -152,7 +152,7 @@ const ContactSection = () => {
               Let&apos;s Work Together
             </h2>
             
-            <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed light:text-slate-600">
+            <p className="text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: `rgb(var(--text-secondary))` }}>
               I&apos;m always open to discussing new opportunities, interesting projects, 
               or just having a chat about technology. Feel free to reach out!
             </p>
@@ -167,7 +167,11 @@ const ContactSection = () => {
                   <motion.a
                     key={info.title}
                     href={info.link}
-                    className="flex items-start space-x-4 p-6 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group light:bg-white/60 light:border-slate-200"
+                    className="flex items-start space-x-4 p-6 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group"
+                    style={{ 
+                      background: `rgb(var(--surface-primary))`,
+                      border: `1px solid rgb(var(--border))`
+                    }}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 + index * 0.1 }}
@@ -177,13 +181,13 @@ const ContactSection = () => {
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-slate-100 mb-1 light:text-slate-900">
+                      <h3 className="font-semibold mb-1" style={{ color: `rgb(var(--text-primary))` }}>
                         {info.title}
                       </h3>
-                      <p className="text-slate-300 font-medium mb-1 light:text-slate-700">
+                      <p className="font-medium mb-1" style={{ color: `rgb(var(--text-primary))` }}>
                         {info.value}
                       </p>
-                      <p className="text-sm text-slate-400 light:text-slate-500">
+                      <p className="text-sm" style={{ color: `rgb(var(--text-secondary))` }}>
                         {info.description}
                       </p>
                     </div>
