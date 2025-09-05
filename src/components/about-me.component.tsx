@@ -19,30 +19,40 @@ import {
 const AboutMe = () => {
   const skills = [
     {
-      name: "React",
+      name: "React & Next.js",
       level: 95,
       icon: Code,
       color: "from-indigo-500 to-cyan-500",
     },
     {
-      name: "Next.js",
+      name: "TypeScript & JavaScript",
+      level: 92,
       icon: Code,
       color: "from-purple-500 to-pink-500",
     },
     {
-      name: "TypeScript",
-      icon: Code,
-      color: "from-indigo-600 to-purple-600",
-    },
-    {
-      name: "Node.js",
+      name: "Node.js & Python",
+      level: 88,
       icon: Server,
       color: "from-cyan-500 to-emerald-500",
     },
     {
-      name: "AWS",
+      name: "Android & Kotlin",
+      level: 90,
+      icon: Smartphone,
+      color: "from-green-500 to-teal-500",
+    },
+    {
+      name: "AWS & Cloud",
+      level: 85,
       icon: Cloud,
       color: "from-orange-500 to-red-500",
+    },
+    {
+      name: "Database & APIs",
+      level: 87,
+      icon: Database,
+      color: "from-violet-500 to-purple-500",
     },
   ];
 
@@ -52,27 +62,29 @@ const AboutMe = () => {
       title: "Senior Software Engineer",
       company: "Bazaar Technologies",
       description:
-        "Led development of enterprise-scale applications using React, Next.js, and AWS. Implemented CI/CD pipelines and mentored junior developers.",
+        "Developed B2C e-commerce bazaar webapp platform serving thousands of users. Built React/Next.js frontend with 99% test coverage, and optimized performance by improving web vitals. Mentoring junior developers and establishing best practices and storybook.",
     },
     {
       year: "August 2021 - March 2023",
       title: "Full Stack Developer - Junior Front-End Lead",
       company: "Orcalo Holdings",
       description:
-        "Built scalable web applications and mobile apps. Optimized performance and reduced loading times by 60%.",
+        "Developed scalable web applications and mobile solutions. Led frontend team initiatives, implemented performance optimizations achieving 60% faster load times, and delivered multiple projects using React, Node.js, and cloud technologies.",
     },
     {
-      year: "November 2020 - April 2021",
-      title: "Web Intern",
+      year: "November 2020 - August 2021",
+      title: "Software Developer Intern",
       company: "Web Mechanics",
       description:
-        "Learned web development and gained experience in HTML, CSS, JavaScript, React, Python.",
+        "Gained foundational experience in full-stack development. Worked with HTML, CSS, JavaScript, React, Python, and database technologies. Contributed to client projects and learned industry best practices.",
     },
   ];
 
   const stats = [
-    { label: "Years Experience", value: "4.5+", icon: Clock },
-    { label: "Projects Delivered", value: "15+", icon: Award },
+    { label: "Years Experience", value: "4+", icon: Clock },
+    { label: "Projects Delivered", value: "20+", icon: Award },
+    { label: "Technologies Mastered", value: "15+", icon: Code },
+    { label: "Happy Clients", value: "50+", icon: Users },
   ];
 
   const containerVariants = {
@@ -132,10 +144,10 @@ const AboutMe = () => {
             </h2>
 
             <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed light:text-slate-600">
-              I&apos;m a passionate Full Stack Developer and Cloud Engineer with
-              expertise in modern web technologies, cloud infrastructure, and
-              mobile development. I love turning complex problems into elegant
-              solutions.
+              I&apos;m a passionate Senior Software Engineer with 4+ years of
+              experience in full-stack development, mobile applications, and
+              cloud infrastructure. I specialize in building scalable,
+              high-performance applications that serve thousands of users daily.
             </p>
           </motion.div>
 
@@ -175,18 +187,20 @@ const AboutMe = () => {
                   My Journey
                 </h3>
                 <p className="text-slate-400 leading-relaxed mb-6 light:text-slate-600">
-                  I&apos;ve spent the last 3+ years immersed in the world of
+                  I&apos;ve spent the last 4+ years immersed in the world of
                   software development, working on projects that range from
-                  small business websites to enterprise-scale applications. My
+                  mobile applications to enterprise-scale web platforms. My
                   passion lies in creating solutions that not only work
-                  flawlessly but also provide exceptional user experiences.
+                  flawlessly but also provide exceptional user experiences and
+                  drive business value.
                 </p>
                 <p className="text-slate-400 leading-relaxed light:text-slate-600">
-                  I specialize in React, Next.js, TypeScript, and AWS, with a
+                  I specialize in React, Next.js, TypeScript, Node.js, Android
+                  development with Kotlin, and AWS cloud infrastructure. With a
                   strong focus on performance optimization, security, and
-                  scalable architecture. I believe in writing clean,
-                  maintainable code and staying up-to-date with the latest
-                  industry trends.
+                  scalable architecture, I&apos;ve successfully delivered
+                  applications serving thousands of users daily while
+                  maintaining 99%+ test coverage.
                 </p>
               </div>
 
@@ -228,25 +242,39 @@ const AboutMe = () => {
                 <h3 className="text-2xl font-bold heading-gradient mb-6">
                   Technical Skills
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {skills.map((skill, index) => (
                     <motion.div
                       key={skill.name}
-                      className="space-y-2"
+                      className="space-y-3"
                       initial={{ opacity: 0, x: 20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.5 + index * 0.1 }}
                     >
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2">
-                          <div
-                            className={`w-6 h-6 bg-gradient-to-r ${skill.color} rounded flex items-center justify-center`}
-                          >
-                            <skill.icon className="w-3 h-3 text-white" />
-                          </div>
-                          <span className="font-medium text-slate-300 light:text-slate-700">
-                            {skill.name}
-                          </span>
+                      <div className="flex items-center space-x-3">
+                        <div
+                          className={`w-8 h-8 bg-gradient-to-r ${skill.color} rounded-xl flex items-center justify-center shadow-lg`}
+                        >
+                          <skill.icon className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="font-semibold text-slate-300 light:text-slate-700">
+                          {skill.name}
+                        </span>
+                      </div>
+                      <div className="ml-11">
+                        <div className="w-full bg-slate-700/50 rounded-full h-2 light:bg-slate-200">
+                          <motion.div
+                            className={`h-2 bg-gradient-to-r ${skill.color} rounded-full`}
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${skill.level || 90}%` }}
+                            transition={{
+                              delay: 0.7 + index * 0.1,
+                              duration: 1,
+                            }}
+                          />
+                        </div>
+                        <div className="text-xs text-slate-500 mt-1 light:text-slate-500">
+                          {skill.level || 90}% Proficiency
                         </div>
                       </div>
                     </motion.div>

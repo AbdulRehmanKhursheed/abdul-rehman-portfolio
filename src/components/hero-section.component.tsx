@@ -12,13 +12,14 @@ import {
 import DisplayPictureComponent from "./display-picture.component";
 
 const technologies = [
-  "TypeScript",
-  "JavaScript",
   "React",
   "Next.js",
-  "Nest.js",
-  "AWS",
+  "TypeScript",
   "Node.js",
+  "AWS",
+  "Android",
+  "Kotlin",
+  "Python",
 ];
 
 const HeroSection = () => {
@@ -90,6 +91,31 @@ const HeroSection = () => {
 
       {/* Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.1)_1px,transparent_1px)] bg-[size:50px_50px] light:bg-[linear-gradient(rgba(99,102,241,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.05)_1px,transparent_1px)]" />
+      
+      {/* Animated Particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-gradient-to-r from-indigo-400 to-cyan-400 rounded-full opacity-30"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [-20, 20, -20],
+              x: [-10, 10, -10],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
 
       <div className="container-custom relative z-10">
         <motion.div
@@ -126,13 +152,12 @@ const HeroSection = () => {
             {/* Subtitle */}
             <motion.div variants={itemVariants}>
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-400 mb-4 light:text-slate-600">
-                Full Stack Developer & Cloud Engineer
+                Senior Software Engineer & Full Stack Developer
               </h2>
               <p className="text-lg text-slate-400 leading-relaxed max-w-lg light:text-slate-500">
-                Crafting exceptional digital experiences with modern
-                technologies. Specialized in React, Next.js, AWS, and cloud
-                infrastructure. Passionate about performance, security, and
-                scalable solutions.
+                Passionate software engineer with 4+ years of experience building scalable web applications and mobile solutions. 
+                Expert in React, Next.js, Node.js, AWS, and modern development practices. 
+                Proven track record of delivering high-performance applications serving thousands of users.
               </p>
             </motion.div>
 

@@ -306,15 +306,14 @@ const ProjectsSection = () => {
                             <span>High Performance</span>
                           </div>
                         </div>
-
-                        <motion.div
-                          className="flex items-center  text-white-400 font-small group/link light:text-indigo-400 bg-indigo-400 rounded-md px-2 py-1"
-                          whileHover={{ x: 5 }}
-                        >
-                          <span>View Details</span>
-                          <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" />
-                        </motion.div>
                       </div>
+                      <motion.div
+                        className="flex justify-center items-center text-white-400 font-small group/link light:text-indigo-400 bg-indigo-400 rounded-md p-2"
+                        whileHover={{ x: 5 }}
+                      >
+                        <span>View Details</span>
+                        <ArrowRight className="ms-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" />
+                      </motion.div>
                     </div>
                   </motion.div>
                 ))}
