@@ -184,14 +184,14 @@ const ProjectsSection = () => {
 
             {/* Projects Grid */}
             <motion.div
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
               variants={containerVariants}
             >
               <AnimatePresence mode="wait">
                 {filteredProjects.map((project, index) => (
                   <motion.div
                     key={project.projectName}
-                    className="project-card group relative overflow-hidden cursor-pointer"
+                    className="project-card group relative overflow-hidden cursor-pointer flex flex-col h-full"
                     variants={cardVariants}
                     initial="hidden"
                     animate="visible"
@@ -227,7 +227,7 @@ const ProjectsSection = () => {
                     )}
 
                     {/* Project Image Placeholder */}
-                    <div className="relative h-48 bg-gradient-to-br from-slate-800 to-slate-700 rounded-xl mb-6 overflow-hidden light:from-slate-100 light:to-slate-200">
+                    <div className="relative h-40 bg-gradient-to-br from-slate-800 to-slate-700 rounded-xl mb-4 overflow-hidden light:from-slate-100 light:to-slate-200">
                       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-cyan-500/10" />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center">
@@ -269,21 +269,21 @@ const ProjectsSection = () => {
                     </div>
 
                     {/* Project Content */}
-                    <div className="space-y-4">
+                    <div className="flex flex-col flex-grow space-y-4">
                       <h3 className="text-xl font-bold heading-gradient group-hover:gradient-text transition-all duration-300">
                         {project.projectName}
                       </h3>
 
-                      <p className="text-slate-400 leading-relaxed line-clamp-3 light:text-slate-600">
+                      <p className="text-slate-400 leading-relaxed flex-grow light:text-slate-600 text-sm line-clamp-4">
                         {project.description}
                       </p>
 
                       {/* Tech Stack */}
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.slice(0, 6).map((tech, idx) => (
+                      <div className="flex flex-wrap gap-2 min-h-[2.5rem]">
+                        {project.technologies.slice(0, 4).map((tech, idx) => (
                           <motion.span
                             key={tech}
-                            className="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm font-medium light:bg-slate-100 light:text-slate-700"
+                            className="px-2 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium light:bg-slate-100 light:text-slate-700"
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.1 + idx * 0.05 }}
@@ -291,24 +291,18 @@ const ProjectsSection = () => {
                             {tech}
                           </motion.span>
                         ))}
-                        {project.technologies.length > 6 && (
-                          <span className="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm font-medium light:bg-slate-100 light:text-slate-700">
-                            +{project.technologies.length - 6} more
+                        {project.technologies.length > 4 && (
+                          <span className="px-2 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium light:bg-slate-100 light:text-slate-700">
+                            +{project.technologies.length - 4}
                           </span>
                         )}
                       </div>
 
-                      {/* Project Stats */}
-                      <div className="flex items-center justify-between pt-4 border-t border-slate-700 light:border-slate-200">
-                        <div className="flex items-center space-x-4 text-sm text-slate-400 light:text-slate-500">
-                          <div className="flex items-center space-x-1">
-                            <Zap size={14} />
-                            <span>High Performance</span>
-                          </div>
-                        </div>
-                      </div>
+                   
+                      
+                      {/* View Details Button - Always at bottom */}
                       <motion.div
-                        className="flex justify-center items-center text-white-400 font-small group/link light:text-indigo-400 bg-indigo-400 rounded-md p-2"
+                        className="flex justify-center items-center text-white font-medium group/link bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-lg p-3 mt-auto"
                         whileHover={{ x: 5 }}
                       >
                         <span>View Details</span>
