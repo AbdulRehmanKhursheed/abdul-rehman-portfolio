@@ -96,13 +96,16 @@ const Footer = () => {
                     <h3 className="text-2xl font-bold gradient-text">
                       Abdul Rehman
                     </h3>
-                    <p className="text-slate-400">
+                    <p style={{ color: `rgb(var(--text-secondary))` }}>
                       Full Stack Developer & Cloud Engineer
                     </p>
                   </div>
                 </motion.div>
 
-                <p className="text-slate-400 leading-relaxed mb-6 max-w-md">
+                <p 
+                  className="leading-relaxed mb-6 max-w-md"
+                  style={{ color: `rgb(var(--text-secondary))` }}
+                >
                   Crafting exceptional digital experiences with modern
                   technologies. Specialized in React, Next.js, AWS, and cloud
                   infrastructure.
@@ -116,14 +119,21 @@ const Footer = () => {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-xl hover:bg-slate-800 hover:shadow-lg transition-all duration-300 group"
+                      className="p-3 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300 group"
+                      style={{
+                        background: `rgb(var(--surface-secondary))`,
+                        border: `1px solid rgb(var(--border))`
+                      }}
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       whileTap={{ scale: 0.95 }}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 + index * 0.1 }}
                     >
-                      <social.icon className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors duration-200" />
+                      <social.icon 
+                        className="w-5 h-5 transition-colors duration-200" 
+                        style={{ color: `rgb(var(--text-secondary))` }}
+                      />
                     </motion.a>
                   ))}
                 </div>
@@ -131,7 +141,10 @@ const Footer = () => {
 
               {/* Quick Links */}
               <motion.div variants={itemVariants}>
-                <h4 className="text-lg font-semibold mb-6 text-white">
+                <h4 
+                  className="text-lg font-semibold mb-6"
+                  style={{ color: `rgb(var(--text-primary))` }}
+                >
                   Quick Links
                 </h4>
                 <ul className="space-y-3">
@@ -144,7 +157,8 @@ const Footer = () => {
                     >
                       <a
                         href={link.href}
-                        className="text-slate-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block"
+                        className="transition-colors duration-200 hover:translate-x-1 inline-block"
+                        style={{ color: `rgb(var(--text-secondary))` }}
                       >
                         {link.name}
                       </a>
@@ -155,10 +169,16 @@ const Footer = () => {
 
               {/* Contact Info */}
               <motion.div variants={itemVariants}>
-                <h4 className="text-lg font-semibold mb-6 text-white">
+                <h4 
+                  className="text-lg font-semibold mb-6"
+                  style={{ color: `rgb(var(--text-primary))` }}
+                >
                   Contact
                 </h4>
-                <div className="space-y-3 text-slate-400">
+                <div 
+                  className="space-y-3"
+                  style={{ color: `rgb(var(--text-secondary))` }}
+                >
                   <p>malik.ali5560@gmail.com</p>
                   <p>+92 304 5919 454</p>
                   <p>Lahore, Pakistan</p>
@@ -169,11 +189,19 @@ const Footer = () => {
 
           {/* Bottom Bar */}
           <motion.div
-            className="border-t border-slate-800 py-6"
+            className="border-t py-6"
+            style={{ 
+              borderColor: `rgb(var(--border))`,
+              borderTopWidth: '1px',
+              borderTopStyle: 'solid'
+            }}
             variants={itemVariants}
           >
             <div className="flex flex-col md:flex-row items-center  space-y-4 md:space-y-0">
-              <div className="flex items-center space-x-2 text-slate-400">
+              <div 
+                className="flex items-center space-x-2"
+                style={{ color: `rgb(var(--text-secondary))` }}
+              >
                 <span>Built with</span>
                 <Heart className="w-4 h-4 text-red-500 fill-current animate-pulse" />
                 <span>by Abdul Rehman</span>
