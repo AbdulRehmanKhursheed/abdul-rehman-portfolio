@@ -222,31 +222,52 @@ const HeroSection = () => {
                 href="https://github.com/AbdulRehmanKhursheed"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-xl hover:bg-slate-800 hover:shadow-lg transition-all duration-300 group light:bg-white/60 light:border-slate-200 light:hover:bg-white"
+                className="p-3 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300 group"
+                style={{
+                  background: `rgb(var(--surface-secondary))`,
+                  border: `1px solid rgb(var(--border))`
+                }}
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Github className="w-5 h-5 text-slate-300 group-hover:text-slate-100 light:text-slate-700 light:group-hover:text-slate-900" />
+                <Github 
+                  className="w-5 h-5" 
+                  style={{ color: `rgb(var(--text-secondary))` }}
+                />
               </motion.a>
               <motion.a
                 href="https://www.linkedin.com/in/malik-abdul-rehman/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-xl hover:bg-slate-800 hover:shadow-lg transition-all duration-300 group light:bg-white/60 light:border-slate-200 light:hover:bg-white"
+                className="p-3 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300 group"
+                style={{
+                  background: `rgb(var(--surface-secondary))`,
+                  border: `1px solid rgb(var(--border))`
+                }}
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Linkedin className="w-5 h-5 text-slate-300 group-hover:text-slate-100 light:text-slate-700 light:group-hover:text-slate-900" />
+                <Linkedin 
+                  className="w-5 h-5" 
+                  style={{ color: `rgb(var(--text-secondary))` }}
+                />
               </motion.a>
               <motion.a
                 href="/pdf/Fullstack_Dev_AbdulRehman_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-xl hover:bg-slate-800 hover:shadow-lg transition-all duration-300 group light:bg-white/60 light:border-slate-200 light:hover:bg-white"
+                className="p-3 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300 group"
+                style={{
+                  background: `rgb(var(--surface-secondary))`,
+                  border: `1px solid rgb(var(--border))`
+                }}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Download className="w-5 h-5 text-slate-300 group-hover:text-slate-100 light:text-slate-700 light:group-hover:text-slate-900" />
+                <Download 
+                  className="w-5 h-5" 
+                  style={{ color: `rgb(var(--text-secondary))` }}
+                />
               </motion.a>
             </motion.div>
           </motion.div>
@@ -304,13 +325,20 @@ const HeroSection = () => {
         >
           <motion.button
             onClick={() => scrollToSection("about")}
-            className="p-3 bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-full shadow-lg hover:bg-slate-800 hover:shadow-xl transition-all duration-300 group light:bg-white/60 light:border-slate-200 light:hover:bg-white"
+            className="p-3 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+            style={{
+              background: `rgb(var(--surface-secondary))`,
+              border: `1px solid rgb(var(--border))`
+            }}
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <ArrowDown className="w-5 h-5 text-slate-400 group-hover:text-slate-100 light:text-slate-600 light:group-hover:text-slate-900" />
+            <ArrowDown 
+              className="w-5 h-5" 
+              style={{ color: `rgb(var(--text-secondary))` }}
+            />
           </motion.button>
         </motion.div>
       </div>

@@ -131,7 +131,12 @@ const AboutMe = () => {
           {/* Section Header */}
           <motion.div className="text-center mb-16" variants={itemVariants}>
             <motion.div
-              className="inline-flex items-center space-x-2 px-4 py-2 bg-purple-900/20 border border-purple-800 rounded-full text-purple-300 font-medium mb-6 light:bg-purple-50 light:border-purple-200 light:text-purple-700"
+              className="inline-flex items-center space-x-2 px-4 py-2 rounded-full font-medium mb-6"
+              style={{
+                background: `rgb(var(--surface-secondary))`,
+                border: `1px solid rgb(var(--border))`,
+                color: `rgb(var(--text-primary))`
+              }}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
@@ -223,7 +228,11 @@ const AboutMe = () => {
                   ].map((strength, index) => (
                     <motion.div
                       key={strength.label}
-                      className="flex items-center space-x-3 p-3 bg-slate-800/40 rounded-xl light:bg-slate-100/40"
+                      className="flex items-center space-x-3 p-3 rounded-xl"
+                      style={{
+                        background: `rgb(var(--surface-secondary))`,
+                        border: `1px solid rgb(var(--border))`
+                      }}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.4 + index * 0.1 }}
@@ -231,7 +240,10 @@ const AboutMe = () => {
                       <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-lg flex items-center justify-center">
                         <strength.icon className="w-4 h-4 text-white" />
                       </div>
-                      <span className="text-sm font-medium text-slate-300 light:text-slate-700">
+                      <span 
+                        className="text-sm font-medium"
+                        style={{ color: `rgb(var(--text-primary))` }}
+                      >
                         {strength.label}
                       </span>
                     </motion.div>
@@ -303,17 +315,29 @@ const AboutMe = () => {
                     >
                       <div className="space-y-2">
                         <div className="flex items-center space-x-2">
-                          <span className="text-sm font-medium text-indigo-400 light:text-indigo-600">
+                          <span 
+                            className="text-sm font-medium"
+                            style={{ color: `rgb(var(--primary))` }}
+                          >
                             {exp.year}
                           </span>
                         </div>
-                        <h4 className="font-semibold text-slate-100 light:text-slate-900">
+                        <h4 
+                          className="font-semibold"
+                          style={{ color: `rgb(var(--text-primary))` }}
+                        >
                           {exp.title}
                         </h4>
-                        <p className="text-sm text-slate-400 font-medium light:text-slate-600">
+                        <p 
+                          className="text-sm font-medium"
+                          style={{ color: `rgb(var(--text-secondary))` }}
+                        >
                           {exp.company}
                         </p>
-                        <p className="text-slate-400 text-sm leading-relaxed light:text-slate-600">
+                        <p 
+                          className="text-sm leading-relaxed"
+                          style={{ color: `rgb(var(--text-secondary))` }}
+                        >
                           {exp.description}
                         </p>
                       </div>
