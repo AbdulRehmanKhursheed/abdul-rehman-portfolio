@@ -7,7 +7,7 @@
 @layer base {
   :root {
     /* Light Theme (Default) */
-    --background: 248 250 252; /* #F8FAFC */
+    --background: 255 255 255 ; /* #FFFFFF */
     --foreground: 15 23 42; /* #0F172A */
     --card: 255 255 255; /* #FFFFFF */
     --card-foreground: 15 23 42; /* #0F172A */

@@ -1,7 +1,6 @@
 import HeroSection from "../components/hero-section.component";
 import AboutMe from "../components/about-me.component";
 import ProjectsSection from "../components/projects-section.component";
-import TestimonialsSection from "../components/testimonials-section";
 import ContactSection from "../components/contact-section.component";
 import Footer from "../components/footer.component";
 
@@ -11,7 +10,6 @@ export default function Home() {
       <HeroSection />
       <AboutMe />
       <ProjectsSection />
-      <TestimonialsSection />
       <ContactSection />
       <Footer />
     </main>

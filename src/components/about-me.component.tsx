@@ -26,57 +26,47 @@ const AboutMe = () => {
     },
     {
       name: "Next.js",
-      level: 90,
       icon: Code,
       color: "from-purple-500 to-pink-500",
     },
     {
       name: "TypeScript",
-      level: 92,
       icon: Code,
       color: "from-indigo-600 to-purple-600",
     },
     {
       name: "Node.js",
-      level: 88,
       icon: Server,
       color: "from-cyan-500 to-emerald-500",
     },
     {
       name: "AWS",
-      level: 85,
       icon: Cloud,
       color: "from-orange-500 to-red-500",
-    },
-    {
-      name: "PostgreSQL",
-      level: 87,
-      icon: Database,
-      color: "from-indigo-500 to-purple-500",
     },
   ];
 
   const experiences = [
     {
-      year: "2023 - Present",
+      year: "March 2023 - Present",
       title: "Senior Software Engineer",
       company: "Bazaar Technologies",
       description:
         "Led development of enterprise-scale applications using React, Next.js, and AWS. Implemented CI/CD pipelines and mentored junior developers.",
     },
     {
-      year: "2022 - 2023",
+      year: "August 2021 - March 2023",
       title: "Full Stack Developer - Junior Front-End Lead",
       company: "Orcalo Holdings",
       description:
         "Built scalable web applications and mobile apps. Optimized performance and reduced loading times by 60%.",
     },
     {
-      year: "2021 - 2022",
-      title: "Frontend Intern",
+      year: "November 2020 - April 2021",
+      title: "Web Intern",
       company: "Web Mechanics",
       description:
-        "Developed responsive user interfaces and implemented modern design patterns. Collaborated with UX/UI teams.",
+        "Learned web development and gained experience in HTML, CSS, JavaScript, React, Python.",
     },
   ];
 
@@ -258,17 +248,6 @@ const AboutMe = () => {
                             {skill.name}
                           </span>
                         </div>
-                        <span className="text-sm text-slate-400 light:text-slate-500">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div className="w-full bg-slate-700 rounded-full h-2 light:bg-slate-200">
-                        <motion.div
-                          className={`h-2 bg-gradient-to-r ${skill.color} rounded-full`}
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          transition={{ duration: 1, delay: 0.6 + index * 0.1 }}
-                        />
                       </div>
                     </motion.div>
                   ))}

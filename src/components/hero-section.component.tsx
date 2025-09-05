@@ -66,7 +66,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen pt-20 pb-5 flex items-center relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 light:from-slate-50 light:via-blue-50/30 light:to-purple-50/30"
+      className="min-h-screen pt-20 pb-5 flex items-center relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 light:from-slate-50 light:via-blue-50/30 light:to-purple-50/30 "
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 bg-gradient-radial" />
