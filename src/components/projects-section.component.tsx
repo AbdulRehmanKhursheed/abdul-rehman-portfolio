@@ -246,11 +246,16 @@ const ProjectsSection = () => {
                 <motion.button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center space-x-2 ${
-                    selectedCategory === category
-                      ? "bg-gradient-to-r from-indigo-500 to-cyan-500 text-white shadow-lg"
-                      : "bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700 light:bg-white light:text-slate-600 light:hover:bg-slate-100 light:border-slate-200"
-                  }`}
+                  className="px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center space-x-2"
+                  style={{
+                    background: selectedCategory === category 
+                      ? `linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent-purple)))`
+                      : `rgb(var(--surface-secondary))`,
+                    color: selectedCategory === category 
+                      ? `rgb(var(--primary-foreground))`
+                      : `rgb(var(--text-primary))`,
+                    border: `1px solid ${selectedCategory === category ? 'transparent' : `rgb(var(--border))`}`
+                  }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
