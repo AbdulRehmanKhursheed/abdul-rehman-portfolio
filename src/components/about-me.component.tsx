@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import {
   Code,
   Database,
@@ -17,6 +18,25 @@ import {
 } from "lucide-react";
 
 const AboutMe = () => {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      setIsDark(document.documentElement.classList.contains('dark'));
+    };
+    
+    checkDarkMode();
+    
+    // Watch for theme changes
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+    
+    return () => observer.disconnect();
+  }, []);
+
   const skills = [
     {
       name: "React & Next.js",
@@ -274,12 +294,17 @@ const AboutMe = () => {
                         >
                           <skill.icon className="w-4 h-4 text-white" />
                         </div>
-                        <span className="font-semibold text-slate-300 light:text-slate-700">
+                        <span 
+                          className="font-semibold"
+                          style={{ 
+                            color: isDark ? '#ffffff' : '#1e293b'
+                          }}
+                        >
                           {skill.name}
                         </span>
                       </div>
                       <div className="ml-11">
-                        <div className="w-full bg-slate-700/50 rounded-full h-2 light:bg-slate-200">
+                        <div className="w-full bg-slate-200 rounded-full h-2 dark:bg-slate-700/50">
                           <motion.div
                             className={`h-2 bg-gradient-to-r ${skill.color} rounded-full`}
                             initial={{ width: 0 }}
@@ -290,7 +315,7 @@ const AboutMe = () => {
                             }}
                           />
                         </div>
-                        <div className="text-xs text-slate-500 mt-1 light:text-slate-500">
+                        <div className="text-xs text-slate-600 mt-1 dark:!text-slate-300">
                           {skill.level || 90}% Proficiency
                         </div>
                       </div>

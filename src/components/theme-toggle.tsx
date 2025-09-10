@@ -9,24 +9,6 @@ export function ThemeToggle() {
 
   return (
     <div className="flex items-center gap-2">
-      {/* Auto mode indicator */}
-      {/* <motion.button
-        onClick={toggleAutoMode}
-        className={`p-2 backdrop-blur-sm border rounded-lg transition-all duration-300 ${
-          isAutoMode
-            ? "bg-blue-100/80 border-blue-300 text-blue-700 dark:bg-blue-900/40 dark:border-blue-600 dark:text-blue-300"
-            : "bg-white/60 border-slate-200 text-slate-500 hover:bg-white hover:text-slate-700 dark:bg-slate-800/60 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-300"
-        }`}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        title={
-          isAutoMode ? "Auto mode (based on sunrise/sunset)" : "Manual mode"
-        }
-      >
-        <Clock className="w-4 h-4" />
-      </motion.button> */}
-
-      {/* Theme toggle button */}
       <motion.button
         onClick={toggleTheme}
         className={`p-3 backdrop-blur-sm border rounded-xl hover:shadow-lg transition-all duration-300 ${
@@ -42,7 +24,6 @@ export function ThemeToggle() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3 }}
-        // disabled={isAutoMode}
         title={`Switch to ${theme === "light" ? "light" : "dark"} mode`}
       >
         <motion.div
