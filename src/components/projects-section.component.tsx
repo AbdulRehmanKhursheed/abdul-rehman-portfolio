@@ -68,7 +68,7 @@ const ProjectIcon = ({
         alt={`${project.projectName} icon`}
         width={size}
         height={size}
-        className={`rounded-sm ${className}`}
+        className={`rounded-sm ${className} rounded-full`}
       />
     );
   }
@@ -321,10 +321,10 @@ const ProjectsSection = () => {
                       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-cyan-500/10" />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center">
-                          <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                          <div className=" bg-gradient-to-r rounded-full flex items-center justify-center mx-auto mb-3">
                             <ProjectIcon
                               project={project}
-                              size={24}
+                              size={50}
                               className=""
                             />
                           </div>

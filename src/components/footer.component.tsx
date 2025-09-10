@@ -181,7 +181,7 @@ const Footer = () => {
                 >
                   <p>malik.ali5560@gmail.com</p>
                   <p>+92 304 5919 454</p>
-                  <p>Lahore, Pakistan</p>
+                  <p>Islamabad, Pakistan</p>
                 </div>
               </motion.div>
             </div>

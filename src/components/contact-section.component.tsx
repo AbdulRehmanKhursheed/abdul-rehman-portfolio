@@ -61,7 +61,7 @@ const ContactSection = () => {
     {
       icon: MapPin,
       title: "Location",
-      value: "Lahore, Pakistan",
+      value: "Islamabad, Pakistan",
       description: "Open to remote & on-site work",
       link: "#",
     },
