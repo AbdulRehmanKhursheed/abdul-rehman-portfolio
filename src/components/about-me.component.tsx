@@ -22,18 +22,18 @@ const AboutMe = () => {
 
   useEffect(() => {
     const checkDarkMode = () => {
-      setIsDark(document.documentElement.classList.contains('dark'));
+      setIsDark(document.documentElement.classList.contains("dark"));
     };
-    
+
     checkDarkMode();
-    
+
     // Watch for theme changes
     const observer = new MutationObserver(checkDarkMode);
     observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ['class']
+      attributeFilter: ["class"],
     });
-    
+
     return () => observer.disconnect();
   }, []);
 
@@ -155,7 +155,7 @@ const AboutMe = () => {
               style={{
                 background: `rgb(var(--surface-secondary))`,
                 border: `1px solid rgb(var(--border))`,
-                color: `rgb(var(--text-primary))`
+                color: `rgb(var(--text-primary))`,
               }}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -169,7 +169,10 @@ const AboutMe = () => {
               Crafting Digital Excellence
             </h2>
 
-            <p className="text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: `rgb(var(--text-secondary))` }}>
+            <p
+              className="text-xl max-w-3xl mx-auto leading-relaxed"
+              style={{ color: `rgb(var(--text-secondary))` }}
+            >
               I&apos;m a passionate Senior Software Engineer with 4+ years of
               experience in full-stack development, mobile applications, and
               cloud infrastructure. I specialize in building scalable,
@@ -186,9 +189,9 @@ const AboutMe = () => {
               <motion.div
                 key={stat.label}
                 className="text-center p-6 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
-                style={{ 
+                style={{
                   background: `rgb(var(--surface-primary))`,
-                  border: `1px solid rgb(var(--border))`
+                  border: `1px solid rgb(var(--border))`,
                 }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -201,7 +204,10 @@ const AboutMe = () => {
                 <div className="text-2xl font-bold gradient-text mb-2">
                   {stat.value}
                 </div>
-                <div className="text-sm" style={{ color: `rgb(var(--text-secondary))` }}>
+                <div
+                  className="text-sm"
+                  style={{ color: `rgb(var(--text-secondary))` }}
+                >
                   {stat.label}
                 </div>
               </motion.div>
@@ -216,7 +222,10 @@ const AboutMe = () => {
                 <h3 className="text-2xl font-bold heading-gradient mb-4">
                   My Journey
                 </h3>
-                <p className="leading-relaxed mb-6" style={{ color: `rgb(var(--text-secondary))` }}>
+                <p
+                  className="leading-relaxed mb-6"
+                  style={{ color: `rgb(var(--text-secondary))` }}
+                >
                   I&apos;ve spent the last 4.5+ years immersed in the world of
                   software development, working on projects that range from
                   mobile applications to enterprise-scale web platforms. My
@@ -224,7 +233,10 @@ const AboutMe = () => {
                   flawlessly but also provide exceptional user experiences and
                   drive business value.
                 </p>
-                <p className="leading-relaxed" style={{ color: `rgb(var(--text-secondary))` }}>
+                <p
+                  className="leading-relaxed"
+                  style={{ color: `rgb(var(--text-secondary))` }}
+                >
                   I specialize in React, Next.js, TypeScript, Node.js, Android
                   development with Kotlin, and AWS cloud infrastructure. With a
                   strong focus on performance optimization, security, and
@@ -251,7 +263,7 @@ const AboutMe = () => {
                       className="flex items-center space-x-3 p-3 rounded-xl"
                       style={{
                         background: `rgb(var(--surface-secondary))`,
-                        border: `1px solid rgb(var(--border))`
+                        border: `1px solid rgb(var(--border))`,
                       }}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -260,7 +272,7 @@ const AboutMe = () => {
                       <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-lg flex items-center justify-center">
                         <strength.icon className="w-4 h-4 text-white" />
                       </div>
-                      <span 
+                      <span
                         className="text-sm font-medium"
                         style={{ color: `rgb(var(--text-primary))` }}
                       >
@@ -294,30 +306,14 @@ const AboutMe = () => {
                         >
                           <skill.icon className="w-4 h-4 text-white" />
                         </div>
-                        <span 
+                        <span
                           className="font-semibold"
-                          style={{ 
-                            color: isDark ? '#ffffff' : '#1e293b'
+                          style={{
+                            color: isDark ? "#ffffff" : "#1e293b",
                           }}
                         >
                           {skill.name}
                         </span>
-                      </div>
-                      <div className="ml-11">
-                        <div className="w-full bg-slate-200 rounded-full h-2 dark:bg-slate-700/50">
-                          <motion.div
-                            className={`h-2 bg-gradient-to-r ${skill.color} rounded-full`}
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.level || 90}%` }}
-                            transition={{
-                              delay: 0.7 + index * 0.1,
-                              duration: 1,
-                            }}
-                          />
-                        </div>
-                        <div className="text-xs text-slate-600 mt-1 dark:!text-slate-300">
-                          {skill.level || 90}% Proficiency
-                        </div>
                       </div>
                     </motion.div>
                   ))}
@@ -340,26 +336,26 @@ const AboutMe = () => {
                     >
                       <div className="space-y-2">
                         <div className="flex items-center space-x-2">
-                          <span 
+                          <span
                             className="text-sm font-medium"
                             style={{ color: `rgb(var(--primary))` }}
                           >
                             {exp.year}
                           </span>
                         </div>
-                        <h4 
+                        <h4
                           className="font-semibold"
                           style={{ color: `rgb(var(--text-primary))` }}
                         >
                           {exp.title}
                         </h4>
-                        <p 
+                        <p
                           className="text-sm font-medium"
                           style={{ color: `rgb(var(--text-secondary))` }}
                         >
                           {exp.company}
                         </p>
-                        <p 
+                        <p
                           className="text-sm leading-relaxed"
                           style={{ color: `rgb(var(--text-secondary))` }}
                         >
