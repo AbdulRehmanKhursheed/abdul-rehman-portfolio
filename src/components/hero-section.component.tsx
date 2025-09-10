@@ -132,11 +132,11 @@ const HeroSection = () => {
           >
             {/* Badge */}
             <motion.div
-              className="inline-flex items-center space-x-2 px-4 py-2 bg-slate-800/80 backdrop-blur-sm border border-slate-700 rounded-full shadow-lg light:bg-white/80 light:border-slate-200"
+              className="inline-flex items-center space-x-2 px-4 py-2 bg-white/90 backdrop-blur-sm border border-slate-300 rounded-full shadow-lg dark:bg-slate-800/90 dark:border-slate-600"
               variants={itemVariants}
             >
-              <Sparkles className="w-4 h-4 text-indigo-400" />
-              <span className="text-sm font-medium text-slate-300 light:text-slate-700">
+              <Sparkles className="w-4 h-4 text-indigo-500 dark:text-indigo-300" />
+              <span className="text-sm font-medium text-slate-700 dark:text-slate-100">
                 Available for new opportunities
               </span>
             </motion.div>
