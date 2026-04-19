@@ -147,7 +147,7 @@ const Header = () => {
                 <Linkedin size={20} />
               </motion.a>
               <motion.a
-                href="/pdf/Fullstack_Dev_AbdulRehman_Resume.pdf"
+                href="/api/resume"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"

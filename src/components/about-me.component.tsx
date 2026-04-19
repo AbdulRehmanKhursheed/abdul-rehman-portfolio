@@ -51,25 +51,25 @@ const AboutMe = () => {
       color: "from-purple-500 to-pink-500",
     },
     {
-      name: "Node.js & Python",
+      name: "NestJS & Node.js",
       level: 88,
       icon: Server,
       color: "from-cyan-500 to-emerald-500",
     },
     {
-      name: "Android & Kotlin",
+      name: "Redux & React Query",
       level: 90,
-      icon: Smartphone,
+      icon: Zap,
       color: "from-green-500 to-teal-500",
     },
     {
-      name: "AWS & Cloud",
+      name: "AWS & Cloud (S3, CloudFront, Lambda)",
       level: 85,
       icon: Cloud,
       color: "from-orange-500 to-red-500",
     },
     {
-      name: "Database & APIs",
+      name: "MongoDB & REST APIs",
       level: 87,
       icon: Database,
       color: "from-violet-500 to-purple-500",
@@ -78,33 +78,33 @@ const AboutMe = () => {
 
   const experiences = [
     {
-      year: "March 2023 - Present",
-      title: "Senior Software Engineer",
+      year: "March 2023 – Present",
+      title: "Senior Software Engineer I",
       company: "Bazaar Technologies",
       description:
-        "Developed B2C e-commerce bazaar webapp platform serving thousands of users. Built React/Next.js frontend with 99% test coverage, and optimized performance by improving web vitals. Mentoring junior developers and establishing best practices and storybook.",
+        "Lead development of the Bazaar Web App (Next.js + NestJS) serving 100k+ active users. Cut CDN costs by $450/month, reduced LCP by 40%, and drove a 47% increase in customer order value via gamification features. Drove TDD and SOLID adoption across teams. Hackathon runner-up.",
     },
     {
-      year: "August 2021 - March 2023",
-      title: "Full Stack Developer - Junior Front-End Lead",
+      year: "Aug 2021 – March 2023",
+      title: "Senior Front-End Engineer & Junior Team Lead",
       company: "Orcalo Holdings",
       description:
-        "Developed scalable web applications and mobile solutions. Led frontend team initiatives, implemented performance optimizations achieving 60% faster load times, and delivered multiple projects using React, Node.js, and cloud technologies.",
+        "Mentored and managed 24 junior developers, ensuring timely feature delivery. Introduced the Component-Container pattern to separate UI from business logic. Integrated React Query and other tools to improve client-server performance.",
     },
     {
-      year: "November 2020 - August 2021",
-      title: "Software Developer Intern",
-      company: "Web Mechanics",
+      year: "Nov 2020 – Jun 2021",
+      title: "Software Engineer Intern (Python / Frontend)",
+      company: "Web Mekanics",
       description:
-        "Gained foundational experience in full-stack development. Worked with HTML, CSS, JavaScript, React, Python, and database technologies. Contributed to client projects and learned industry best practices.",
+        "Developed responsive front-end designs for automobile-related products. Built REST APIs using Django to retrieve and present real-time data insights.",
     },
   ];
 
   const stats = [
-    { label: "Years Experience", value: "4.5+", icon: Clock },
+    { label: "Years Experience", value: "5+", icon: Clock },
     { label: "Projects Delivered", value: "20+", icon: Award },
     { label: "Technologies Mastered", value: "15+", icon: Code },
-    { label: "Happy Clients", value: "50+", icon: Users },
+    { label: "Active Users Served", value: "100k+", icon: Users },
   ];
 
   const containerVariants = {
@@ -173,10 +173,10 @@ const AboutMe = () => {
               className="text-xl max-w-3xl mx-auto leading-relaxed"
               style={{ color: `rgb(var(--text-secondary))` }}
             >
-              I&apos;m a passionate Senior Software Engineer with 4+ years of
-              experience in full-stack development, mobile applications, and
-              cloud infrastructure. I specialize in building scalable,
-              high-performance applications that serve thousands of users daily.
+              I&apos;m a Front-End Heavy Full-Stack Engineer with 5 years of
+              experience building and scaling high-traffic web applications.
+              Specialized in React, Next.js, and NestJS — with a record of
+              cutting costs, boosting performance, and driving revenue impact.
             </p>
           </motion.div>
 
@@ -226,23 +226,22 @@ const AboutMe = () => {
                   className="leading-relaxed mb-6"
                   style={{ color: `rgb(var(--text-secondary))` }}
                 >
-                  I&apos;ve spent the last 4.5+ years immersed in the world of
-                  software development, working on projects that range from
-                  mobile applications to enterprise-scale web platforms. My
-                  passion lies in creating solutions that not only work
-                  flawlessly but also provide exceptional user experiences and
-                  drive business value.
+                  Over 5 years I&apos;ve built and shipped products at every
+                  layer of the stack — from pixel-perfect React UIs to NestJS
+                  APIs and AWS infrastructure. I thrive on measurable impact:
+                  saving $5,400/year in CDN costs, cutting LCP by 40%, and
+                  boosting order value by 47% with a single gamification
+                  feature.
                 </p>
                 <p
                   className="leading-relaxed"
                   style={{ color: `rgb(var(--text-secondary))` }}
                 >
-                  I specialize in React, Next.js, TypeScript, Node.js, Android
-                  development with Kotlin, and AWS cloud infrastructure. With a
-                  strong focus on performance optimization, security, and
-                  scalable architecture, I&apos;ve successfully delivered
-                  applications serving thousands of users daily while
-                  maintaining 99%+ test coverage.
+                  I care deeply about code quality — TDD, SOLID principles, and
+                  clean architecture are non-negotiables for me. I&apos;ve also
+                  led and mentored teams, introduced design patterns like
+                  Component-Container, and driven engineering culture changes
+                  across organizations.
                 </p>
               </div>
 
@@ -254,9 +253,9 @@ const AboutMe = () => {
                 <div className="grid grid-cols-2 gap-4">
                   {[
                     { icon: Zap, label: "Performance Optimization" },
-                    { icon: Shield, label: "Security Best Practices" },
+                    { icon: Shield, label: "TDD & SOLID Principles" },
                     { icon: TrendingUp, label: "Scalable Architecture" },
-                    { icon: Smartphone, label: "Mobile-First Design" },
+                    { icon: Users, label: "Team Leadership & Mentoring" },
                   ].map((strength, index) => (
                     <motion.div
                       key={strength.label}

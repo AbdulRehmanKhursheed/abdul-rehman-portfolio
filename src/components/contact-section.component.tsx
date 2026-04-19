@@ -90,7 +90,7 @@ const ContactSection = () => {
     {
       icon: Download,
       label: "Resume",
-      url: "/pdf/Fullstack_Dev_AbdulRehman_Resume.pdf",
+      url: "/api/resume",
       color: "hover:text-emerald-400",
     },
   ];

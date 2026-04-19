@@ -15,11 +15,11 @@ const technologies = [
   "React",
   "Next.js",
   "TypeScript",
+  "NestJS",
   "Node.js",
   "AWS",
-  "Android",
+  "Redux",
   "Kotlin",
-  "Python",
 ];
 
 const HeroSection = () => {
@@ -153,14 +153,14 @@ const HeroSection = () => {
             {/* Subtitle */}
             <motion.div variants={itemVariants}>
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4" style={{ color: `rgb(var(--text-secondary))` }}>
-                Senior Software Engineer & Full Stack Developer
+                Front-End Heavy Full-Stack Engineer
               </h2>
               <p className="text-lg leading-relaxed max-w-lg" style={{ color: `rgb(var(--text-secondary))` }}>
-                Passionate software engineer with 4.5+ years of experience
-                building scalable web applications and mobile solutions. Expert
-                in React, Next.js, Node.js, AWS, and modern development
-                practices. Proven track record of delivering high-performance
-                applications serving thousands of users.
+                5 years of experience building and scaling high-traffic web
+                applications. Specialized in React, Next.js, and NestJS — with
+                a track record of cutting infrastructure costs, boosting
+                performance, and driving revenue impact across 100k+ active
+                users.
               </p>
             </motion.div>
 
@@ -253,7 +253,7 @@ const HeroSection = () => {
                 />
               </motion.a>
               <motion.a
-                href="/pdf/Fullstack_Dev_AbdulRehman_Resume.pdf"
+                href="/api/resume"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300 group"

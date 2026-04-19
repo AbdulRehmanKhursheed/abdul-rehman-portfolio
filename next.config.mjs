@@ -46,6 +46,24 @@ const nextConfig = {
       },
     ],
   },
+  // Ensure static files are properly served
+  async headers() {
+    return [
+      {
+        source: '/pdf/:path*',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/pdf',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

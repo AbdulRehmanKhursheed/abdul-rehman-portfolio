@@ -22,12 +22,12 @@ const Footer = () => {
     {
       icon: Mail,
       label: "Email",
-      url: "mailto:mali.ali5560@gmail.com",
+      url: "mailto:malik.ali5560@gmail.com",
     },
     {
       icon: Download,
       label: "Resume",
-      url: "/pdf/Fullstack_Dev_AbdulRehman_Resume.pdf",
+      url: "/api/resume",
     },
   ];
 
@@ -97,18 +97,18 @@ const Footer = () => {
                       Abdul Rehman
                     </h3>
                     <p style={{ color: `rgb(var(--text-secondary))` }}>
-                      Full Stack Developer & Cloud Engineer
+                      Front-End Heavy Full-Stack Engineer
                     </p>
                   </div>
                 </motion.div>
 
-                <p 
+                <p
                   className="leading-relaxed mb-6 max-w-md"
                   style={{ color: `rgb(var(--text-secondary))` }}
                 >
-                  Crafting exceptional digital experiences with modern
-                  technologies. Specialized in React, Next.js, AWS, and cloud
-                  infrastructure.
+                  5 years building high-traffic web applications. Specialized
+                  in React, Next.js, NestJS, and AWS — with a track record of
+                  measurable impact.
                 </p>
 
                 {/* Social Links */}

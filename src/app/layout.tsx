@@ -5,27 +5,27 @@ export const revalidate = 0;
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "../components/header.component";
+import ConditionalHeader from "../components/conditional-header.component";
 import { ThemeProvider } from "../components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Abdul Rehman - Senior Software Engineer & Full Stack Developer",
-  description: "Professional portfolio of Abdul Rehman, a Senior Software Engineer with 4.5+ years of experience in full-stack development, mobile applications, and cloud infrastructure. Specializing in React, Next.js, Android, AWS, and modern web technologies.",
-  keywords: ["Senior Software Engineer", "Full Stack Developer", "React", "Next.js", "Android", "Kotlin", "AWS", "TypeScript", "Mobile Development", "Portfolio", "Pakistan"],
+  title: "Abdul Rehman - Front-End Heavy Full-Stack Engineer (React · Next.js · NestJS)",
+  description: "Portfolio of Abdul Rehman — 5 years building high-traffic web apps. Specializing in React, Next.js, NestJS, TypeScript, and AWS. Cut CDN costs $450/mo, improved LCP 40%, boosted order value 47%.",
+  keywords: ["Front-End Engineer", "Full Stack Developer", "React", "Next.js", "NestJS", "TypeScript", "AWS", "Redux", "Node.js", "Portfolio", "Pakistan", "Senior Software Engineer"],
   authors: [{ name: "Abdul Rehman" }],
   creator: "Abdul Rehman",
   openGraph: {
-    title: "Abdul Rehman - Senior Software Engineer & Full Stack Developer",
-    description: "Professional portfolio showcasing 4+ years of expertise in web development, mobile applications, and cloud engineering. Serving thousands of users with scalable solutions.",
+    title: "Abdul Rehman - Front-End Heavy Full-Stack Engineer (React · Next.js · NestJS)",
+    description: "5 years building and scaling high-traffic web applications. Specialized in React, Next.js, and NestJS with measurable impact across 100k+ active users.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abdul Rehman - Senior Software Engineer & Full Stack Developer",
-    description: "Professional portfolio showcasing 4+ years of expertise in web development, mobile applications, and cloud engineering.",
+    title: "Abdul Rehman - Front-End Heavy Full-Stack Engineer (React · Next.js · NestJS)",
+    description: "5 years building and scaling high-traffic web applications. Specialized in React, Next.js, and NestJS with measurable impact across 100k+ active users.",
   },
   robots: {
     index: true,
@@ -46,7 +46,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <ThemeProvider>
-          <Header />
+          <ConditionalHeader />
           {children}
         </ThemeProvider>
       </body>

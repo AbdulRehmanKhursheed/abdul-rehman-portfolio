@@ -10,24 +10,21 @@ export interface Project {
 
 const projects: Project[] = [
   {
-    projectName: "Bazaar E-commerce Platform",
+    projectName: "Bazaar Web App",
     description:
-      "Enterprise-scale B2B & B2C e-commerce platform serving thousands of daily users. Built with React/Next.js frontend featuring SSR, SWR caching, and comprehensive product catalog. Achieved 99% test coverage using Jest/RTL, implemented AWS WAF for security, and optimized infrastructure with Lambda & CloudFront, reducing operational costs by 57% while improving Core Web Vitals scores.",
+      "Lead development of the flagship B2C e-commerce web app (Next.js + NestJS) serving 100k+ active users. Optimized CDN usage reducing infra costs by $450/month (~$5,400/year), cut LCP by 40% via an advanced image optimization pipeline, and drove a 47% increase in customer order value through gamification features.",
     link: "https://www.bazaarapp.com",
     technologies: [
-      "React",
       "Next.js",
-      "SSR",
+      "NestJS",
       "TypeScript",
-      "Node.js",
+      "React",
       "MUI",
-      "SWR",
-      "Jest",
-      "RTL",
       "AWS",
       "CloudFront",
       "Lambda",
-      "WAF",
+      "TDD",
+      "SOLID",
     ],
     category: "Web App",
     featured: true,
@@ -71,11 +68,28 @@ const projects: Project[] = [
     localIcon: "/images/app-icons/bazaaragent.webp",
   },
   {
+    projectName: "Bazaar Partner Portal",
+    description:
+      "Internal React application built for Bazaar's partner ecosystem, providing partner insights and analytics. Integrated Bazaar's internal component library for consistent UX, and used React Query for efficient data fetching and server-state management.",
+    link: "https://partners.bazaar.technology",
+    technologies: ["React", "TypeScript", "MUI", "React Query", "REST APIs"],
+    category: "Web App",
+    featured: true,
+  },
+  {
     projectName: "Bazaar Website",
     description:
-      "Corporate website built with WebFlow, featuring dynamic job postings integration using HTML, CSS, and Vanilla JavaScript. Responsive design with modern UI/UX principles and SEO optimization.",
+      "Corporate website with dynamic job postings integration using WebFlow, HTML, CSS, and Vanilla JavaScript. Responsive design with SEO optimization.",
     link: "https://bazaartech.com",
     technologies: ["WebFlow", "HTML", "CSS", "JavaScript", "SEO"],
+    category: "Web App",
+  },
+  {
+    projectName: "Check My DBS",
+    description:
+      "DBS certificate verification platform for UK companies, allowing businesses to check and validate employee background checks online. Built with React, Next.js, TypeScript, and RTK Query for a fast and secure verification workflow.",
+    link: "https://app-dev.checkmydbs.co.uk/login",
+    technologies: ["React", "Next.js", "TypeScript", "RTK Query", "REST APIs"],
     category: "Web App",
   },
   {
