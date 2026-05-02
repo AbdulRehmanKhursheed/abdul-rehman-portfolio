@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Malik Abdul Rehman Khursheed — Senior Frontend Engineer</title>
+<style>
+  :root {
+    --ink: #0f172a;
+    --muted: #475569;
+    --soft: #94a3b8;
+    --rule: #e2e8f0;
+  }
+
+  @page { size: A4; margin: 14mm 14mm 14mm 14mm; }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Inter, system-ui, sans-serif;
+    color: var(--ink);
+    font-size: 10.25pt;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page { max-width: 100%; }
+
+  .header { padding-bottom: 10pt; border-bottom: 1px solid var(--rule); margin-bottom: 14pt; }
+  .name {
+    font-size: 22pt;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0;
+    line-height: 1.1;
+  }
+  .role {
+    font-size: 11pt;
+    color: var(--muted);
+    margin: 2pt 0 0 0;
+  }
+  .contact {
+    margin-top: 8pt;
+    font-size: 9pt;
+    color: var(--muted);
+  }
+  .contact a { color: var(--muted); text-decoration: none; }
+  .contact .sep { color: var(--soft); margin: 0 6pt; }
+
+  .section { margin-top: 14pt; }
+  .section h2 {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--soft);
+    margin: 0 0 8pt 0;
+    font-weight: 600;
+  }
+
+  .summary { color: var(--muted); margin: 0; }
+
+  /* Bullets — block-level for clean ATS extraction */
+  ul.bullets { list-style: none; margin: 0; padding: 0; }
+  ul.bullets li {
+    position: relative;
+    padding-left: 12pt;
+    margin-bottom: 4pt;
+    color: var(--muted);
+  }
+  ul.bullets li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--soft);
+  }
+  ul.bullets li strong { color: var(--ink); font-weight: 600; }
+
+  /* Experience entry — single-line linear flow for ATS, no flex */
+  .entry { margin-bottom: 12pt; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-line {
+    color: var(--ink);
+    font-size: 10.5pt;
+    font-weight: 600;
+    margin: 0 0 1pt 0;
+  }
+  .entry-line .meta {
+    color: var(--soft);
+    font-weight: 400;
+    font-size: 9.5pt;
+  }
+  .entry-role {
+    color: var(--muted);
+    font-size: 9.5pt;
+    margin: 0 0 4pt 0;
+  }
+  .entry-role .dates {
+    color: var(--soft);
+  }
+  .entry-note {
+    color: var(--soft);
+    font-size: 9pt;
+    font-style: italic;
+    margin: 0 0 4pt 0;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 110pt 1fr;
+    gap: 4pt 14pt;
+  }
+  .skills-grid dt {
+    color: var(--soft);
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-top: 2pt;
+  }
+  .skills-grid dd {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10pt 24pt;
+  }
+
+  .meta-line { color: var(--muted); font-size: 9.5pt; margin: 0; }
+  .meta-line strong { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <h1 class="name">Malik Abdul Rehman Khursheed</h1>
+    <p class="role">Senior Frontend Engineer · Performance &amp; Scale (Next.js · React · TypeScript)</p>
+    <p class="contact">
+      +92 304 5919 454
+      <span class="sep">·</span>
+      malik.ali5560@gmail.com
+      <span class="sep">·</span>
+      linkedin.com/in/malik-abdul-rehman
+      <span class="sep">·</span>
+      github.com/AbdulRehmanKhursheed
+      <span class="sep">·</span>
+      Islamabad, Pakistan
+    </p>
+  </header>
+
+  <section class="section">
+    <h2>Summary</h2>
+    <p class="summary">Senior Frontend Engineer with 5 years building and scaling B2C web apps for emerging-market users. Specialized in Next.js, React, and web performance — verified Lighthouse 92+ and Core Web Vitals: Passed on Bazaar's flagship app (100k+ active web users, 1M+ Android downloads). Comfortable across Node.js / NestJS for BFFs and internal services.</p>
+  </section>
+
+  <section class="section">
+    <h2>Key Achievements</h2>
+    <ul class="bullets">
+      <li><strong>Web Vitals &amp; SEO turnaround</strong> — Co-led the image-optimization + CDN-tuning pipeline (Next.js Image, viewport-aware lazy loading) on bazaarapp.com, cutting <strong>LCP 40%</strong> and taking Core Web Vitals from failing to <strong>Passed</strong> under Pakistani 3G/4G conditions. Organic search grew from ~0 to <strong>156K monthly clicks / 11.2M impressions</strong> (Google Search Console, avg. position 7).</li>
+      <li><strong>CDN cost optimization</strong> — Co-designed asset delivery + caching strategy across web and Android, cutting CDN spend <strong>~$450/month (~$5,400/year)</strong> with no regression in image quality.</li>
+      <li><strong>MUI → Tailwind + Radix migration</strong> — Owned the migration on a high-traffic Next.js app: eliminated runtime style injection, preserved accessibility contracts across 38 files / ~1,900 lines changed.</li>
+      <li><strong>Revenue-driving engineering</strong> — Shipped PM-designed gamification (order-threshold reward levels) on the customer app, lifting <strong>customer order value 47%</strong>.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <p class="entry-line">Bazaar Technologies <span class="meta">— Islamabad, Pakistan</span></p>
+      <p class="entry-role">Senior Software Engineer <span class="dates">· Mar 2023 — Present</span></p>
+      <p class="entry-note">Promoted from Software Engineer II in Dec 2024. Currently working on identity for the Keenu acquisition (post-acquisition restaurant-management platform).</p>
+      <ul class="bullets">
+        <li>Lead frontend on <strong>bazaarapp.com</strong> (Next.js + NestJS BFF) — flagship customer web for Pakistan's largest B2C grocery platform.</li>
+        <li>Owned the image-optimization + CDN pipeline that took CWV from failing to Passed (40% LCP cut, Lighthouse 92).</li>
+        <li>Drove the MUI v5 + Emotion → Tailwind + Radix migration — eliminated runtime style injection while preserving accessibility contracts.</li>
+        <li>Built <strong>Bazaar Partner Portal</strong> (React, MUI, React Query) — internal vendor-analytics surface integrated with Bazaar's component library.</li>
+        <li>Replaced finance team's manual invoice + tax-calculation workflow with an automated pipeline integrated into internal apps.</li>
+        <li>Shipped customer features cross-platform — Next.js web and customer Android app (Kotlin / Jetpack Compose / MVVM).</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <p class="entry-line">Orcalo Holdings <span class="meta">— Rawalpindi, Pakistan</span></p>
+      <p class="entry-role">Senior Frontend Engineer · Frontend Team Lead <span class="dates">· Oct 2021 — Mar 2023</span></p>
+      <ul class="bullets">
+        <li>Mentored a team of <strong>24 junior frontend developers</strong> across multiple client projects.</li>
+        <li>Introduced and enforced the <strong>Component-Container</strong> pattern across the FE codebase, separating UI from business logic.</li>
+        <li>Integrated <strong>React Query</strong> into legacy Redux-heavy projects, cutting redundant API calls and improving cache behavior.</li>
+      </ul>
+      <p class="entry-role" style="margin-top: 4pt;">Junior Node.js Developer <span class="dates">· Aug 2021 — Oct 2021</span></p>
+      <ul class="bullets">
+        <li>Built APIs and server-side components against Airtable, Twilio SMS, and SendGrid integrations.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <p class="entry-line">Web Mekanics <span class="meta">— Rawalpindi, Pakistan</span></p>
+      <p class="entry-role">Software Engineer Intern (Python · Frontend) <span class="dates">· Nov 2020 — Jun 2021</span></p>
+      <ul class="bullets">
+        <li>Built responsive frontends for automobile-related products.</li>
+        <li>Built REST APIs in Django for real-time data insights.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Skills</h2>
+    <dl class="skills-grid">
+      <dt>Languages</dt>
+      <dd>TypeScript, JavaScript, HTML/CSS, Kotlin</dd>
+
+      <dt>Frontend</dt>
+      <dd>Next.js (App Router, RSC), React, Redux / RTK, React Query, Tailwind, MUI, Radix UI, SCSS, Jest, micro-frontends</dd>
+
+      <dt>Backend / BFF</dt>
+      <dd>Node.js, NestJS, Express, MongoDB, REST APIs</dd>
+
+      <dt>Cloud / Tools</dt>
+      <dd>AWS (S3, CloudFront, Lambda), Docker, Vercel, Webpack, Git, CI/CD, Postman</dd>
+
+      <dt>Mobile</dt>
+      <dd>Android, Kotlin, Jetpack Compose, MVVM, Room</dd>
+
+      <dt>Practice</dt>
+      <dd>Web performance &amp; Core Web Vitals, image pipelines, caching &amp; CDN strategy, system design for scale, TDD, SOLID, Agile, code review, mentorship, AI-assisted development (Claude Code, Cursor)</dd>
+    </dl>
+  </section>
+
+  <section class="section">
+    <h2>Highlighted Projects</h2>
+    <ul class="bullets">
+      <li><strong>Bazaar Web App</strong> — bazaarapp.com (Next.js, NestJS) — flagship B2C grocery web.</li>
+      <li><strong>Bazaar Partner Portal</strong> — partners.bazaar.technology (React, MUI, React Query) — internal vendor analytics.</li>
+      <li><strong>Bazaar Grocery Delivery App</strong> — Android (Kotlin, Jetpack Compose, MVVM) — 1M+ downloads, 4.3★.</li>
+      <li><strong>Check My DBS</strong> — app-dev.checkmydbs.co.uk — UK DBS certificate verification (React, Next.js, RTK Query).</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="two-col">
+      <div>
+        <h2>Education</h2>
+        <p class="meta-line"><strong>BS Computer Science</strong>, Hitec University, Taxila — 2017–2021 — GPA 3.29 / 4.0</p>
+      </div>
+      <div>
+        <h2>Awards</h2>
+        <p class="meta-line">Hackathon Runner-Up, Bazaar Technologies · Runner-Up, Speed Programming, Hitec University</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Certifications</h2>
+    <p class="meta-line">React with Redux &amp; Next.js (Academind) · Angular Mastery (Academind) · AWS Technical Essentials (Coursera) · Node.js (Mosh) · MTA Python (Microsoft)</p>
+  </section>
+
+</div>
+</body>
+</html>

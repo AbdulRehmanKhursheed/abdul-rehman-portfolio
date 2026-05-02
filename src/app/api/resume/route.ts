@@ -5,7 +5,7 @@ import { join } from 'path';
 export async function GET(request: NextRequest) {
   try {
     // Path to the PDF file in the public directory
-    const filePath = join(process.cwd(), 'public', 'pdf', 'Fullstack_Dev_AbdulRehman_Resume.pdf');
+    const filePath = join(process.cwd(), 'public', 'pdf', 'AbdulRehman_Senior_Frontend_Resume.pdf');
     
     // Read the file
     const fileBuffer = readFileSync(filePath);
@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
       status: 200,
       headers: {
         'Content-Type': 'application/pdf',
-        'Content-Disposition': 'inline; filename="Fullstack_Dev_AbdulRehman_Resume.pdf"',
+        'Content-Disposition': 'inline; filename="AbdulRehman_Senior_Frontend_Resume.pdf"',
         'Cache-Control': 'public, max-age=31536000, immutable',
       },
     });

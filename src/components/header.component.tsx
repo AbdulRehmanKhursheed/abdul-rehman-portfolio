@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Mail, Github, Linkedin, Download } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { ThemeToggle } from "./theme-toggle";
 
 const Header = () => {
   const router = useRouter();
@@ -15,9 +14,9 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
+
       const sections = ["hero", "about", "projects", "contact"];
-      const current = sections.find(section => {
+      const current = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -51,245 +50,188 @@ const Header = () => {
     { name: "Contact", id: "contact" },
   ];
 
-  const headerVariants = {
-    hidden: { y: -100, opacity: 0 },
-    visible: { 
-      y: 0, 
-      opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
-  };
-
-  const menuVariants = {
-    closed: {
-      opacity: 0,
-      height: 0,
-      transition: { duration: 0.3, ease: "easeInOut" }
-    },
-    open: {
-      opacity: 1,
-      height: "auto",
-      transition: { duration: 0.3, ease: "easeInOut" }
-    }
-  };
-
   return (
-    <motion.header
-              className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? "bg-white/95 backdrop-blur-xl shadow-lg border-b border-slate-200/50 dark:bg-slate-900/95 dark:border-slate-700/50"
-            : "bg-transparent"
-        }`}
-      variants={headerVariants}
-      initial="hidden"
-      animate="visible"
+    <header
+      className="fixed top-0 left-0 right-0 z-50 transition-colors duration-200"
+      style={{
+        background: isScrolled ? "rgba(250, 250, 249, 0.85)" : "transparent",
+        borderBottom: isScrolled
+          ? `1px solid rgb(var(--border))`
+          : `1px solid transparent`,
+        backdropFilter: isScrolled ? "blur(12px) saturate(140%)" : "none",
+        WebkitBackdropFilter: isScrolled ? "blur(12px) saturate(140%)" : "none",
+      }}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <motion.div
-            className="flex items-center space-x-3 cursor-pointer group"
+          <div
+            className="flex items-center space-x-3 cursor-pointer"
             onClick={handleLogoClick}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
-            <motion.div 
-              className="w-10 h-10 bg-gradient-to-r from-indigo-500 via-cyan-400 to-purple-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300"
-              whileHover={{ rotate: 5 }}
+            <div
+              className="w-9 h-9 rounded-md flex items-center justify-center"
+              style={{ background: `rgb(var(--primary))` }}
             >
-              <span className="text-white font-bold text-sm">AR</span>
-            </motion.div>
+              <span
+                className="font-semibold text-sm"
+                style={{ color: `rgb(var(--primary-foreground))` }}
+              >
+                AR
+              </span>
+            </div>
             <div className="hidden sm:block">
-              <span className="font-bold text-xl gradient-text">
+              <span
+                className="font-semibold text-base tracking-tight"
+                style={{ color: `rgb(var(--text-primary))` }}
+              >
                 Abdul Rehman
               </span>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
-              <motion.button
+              <button
                 key={item.name}
-                onClick={() => scrollToSection(item.id!)}
-                className={`nav-link relative ${
-                  activeSection === item.id ? "active" : ""
-                }`}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.95 }}
+                onClick={() => scrollToSection(item.id)}
+                className={`nav-link ${activeSection === item.id ? "active" : ""}`}
               >
                 {item.name}
-              </motion.button>
+              </button>
             ))}
           </nav>
 
-          {/* Desktop Social Links & CTA */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <div className="flex items-center space-x-3">
-              <motion.a
-                href="https://github.com/AbdulRehmanKhursheed"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Github size={20} />
-              </motion.a>
-              <motion.a
-                href="https://www.linkedin.com/in/malik-abdul-rehman/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
-                whileHover={{ scale: 1.1, rotate: -5 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Linkedin size={20} />
-              </motion.a>
-              <motion.a
-                href="/api/resume"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Download size={20} />
-              </motion.a>
-              <ThemeToggle />
-            </div>
-
-            <motion.button
-              onClick={() => scrollToSection("contact")}
-              className="px-6 py-3 font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2 group"
-              style={{
-                background: `linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent-purple)))`,
-                color: `rgb(var(--primary-foreground))`
-              }}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+          <div className="hidden lg:flex items-center space-x-2">
+            <a
+              href="https://github.com/AbdulRehmanKhursheed"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="p-2 rounded-md transition-colors hover:bg-[rgb(var(--surface-secondary))]"
+              style={{ color: `rgb(var(--text-secondary))` }}
             >
-              <Mail size={16} />
-              <span>Get in Touch</span>
-            </motion.button>
+              <Github size={18} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/malik-abdul-rehman/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="p-2 rounded-md transition-colors hover:bg-[rgb(var(--surface-secondary))]"
+              style={{ color: `rgb(var(--text-secondary))` }}
+            >
+              <Linkedin size={18} />
+            </a>
+            <a
+              href="/api/resume"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Resume"
+              className="p-2 rounded-md transition-colors hover:bg-[rgb(var(--surface-secondary))] mr-2"
+              style={{ color: `rgb(var(--text-secondary))` }}
+            >
+              <Download size={18} />
+            </a>
+
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="button-primary inline-flex items-center gap-2"
+            >
+              <Mail size={14} />
+              <span>Get in touch</span>
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <motion.button
+          <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors duration-200 dark:hover:bg-slate-800"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            className="lg:hidden p-2 rounded-md transition-colors"
+            aria-label="Toggle menu"
+            style={{ color: `rgb(var(--text-primary))` }}
           >
-            <AnimatePresence mode="wait">
-              {isMenuOpen ? (
-                <motion.div
-                  key="close"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <X size={24} />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="menu"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Menu size={24} />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.button>
+            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              className="lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/95"
-              variants={menuVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
+              className="lg:hidden border-t"
+              style={{
+                borderColor: `rgb(var(--border))`,
+                background: `rgb(var(--surface-primary))`,
+              }}
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
             >
-              <div className="py-6 space-y-4">
-                {navItems.map((item, index) => (
-                  <motion.button
+              <div className="py-4 space-y-1">
+                {navItems.map((item) => (
+                  <button
                     key={item.name}
-                    onClick={() => scrollToSection(item.id!)}
-                    className={`block w-full text-left px-4 py-3 text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-xl transition-all duration-200 font-medium dark:text-slate-300 dark:hover:text-slate-100 dark:hover:bg-slate-800 ${
-                      activeSection === item.id ? "text-indigo-600 bg-indigo-50 dark:text-indigo-400 dark:bg-indigo-900/20" : ""
-                    }`}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ x: 10 }}
-                    whileTap={{ scale: 0.98 }}
+                    onClick={() => scrollToSection(item.id)}
+                    className="block w-full text-left px-4 py-2.5 rounded-md font-medium transition-colors"
+                    style={{
+                      color:
+                        activeSection === item.id
+                          ? `rgb(var(--text-primary))`
+                          : `rgb(var(--text-secondary))`,
+                    }}
                   >
                     {item.name}
-                  </motion.button>
+                  </button>
                 ))}
 
-                <div className="px-4 pt-6 border-t border-slate-200 dark:border-slate-800">
-                  <div className="flex items-center justify-center space-x-4 mb-6">
-                    <motion.a
+                <div
+                  className="pt-4 mt-2 px-4 flex items-center justify-between border-t"
+                  style={{ borderColor: `rgb(var(--border))` }}
+                >
+                  <div className="flex items-center gap-1 pt-3">
+                    <a
                       href="https://github.com/AbdulRehmanKhursheed"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      whileTap={{ scale: 0.95 }}
+                      aria-label="GitHub"
+                      className="p-2 rounded-md"
+                      style={{ color: `rgb(var(--text-secondary))` }}
                     >
-                      <Github size={20} />
-                    </motion.a>
-                    <motion.a
+                      <Github size={18} />
+                    </a>
+                    <a
                       href="https://www.linkedin.com/in/malik-abdul-rehman/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
-                      whileHover={{ scale: 1.1, rotate: -5 }}
-                      whileTap={{ scale: 0.95 }}
+                      aria-label="LinkedIn"
+                      className="p-2 rounded-md"
+                      style={{ color: `rgb(var(--text-secondary))` }}
                     >
-                      <Linkedin size={20} />
-                    </motion.a>
-                    <motion.a
-                      href="/pdf/Fullstack_Dev_AbdulRehman_Resume.pdf"
+                      <Linkedin size={18} />
+                    </a>
+                    <a
+                      href="/api/resume"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all duration-200 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
+                      aria-label="Resume"
+                      className="p-2 rounded-md"
+                      style={{ color: `rgb(var(--text-secondary))` }}
                     >
-                      <Download size={20} />
-                    </motion.a>
-                    <ThemeToggle />
+                      <Download size={18} />
+                    </a>
                   </div>
-
-                  <motion.button
+                  <button
                     onClick={() => scrollToSection("contact")}
-                    className="w-full px-6 py-4 font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
-                    style={{
-                      background: `linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent-purple)))`,
-                      color: `rgb(var(--primary-foreground))`
-                    }}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    className="button-primary inline-flex items-center gap-2 mt-3"
                   >
-                    <Mail size={16} />
-                    <span>Get in Touch</span>
-                  </motion.button>
+                    <Mail size={14} />
+                    <span>Get in touch</span>
+                  </button>
                 </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
-    </motion.header>
+    </header>
   );
 };
 

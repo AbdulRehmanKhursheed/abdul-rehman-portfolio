@@ -1,345 +1,149 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  ArrowDown,
-  Mail,
-  Github,
-  Linkedin,
-  Download,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, Mail, Github, Linkedin, Download } from "lucide-react";
 import DisplayPictureComponent from "./display-picture.component";
 
-const technologies = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "NestJS",
-  "Node.js",
-  "AWS",
-  "Redux",
-  "Kotlin",
+const HERO_STATS = [
+  { value: "Lighthouse 92", label: "Performance" },
+  { value: "CWV: Passed", label: "Core Web Vitals" },
+  { value: "156K", label: "Monthly organic clicks" },
+  { value: "1M+", label: "Android downloads" },
 ];
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section
       id="hero"
-      className="min-h-screen pt-20 pb-5 flex items-center relative overflow-hidden"
+      className="min-h-screen pt-28 pb-16 flex items-center"
       style={{ background: `rgb(var(--surface-primary))` }}
     >
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 bg-gradient-radial" />
-
-      {/* Floating Orbs */}
-      <motion.div
-        className="absolute top-20 left-10 w-72 h-72 bg-indigo-500/20 rounded-full mix-blend-multiply filter blur-3xl"
-        animate={{ y: [-20, 20, -20], x: [-10, 10, -10] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute top-40 right-10 w-72 h-72 bg-cyan-500/20 rounded-full mix-blend-multiply filter blur-3xl"
-        animate={{ y: [20, -20, 20], x: [10, -10, 10] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute -bottom-8 left-20 w-72 h-72 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl"
-        animate={{ y: [-15, 15, -15], x: [-5, 5, -5] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-      />
-
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.1)_1px,transparent_1px)] bg-[size:50px_50px] light:bg-[linear-gradient(rgba(99,102,241,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.05)_1px,transparent_1px)]" />
-
-      {/* Animated Particles */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-gradient-to-r from-indigo-400 to-cyan-400 rounded-full opacity-30"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [-20, 20, -20],
-              x: [-10, 10, -10],
-              opacity: [0.3, 0.8, 0.3],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
-
-      <div className="container-custom relative z-10">
+      <div className="container-custom w-full">
         <motion.div
-          className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
+          className="grid lg:grid-cols-[1.4fr_1fr] gap-12 lg:gap-20 items-center"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
         >
-          {/* Left Content */}
-          <motion.div
-            className="space-y-8 lg:space-y-10 order-2 lg:order-1"
-            variants={itemVariants}
-          >
-            {/* Badge */}
-            <motion.div
-              className="inline-flex items-center space-x-2 px-4 py-2 bg-white/90 backdrop-blur-sm border border-slate-300 rounded-full shadow-lg dark:bg-slate-800/90 dark:border-slate-600"
-              variants={itemVariants}
+          <div className="order-2 lg:order-1 space-y-8">
+            <p
+              className="text-sm font-medium tracking-widest uppercase"
+              style={{ color: `rgb(var(--text-tertiary))` }}
             >
-              <Sparkles className="w-4 h-4 text-indigo-500 dark:text-indigo-300" />
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-100">
-                Available for new opportunities
+              Senior Frontend Engineer · Performance & Scale
+            </p>
+
+            <h1
+              className="font-serif text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.0] tracking-tight"
+              style={{ color: `rgb(var(--text-primary))` }}
+            >
+              Abdul Rehman
+            </h1>
+
+            <p
+              className="text-lg md:text-xl leading-relaxed max-w-xl"
+              style={{ color: `rgb(var(--text-secondary))` }}
+            >
+              I build performant web experiences for emerging-market users.
+              Currently at{" "}
+              <span style={{ color: `rgb(var(--text-primary))` }}>
+                Bazaar Technologies
               </span>
-            </motion.div>
+              , shipping Pakistan&apos;s flagship B2C grocery web app on Next.js —
+              Core Web Vitals: Passed, Lighthouse 92, organic search from zero
+              to 156K monthly clicks.
+            </p>
 
-            {/* Main Heading */}
-            <motion.div variants={itemVariants}>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
-                <span className="gradient-text">Abdul</span>
-                <br />
-                <span className="heading-gradient">Rehman</span>
-              </h1>
-            </motion.div>
-
-            {/* Subtitle */}
-            <motion.div variants={itemVariants}>
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4" style={{ color: `rgb(var(--text-secondary))` }}>
-                Front-End Heavy Full-Stack Engineer
-              </h2>
-              <p className="text-lg leading-relaxed max-w-lg" style={{ color: `rgb(var(--text-secondary))` }}>
-                5 years of experience building and scaling high-traffic web
-                applications. Specialized in React, Next.js, and NestJS — with
-                a track record of cutting infrastructure costs, boosting
-                performance, and driving revenue impact across 100k+ active
-                users.
-              </p>
-            </motion.div>
-
-            {/* Tech Stack Preview */}
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-wrap gap-2"
-            >
-              {technologies.map((tech, index) => (
-                <motion.span
-                  key={tech}
-                  className="px-3 py-1 backdrop-blur-sm rounded-full text-sm font-medium"
-                  style={{ 
-                    background: `rgb(var(--surface-secondary))`,
-                    border: `1px solid rgb(var(--border))`,
-                    color: `rgb(var(--text-primary))`
-                  }}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                >
-                  {tech}
-                </motion.span>
-              ))}
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <motion.button
-                onClick={() => scrollToSection("projects")}
-                className="button-primary flex items-center justify-center space-x-2 group"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="/case-study/bazaar-performance"
+                className="button-primary inline-flex items-center justify-center gap-2"
               >
-                <span>View My Work</span>
-                <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-200" />
-              </motion.button>
-
-              <motion.button
+                <span>Read the case study</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <button
                 onClick={() => scrollToSection("contact")}
-                className="button-secondary flex items-center justify-center space-x-2 group"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="button-secondary inline-flex items-center justify-center gap-2"
               >
                 <Mail className="w-4 h-4" />
-                <span>Get in Touch</span>
-              </motion.button>
-            </motion.div>
+                <span>Get in touch</span>
+              </button>
+            </div>
 
-            {/* Social Links */}
-            <motion.div
-              variants={itemVariants}
-              className="flex items-center space-x-6"
-            >
-              <motion.a
+            <div className="flex items-center gap-2 pt-2">
+              <a
                 href="https://github.com/AbdulRehmanKhursheed"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300 group"
-                style={{
-                  background: `rgb(var(--surface-secondary))`,
-                  border: `1px solid rgb(var(--border))`
-                }}
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.95 }}
+                aria-label="GitHub"
+                className="p-2 rounded-lg transition-colors"
+                style={{ color: `rgb(var(--text-secondary))` }}
               >
-                <Github 
-                  className="w-5 h-5" 
-                  style={{ color: `rgb(var(--text-secondary))` }}
-                />
-              </motion.a>
-              <motion.a
+                <Github className="w-5 h-5" />
+              </a>
+              <a
                 href="https://www.linkedin.com/in/malik-abdul-rehman/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300 group"
-                style={{
-                  background: `rgb(var(--surface-secondary))`,
-                  border: `1px solid rgb(var(--border))`
-                }}
-                whileHover={{ scale: 1.1, rotate: -5 }}
-                whileTap={{ scale: 0.95 }}
+                aria-label="LinkedIn"
+                className="p-2 rounded-lg transition-colors"
+                style={{ color: `rgb(var(--text-secondary))` }}
               >
-                <Linkedin 
-                  className="w-5 h-5" 
-                  style={{ color: `rgb(var(--text-secondary))` }}
-                />
-              </motion.a>
-              <motion.a
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
                 href="/api/resume"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300 group"
-                style={{
-                  background: `rgb(var(--surface-secondary))`,
-                  border: `1px solid rgb(var(--border))`
-                }}
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
+                aria-label="Download resume"
+                className="p-2 rounded-lg transition-colors"
+                style={{ color: `rgb(var(--text-secondary))` }}
               >
-                <Download 
-                  className="w-5 h-5" 
-                  style={{ color: `rgb(var(--text-secondary))` }}
-                />
-              </motion.a>
-            </motion.div>
-          </motion.div>
+                <Download className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
 
-          {/* Right Content - Profile Picture */}
-          <motion.div
-            className="flex justify-center lg:justify-end order-1 lg:order-2"
-            variants={itemVariants}
-          >
-            <motion.div
-              className="relative"
-              animate="animate"
-              variants={floatingVariants}
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+            <div
+              className="rounded-full p-1.5 shadow-md"
+              style={{
+                background: `rgb(var(--surface-secondary))`,
+                border: `1px solid rgb(var(--border))`,
+              }}
             >
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-400 via-cyan-400 to-purple-400 rounded-full blur-3xl opacity-30 animate-pulse" />
-
-              {/* Profile Picture Container */}
-              <div className="relative bg-slate-800/20 backdrop-blur-sm border border-slate-700/30 rounded-full p-2 shadow-2xl light:bg-white/20 light:border-slate-200/30">
-                <DisplayPictureComponent />
-              </div>
-
-              {/* Floating Elements */}
-              <motion.div
-                className="absolute -top-4 -right-4 w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center shadow-lg"
-                animate={{ y: [-5, 5, -5], rotate: [0, 180, 360] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <span className="text-white text-xs font-bold">AR</span>
-              </motion.div>
-
-              <motion.div
-                className="absolute -bottom-4 -left-4 w-6 h-6 bg-cyan-500 rounded-full shadow-lg"
-                animate={{ y: [5, -5, 5], scale: [1, 1.2, 1] }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
-            </motion.div>
-          </motion.div>
+              <DisplayPictureComponent />
+            </div>
+          </div>
         </motion.div>
 
-        {/* Scroll Indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0, y: 20 }}
+          className="mt-16 lg:mt-20 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8 max-w-4xl"
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.6 }}
+          transition={{ duration: 0.4, delay: 0.15, ease: "easeOut" }}
         >
-          <motion.button
-            onClick={() => scrollToSection("about")}
-            className="p-3 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
-            style={{
-              background: `rgb(var(--surface-secondary))`,
-              border: `1px solid rgb(var(--border))`
-            }}
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <ArrowDown 
-              className="w-5 h-5" 
-              style={{ color: `rgb(var(--text-secondary))` }}
-            />
-          </motion.button>
+          {HERO_STATS.map((s) => (
+            <div key={s.label}>
+              <div
+                className="text-2xl md:text-3xl font-semibold tracking-tight"
+                style={{ color: `rgb(var(--text-primary))` }}
+              >
+                {s.value}
+              </div>
+              <div
+                className="text-sm mt-1"
+                style={{ color: `rgb(var(--text-tertiary))` }}
+              >
+                {s.label}
+              </div>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>

@@ -6,84 +6,52 @@
 
 @layer base {
   :root {
-    /* Josh-Inspired Light Theme */
-    --background: 255 255 255; /* Pure white */
-    --foreground: 28 25 23; /* Warm dark brown */
-    --card: 255 255 255; /* Pure white */
-    --card-foreground: 28 25 23; /* Warm dark brown */
-    --popover: 255 255 255; /* Pure white */
-    --popover-foreground: 28 25 23; /* Warm dark brown */
-    --primary: 79 70 229; /* Refined indigo */
-    --primary-foreground: 255 255 255; /* White */
-    --secondary: 245 158 11; /* Warm amber */
-    --secondary-foreground: 28 25 23; /* Warm dark brown */
-    --muted: 250 250 249; /* Warm off-white */
-    --muted-foreground: 120 113 108; /* Warm gray */
-    --accent: 245 158 11; /* Warm amber */
-    --accent-foreground: 28 25 23; /* Warm dark brown */
-    --destructive: 239 68 68; /* Soft red */
-    --destructive-foreground: 255 255 255; /* White */
-    --border: 203 213 225; /* More visible light gray */
-    --input: 250 250 249; /* Warm off-white */
-    --ring: 79 70 229; /* Refined indigo */
-    --radius: 0.75rem;
-    
-    /* Custom Josh-inspired colors */
-    --text-primary: 15 23 42; /* Dark slate for better contrast */
-    --text-secondary: 51 65 85; /* Medium slate */
-    --text-tertiary: 100 116 139; /* Light slate */
-    --surface-primary: 255 255 255; /* Pure white */
-    --surface-secondary: 248 250 252; /* Very light gray */
-    --surface-tertiary: 241 245 249; /* Light gray */
-    --accent-purple: 139 92 246; /* Soft purple */
-    --accent-blue: 59 130 246; /* Soft blue */
-    --accent-green: 34 197 94; /* Soft green */
-  }
+    /* Calm warm-stone palette — single mode, no dark switch */
+    --background: 250 250 249;
+    --foreground: 28 25 23;
+    --card: 255 255 255;
+    --card-foreground: 28 25 23;
+    --popover: 255 255 255;
+    --popover-foreground: 28 25 23;
+    --primary: 28 25 23;
+    --primary-foreground: 250 250 249;
+    --secondary: 245 245 244;
+    --secondary-foreground: 28 25 23;
+    --muted: 245 245 244;
+    --muted-foreground: 120 113 108;
+    --accent: 245 245 244;
+    --accent-foreground: 28 25 23;
+    --destructive: 220 38 38;
+    --destructive-foreground: 250 250 249;
+    --border: 231 229 228;
+    --input: 245 245 244;
+    --ring: 28 25 23;
+    --radius: 0.5rem;
 
-  .dark {
-    /* Josh-Inspired Dark Theme */
-    --background: 12 10 9; /* Rich warm black */
-    --foreground: 250 250 249; /* Warm off-white */
-    --card: 28 25 23; /* Dark warm brown */
-    --card-foreground: 250 250 249; /* Warm off-white */
-    --popover: 28 25 23; /* Dark warm brown */
-    --popover-foreground: 250 250 249; /* Warm off-white */
-    --primary: 129 140 248; /* Lighter indigo for dark mode */
-    --primary-foreground: 12 10 9; /* Rich warm black */
-    --secondary: 251 191 36; /* Brighter amber for dark mode */
-    --secondary-foreground: 12 10 9; /* Rich warm black */
-    --muted: 41 37 36; /* Dark warm gray */
-    --muted-foreground: 168 162 158; /* Light warm gray */
-    --accent: 251 191 36; /* Brighter amber */
-    --accent-foreground: 12 10 9; /* Rich warm black */
-    --destructive: 248 113 113; /* Lighter red for dark mode */
-    --destructive-foreground: 12 10 9; /* Rich warm black */
-    --border: 100 116 139; /* More visible dark gray */
-    --input: 41 37 36; /* Dark warm gray */
-    --ring: 129 140 248; /* Lighter indigo */
-    
-    /* Custom Josh-inspired dark colors */
-    --text-primary: 248 250 252; /* Light slate */
-    --text-secondary: 203 213 225; /* Medium light slate */
-    --text-tertiary: 148 163 184; /* Medium slate */
-    --surface-primary: 15 23 42; /* Dark slate */
-    --surface-secondary: 30 41 59; /* Medium dark slate */
-    --surface-tertiary: 51 65 85; /* Lighter dark slate */
-    --accent-purple: 167 139 250; /* Lighter purple */
-    --accent-blue: 96 165 250; /* Lighter blue */
-    --accent-green: 74 222 128; /* Lighter green */
+    --text-primary: 28 25 23;
+    --text-secondary: 87 83 78;
+    --text-tertiary: 168 162 158;
+    --surface-primary: 255 255 255;
+    --surface-secondary: 250 250 249;
+    --surface-tertiary: 245 245 244;
   }
 
   html {
     scroll-behavior: smooth;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
-  
+
   body {
-    @apply font-sans antialiased transition-colors duration-500;
+    @apply antialiased;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     background: rgb(var(--background));
     color: rgb(var(--foreground));
+  }
+
+  .font-serif {
+    font-family: var(--font-serif), "Iowan Old Style", "Apple Garamond", Georgia, serif;
+    letter-spacing: -0.005em;
   }
 
   * {
@@ -95,104 +63,16 @@
   .text-balance {
     text-wrap: balance;
   }
-  
-  /* Josh-Inspired Gradient Text */
+
+  /* Backwards-compat — these classes were used in legacy components */
   .gradient-text {
-    background: linear-gradient(135deg, rgb(var(--accent-purple)), rgb(var(--accent-blue)));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: rgb(var(--text-primary));
   }
 
   .gradient-text-secondary {
-    background: linear-gradient(135deg, rgb(var(--accent-blue)), rgb(var(--accent-green)));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  /* Josh-Inspired Glass Effect */
-  .glass-effect {
-    backdrop-filter: blur(20px);
-    background: rgba(var(--surface-primary), 0.8);
-    border: 1px solid rgb(var(--border));
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Josh-Inspired Card Hover Effects */
-  .card-hover {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-hover:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px -12px rgba(var(--accent-purple), 0.15);
-  }
-
-  .card-hover-subtle {
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .card-hover-subtle:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Josh-Inspired Button Styles */
-  .button-primary {
-    padding: 0.75rem 2rem;
-    background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent-purple)));
-    color: rgb(var(--primary-foreground));
-    font-weight: 600;
-    border-radius: 0.75rem;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 14px 0 rgba(var(--primary), 0.25);
-  }
-  
-  .button-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px 0 rgba(var(--primary), 0.35);
-  }
-  
-  .button-secondary {
-    padding: 0.75rem 2rem;
-    border: 2px solid rgb(var(--border));
-    color: rgb(var(--text-primary));
-    font-weight: 600;
-    border-radius: 0.75rem;
-    background: rgb(var(--surface-primary));
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .button-secondary:hover {
-    border-color: rgb(var(--primary));
-    background: rgb(var(--surface-secondary));
-    transform: translateY(-1px);
-  }
-
-  .button-ghost {
-    padding: 0.5rem 1rem;
     color: rgb(var(--text-secondary));
-    border-radius: 0.5rem;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .button-ghost:hover {
-    color: rgb(var(--text-primary));
-    background: rgb(var(--surface-secondary));
-  }
-
-  /* Layout Utilities */
-  .section-padding {
-    @apply py-20 lg:py-32;
-  }
-
-  .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-
-  /* Josh-Inspired Heading Gradients */
   .heading-gradient {
     color: rgb(var(--text-primary));
     font-weight: 700;
@@ -202,177 +82,143 @@
     color: rgb(var(--text-secondary));
   }
 
-  /* Josh-Inspired Background Gradients */
-  .bg-gradient-radial {
-    background: radial-gradient(ellipse at center, rgba(var(--accent-purple), 0.08) 0%, rgba(var(--accent-blue), 0.04) 50%, transparent 100%);
+  .glass-effect {
+    background: rgb(var(--surface-primary));
+    border: 1px solid rgb(var(--border));
   }
 
-  .bg-gradient-mesh {
-    background: 
-      radial-gradient(at 40% 20%, rgba(99, 102, 241, 0.3) 0px, transparent 50%),
-      radial-gradient(at 80% 0%, rgba(34, 211, 238, 0.3) 0px, transparent 50%),
-      radial-gradient(at 0% 50%, rgba(139, 92, 246, 0.2) 0px, transparent 50%),
-      radial-gradient(at 80% 50%, rgba(244, 63, 94, 0.2) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, rgba(99, 102, 241, 0.2) 0px, transparent 50%),
-      radial-gradient(at 80% 100%, rgba(34, 211, 238, 0.2) 0px, transparent 50%);
+  .card-hover {
+    transition: border-color 0.2s ease;
   }
 
-  /* Enhanced Animations */
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+  .card-hover:hover {
+    border-color: rgb(var(--text-tertiary));
   }
 
-  .animate-float-delayed {
-    animation: float 6s ease-in-out infinite;
-    animation-delay: 2s;
+  .card-hover-subtle {
+    transition: border-color 0.2s ease;
   }
 
-  .animate-float-delayed-2 {
-    animation: float 6s ease-in-out infinite;
-    animation-delay: 4s;
+  .card-hover-subtle:hover {
+    border-color: rgb(var(--text-tertiary));
   }
 
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
+  /* Buttons — solid, minimal, single weight */
+  .button-primary {
+    padding: 0.625rem 1.25rem;
+    background: rgb(var(--primary));
+    color: rgb(var(--primary-foreground));
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: opacity 0.15s ease;
   }
 
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
+  .button-primary:hover {
+    opacity: 0.85;
   }
 
-  @keyframes glow {
-    from {
-      box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
-    }
-    to {
-      box-shadow: 0 0 30px rgba(99, 102, 241, 0.7);
-    }
+  .button-secondary {
+    padding: 0.625rem 1.25rem;
+    border: 1px solid rgb(var(--border));
+    color: rgb(var(--text-primary));
+    font-weight: 500;
+    border-radius: 0.5rem;
+    background: rgb(var(--surface-primary));
+    transition: border-color 0.15s ease, background-color 0.15s ease;
   }
 
-  /* Neo-Aura Skill Badges */
-  .skill-badge {
-    @apply px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm font-medium hover:bg-slate-200 transition-colors duration-200;
+  .button-secondary:hover {
+    border-color: rgb(var(--text-tertiary));
+    background: rgb(var(--surface-secondary));
   }
 
-  .dark .skill-badge {
-    @apply bg-slate-800 text-slate-300 hover:bg-slate-700;
+  .button-ghost {
+    padding: 0.5rem 1rem;
+    color: rgb(var(--text-secondary));
+    border-radius: 0.5rem;
+    transition: color 0.15s ease, background-color 0.15s ease;
   }
 
-  .skill-badge-primary {
-    @apply px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium hover:bg-indigo-200 transition-colors duration-200;
+  .button-ghost:hover {
+    color: rgb(var(--text-primary));
+    background: rgb(var(--surface-secondary));
   }
 
-  .dark .skill-badge-primary {
-    @apply bg-indigo-900/50 text-indigo-300 hover:bg-indigo-900;
+  /* Layout */
+  .section-padding {
+    @apply py-20 lg:py-32;
   }
 
-  .skill-badge-secondary {
-    @apply px-4 py-2 bg-cyan-100 text-cyan-700 rounded-full text-sm font-medium hover:bg-cyan-200 transition-colors duration-200;
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  .dark .skill-badge-secondary {
-    @apply bg-cyan-900/50 text-cyan-300 hover:bg-cyan-900;
-  }
+  /* Backgrounds — flat */
+  .bg-gradient-radial { background: transparent; }
+  .bg-gradient-mesh { background: transparent; }
 
-  .skill-badge-success {
-    @apply px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium hover:bg-purple-200 transition-colors duration-200;
-  }
-
-  .dark .skill-badge-success {
-    @apply bg-purple-900/50 text-purple-300 hover:bg-purple-900;
-  }
-
-  /* Josh-Inspired Project Cards */
+  /* Skill / project cards */
   .project-card {
     background: rgb(var(--surface-primary));
-    border-radius: 1rem;
+    border-radius: 0.75rem;
     padding: 1.5rem;
     border: 1px solid rgb(var(--border));
     min-height: 500px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s ease;
   }
 
   .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px -12px rgba(var(--accent-purple), 0.15);
-    border-color: rgba(var(--accent-purple), 0.2);
+    border-color: rgb(var(--text-tertiary));
   }
 
-  /* Neo-Aura Timeline */
-  .timeline-item {
-    @apply relative pl-8 pb-8 border-l-2 border-slate-300 last:border-l-0 last:pb-0;
-  }
-
-  .dark .timeline-item {
-    @apply border-slate-700;
-  }
-
-  .timeline-item::before {
-    content: '';
-    @apply absolute left-[-9px] top-0 w-4 h-4 bg-indigo-500 rounded-full border-4 border-white shadow-lg;
-  }
-
-  .dark .timeline-item::before {
-    @apply border-slate-900;
-  }
-
-  /* Neo-Aura Navigation */
+  /* Navigation underline */
   .nav-link {
-    @apply relative text-slate-600 hover:text-slate-900 font-medium transition-colors duration-200;
+    color: rgb(var(--text-secondary));
+    font-weight: 500;
+    transition: color 0.15s ease;
+    position: relative;
   }
 
-  .dark .nav-link {
-    @apply text-slate-400 hover:text-slate-100;
+  .nav-link:hover { color: rgb(var(--text-primary)); }
+
+  .nav-link.active {
+    color: rgb(var(--text-primary));
   }
 
   .nav-link::after {
     content: '';
-    @apply absolute bottom-[-4px] left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-cyan-400 transition-all duration-300;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: rgb(var(--text-primary));
+    transition: width 0.2s ease;
   }
 
-  .nav-link:hover::after {
-    @apply w-full;
+  .nav-link:hover::after,
+  .nav-link.active::after { width: 100%; }
+
+  /* Long-form case study prose */
+  .case-prose {
+    color: rgb(var(--text-secondary));
+    font-size: 1.0625rem;
+    line-height: 1.75;
   }
 
-  .nav-link.active::after {
-    @apply w-full;
+  .case-prose p { margin: 0 0 1.25rem 0; }
+
+  .case-prose strong {
+    color: rgb(var(--text-primary));
+    font-weight: 600;
   }
 
-  /* Utility Classes */
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-
-  .blur-backdrop {
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-
-  .text-shadow {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .text-shadow-lg {
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  }
-
-  .dark .text-shadow {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  .dark .text-shadow-lg {
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  .case-h3 {
+    color: rgb(var(--text-primary));
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 2rem 0 0.75rem 0;
   }
 
   /* Text truncation utilities */
@@ -392,19 +238,12 @@
 }
 
 @layer utilities {
-  .perspective-1000 {
-    perspective: 1000px;
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
-  .rotate-y-12 {
-    transform: rotateY(12deg);
-  }
-
-  .rotate-y-neg-12 {
-    transform: rotateY(-12deg);
-  }
-
-  .backface-hidden {
-    backface-visibility: hidden;
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

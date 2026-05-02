@@ -12,7 +12,7 @@ const projects: Project[] = [
   {
     projectName: "Bazaar Web App",
     description:
-      "Lead development of the flagship B2C e-commerce web app (Next.js + NestJS) serving 100k+ active users. Optimized CDN usage reducing infra costs by $450/month (~$5,400/year), cut LCP by 40% via an advanced image optimization pipeline, and drove a 47% increase in customer order value through gamification features.",
+      "Flagship B2C e-commerce web for Pakistan's largest grocery platform (Next.js + NestJS). Co-led the image-optimization + CDN pipeline that took Core Web Vitals from failing to Passed (40% LCP cut, Lighthouse 92) under Pakistani 3G/4G conditions. Organic search grew from ~0 to 156K monthly clicks / 11.2M impressions. Cut CDN spend by ~$5,400/year. Also shipped a PM-designed gamification feature that lifted customer order value 47%.",
     link: "https://www.bazaarapp.com",
     technologies: [
       "Next.js",
