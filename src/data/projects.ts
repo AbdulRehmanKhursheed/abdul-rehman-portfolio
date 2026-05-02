@@ -32,7 +32,7 @@ const projects: Project[] = [
   {
     projectName: "Bazaar - Grocery Delivery App",
     description:
-      "Pakistan's leading grocery delivery app serving 1M+ downloads with 4.3★ rating. Features next-day delivery, 3,000+ items across 30+ categories, real-time order tracking, and multiple payment options. Built with native Android architecture serving households and businesses in Karachi, Lahore, and Islamabad.",
+      "Pakistan's leading grocery delivery app serving 1M+ downloads with 4.5★ rating. Features next-day delivery, 3,000+ items across 30+ categories, real-time order tracking, and multiple payment options. Built with native Android architecture serving households and businesses in Karachi, Lahore, and Islamabad.",
     link: "https://play.google.com/store/apps/details?id=bazaar.tech.com&hl=en",
     technologies: [
       "Android",
