@@ -1,25 +1,14 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import ConditionalHeader from "../components/conditional-header.component";
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-sans",
-});
-
-const serif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-  variable: "--font-serif",
-});
-
 export const metadata: Metadata = {
-  title: "Abdul Rehman — Senior Frontend Engineer (Next.js · React · TypeScript)",
+  title:
+    "Abdul Rehman — Senior Frontend Engineer (Next.js · React · TypeScript)",
   description:
-    "Senior Frontend Engineer at Bazaar Technologies. Web performance for emerging-market users — Core Web Vitals: Passed, Lighthouse 92, organic search 0 → 156K monthly clicks.",
+    "Senior Frontend Engineer at Bazaar Technologies. Web performance for emerging-market users — Core Web Vitals: Passed, Lighthouse 92, organic search 0 → 156K monthly clicks. Sole author of the Keenu One storefront.",
   keywords: [
     "Senior Frontend Engineer",
     "Web Performance",
@@ -29,6 +18,7 @@ export const metadata: Metadata = {
     "TypeScript",
     "NestJS",
     "AWS",
+    "Multi-tenant",
     "Pakistan",
   ],
   authors: [{ name: "Abdul Rehman" }],
@@ -36,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Abdul Rehman — Senior Frontend Engineer",
     description:
-      "Web performance for emerging-market users. Core Web Vitals: Passed, Lighthouse 92, SEO 0 → 156K monthly clicks at Bazaar Technologies.",
+      "Web performance for emerging-market users. Core Web Vitals: Passed, Lighthouse 92, SEO 0 → 156K monthly clicks at Bazaar. Sole author of the Keenu One storefront.",
     type: "website",
     locale: "en_US",
   },
@@ -44,12 +34,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Abdul Rehman — Senior Frontend Engineer",
     description:
-      "Web performance for emerging-market users. Core Web Vitals: Passed, Lighthouse 92, SEO 0 → 156K monthly clicks at Bazaar Technologies.",
+      "Web performance for emerging-market users. Core Web Vitals: Passed, Lighthouse 92, SEO 0 → 156K monthly clicks at Bazaar.",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -58,9 +45,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${serif.variable}`}>
+    <html
+      lang="en"
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
+    >
       <head>
-        <meta name="theme-color" content="#fafaf9" />
+        <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className="font-sans">

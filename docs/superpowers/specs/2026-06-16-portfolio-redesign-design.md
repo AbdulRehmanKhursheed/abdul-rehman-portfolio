@@ -96,7 +96,9 @@ Mirror the structure/styling of `bazaar-performance`. Sections:
 
 ## 6. Resume (`public/pdf/resume.html` → regenerated PDF)
 
-Source is `public/pdf/resume.html`; the served file is `public/pdf/AbdulRehman_Senior_Frontend_Resume.pdf` via `/api/resume`.
+**Strategy decision:** The handmade LaTeX resume (`~/Downloads/Front_End_Dev_AbdulRehman_Resume.pdf`) is the one that historically got responses; the current fancy portfolio resume got none. Follow the data: adopt the handmade one's **single-column, dense, ATS-friendly structure** as the basis — not the fancier multi-block layout.
+
+**Toolchain reality:** No `.tex` source exists locally and no LaTeX toolchain is installed. Google Chrome IS available. The portfolio already renders resume PDFs from `public/pdf/resume.html` via headless Chrome. So: rebuild `resume.html` to mirror the handmade single-column structure, then render to PDF with `Google Chrome --headless --print-to-pdf` and replace the served file `public/pdf/AbdulRehman_Senior_Frontend_Resume.pdf` (served via `/api/resume`). Result: the converting layout + an editable, versioned source + one-command regeneration.
 
 Changes:
 1. **Add Keenu One Storefront** to experience bullets and highlighted projects (sole author, multi-tenant, Next 16/React 19, sirocpk.com).
@@ -105,6 +107,13 @@ Changes:
 4. **Restore keyword density** — re-add truthful keywords the old resume had that ATS filters match (e.g., Webpack, Prometheus/Grafana, Route 53, Spring Boot if still truthful, CI/CD). Keep the clean look but widen the skills line.
 5. **Single-column-safe** — ensure layout stays parseable (it already extracts cleanly; keep it that way).
 6. Regenerate the PDF from the updated HTML (headless Chrome / available tool) and replace the served file.
+
+### Stack honesty (applies to resume AND portfolio)
+Only list skills defensible in a deep interview. Author is a Next.js/React/TypeScript/web-performance specialist; Node/NestJS BFF is the genuine secondary stack.
+- **Remove Spring Boot and Java entirely** from all skill lists (not the author's stack; pure interview liability).
+- **Remove Kotlin / Android from the *skills/languages* lists** (no claim of depth).
+- **Keep the Bazaar Android apps as shipped *projects*** (1M+ downloads is real, verifiable credibility), framed as cross-platform contribution — "shipped customer features on Android (Kotlin/Compose)" — never as Kotlin mastery. Soften/trim the per-project Kotlin tech-tag walls accordingly.
+- Net positioning: **Senior Frontend Engineer — Next.js / React / TypeScript / web performance**, Node/NestJS BFF secondary.
 
 ---
 
