@@ -65,7 +65,7 @@ const AboutMe = () => {
       <div className="container-custom">
         <div className="grid md:grid-cols-[140px_1fr] gap-4 md:gap-10">
           <p className="eyebrow pt-1">About</p>
-          <div>
+          <div className="min-w-0">
             <div
               className="space-y-4 text-[0.975rem] md:text-base leading-relaxed max-w-2xl text-pretty"
               style={{ color: `rgb(var(--text-secondary))` }}
@@ -94,7 +94,7 @@ const AboutMe = () => {
         {/* Skills */}
         <div className="mt-16 grid md:grid-cols-[140px_1fr] gap-4 md:gap-10">
           <p className="eyebrow pt-1">Stack</p>
-          <div className="space-y-4 max-w-2xl">
+          <div className="space-y-4 max-w-2xl min-w-0">
             {skills.map((g) => (
               <div
                 key={g.group}
@@ -117,7 +117,7 @@ const AboutMe = () => {
           className="mt-16 grid md:grid-cols-[140px_1fr] gap-4 md:gap-10"
         >
           <p className="eyebrow pt-1">Experience</p>
-          <div className="max-w-2xl">
+          <div className="max-w-2xl min-w-0">
             {experiences.map((exp) => (
               <div
                 key={`${exp.company}-${exp.period}`}

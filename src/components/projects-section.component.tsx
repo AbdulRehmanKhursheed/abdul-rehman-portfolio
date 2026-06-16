@@ -15,9 +15,9 @@ function FeaturedRow({ project }: { project: Project }) {
       className="py-7 border-t first:border-t-0 first:pt-0"
       style={{ borderColor: `rgb(var(--border))` }}
     >
-      <div className="flex items-baseline justify-between gap-4">
+      <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
         <h3
-          className="text-base font-medium flex items-center gap-2.5 flex-wrap"
+          className="text-base font-medium flex items-center gap-2.5 flex-wrap min-w-0"
           style={{ color: `rgb(var(--text-primary))` }}
         >
           {project.projectName}
@@ -34,7 +34,7 @@ function FeaturedRow({ project }: { project: Project }) {
           )}
         </h3>
         <span
-          className="font-mono text-xs shrink-0"
+          className="font-mono text-xs sm:shrink-0"
           style={{ color: `rgb(var(--text-tertiary))` }}
         >
           {[project.role, project.year].filter(Boolean).join(" · ")}
@@ -125,7 +125,7 @@ const ProjectsSection = () => {
       <div className="container-custom">
         <div className="grid md:grid-cols-[140px_1fr] gap-4 md:gap-10">
           <p className="eyebrow pt-1">Selected work</p>
-          <div>
+          <div className="min-w-0">
             {featured.map((p) => (
               <FeaturedRow key={p.projectName} project={p} />
             ))}

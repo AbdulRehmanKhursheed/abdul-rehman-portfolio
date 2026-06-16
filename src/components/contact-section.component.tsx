@@ -19,7 +19,7 @@ const ContactSection = () => {
       <div className="container-custom">
         <div className="grid md:grid-cols-[140px_1fr] gap-4 md:gap-10">
           <p className="eyebrow pt-1">Contact</p>
-          <div className="max-w-2xl">
+          <div className="max-w-2xl min-w-0">
             <p
               className="text-[0.975rem] md:text-base leading-relaxed mb-8"
               style={{ color: `rgb(var(--text-secondary))` }}

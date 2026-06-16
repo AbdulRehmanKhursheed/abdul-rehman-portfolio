@@ -20,9 +20,9 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease }}
-          className="flex items-start justify-between gap-8"
+          className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-8"
         >
-          <div className="max-w-2xl">
+          <div className="w-full sm:w-auto sm:max-w-2xl">
             <h1
               className="font-display text-3xl md:text-[2.5rem] leading-[1.1] tracking-tight"
               style={{ color: `rgb(var(--text-primary))` }}
