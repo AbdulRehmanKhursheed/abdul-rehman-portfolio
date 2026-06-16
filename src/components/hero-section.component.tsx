@@ -69,6 +69,7 @@ const HeroSection = () => {
               </a>
               <span style={{ color: `rgb(var(--text-tertiary))` }}>·</span>
               <button
+                type="button"
                 onClick={() => scrollTo("contact")}
                 className="text-link"
                 style={{ color: `rgb(var(--text-primary))` }}

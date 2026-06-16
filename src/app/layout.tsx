@@ -4,7 +4,12 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import ConditionalHeader from "../components/conditional-header.component";
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title:
     "Abdul Rehman — Senior Frontend Engineer (Next.js · React · TypeScript)",
   description:

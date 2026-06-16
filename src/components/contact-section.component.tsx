@@ -29,12 +29,14 @@ const ContactSection = () => {
             </p>
 
             <div>
-              {LINKS.map(({ label, value, href }) => (
+              {LINKS.map(({ label, value, href }) => {
+                const external = href.startsWith("http") || href === "/api/resume";
+                return (
                 <a
                   key={label}
                   href={href}
-                  target={href.startsWith("http") || href === "/api/resume" ? "_blank" : undefined}
-                  rel="noopener noreferrer"
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noopener noreferrer" : undefined}
                   className="group flex items-baseline justify-between gap-4 py-3 border-t"
                   style={{ borderColor: `rgb(var(--border))` }}
                 >
@@ -51,7 +53,8 @@ const ContactSection = () => {
                     {value}
                   </span>
                 </a>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

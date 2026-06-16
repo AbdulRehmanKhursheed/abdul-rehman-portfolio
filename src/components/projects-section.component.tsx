@@ -58,7 +58,7 @@ function FeaturedRow({ project }: { project: Project }) {
           className="inline-flex items-center gap-1 text-link"
         >
           {prettyHost(project.link)}
-          <ArrowUpRight className="w-3.5 h-3.5" />
+          <ArrowUpRight className="w-3.5 h-3.5" aria-hidden />
         </a>
         {project.caseStudyHref && (
           <a
@@ -67,7 +67,7 @@ function FeaturedRow({ project }: { project: Project }) {
             style={{ color: `rgb(var(--accent))` }}
           >
             Case study
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-3.5 h-3.5" aria-hidden />
           </a>
         )}
       </div>

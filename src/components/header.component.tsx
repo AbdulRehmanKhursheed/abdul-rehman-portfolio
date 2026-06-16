@@ -54,6 +54,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-[4.5rem]">
           {/* Wordmark */}
           <button
+            type="button"
             onClick={() => {
               router.push("/");
               scrollToSection("hero");
@@ -78,6 +79,7 @@ const Header = () => {
           <nav className="hidden md:flex items-center gap-8">
             {NAV.map((item, i) => (
               <button
+                type="button"
                 key={item.name}
                 onClick={() => scrollToSection(item.id)}
                 className="font-mono text-xs transition-colors flex items-center gap-1.5"
@@ -106,6 +108,7 @@ const Header = () => {
           </nav>
 
           <button
+            type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2"
             aria-label="Toggle menu"
@@ -131,6 +134,7 @@ const Header = () => {
               <div className="py-4 flex flex-col gap-1">
                 {NAV.map((item, i) => (
                   <button
+                    type="button"
                     key={item.name}
                     onClick={() => scrollToSection(item.id)}
                     className="font-mono text-sm text-left px-1 py-2.5 flex items-center gap-2"
