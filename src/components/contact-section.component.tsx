@@ -1,6 +1,6 @@
 const LINKS = [
   { label: "Email", value: "malik.ali5560@gmail.com", href: "mailto:malik.ali5560@gmail.com" },
-  { label: "Phone", value: "+92 304 5919 454", href: "tel:+923045919454" },
+  { label: "WhatsApp", value: "+92 304 591 9454", href: "https://wa.me/923045919454" },
   { label: "GitHub", value: "AbdulRehmanKhursheed", href: "https://github.com/AbdulRehmanKhursheed" },
   { label: "LinkedIn", value: "malik-abdul-rehman", href: "https://www.linkedin.com/in/malik-abdul-rehman/" },
   { label: "Résumé", value: "Download PDF", href: "/api/resume" },
@@ -25,7 +25,7 @@ const ContactSection = () => {
               style={{ color: `rgb(var(--text-secondary))` }}
             >
               Open to senior frontend roles — remote, or Islamabad / Rawalpindi.
-              Email is the fastest way to reach me.
+              Email or WhatsApp are the fastest ways to reach me.
             </p>
 
             <div>
