@@ -38,6 +38,7 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    font-size: 17px;
   }
 
   body {
@@ -45,7 +46,8 @@
     font-family: var(--font-geist-sans), system-ui, sans-serif;
     background: rgb(var(--background));
     color: rgb(var(--text-primary));
-    font-size: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
     letter-spacing: -0.006em;
   }
 
@@ -89,7 +91,7 @@
   /* Small, quiet section label */
   .eyebrow {
     font-family: var(--font-geist-mono), ui-monospace, monospace;
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     font-weight: 400;
     letter-spacing: 0.01em;
     color: rgb(var(--text-tertiary));
@@ -154,9 +156,9 @@
   /* Tech token — plain text, comma-feel, no chrome */
   .tech-chip {
     font-family: var(--font-geist-mono), ui-monospace, monospace;
-    font-size: 0.74rem;
+    font-size: 0.8rem;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.7;
     color: rgb(var(--text-tertiary));
   }
 
