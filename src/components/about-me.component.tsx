@@ -25,9 +25,9 @@ const experiences = [
     note: "Promoted from Software Engineer II in Dec 2024.",
     bullets: [
       "Lead frontend on bazaarapp.com (Next.js + NestJS BFF) — flagship customer web for Pakistan's largest B2C grocery platform.",
-      "Co-led the image + CDN pipeline: 40% LCP cut, CWV Passed, ~$5,400/yr CDN saving, organic search 0 → 156K monthly clicks.",
-      "Sole author of the Keenu One storefront — a multi-tenant ordering platform (Next.js 16 / React 19); first merchant live at sirocpk.com.",
-      "Built end-to-end frontend flows on the Keenu One merchant dashboard (React + Vite) — including the map-based delivery-zone editor.",
+      "Co-led the image + CDN pipeline: 40% LCP cut, CWV Passed, ~$5,400/yr CDN saving, organic search 0 → 156K total clicks.",
+      "Lead author of the Keenu One storefront — a multi-tenant ordering platform (Next.js 16 / React 19) I wrote the large majority of; first merchant live at sirocpk.com.",
+      "Built end-to-end frontend flows on the Keenu One merchant dashboard (React + Vite) — the storefront-config / theming & branding editors, plus dashboard and POS-kiosk screens.",
       "Drove the MUI → Tailwind + Radix migration; shipped gamification that lifted customer order value 47%.",
     ],
   },
@@ -77,15 +77,15 @@ const AboutMe = () => {
                 <span style={{ color: `rgb(var(--text-primary))` }}>
                   Core Web Vitals: Passed
                 </span>
-                , Lighthouse 92, and grew organic search from ~0 to 156K monthly
+                , Lighthouse 92, and grew organic search from ~0 to 156K total
                 clicks.
               </p>
               <p>
-                I&apos;m also sole author of the Keenu One storefront — a
-                multi-tenant platform where one Next.js codebase serves merchants
-                on their own domains. I use AI-assisted dev day-to-day, but
-                I&apos;ve shipped enough greenfield React to fix what it gets
-                wrong.
+                I&apos;m also lead author of the Keenu One storefront — a
+                multi-tenant platform where one Next.js codebase is built to
+                serve many merchants on their own domains (first merchant live).
+                I use AI-assisted development to move fast, grounded in years of
+                shipping production React.
               </p>
             </div>
           </div>

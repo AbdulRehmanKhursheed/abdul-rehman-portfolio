@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title:
     "Abdul Rehman — Senior Frontend Engineer (Next.js · React · TypeScript)",
   description:
-    "Senior Frontend Engineer at Bazaar Technologies. Web performance for emerging-market users — Core Web Vitals: Passed, Lighthouse 92, organic search 0 → 156K monthly clicks. Sole author of the Keenu One storefront.",
+    "Senior Frontend Engineer at Bazaar Technologies. Web performance for emerging-market users — Core Web Vitals: Passed, Lighthouse 92, organic search 0 → 156K total clicks. Sole author of the Keenu One storefront.",
   keywords: [
     "Senior Frontend Engineer",
     "Web Performance",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Abdul Rehman — Senior Frontend Engineer",
     description:
-      "Web performance for emerging-market users. Core Web Vitals: Passed, Lighthouse 92, SEO 0 → 156K monthly clicks at Bazaar. Sole author of the Keenu One storefront.",
+      "Web performance for emerging-market users. Core Web Vitals: Passed, Lighthouse 92, SEO 0 → 156K total clicks at Bazaar. Sole author of the Keenu One storefront.",
     type: "website",
     locale: "en_US",
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Abdul Rehman — Senior Frontend Engineer",
     description:
-      "Web performance for emerging-market users. Core Web Vitals: Passed, Lighthouse 92, SEO 0 → 156K monthly clicks at Bazaar.",
+      "Web performance for emerging-market users. Core Web Vitals: Passed, Lighthouse 92, SEO 0 → 156K total clicks at Bazaar.",
   },
   robots: { index: true, follow: true },
 };

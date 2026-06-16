@@ -45,12 +45,12 @@ const HeroSection = () => {
                 <span style={{ color: `rgb(var(--text-primary))` }}>
                   Bazaar Technologies
                 </span>{" "}
-                I took the flagship grocery app to Core Web Vitals: Passed —
-                Lighthouse 92, and organic search from zero to 156K monthly
-                clicks.
+                I co-led the work that took the flagship grocery app to Core
+                Web Vitals: Passed — Lighthouse 92, and organic search from zero
+                to 156K total clicks.
               </p>
               <p>
-                On the side, I&apos;m sole author of the{" "}
+                On the side, I&apos;m lead author of the{" "}
                 <a
                   href="https://sirocpk.com"
                   target="_blank"
@@ -59,7 +59,8 @@ const HeroSection = () => {
                 >
                   Keenu One storefront
                 </a>{" "}
-                — a multi-tenant ordering platform on Next.js 16 / React 19.
+                — a multi-tenant ordering platform on Next.js 16 / React 19
+                (first merchant live).
               </p>
             </div>
 

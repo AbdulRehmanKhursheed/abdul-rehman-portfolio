@@ -29,7 +29,7 @@ function FeaturedRow({ project }: { project: Project }) {
                 background: `rgb(var(--accent-soft))`,
               }}
             >
-              sole author
+              lead author
             </span>
           )}
         </h3>

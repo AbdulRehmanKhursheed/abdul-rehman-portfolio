@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 const FACTS = [
-  { label: "ROLE", value: "Sole author" },
+  { label: "ROLE", value: "Lead author" },
   { label: "STACK", value: "Next.js 16 · React 19" },
   { label: "LIVE", value: "sirocpk.com" },
   { label: "SCALE", value: "~24K lines · 385 commits" },
@@ -52,10 +52,10 @@ export default function KeenuStorefrontCaseStudy() {
               className="text-lg leading-relaxed"
               style={{ color: `rgb(var(--text-secondary))` }}
             >
-              I&apos;m sole author of the Keenu One storefront — a multi-tenant
-              ordering platform where a single Next.js codebase serves multiple
-              restaurants, each on their own branded domain. The first merchant
-              is live at{" "}
+              I&apos;m lead author of the Keenu One storefront — a multi-tenant
+              ordering platform where a single Next.js codebase is built to serve
+              many restaurants, each on their own branded domain. The first
+              merchant is live at{" "}
               <a
                 href="https://sirocpk.com"
                 target="_blank"
@@ -139,13 +139,15 @@ export default function KeenuStorefrontCaseStudy() {
 
           <Section title="Honest scope">
             <p>
-              I&apos;m sole author of the <strong>storefront</strong> and its
-              related flows — menu, cart, checkout, order tracking, theming and
-              SEO. I do not claim the whole Keenu One platform: the merchant
-              dashboard, the Go BFF and the backend services are the wider
-              team&apos;s work (I contributed frontend to the merchant
-              dashboard). One merchant is live today; the multi-theme system is
-              built for many and currently serves the first.
+              I&apos;m the <strong>lead author / primary engineer</strong> of
+              the storefront — I wrote the large majority of it (the substance:
+              menu, cart, checkout, order tracking, theming and SEO), with a few
+              other engineers contributing along the way. I don&apos;t claim the
+              whole Keenu One platform: the merchant dashboard, the Go BFF and
+              the backend services are the wider team&apos;s work — on the
+              merchant dashboard I built the storefront-config / theming editors.
+              One merchant is live today; the multi-theme system is built for
+              many and currently serves the first.
             </p>
           </Section>
 

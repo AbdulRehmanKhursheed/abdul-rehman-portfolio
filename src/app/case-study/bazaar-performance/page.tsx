@@ -6,11 +6,11 @@ import { ArrowLeft, Mail, Linkedin } from "lucide-react";
 export const metadata: Metadata = {
   title: "Bazaar — Web Performance Case Study | Abdul Rehman",
   description:
-    "How we took Bazaar's flagship web app from failing Core Web Vitals to Passed and grew organic search from zero to 156K monthly clicks — under Pakistani 3G/4G conditions.",
+    "How we took Bazaar's flagship web app from failing Core Web Vitals to Passed and grew organic search from zero to 156K total clicks — under Pakistani 3G/4G conditions.",
   openGraph: {
     title: "Web performance for the rest of the world — Abdul Rehman",
     description:
-      "Bazaar case study: Core Web Vitals from failing to Passed, Lighthouse 92, organic search 0 → 156K monthly clicks under Pakistani 3G/4G.",
+      "Bazaar case study: Core Web Vitals from failing to Passed, Lighthouse 92, organic search 0 → 156K total clicks under Pakistani 3G/4G.",
     type: "article",
     images: [
       {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Web performance for the rest of the world — Abdul Rehman",
     description:
-      "Bazaar case study: CWV: Passed, Lighthouse 92, organic search 0 → 156K monthly clicks.",
+      "Bazaar case study: CWV: Passed, Lighthouse 92, organic search 0 → 156K total clicks.",
     images: ["/case-study/lighthouse.png"],
   },
 };
@@ -34,7 +34,7 @@ const RECEIPTS = [
   { value: "Passed", label: "Core Web Vitals (CrUX)" },
   { value: "92", label: "Lighthouse Performance" },
   { value: "40%", label: "LCP cut" },
-  { value: "156K", label: "Monthly organic clicks" },
+  { value: "156K", label: "Total organic clicks" },
   { value: "11.2M", label: "Monthly impressions" },
   { value: "$5,400/yr", label: "CDN cost reduction" },
 ];
@@ -75,7 +75,7 @@ export default function BazaarCaseStudy() {
               How we took Bazaar&apos;s flagship app from failing Core Web
               Vitals to Passed — and grew organic search from zero to{" "}
               <strong style={{ color: `rgb(var(--text-primary))` }}>
-                156K monthly clicks
+                156K total clicks
               </strong>{" "}
               — under Pakistani 3G/4G network conditions.
             </p>
