@@ -1,375 +1,147 @@
-"use client";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
+import projects, { type Project } from "../data/projects";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import {
-  ExternalLink,
-  Github,
-  Filter,
-  Code,
-  Smartphone,
-  Cloud,
-  Database,
-  Eye,
-  ArrowRight,
-  Star,
-  Users,
-  Zap,
-} from "lucide-react";
-import projects from "../data/projects";
-import React from "react";
-import { ProjectModal } from "./project-modal";
-
-// Helper functions
-const getCategoryIcon = (category: string) => {
-  switch (category) {
-    case "Web App":
-      return Code;
-    case "Mobile App":
-      return Smartphone;
-    case "Infrastructure":
-      return Cloud;
-    default:
-      return Database;
-  }
-};
-
-const getFaviconUrl = (url: string) => {
-  if (!url || url === "#") return null;
+function prettyHost(url: string) {
   try {
-    const domain = new URL(url).hostname;
-    // Use multiple favicon services for better reliability
-    return `https://favicon.im/${domain}?larger=true`;
+    return new URL(url).hostname.replace(/^www\./, "");
   } catch {
-    return null;
+    return url;
   }
-};
+}
 
-// Project Icon Component with Local Icon and Favicon Support
-const ProjectIcon = ({
-  project,
-  size = 24,
-  className = "",
-}: {
-  project: any;
-  size?: number;
-  className?: string;
-}) => {
-  const [faviconError, setFaviconError] = useState(false);
-  const [faviconLoaded, setFaviconLoaded] = useState(false);
-  const CategoryIcon = getCategoryIcon(project.category);
+function FeaturedRow({ project }: { project: Project }) {
+  return (
+    <article
+      className="py-7 border-t first:border-t-0 first:pt-0"
+      style={{ borderColor: `rgb(var(--border))` }}
+    >
+      <div className="flex items-baseline justify-between gap-4">
+        <h3
+          className="text-base font-medium flex items-center gap-2.5 flex-wrap"
+          style={{ color: `rgb(var(--text-primary))` }}
+        >
+          {project.projectName}
+          {project.soleAuthor && (
+            <span
+              className="font-mono text-[0.65rem] px-1.5 py-0.5 rounded"
+              style={{
+                color: `rgb(var(--accent))`,
+                background: `rgb(var(--accent-soft))`,
+              }}
+            >
+              sole author
+            </span>
+          )}
+        </h3>
+        <span
+          className="font-mono text-xs shrink-0"
+          style={{ color: `rgb(var(--text-tertiary))` }}
+        >
+          {[project.role, project.year].filter(Boolean).join(" · ")}
+        </span>
+      </div>
 
-  // Use local icon if available
-  if (project.localIcon) {
-    return (
-      <Image
-        src={project.localIcon}
-        alt={`${project.projectName} icon`}
-        width={size}
-        height={size}
-        className={`rounded-sm ${className} rounded-full`}
-      />
-    );
-  }
+      <p
+        className="mt-2.5 text-sm md:text-[0.95rem] leading-relaxed max-w-2xl text-pretty"
+        style={{ color: `rgb(var(--text-secondary))` }}
+      >
+        {project.description}
+      </p>
 
-  // Fallback to favicon
-  const faviconUrl = getFaviconUrl(project.link);
-  if (faviconUrl && !faviconError) {
-    return (
-      <div className="relative flex items-center justify-center">
-        <Image
-          src={faviconUrl}
-          alt={`${project.projectName} favicon`}
-          width={size}
-          height={size}
-          className={`rounded-sm transition-opacity duration-200 ${
-            faviconLoaded ? "opacity-100" : "opacity-0"
-          } ${className}`}
-          onError={() => setFaviconError(true)}
-          onLoad={(e) => {
-            const img = e.target as HTMLImageElement;
-            // Check if the image is actually loaded and not a tiny/broken icon
-            if (img.naturalWidth >= 16 && img.naturalHeight >= 16) {
-              setFaviconLoaded(true);
-            } else {
-              setFaviconError(true);
-            }
-          }}
-          unoptimized
-        />
-        {!faviconLoaded && !faviconError && (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <CategoryIcon size={size} className={`text-white ${className}`} />
-          </div>
+      <p className="tech-chip mt-3">{project.technologies.join("  ·  ")}</p>
+
+      <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-link"
+        >
+          {prettyHost(project.link)}
+          <ArrowUpRight className="w-3.5 h-3.5" aria-hidden />
+        </a>
+        {project.caseStudyHref && (
+          <a
+            href={project.caseStudyHref}
+            className="inline-flex items-center gap-1"
+            style={{ color: `rgb(var(--accent))` }}
+          >
+            Case study
+            <ArrowRight className="w-3.5 h-3.5" aria-hidden />
+          </a>
         )}
       </div>
-    );
-  }
+    </article>
+  );
+}
 
-  // Final fallback to category icon
-  return <CategoryIcon size={size} className={`text-white ${className}`} />;
-};
+function CompactRow({ project }: { project: Project }) {
+  return (
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex items-baseline justify-between gap-4 py-3.5 border-t"
+      style={{ borderColor: `rgb(var(--border))` }}
+    >
+      <span className="flex items-baseline gap-3 flex-wrap min-w-0">
+        <span
+          className="text-sm font-medium transition-colors group-hover:opacity-70"
+          style={{ color: `rgb(var(--text-primary))` }}
+        >
+          {project.projectName}
+        </span>
+        <span
+          className="text-sm truncate"
+          style={{ color: `rgb(var(--text-tertiary))` }}
+        >
+          {project.tagline}
+        </span>
+      </span>
+      <span
+        className="font-mono text-xs inline-flex items-center gap-1 shrink-0"
+        style={{ color: `rgb(var(--text-tertiary))` }}
+      >
+        {prettyHost(project.link)}
+        <ArrowUpRight className="w-3.5 h-3.5" />
+      </span>
+    </a>
+  );
+}
 
 const ProjectsSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
-  const [selectedProjectIndex, setSelectedProjectIndex] = useState<
-    number | null
-  >(null);
-
-  const categories = [
-    "All",
-    "Web App",
-    "Mobile App",
-    "Infrastructure",
-    "Other",
-  ];
-
-  const filteredProjects =
-    selectedCategory === "All"
-      ? projects
-      : projects.filter((project) => project.category === selectedCategory);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-    hover: {
-      y: -10,
-      scale: 1.02,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case "Web App":
-        return "from-indigo-500 to-cyan-500";
-      case "Mobile App":
-        return "from-purple-500 to-pink-500";
-      case "Infrastructure":
-        return "from-cyan-500 to-emerald-500";
-      default:
-        return "from-orange-500 to-red-500";
-    }
-  };
-
-  const openProjectModal = (index: number) => {
-    setSelectedProjectIndex(index);
-  };
-
-  const closeProjectModal = () => {
-    setSelectedProjectIndex(null);
-  };
+  const featured = projects.filter((p) => p.featured);
+  const rest = projects.filter((p) => !p.featured);
 
   return (
-    <>
-      <section
-        id="projects"
-        className="section-padding"
-        style={{ background: `rgb(var(--surface-primary))` }}
-      >
-        <div className="container-custom">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <motion.div className="mb-12 max-w-3xl" variants={itemVariants}>
-              <p
-                className="text-sm font-medium tracking-widest uppercase mb-4"
-                style={{ color: `rgb(var(--text-tertiary))` }}
-              >
-                Selected work
-              </p>
-              <h2
-                className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
-                style={{ color: `rgb(var(--text-primary))` }}
-              >
-                Things I&apos;ve shipped.
-              </h2>
-            </motion.div>
+    <section
+      id="projects"
+      className="section-padding border-t"
+      style={{
+        background: `rgb(var(--surface-primary))`,
+        borderColor: `rgb(var(--border))`,
+      }}
+    >
+      <div className="container-custom">
+        <div className="grid md:grid-cols-[140px_1fr] gap-4 md:gap-10">
+          <p className="eyebrow pt-1">Selected work</p>
+          <div>
+            {featured.map((p) => (
+              <FeaturedRow key={p.projectName} project={p} />
+            ))}
 
-            <motion.div
-              className="flex flex-wrap gap-2 mb-10"
-              variants={itemVariants}
-            >
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className="px-3.5 py-1.5 rounded-md text-sm font-medium transition-colors"
-                  style={{
-                    background:
-                      selectedCategory === category
-                        ? `rgb(var(--primary))`
-                        : `rgb(var(--surface-secondary))`,
-                    color:
-                      selectedCategory === category
-                        ? `rgb(var(--primary-foreground))`
-                        : `rgb(var(--text-secondary))`,
-                    border: `1px solid ${
-                      selectedCategory === category
-                        ? `rgb(var(--primary))`
-                        : `rgb(var(--border))`
-                    }`,
-                  }}
-                >
-                  {category}
-                </button>
-              ))}
-            </motion.div>
-
-            {/* Projects Grid */}
-            <motion.div
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
-              variants={containerVariants}
-            >
-              <AnimatePresence mode="wait">
-                {filteredProjects.map((project, index) => (
-                  <motion.div
-                    key={project.projectName}
-                    className="project-card group relative overflow-hidden cursor-pointer flex flex-col h-full"
-                    variants={cardVariants}
-                    initial="hidden"
-                    animate="visible"
-                    whileHover="hover"
-                    onHoverStart={() => setHoveredProject(project.projectName)}
-                    onHoverEnd={() => setHoveredProject(null)}
-                    onClick={() => openProjectModal(index)}
-                    layout
-                  >
-                    <div className="flex items-center justify-between mb-4">
-                      <span
-                        className="text-xs font-medium uppercase tracking-widest"
-                        style={{ color: `rgb(var(--text-tertiary))` }}
-                      >
-                        {project.category}
-                      </span>
-                      {project.featured && (
-                        <span
-                          className="text-xs font-medium uppercase tracking-widest"
-                          style={{ color: `rgb(var(--text-primary))` }}
-                        >
-                          Featured
-                        </span>
-                      )}
-                    </div>
-
-                    <div
-                      className="relative h-32 rounded-md mb-5 flex items-center justify-center overflow-hidden"
-                      style={{
-                        background: `rgb(var(--surface-secondary))`,
-                      }}
-                    >
-                      <ProjectIcon project={project} size={56} className="" />
-                    </div>
-
-                    <div className="flex flex-col flex-grow space-y-4">
-                      <h3
-                        className="text-lg font-semibold tracking-tight"
-                        style={{ color: `rgb(var(--text-primary))` }}
-                      >
-                        {project.projectName}
-                      </h3>
-
-                      <p
-                        className="text-sm leading-relaxed flex-grow line-clamp-4"
-                        style={{ color: `rgb(var(--text-secondary))` }}
-                      >
-                        {project.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-1.5 min-h-[2rem]">
-                        {project.technologies.slice(0, 4).map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-2 py-0.5 rounded text-xs"
-                            style={{
-                              background: `rgb(var(--surface-secondary))`,
-                              color: `rgb(var(--text-secondary))`,
-                              border: `1px solid rgb(var(--border))`,
-                            }}
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                        {project.technologies.length > 4 && (
-                          <span
-                            className="px-2 py-0.5 rounded text-xs"
-                            style={{
-                              background: `rgb(var(--surface-secondary))`,
-                              color: `rgb(var(--text-secondary))`,
-                              border: `1px solid rgb(var(--border))`,
-                            }}
-                          >
-                            +{project.technologies.length - 4}
-                          </span>
-                        )}
-                      </div>
-
-                      <div
-                        className="flex items-center justify-between text-sm font-medium pt-2 mt-auto border-t"
-                        style={{ borderColor: `rgb(var(--border))` }}
-                      >
-                        <span style={{ color: `rgb(var(--text-primary))` }}>
-                          View details
-                        </span>
-                        <ArrowRight
-                          className="w-4 h-4"
-                          style={{ color: `rgb(var(--text-secondary))` }}
-                        />
-                      </div>
-                    </div>
-                  </motion.div>
+            {rest.length > 0 && (
+              <div className="mt-12">
+                <p className="eyebrow mb-2">More</p>
+                {rest.map((p) => (
+                  <CompactRow key={p.projectName} project={p} />
                 ))}
-              </AnimatePresence>
-            </motion.div>
-          </motion.div>
+              </div>
+            )}
+          </div>
         </div>
-      </section>
-
-      {/* Project Modal */}
-      <ProjectModal
-        isOpen={selectedProjectIndex !== null}
-        onClose={closeProjectModal}
-        projectIndex={selectedProjectIndex || 0}
-      />
-    </>
+      </div>
+    </section>
   );
 };
 
