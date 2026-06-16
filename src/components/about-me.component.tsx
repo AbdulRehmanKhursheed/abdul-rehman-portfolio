@@ -27,7 +27,7 @@ const experiences = [
       "Lead frontend on bazaarapp.com (Next.js + NestJS BFF) — flagship customer web for Pakistan's largest B2C grocery platform.",
       "Co-led the image + CDN pipeline: 40% LCP cut, CWV Passed, ~$5,400/yr CDN saving, organic search 0 → 156K monthly clicks.",
       "Sole author of the Keenu One storefront — a multi-tenant ordering platform (Next.js 16 / React 19); first merchant live at sirocpk.com.",
-      "Contributed frontend to the Keenu One merchant dashboard (React + Vite) — operations surfaces including the map-based delivery-zone editor.",
+      "Built end-to-end frontend flows on the Keenu One merchant dashboard (React + Vite) — including the map-based delivery-zone editor.",
       "Drove the MUI → Tailwind + Radix migration; shipped gamification that lifted customer order value 47%.",
     ],
   },

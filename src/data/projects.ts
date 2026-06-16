@@ -49,7 +49,7 @@ const projects: Project[] = [
     tagline:
       "Operations dashboard for restaurants — menu, branches, delivery zones, POS.",
     description:
-      "The merchant-facing control panel for the Keenu One platform — a React 19 + Vite SPA. I contributed frontend across its operations surfaces, including the interactive map-based delivery-zone editor (Leaflet + Turf + Geoman). The wider app covers catalog/menu management, branches, a canvas floor-plan editor (Konva), POS, promotions, role-based access and analytics (Recharts).",
+      "The merchant-facing control panel for the Keenu One platform — a React 19 + Vite SPA. I built end-to-end frontend flows across its operations surfaces, including the interactive map-based delivery-zone editor (Leaflet + Turf + Geoman). The wider app covers catalog/menu management, branches, a canvas floor-plan editor (Konva), POS, promotions, role-based access and analytics (Recharts).",
     link: "https://console.keenu.one",
     technologies: [
       "React 19",
@@ -62,7 +62,7 @@ const projects: Project[] = [
     ],
     category: "Web App",
     featured: true,
-    role: "Frontend contributor",
+    role: "Frontend — end-to-end flows",
     year: "2025—26",
   },
   {
