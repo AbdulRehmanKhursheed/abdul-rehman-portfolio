@@ -151,15 +151,15 @@
 
   <section class="section">
     <h2>Summary</h2>
-    <p class="summary">Senior Frontend Engineer with 5 years building and scaling B2C web apps for emerging-market users. Specialized in Next.js, React, and web performance — verified Lighthouse 92+ and Core Web Vitals: Passed on Bazaar's flagship app (100k+ active web users, 1M+ Android downloads). Comfortable across Node.js / NestJS for BFFs and internal services.</p>
+    <p class="summary">Senior Frontend Engineer with 5 years building and scaling B2C web apps for emerging-market users. Specialized in Next.js, React, TypeScript and web performance — verified Lighthouse 92+ and Core Web Vitals: Passed on Bazaar's flagship app (100k+ active web users, 1M+ Android downloads). Sole author of a multi-tenant storefront platform (Next.js 16 / React 19). Comfortable across Node.js / NestJS for BFFs and internal services.</p>
   </section>
 
   <section class="section">
     <h2>Key Achievements</h2>
     <ul class="bullets">
       <li><strong>Web Vitals &amp; SEO turnaround</strong> — Co-led the image-optimization + CDN-tuning pipeline (Next.js Image, viewport-aware lazy loading) on bazaarapp.com, cutting <strong>LCP 40%</strong> and taking Core Web Vitals from failing to <strong>Passed</strong> under Pakistani 3G/4G conditions. Organic search grew from ~0 to <strong>156K monthly clicks / 11.2M impressions</strong> (Google Search Console, avg. position 7).</li>
+      <li><strong>Multi-tenant storefront platform</strong> — Sole author of the Keenu One storefront: one Next.js 16 / React 19 codebase serving multiple merchants on their own domains, with edge tenant-resolution, SSR + JSON-LD SEO and a manifest-driven theme system. First merchant live in production at sirocpk.com.</li>
       <li><strong>CDN cost optimization</strong> — Co-designed asset delivery + caching strategy across web and Android, cutting CDN spend <strong>~$450/month (~$5,400/year)</strong> with no regression in image quality.</li>
-      <li><strong>MUI → Tailwind + Radix migration</strong> — Owned the migration on a high-traffic Next.js app: eliminated runtime style injection, preserved accessibility contracts across 38 files / ~1,900 lines changed.</li>
       <li><strong>Revenue-driving engineering</strong> — Shipped PM-designed gamification (order-threshold reward levels) on the customer app, lifting <strong>customer order value 47%</strong>.</li>
     </ul>
   </section>
@@ -170,14 +170,13 @@
     <div class="entry">
       <p class="entry-line">Bazaar Technologies <span class="meta">— Islamabad, Pakistan</span></p>
       <p class="entry-role">Senior Software Engineer <span class="dates">· Mar 2023 — Present</span></p>
-      <p class="entry-note">Promoted from Software Engineer II in Dec 2024. Currently working on identity for the Keenu acquisition (post-acquisition restaurant-management platform).</p>
+      <p class="entry-note">Promoted from Software Engineer II in Dec 2024. Now building the Keenu One restaurant-commerce platform.</p>
       <ul class="bullets">
-        <li>Lead frontend on <strong>bazaarapp.com</strong> (Next.js + NestJS BFF) — flagship customer web for Pakistan's largest B2C grocery platform.</li>
-        <li>Owned the image-optimization + CDN pipeline that took CWV from failing to Passed (40% LCP cut, Lighthouse 92).</li>
-        <li>Drove the MUI v5 + Emotion → Tailwind + Radix migration — eliminated runtime style injection while preserving accessibility contracts.</li>
+        <li>Lead frontend on <strong>bazaarapp.com</strong> (Next.js + NestJS BFF) — flagship customer web for Pakistan's largest B2C grocery platform; owned the image + CDN pipeline and the MUI → Tailwind + Radix migration.</li>
+        <li><strong>Sole author of the Keenu One storefront</strong> — a multi-tenant ordering platform (Next.js 16 / React 19) serving merchants on their own domains; first merchant live at sirocpk.com.</li>
+        <li>Contributed frontend to the <strong>Keenu One merchant dashboard</strong> (React + Vite), including the interactive map-based delivery-zone editor (Leaflet + Turf).</li>
         <li>Built <strong>Bazaar Partner Portal</strong> (React, MUI, React Query) — internal vendor-analytics surface integrated with Bazaar's component library.</li>
         <li>Replaced finance team's manual invoice + tax-calculation workflow with an automated pipeline integrated into internal apps.</li>
-        <li>Shipped customer features cross-platform — Next.js web and customer Android app (Kotlin / Jetpack Compose / MVVM).</li>
       </ul>
     </div>
 
@@ -209,31 +208,32 @@
     <h2>Skills</h2>
     <dl class="skills-grid">
       <dt>Languages</dt>
-      <dd>TypeScript, JavaScript, HTML/CSS, Kotlin</dd>
+      <dd>TypeScript, JavaScript, HTML/CSS</dd>
 
       <dt>Frontend</dt>
-      <dd>Next.js (App Router, RSC), React, Redux / RTK, React Query, Tailwind, MUI, Radix UI, SCSS, Jest, micro-frontends</dd>
+      <dd>Next.js (App Router, RSC), React 19, Redux / RTK, React Query (TanStack), Tailwind CSS, Radix UI, MUI, SCSS, Zustand, Jest, micro-frontends</dd>
 
       <dt>Backend / BFF</dt>
       <dd>Node.js, NestJS, Express, MongoDB, REST APIs</dd>
 
       <dt>Cloud / Tools</dt>
-      <dd>AWS (S3, CloudFront, Lambda), Docker, Vercel, Webpack, Git, CI/CD, Postman</dd>
+      <dd>AWS (S3, CloudFront, Lambda, Route 53), Docker, Vercel, Netlify, Webpack, Vite, Git, CI/CD, Prometheus, Grafana, Postman</dd>
 
-      <dt>Mobile</dt>
-      <dd>Android, Kotlin, Jetpack Compose, MVVM, Room</dd>
+      <dt>Architecture</dt>
+      <dd>Multi-tenant systems, web performance &amp; Core Web Vitals, image pipelines, caching &amp; CDN strategy, SSR / SEO (JSON-LD), system design for scale</dd>
 
       <dt>Practice</dt>
-      <dd>Web performance &amp; Core Web Vitals, image pipelines, caching &amp; CDN strategy, system design for scale, TDD, SOLID, Agile, code review, mentorship, AI-assisted development (Claude Code, Cursor)</dd>
+      <dd>TDD, SOLID, Agile, code review, mentorship, AI-assisted development (Claude Code, Cursor)</dd>
     </dl>
   </section>
 
   <section class="section">
     <h2>Highlighted Projects</h2>
     <ul class="bullets">
-      <li><strong>Bazaar Web App</strong> — bazaarapp.com (Next.js, NestJS) — flagship B2C grocery web.</li>
-      <li><strong>Bazaar Partner Portal</strong> — partners.bazaar.technology (React, MUI, React Query) — internal vendor analytics.</li>
-      <li><strong>Bazaar Grocery Delivery App</strong> — Android (Kotlin, Jetpack Compose, MVVM) — 1M+ downloads, 4.5★.</li>
+      <li><strong>Keenu One Storefront</strong> — sirocpk.com (Next.js 16, React 19, TypeScript) — sole author; multi-tenant ordering platform, one codebase serving merchants on their own domains.</li>
+      <li><strong>Keenu One Merchant Dashboard</strong> — console.keenu.one (React 19, Vite) — frontend contributor; operations dashboard incl. map-based delivery-zone editor (Leaflet + Turf).</li>
+      <li><strong>Bazaar Web App</strong> — bazaarapp.com (Next.js, NestJS) — flagship B2C grocery web; Core Web Vitals: Passed, Lighthouse 92.</li>
+      <li><strong>Bazaar Grocery Delivery App</strong> — Android — 1M+ downloads, 4.5★; contributed customer features cross-platform.</li>
       <li><strong>Check My DBS</strong> — app-dev.checkmydbs.co.uk — UK DBS certificate verification (React, Next.js, RTK Query).</li>
     </ul>
   </section>
@@ -253,7 +253,7 @@
 
   <section class="section">
     <h2>Certifications</h2>
-    <p class="meta-line">React with Redux &amp; Next.js (Academind) · Angular Mastery (Academind) · AWS Technical Essentials (Coursera) · Node.js (Mosh) · MTA Python (Microsoft)</p>
+    <p class="meta-line"><strong>AWS Certified Solutions Architect – Associate</strong> (in progress, 2026) · AWS Technical Essentials (Coursera) · React with Redux &amp; Next.js (Academind) · Node.js (Mosh) · MTA Python (Microsoft)</p>
   </section>
 
 </div>

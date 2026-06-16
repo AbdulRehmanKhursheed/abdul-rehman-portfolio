@@ -45,36 +45,31 @@ export default function BazaarCaseStudy() {
       className="min-h-screen"
       style={{ background: `rgb(var(--surface-primary))` }}
     >
-      <div className="container-custom py-16 lg:py-24">
+      <div className="container-custom py-20 lg:py-28">
         {/* Back */}
-        <div className="mb-12">
+        <div className="mb-14">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm transition-colors hover:underline"
+            className="inline-flex items-center gap-2 text-sm transition-colors hover:opacity-70"
             style={{ color: `rgb(var(--text-tertiary))` }}
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to portfolio
+            Back
           </Link>
         </div>
 
-        <article className="max-w-3xl">
+        <article className="max-w-2xl">
           {/* Title block */}
-          <header className="mb-16">
-            <p
-              className="text-sm font-medium tracking-widest uppercase mb-4"
-              style={{ color: `rgb(var(--text-tertiary))` }}
-            >
-              Case study · Bazaar Technologies
-            </p>
+          <header className="mb-12">
+            <p className="eyebrow mb-5">Case study · Bazaar Technologies</p>
             <h1
-              className="font-serif text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight leading-[1.0] mb-8"
+              className="font-display text-3xl md:text-[2.5rem] tracking-tight leading-[1.1] mb-5"
               style={{ color: `rgb(var(--text-primary))` }}
             >
               Web performance for the rest of the world.
             </h1>
             <p
-              className="text-xl md:text-2xl leading-relaxed"
+              className="text-lg leading-relaxed"
               style={{ color: `rgb(var(--text-secondary))` }}
             >
               How we took Bazaar&apos;s flagship app from failing Core Web
@@ -86,32 +81,36 @@ export default function BazaarCaseStudy() {
             </p>
 
             <p
-              className="mt-10 text-sm"
+              className="mt-8 font-mono text-xs"
               style={{ color: `rgb(var(--text-tertiary))` }}
             >
               Senior Software Engineer · Bazaar Technologies
             </p>
           </header>
 
-          {/* Receipts strip */}
+          {/* Receipts — minimal ruled list */}
           <section
-            className="mb-20 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-8 py-10 border-y"
+            className="mb-16 border-t"
             style={{ borderColor: `rgb(var(--border))` }}
           >
             {RECEIPTS.map((r) => (
-              <div key={r.label}>
-                <div
-                  className="text-2xl md:text-3xl font-semibold tracking-tight"
-                  style={{ color: `rgb(var(--text-primary))` }}
-                >
-                  {r.value}
-                </div>
-                <div
-                  className="text-sm mt-1"
+              <div
+                key={r.label}
+                className="flex items-baseline justify-between gap-4 py-3 border-b"
+                style={{ borderColor: `rgb(var(--border))` }}
+              >
+                <span
+                  className="font-mono text-xs"
                   style={{ color: `rgb(var(--text-tertiary))` }}
                 >
                   {r.label}
-                </div>
+                </span>
+                <span
+                  className="text-sm font-medium"
+                  style={{ color: `rgb(var(--text-primary))` }}
+                >
+                  {r.value}
+                </span>
               </div>
             ))}
           </section>
@@ -271,9 +270,9 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="mb-14">
+    <section className="mb-12">
       <h2
-        className="font-serif text-3xl md:text-4xl font-normal tracking-tight mb-5"
+        className="font-display text-xl md:text-2xl tracking-tight mb-4"
         style={{ color: `rgb(var(--text-primary))` }}
       >
         {title}

@@ -70,7 +70,7 @@ const Header = () => {
               className="hidden sm:inline font-mono text-[0.68rem]"
               style={{ color: `rgb(var(--text-tertiary))` }}
             >
-              /// FE ENGINEER
+              {"// FE ENGINEER"}
             </span>
           </button>
 
