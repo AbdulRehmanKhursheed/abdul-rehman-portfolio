@@ -14,7 +14,7 @@ const Footer = () => {
           className="font-mono text-xs"
           style={{ color: `rgb(var(--text-tertiary))` }}
         >
-          © {new Date().getFullYear()} Abdul Rehman
+          © {new Date().getFullYear()} Malik Abdul Rehman Khursheed
         </span>
         <span
           className="font-mono text-xs"

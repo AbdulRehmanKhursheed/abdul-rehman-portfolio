@@ -11,9 +11,9 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title:
-    "Abdul Rehman — Senior Frontend Engineer (Next.js · React · TypeScript)",
+    "Malik Abdul Rehman Khursheed — Senior Frontend Engineer (Next.js · React · TypeScript)",
   description:
-    "Senior Frontend Engineer at Bazaar Technologies. Web performance for emerging-market users — Core Web Vitals: Passed, Lighthouse 92, organic search 0 → 156K total clicks. Sole author of the Keenu One storefront.",
+    "Senior Frontend Engineer at Bazaar Technologies. Web performance for emerging-market users — Core Web Vitals: Passed, Lighthouse 92, organic search 0 → 156K total clicks. Lead author of the Keenu One storefront.",
   keywords: [
     "Senior Frontend Engineer",
     "Web Performance",
@@ -26,20 +26,29 @@ export const metadata: Metadata = {
     "Multi-tenant",
     "Pakistan",
   ],
-  authors: [{ name: "Abdul Rehman" }],
-  creator: "Abdul Rehman",
+  authors: [{ name: "Malik Abdul Rehman Khursheed" }],
+  creator: "Malik Abdul Rehman Khursheed",
   openGraph: {
-    title: "Abdul Rehman — Senior Frontend Engineer",
+    title: "Malik Abdul Rehman Khursheed — Senior Frontend Engineer",
     description:
-      "Web performance for emerging-market users. Core Web Vitals: Passed, Lighthouse 92, SEO 0 → 156K total clicks at Bazaar. Sole author of the Keenu One storefront.",
+      "Web performance for emerging-market users. Core Web Vitals: Passed, Lighthouse 92, SEO 0 → 156K total clicks at Bazaar. Lead author of the Keenu One storefront.",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Malik Abdul Rehman Khursheed — Senior Frontend Engineer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abdul Rehman — Senior Frontend Engineer",
+    title: "Malik Abdul Rehman Khursheed — Senior Frontend Engineer",
     description:
       "Web performance for emerging-market users. Core Web Vitals: Passed, Lighthouse 92, SEO 0 → 156K total clicks at Bazaar.",
+    images: ["/og.png"],
   },
   robots: { index: true, follow: true },
 };

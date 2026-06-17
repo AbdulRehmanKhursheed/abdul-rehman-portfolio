@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Keenu One Storefront — Case Study | Abdul Rehman",
+  title: "Keenu One Storefront — Case Study | Malik Abdul Rehman Khursheed",
   description:
-    "Sole-authoring a multi-tenant restaurant storefront: one Next.js 16 / React 19 codebase serving merchants on their own domains, with edge tenant-resolution, SSR + JSON-LD SEO, and a manifest-driven theme system. First merchant live at sirocpk.com.",
+    "Lead-authoring a multi-tenant restaurant storefront: one Next.js 16 / React 19 codebase serving merchants on their own domains, with edge tenant-resolution, SSR + JSON-LD SEO, and a manifest-driven theme system. First merchant live at sirocpk.com.",
   openGraph: {
     title: "Keenu One Storefront — Case Study",
     description:
-      "One codebase, many merchant domains. Edge tenant-resolution, SSR + JSON-LD SEO, a manifest-driven theme system. Sole author.",
+      "One codebase, many merchant domains. Edge tenant-resolution, SSR + JSON-LD SEO, a manifest-driven theme system. Lead author.",
     type: "article",
   },
 };
@@ -18,7 +19,7 @@ const FACTS = [
   { label: "ROLE", value: "Lead author" },
   { label: "STACK", value: "Next.js 16 · React 19" },
   { label: "LIVE", value: "sirocpk.com" },
-  { label: "SCALE", value: "~24K lines · 385 commits" },
+  { label: "SCOPE", value: "Menu · cart · checkout · theming" },
 ];
 
 export default function KeenuStorefrontCaseStudy() {
@@ -137,6 +138,25 @@ export default function KeenuStorefrontCaseStudy() {
             </p>
           </Section>
 
+          <Section title="The storefront, live">
+            <p>
+              The first merchant — Siroc — running in production on{" "}
+              <strong>sirocpk.com</strong>: branded header, server-rendered menu,
+              category navigation, and the Zustand-backed cart. The same codebase
+              renders any merchant&apos;s theme from its manifest.
+            </p>
+            <Figure
+              src="/case-study/keenu-desktop.png"
+              alt="Siroc storefront on desktop — branded header, food carousel, category navigation and menu, served from the multi-tenant Keenu One codebase"
+              caption="Desktop — sirocpk.com. Branded header, category nav and server-rendered menu, all driven by the merchant's theme manifest."
+            />
+            <Figure
+              src="/case-study/keenu-mobile.png"
+              alt="Siroc storefront on mobile — category cards, menu list with prices and add-to-cart, served from the multi-tenant Keenu One codebase"
+              caption="Mobile — same codebase, same theme manifest, responsive down to the phone."
+            />
+          </Section>
+
           <Section title="Honest scope">
             <p>
               I&apos;m the <strong>lead author / primary engineer</strong> of
@@ -205,5 +225,46 @@ function Section({
       </h2>
       <div className="case-prose">{children}</div>
     </section>
+  );
+}
+
+function Figure({
+  src,
+  alt,
+  caption,
+}: {
+  src: string;
+  alt: string;
+  caption: string;
+}) {
+  // Portrait (mobile) shots are constrained so they don't dominate the column.
+  const portrait = src.includes("mobile");
+  const dims = portrait
+    ? { w: 1242, h: 2580 }
+    : { w: 2732, h: 1720 };
+  return (
+    <figure className="my-8">
+      <div
+        className={`rounded-lg overflow-hidden border ${
+          portrait ? "max-w-[300px] mx-auto" : ""
+        }`}
+        style={{ borderColor: `rgb(var(--border))` }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          width={dims.w}
+          height={dims.h}
+          className="w-full h-auto"
+          unoptimized
+        />
+      </div>
+      <figcaption
+        className="text-sm mt-3 italic"
+        style={{ color: `rgb(var(--text-tertiary))` }}
+      >
+        {caption}
+      </figcaption>
+    </figure>
   );
 }

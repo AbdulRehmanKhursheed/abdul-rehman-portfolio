@@ -9,8 +9,10 @@ export interface Project {
   technologies: string[];
   category: "Web App" | "Mobile App" | "Infrastructure" | "Other";
   featured?: boolean;
-  /** True when Abdul is the sole author of the codebase. */
-  soleAuthor?: boolean;
+  /** True when Abdul is the lead author / primary engineer of the codebase. */
+  leadAuthor?: boolean;
+  /** True when the live URL is internal / login-gated and shouldn't be a public clickable link. */
+  internal?: boolean;
   role?: string;
   year?: string;
   /** A single headline number for the card. */
@@ -24,7 +26,7 @@ const projects: Project[] = [
     tagline:
       "Multi-tenant restaurant ordering platform — one codebase, many merchant domains.",
     description:
-      "Lead author / primary engineer — I wrote the large majority of the codebase. A single Next.js 16 / React 19 codebase built to serve many restaurants, each on their own branded domain. Tenancy is resolved at the edge (host → org, HMAC-signed cookies), and pages are server-rendered with structured JSON-LD for SEO. I architected a manifest-driven theme system — design tokens plus per-merchant config — built to host many themes; the first merchant, Siroc, is live in production at sirocpk.com. ~24K lines spanning menu, cart (Zustand), checkout and order tracking, integrated with a Go BFF.",
+      "Lead author / primary engineer — I wrote the large majority of the codebase. A single Next.js 16 / React 19 codebase built to serve many restaurants, each on their own branded domain. Tenancy is resolved at the edge (host → org, HMAC-signed cookies), and pages are server-rendered with structured JSON-LD for SEO. I architected a manifest-driven theme system — design tokens plus per-merchant config — built to host many themes; the first merchant, Siroc, is live in production at sirocpk.com. I built the menu, cart (Zustand), checkout and order tracking, integrated with a Go BFF.",
     link: "https://sirocpk.com",
     caseStudyHref: "/case-study/keenu-storefront",
     technologies: [
@@ -38,10 +40,10 @@ const projects: Project[] = [
     ],
     category: "Web App",
     featured: true,
-    soleAuthor: true,
+    leadAuthor: true,
     role: "Lead author",
     year: "2025—26",
-    metric: { value: "~24K", label: "lines · lead author" },
+    metric: { value: "Multi-tenant", label: "SSR · 1 merchant live" },
   },
   {
     projectName: "Keenu One Merchant Dashboard",
@@ -96,12 +98,13 @@ const projects: Project[] = [
     category: "Web App",
     role: "Frontend",
     year: "2023—24",
+    internal: true,
   },
   {
     projectName: "Bazaar Grocery Delivery App",
     tagline: "Pakistan's leading grocery delivery app — 1M+ downloads, 4.5★.",
     description:
-      "Pakistan's leading grocery delivery app, serving 1M+ downloads at a 4.5★ rating across Karachi, Lahore and Islamabad. I contributed customer-facing features cross-platform (web and Android), including the gamification feature that lifted customer order value 47%.",
+      "Pakistan's leading grocery delivery app, serving 1M+ downloads at a 4.5★ rating across Karachi, Lahore and Islamabad. I contributed customer-facing features cross-platform (web and Android), including the PM-designed gamification feature I built — customer order value rose 47%.",
     link: "https://play.google.com/store/apps/details?id=bazaar.tech.com&hl=en",
     technologies: ["Android", "Kotlin", "Jetpack Compose"],
     category: "Mobile App",
@@ -118,6 +121,7 @@ const projects: Project[] = [
     technologies: ["React", "Next.js", "TypeScript", "RTK Query", "REST APIs"],
     category: "Web App",
     role: "Frontend",
+    internal: true,
   },
   {
     projectName: "Bazaar Agent App",

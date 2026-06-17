@@ -27,7 +27,7 @@ const HeroSection = () => {
               className="font-display text-3xl md:text-[2.5rem] leading-[1.1] tracking-tight"
               style={{ color: `rgb(var(--text-primary))` }}
             >
-              Abdul Rehman
+              Malik Abdul Rehman Khursheed
             </h1>
             <p
               className="mt-2 text-base md:text-lg"
@@ -124,7 +124,7 @@ const HeroSection = () => {
             >
               <Image
                 src="/abdulrehman.png"
-                alt="Abdul Rehman"
+                alt="Malik Abdul Rehman Khursheed"
                 fill
                 className="object-cover object-top"
                 priority

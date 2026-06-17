@@ -28,7 +28,7 @@ const experiences = [
       "Co-led the image + CDN pipeline: 40% LCP cut, CWV Passed, ~$5,400/yr CDN saving, organic search 0 → 156K total clicks.",
       "Lead author of the Keenu One storefront — a multi-tenant ordering platform (Next.js 16 / React 19) I wrote the large majority of; first merchant live at sirocpk.com.",
       "Built end-to-end frontend flows on the Keenu One merchant dashboard (React + Vite) — the storefront-config / theming & branding editors, plus dashboard and POS-kiosk screens.",
-      "Drove the MUI → Tailwind + Radix migration; shipped gamification that lifted customer order value 47%.",
+      "Drove the MUI → Tailwind + Radix migration; built the PM-designed gamification feature — customer order value rose 47%.",
     ],
   },
   {
@@ -36,7 +36,7 @@ const experiences = [
     title: "Senior Frontend Engineer · Frontend Team Lead",
     company: "Orcalo Holdings",
     bullets: [
-      "Mentored a team of 24 junior frontend developers across multiple client projects.",
+      "Directly led and mentored a team of 24 junior frontend developers across multiple client projects.",
       "Introduced the Component-Container pattern across the FE codebase, separating UI from business logic.",
       "Integrated React Query into legacy Redux-heavy projects, cutting redundant API calls.",
     ],

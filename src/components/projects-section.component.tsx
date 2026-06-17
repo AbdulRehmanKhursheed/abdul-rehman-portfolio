@@ -21,7 +21,7 @@ function FeaturedRow({ project }: { project: Project }) {
           style={{ color: `rgb(var(--text-primary))` }}
         >
           {project.projectName}
-          {project.soleAuthor && (
+          {project.leadAuthor && (
             <span
               className="font-mono text-[0.65rem] px-1.5 py-0.5 rounded"
               style={{
@@ -51,15 +51,30 @@ function FeaturedRow({ project }: { project: Project }) {
       <p className="tech-chip mt-3">{project.technologies.join("  ·  ")}</p>
 
       <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-link"
-        >
-          {prettyHost(project.link)}
-          <ArrowUpRight className="w-3.5 h-3.5" aria-hidden />
-        </a>
+        {project.internal ? (
+          <span
+            className="inline-flex items-center gap-1.5 font-mono text-xs"
+            style={{ color: `rgb(var(--text-tertiary))` }}
+          >
+            {prettyHost(project.link)}
+            <span
+              className="px-1.5 py-0.5 rounded"
+              style={{ background: `rgb(var(--accent-soft))`, color: `rgb(var(--accent))` }}
+            >
+              internal
+            </span>
+          </span>
+        ) : (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-link"
+          >
+            {prettyHost(project.link)}
+            <ArrowUpRight className="w-3.5 h-3.5" aria-hidden />
+          </a>
+        )}
         {project.caseStudyHref && (
           <a
             href={project.caseStudyHref}
@@ -76,14 +91,30 @@ function FeaturedRow({ project }: { project: Project }) {
 }
 
 function CompactRow({ project }: { project: Project }) {
-  return (
-    <a
-      href={project.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex items-baseline justify-between gap-4 py-3.5 border-t"
-      style={{ borderColor: `rgb(var(--border))` }}
+  const meta = project.internal ? (
+    <span
+      className="font-mono text-xs inline-flex items-center gap-1.5 shrink-0"
+      style={{ color: `rgb(var(--text-tertiary))` }}
     >
+      <span
+        className="px-1.5 py-0.5 rounded"
+        style={{ background: `rgb(var(--accent-soft))`, color: `rgb(var(--accent))` }}
+      >
+        internal
+      </span>
+    </span>
+  ) : (
+    <span
+      className="font-mono text-xs inline-flex items-center gap-1 shrink-0"
+      style={{ color: `rgb(var(--text-tertiary))` }}
+    >
+      {prettyHost(project.link)}
+      <ArrowUpRight className="w-3.5 h-3.5" />
+    </span>
+  );
+
+  const inner = (
+    <>
       <span className="flex items-baseline gap-3 flex-wrap min-w-0">
         <span
           className="text-sm font-medium transition-colors group-hover:opacity-70"
@@ -98,13 +129,30 @@ function CompactRow({ project }: { project: Project }) {
           {project.tagline}
         </span>
       </span>
-      <span
-        className="font-mono text-xs inline-flex items-center gap-1 shrink-0"
-        style={{ color: `rgb(var(--text-tertiary))` }}
+      {meta}
+    </>
+  );
+
+  if (project.internal) {
+    return (
+      <div
+        className="flex items-baseline justify-between gap-4 py-3.5 border-t"
+        style={{ borderColor: `rgb(var(--border))` }}
       >
-        {prettyHost(project.link)}
-        <ArrowUpRight className="w-3.5 h-3.5" />
-      </span>
+        {inner}
+      </div>
+    );
+  }
+
+  return (
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex items-baseline justify-between gap-4 py-3.5 border-t"
+      style={{ borderColor: `rgb(var(--border))` }}
+    >
+      {inner}
     </a>
   );
 }

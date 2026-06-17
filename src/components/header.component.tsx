@@ -62,10 +62,10 @@ const Header = () => {
             className="flex items-baseline gap-2.5 group"
           >
             <span
-              className="font-display text-lg leading-none tracking-tight"
+              className="font-display text-base sm:text-lg leading-none tracking-tight whitespace-nowrap"
               style={{ color: `rgb(var(--text-primary))`, fontWeight: 900 }}
             >
-              Abdul Rehman
+              Malik Abdul Rehman Khursheed
             </span>
             <span
               className="hidden sm:inline font-mono text-[0.68rem]"

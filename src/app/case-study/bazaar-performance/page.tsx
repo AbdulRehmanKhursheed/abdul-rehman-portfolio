@@ -4,11 +4,11 @@ import Link from "next/link";
 import { ArrowLeft, Mail, Linkedin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Bazaar — Web Performance Case Study | Abdul Rehman",
+  title: "Bazaar — Web Performance Case Study | Malik Abdul Rehman Khursheed",
   description:
     "How we took Bazaar's flagship web app from failing Core Web Vitals to Passed and grew organic search from zero to 156K total clicks — under Pakistani 3G/4G conditions.",
   openGraph: {
-    title: "Web performance for the rest of the world — Abdul Rehman",
+    title: "Web performance for the rest of the world — Malik Abdul Rehman Khursheed",
     description:
       "Bazaar case study: Core Web Vitals from failing to Passed, Lighthouse 92, organic search 0 → 156K total clicks under Pakistani 3G/4G.",
     type: "article",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web performance for the rest of the world — Abdul Rehman",
+    title: "Web performance for the rest of the world — Malik Abdul Rehman Khursheed",
     description:
       "Bazaar case study: CWV: Passed, Lighthouse 92, organic search 0 → 156K total clicks.",
     images: ["/case-study/lighthouse.png"],

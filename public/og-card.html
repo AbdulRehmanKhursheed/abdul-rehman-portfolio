@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face { font-family:"Geist"; src:url("fonts/geist/Geist-Regular.woff2") format("woff2"); font-weight:400; }
+  @font-face { font-family:"Geist"; src:url("fonts/geist/Geist-Medium.woff2") format("woff2"); font-weight:500; }
+  @font-face { font-family:"Geist"; src:url("fonts/geist/Geist-SemiBold.woff2") format("woff2"); font-weight:600; }
+  @font-face { font-family:"Geist"; src:url("fonts/geist/Geist-Bold.woff2") format("woff2"); font-weight:700; }
+  @font-face { font-family:"Geist Mono"; src:url("fonts/geist-mono/GeistMono-Medium.woff2") format("woff2"); font-weight:500; }
+
+  :root {
+    --ink:#111111; --body:#404040; --muted:#6a6a6a; --border:#ebebeb; --accent:#2563a8; --accent-soft:#f0f5fa;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body { width:1200px; height:630px; }
+  body {
+    font-family:"Geist", sans-serif; background:#ffffff; color:var(--body);
+    padding:72px 80px; display:flex; flex-direction:column; justify-content:space-between;
+    -webkit-font-smoothing:antialiased;
+  }
+  .top { display:flex; align-items:center; gap:14px; }
+  .dot { width:11px; height:11px; border-radius:50%; background:var(--accent); }
+  .kicker { font-family:"Geist Mono", monospace; font-size:18px; letter-spacing:0.08em; color:var(--muted); text-transform:uppercase; }
+
+  .name { font-size:62px; font-weight:600; letter-spacing:-0.03em; color:var(--ink); line-height:1.02; margin-top:42px; }
+  .role { font-size:30px; color:var(--muted); margin-top:14px; font-weight:400; }
+  .tagline { font-size:25px; color:var(--body); margin-top:26px; max-width:920px; line-height:1.4; }
+  .tagline b { color:var(--ink); font-weight:600; }
+
+  .metrics { display:flex; gap:0; border-top:1px solid var(--border); padding-top:26px; }
+  .metric { flex:1; }
+  .metric:not(:last-child) { border-right:1px solid var(--border); margin-right:30px; padding-right:30px; }
+  .metric .v { font-size:30px; font-weight:600; color:var(--ink); letter-spacing:-0.02em; }
+  .metric .l { font-family:"Geist Mono", monospace; font-size:15px; color:var(--muted); margin-top:7px; letter-spacing:0.01em; }
+
+  .foot { display:flex; justify-content:space-between; align-items:center; font-family:"Geist Mono", monospace; font-size:17px; color:var(--muted); }
+  .foot .accent { color:var(--accent); }
+</style>
+</head>
+<body>
+  <div>
+    <div class="top">
+      <span class="dot"></span>
+      <span class="kicker">Senior Frontend Engineer</span>
+    </div>
+    <h1 class="name">Malik Abdul Rehman Khursheed</h1>
+    <p class="tagline">Performance &amp; scale for <b>emerging-market web</b> — Next.js · React · TypeScript.</p>
+  </div>
+
+  <div class="metrics">
+    <div class="metric"><div class="v">Lighthouse 92</div><div class="l">Core Web Vitals: Passed</div></div>
+    <div class="metric"><div class="v">0 → 156K</div><div class="l">organic clicks at Bazaar</div></div>
+    <div class="metric"><div class="v">Lead author</div><div class="l">Keenu One storefront</div></div>
+  </div>
+
+  <div class="foot">
+    <span class="accent">github.com/AbdulRehmanKhursheed</span>
+    <span>Islamabad, PK · Remote</span>
+  </div>
+</body>
+</html>

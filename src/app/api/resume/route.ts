@@ -16,7 +16,8 @@ export async function GET(request: NextRequest) {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': 'inline; filename="AbdulRehman_Senior_Frontend_Resume.pdf"',
-        'Cache-Control': 'public, max-age=31536000, immutable',
+        // Short cache so résumé edits propagate quickly; revalidate hourly.
+        'Cache-Control': 'public, max-age=3600, must-revalidate',
       },
     });
   } catch (error) {
