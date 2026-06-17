@@ -28,6 +28,7 @@ const experiences = [
       "Co-led the image + CDN pipeline: 40% LCP cut, CWV Passed, ~$5,400/yr CDN saving, organic search 0 → 156K total clicks.",
       "Lead author of the Keenu One storefront — a multi-tenant ordering platform (Next.js 16 / React 19) I wrote the large majority of; first merchant live at sirocpk.com.",
       "Built end-to-end frontend flows on the Keenu One merchant dashboard (React + Vite) — the storefront-config / theming & branding editors, plus dashboard and POS-kiosk screens.",
+      "Lead-authored the Keenu corporate site (keenu.pk) end-to-end — the public payments / POS marketing site, on Next.js + Tailwind.",
       "Drove the MUI → Tailwind + Radix migration; built the PM-designed gamification feature — customer order value rose 47%.",
     ],
   },

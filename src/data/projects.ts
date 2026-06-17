@@ -89,6 +89,19 @@ const projects: Project[] = [
     metric: { value: "Lighthouse 92", label: "CWV: Passed" },
   },
   {
+    projectName: "Keenu Corporate Site",
+    tagline:
+      "Marketing site for Keenu's digital-payments & POS business.",
+    description:
+      "Lead author — I built the Keenu corporate site end-to-end. The public marketing and product site for Keenu's digital-payments and POS business (Bazaar group) — home, services, company, careers and newsroom. Built on Next.js with Tailwind, server-rendered for SEO and responsive across breakpoints.",
+    link: "https://keenu.pk",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "SSR / SEO"],
+    category: "Web App",
+    featured: true,
+    leadAuthor: true,
+    role: "Lead author",
+  },
+  {
     projectName: "Bazaar Partner Portal",
     tagline: "Internal vendor-analytics surface for Bazaar's partner ecosystem.",
     description:
