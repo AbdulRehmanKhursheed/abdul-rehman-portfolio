@@ -1,13 +1,16 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const HeroSection = () => {
+  const reduceMotion = useReducedMotion();
   const scrollTo = (id: string) =>
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(id)?.scrollIntoView({
+      behavior: reduceMotion ? "auto" : "smooth",
+    });
 
   return (
     <section
@@ -17,23 +20,31 @@ const HeroSection = () => {
     >
       <div className="container-custom">
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease }}
+          {...(reduceMotion
+            ? {}
+            : {
+                initial: { opacity: 0, y: 12 },
+                animate: { opacity: 1, y: 0 },
+                transition: { duration: 0.5, ease },
+              })}
           className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-8"
         >
           <div className="w-full sm:w-auto sm:max-w-2xl">
+            <p className="eyebrow mb-3">Senior Frontend Engineer</p>
             <h1
-              className="font-display text-3xl md:text-[2.5rem] leading-[1.1] tracking-tight"
+              className="font-display text-display"
               style={{ color: `rgb(var(--text-primary))` }}
             >
               Malik Abdul Rehman Khursheed
             </h1>
+
             <p
-              className="mt-2 text-base md:text-lg"
-              style={{ color: `rgb(var(--text-secondary))` }}
+              className="mt-5 text-lg md:text-xl leading-snug text-balance"
+              style={{ color: `rgb(var(--text-primary))` }}
             >
-              Senior Frontend Engineer
+              I make web fast where the network isn&apos;t — performance for
+              emerging-market users, and lead author of a multi-tenant Next.js
+              storefront.
             </p>
 
             <div
@@ -41,13 +52,18 @@ const HeroSection = () => {
               style={{ color: `rgb(var(--text-secondary))` }}
             >
               <p>
-                I build performant web for emerging-market users. At{" "}
+                At{" "}
                 <span style={{ color: `rgb(var(--text-primary))` }}>
                   Bazaar Technologies
                 </span>{" "}
-                I co-led the work that took the flagship grocery app to Core
-                Web Vitals: Passed — Lighthouse 92, and organic search from zero
-                to 156K total clicks.
+                I co-led the work that took the flagship grocery app to Core Web
+                Vitals: Passed —{" "}
+                <span className="tabular-nums">INP 169&nbsp;ms</span>, LCP down{" "}
+                <span className="tabular-nums">40%</span>, Lighthouse{" "}
+                <span className="tabular-nums">92</span> — and grew organic
+                search from zero to{" "}
+                <span className="tabular-nums">156K</span> clicks, all under
+                Pakistani 3G/4G conditions.
               </p>
               <p>
                 On the side, I&apos;m lead author of the{" "}
@@ -64,20 +80,21 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-              <a href="/case-study/bazaar-performance" className="text-link">
-                Read the case study
+            {/* Primary + secondary actions */}
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <a href="/case-study/bazaar-performance" className="button-primary">
+                Read the case study →
               </a>
-              <span style={{ color: `rgb(var(--text-tertiary))` }}>·</span>
               <button
                 type="button"
                 onClick={() => scrollTo("contact")}
-                className="text-link"
-                style={{ color: `rgb(var(--text-primary))` }}
+                className="button-secondary"
               >
                 Get in touch
               </button>
-              <span style={{ color: `rgb(var(--text-tertiary))` }}>·</span>
+            </div>
+
+            <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
               <a
                 href="https://github.com/AbdulRehmanKhursheed"
                 target="_blank"
@@ -127,7 +144,6 @@ const HeroSection = () => {
                 alt="Malik Abdul Rehman Khursheed"
                 fill
                 className="object-cover object-top"
-                priority
                 sizes="112px"
               />
             </div>

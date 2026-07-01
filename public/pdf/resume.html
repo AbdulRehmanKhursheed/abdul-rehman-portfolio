@@ -20,11 +20,11 @@
 
   body {
     font-family:"Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color:var(--body); font-size:9.6pt; line-height:1.38; letter-spacing:-0.005em;
+    color:var(--body); font-size:9.6pt; line-height:1.33; letter-spacing:-0.005em;
     -webkit-font-smoothing:antialiased; -webkit-print-color-adjust:exact; print-color-adjust:exact;
   }
 
-  .header { padding-bottom:8pt; border-bottom:1px solid var(--rule); margin-bottom:9pt; }
+  .header { padding-bottom:6pt; border-bottom:1px solid var(--rule); margin-bottom:7pt; }
   .name { font-size:20.5pt; font-weight:600; letter-spacing:-0.03em; color:var(--ink); margin:0; line-height:1.05; }
   .role { font-size:10.5pt; color:var(--muted); margin:3pt 0 0 0; }
   .contact {
@@ -35,21 +35,21 @@
   .contact .sep { color:var(--faint); margin:0 4pt; }
   .compact a { color:var(--accent); text-decoration:none; }
 
-  .section { margin-top:7.5pt; }
+  .section { margin-top:5.5pt; }
   .section > h2 {
     font-family:"Geist Mono", ui-monospace, monospace; font-size:7.8pt; text-transform:uppercase;
-    letter-spacing:0.1em; color:var(--muted); font-weight:500; margin:0 0 5pt 0;
+    letter-spacing:0.1em; color:var(--muted); font-weight:500; margin:0 0 3.5pt 0;
   }
   .summary { color:var(--body); margin:0; }
   .summary strong { color:var(--ink); font-weight:600; }
 
   ul.bullets { list-style:none; margin:0; padding:0; }
-  ul.bullets li { position:relative; padding-left:12pt; margin-bottom:2.6pt; color:var(--body); }
+  ul.bullets li { position:relative; padding-left:12pt; margin-bottom:2.1pt; color:var(--body); }
   ul.bullets li:last-child { margin-bottom:0; }
   ul.bullets li::before { content:""; position:absolute; left:0; top:6.5pt; width:4.5pt; height:1.4px; background:var(--accent); }
   ul.bullets li strong { color:var(--ink); font-weight:600; }
 
-  .entry { margin-bottom:5.5pt; }
+  .entry { margin-bottom:4pt; }
   .entry:last-child { margin-bottom:0; }
   .entry-head { display:flex; justify-content:space-between; align-items:baseline; gap:12pt; margin:0 0 1pt 0; }
   .entry-co { color:var(--ink); font-size:10.5pt; font-weight:600; letter-spacing:-0.01em; }
@@ -83,7 +83,7 @@
 
   <section class="section">
     <h2>Summary</h2>
-    <p class="summary">Frontend engineer with ~5 years building B2C web for emerging-market users — 3 of them at scale at Bazaar. Next.js / React performance specialist: <strong>Lighthouse 92</strong> and <strong>Core Web Vitals: Passed</strong> on a flagship app (100k+ web users, 1M+ Android downloads), and <strong>lead author of a multi-tenant storefront platform</strong> on Next.js 16 / React 19 (first merchant live). Comfortable across Node.js / NestJS for BFFs.</p>
+    <p class="summary">Frontend engineer with ~5 years building B2C web for emerging-market users — 3 of them at scale at Bazaar. Next.js / React performance specialist: <strong>Core Web Vitals: Passed</strong> — INP 169&nbsp;ms, LCP down 40%, <strong>Lighthouse 92</strong> — on a flagship app (100k+ web users, 1M+ Android downloads), and <strong>lead author of a multi-tenant storefront platform</strong> on Next.js 16 / React 19 (first merchant live). Comfortable across Node.js / NestJS for BFFs.</p>
   </section>
 
   <section class="section">
@@ -94,12 +94,12 @@
         <span class="entry-co">Bazaar Technologies <span class="loc">— Islamabad, PK</span></span>
         <span class="entry-dates">Mar 2023 – Present</span>
       </div>
-      <p class="entry-role">Senior Software Engineer</p>
+      <p class="entry-role">Senior Software Engineer II <span class="loc">· SWE II → Senior (Dec 2024) → Senior II (Jul 2026)</span></p>
       <ul class="bullets">
-        <li>Lead frontend on <strong>bazaarapp.com</strong> (Next.js + NestJS BFF); co-led the image + CDN pipeline that cut <strong>LCP 40%</strong>, took Core Web Vitals from failing to <strong>Passed</strong> (Lighthouse 92), grew organic search <strong>0 → 156K total clicks</strong>, and saved ~$5,400/yr in CDN.</li>
-        <li><strong>Lead author of the Keenu One storefront</strong> — wrote the large majority of a multi-tenant ordering platform (Next.js 16 / React 19) built to serve many merchants on their own domains via edge tenant-resolution, SSR + JSON-LD SEO and a manifest-driven theme system; first merchant live at sirocpk.com.</li>
+        <li>Lead frontend on <strong>bazaarapp.com</strong> (Next.js + NestJS BFF); co-led the image + CDN pipeline that cut <strong>p75 LCP ~40%</strong>, brought <strong>INP (169&nbsp;ms) and CLS</strong> into the good range for <strong>Core Web Vitals: Passed</strong> (Lighthouse 92), grew organic search <strong>0 → 156K clicks / 11.2M impressions</strong>, and saved ~$5,400/yr in CDN.</li>
+        <li><strong>Lead author of the Keenu One storefront</strong> — wrote the large majority of a multi-tenant ordering platform (Next.js 16 / React 19) serving merchants on their own domains via edge tenant-resolution, SSR + JSON-LD SEO and a manifest-driven theme system; <strong>used AI coding agents to lead-author it while owning the architecture, code review and the security/quality bar</strong>. First merchant live at sirocpk.com.</li>
         <li>Built end-to-end frontend flows on the <strong>Keenu One merchant dashboard</strong> (React + Vite) — storefront-config / theming &amp; branding editors, dashboard and POS-kiosk screens. Also <strong>lead-authored the Keenu corporate site</strong> (keenu.pk, Next.js / Tailwind).</li>
-        <li>Drove the MUI → Tailwind + Radix migration and built the PM-designed gamification feature — average order value rose <strong>47%</strong>.</li>
+        <li>Built the PM-designed gamification feature end-to-end and drove the MUI → Tailwind + Radix migration — <strong>average order value (AOV) rose 47%</strong>.</li>
       </ul>
     </div>
 
@@ -108,10 +108,10 @@
         <span class="entry-co">Orcalo Holdings <span class="loc">— Rawalpindi, PK</span></span>
         <span class="entry-dates">Aug 2021 – Mar 2023</span>
       </div>
-      <p class="entry-role">Senior Frontend Engineer</p>
+      <p class="entry-role">Senior Frontend Engineer <span class="loc">· joined as Junior Node.js Developer (Aug–Oct 2021)</span></p>
       <ul class="bullets">
-        <li>Directly led and mentored a team of <strong>24 junior frontend developers</strong> across multiple client projects.</li>
-        <li>Introduced the <strong>Component-Container</strong> pattern across the FE codebase and integrated <strong>React Query</strong> into legacy Redux-heavy apps, cutting redundant API calls. Started as Junior Node.js Developer (Aug–Oct 2021).</li>
+        <li>Led a team of <strong>24 junior frontend engineers</strong> reporting to the Frontend Lead — interviewed and hired them, and owned their delivery and mentorship across multiple client projects.</li>
+        <li>Introduced the <strong>Component-Container</strong> pattern across the FE codebase and integrated <strong>React Query</strong> into legacy Redux-heavy apps, cutting redundant re-renders and API calls.</li>
       </ul>
     </div>
 
@@ -135,9 +135,9 @@
       <dt>Backend / Cloud</dt>
       <dd>Node.js, NestJS, Express, MongoDB, REST · AWS (S3, CloudFront, Lambda, Route 53), Docker, Vercel, Vite, Git, CI/CD</dd>
       <dt>Performance</dt>
-      <dd>Core Web Vitals, Lighthouse, PageSpeed / CrUX, Google Search Console, image pipelines, caching &amp; CDN strategy, multi-tenant, SSR / SEO (JSON-LD)</dd>
+      <dd>Core Web Vitals (INP, LCP, CLS), Lighthouse, PageSpeed / CrUX, Google Search Console, image pipelines, caching &amp; CDN strategy, multi-tenant, SSR / SEO (JSON-LD)</dd>
       <dt>Practice</dt>
-      <dd>TDD, SOLID, Agile, code review, mentorship, AI-assisted development</dd>
+      <dd>TDD, SOLID, Agile, code review, mentorship</dd>
     </dl>
   </section>
 
@@ -153,16 +153,13 @@
   </section>
 
   <section class="section">
-    <div class="two-col">
-      <div>
-        <h2>Education</h2>
-        <p class="compact"><strong>BS Computer Science</strong>, Hitec University, Taxila — 2017 – 2021</p>
-      </div>
-      <div>
-        <h2>Certifications</h2>
-        <p class="compact"><strong>AWS Solutions Architect – Associate</strong> (in progress) <span class="sep">·</span> AWS Technical Essentials (Udemy)</p>
-      </div>
-    </div>
+    <h2>Education</h2>
+    <p class="compact"><strong>BS Computer Science</strong>, Hitec University, Taxila — 2017 – 2021</p>
+  </section>
+
+  <section class="section">
+    <h2>Certifications</h2>
+    <p class="compact"><strong>AWS Solutions Architect – Associate</strong> (in progress) <span class="sep">·</span> AWS Technical Essentials (Udemy)</p>
   </section>
 
 </body>

@@ -26,7 +26,7 @@ const projects: Project[] = [
     tagline:
       "Multi-tenant restaurant ordering platform — one codebase, many merchant domains.",
     description:
-      "Lead author / primary engineer — I wrote the large majority of the codebase. A single Next.js 16 / React 19 codebase built to serve many restaurants, each on their own branded domain. Tenancy is resolved at the edge (host → org, HMAC-signed cookies), and pages are server-rendered with structured JSON-LD for SEO. I architected a manifest-driven theme system — design tokens plus per-merchant config — built to host many themes; the first merchant, Siroc, is live in production at sirocpk.com. I built the menu, cart (Zustand), checkout and order tracking, integrated with a Go BFF.",
+      "Lead author / primary engineer — I wrote the large majority of the codebase. A single Next.js 16 / React 19 codebase built to serve many restaurants, each on their own branded domain. Tenancy is resolved at the edge (host → org, HMAC-signed cookies), and pages are server-rendered with structured JSON-LD for SEO. I architected a manifest-driven theme system — design tokens plus per-merchant config — built to host many themes; the first merchant, Siroc, is live in production at sirocpk.com. I built the menu, cart (Zustand), checkout and order tracking, integrated with a Go BFF. AI-assisted development let me lead-author this at scale while owning the architecture and reviewing every change.",
     link: "https://sirocpk.com",
     caseStudyHref: "/case-study/keenu-storefront",
     technologies: [
@@ -70,7 +70,7 @@ const projects: Project[] = [
     tagline:
       "Flagship B2C grocery web for Pakistan — performance & Core Web Vitals.",
     description:
-      "Flagship B2C e-commerce web for Pakistan's largest grocery platform (Next.js + NestJS). Co-led the image-optimization + CDN pipeline that took Core Web Vitals from failing to Passed (40% LCP cut, Lighthouse 92) under Pakistani 3G/4G conditions. Organic search grew from ~0 to 156K total clicks / 11.2M impressions (Google Search Console). Cut CDN spend by ~$5,400/year. Drove the MUI → Tailwind + Radix migration on the same app.",
+      "Flagship B2C e-commerce web for Pakistan's largest grocery platform (Next.js + NestJS). Co-led the image-optimization + CDN pipeline that took Core Web Vitals from failing to Passed (40% LCP cut, INP in the good range, Lighthouse 92) under Pakistani 3G/4G conditions. Organic search grew from ~0 to 156K total clicks / 11.2M impressions (Google Search Console). Cut CDN spend by ~$5,400/year. Drove the MUI → Tailwind + Radix migration on the same app.",
     link: "https://www.bazaarapp.com",
     caseStudyHref: "/case-study/bazaar-performance",
     technologies: [
@@ -86,7 +86,7 @@ const projects: Project[] = [
     featured: true,
     role: "Lead frontend",
     year: "2023—Present",
-    metric: { value: "Lighthouse 92", label: "CWV: Passed" },
+    metric: { value: "INP 169ms", label: "CWV Passed · Lighthouse 92" },
   },
   {
     projectName: "Keenu Corporate Site",
@@ -117,7 +117,7 @@ const projects: Project[] = [
     projectName: "Bazaar Grocery Delivery App",
     tagline: "Pakistan's leading grocery delivery app — 1M+ downloads, 4.5★.",
     description:
-      "Pakistan's leading grocery delivery app, serving 1M+ downloads at a 4.5★ rating across Karachi, Lahore and Islamabad. I contributed customer-facing features cross-platform (web and Android), including the PM-designed gamification feature I built — customer order value rose 47%.",
+      "Pakistan's leading grocery delivery app, serving 1M+ downloads at a 4.5★ rating across Karachi, Lahore and Islamabad. I contributed customer-facing features cross-platform (web and Android), including the PM-designed gamification feature I built — average order value (AOV) rose 47%.",
     link: "https://play.google.com/store/apps/details?id=bazaar.tech.com&hl=en",
     technologies: ["Android", "Kotlin", "Jetpack Compose"],
     category: "Mobile App",

@@ -13,33 +13,33 @@ const skills = [
   },
   {
     group: "Practice",
-    items: "Web Vitals · Image pipelines · Caching / CDN · Multi-tenant · TDD · Code review",
+    items: "Core Web Vitals (INP · LCP · CLS) · Image pipelines · Caching / CDN · Multi-tenant · TDD · Code review",
   },
 ];
 
 const experiences = [
   {
     period: "2023 — Present",
-    title: "Senior Software Engineer",
+    title: "Senior Software Engineer II",
     company: "Bazaar Technologies",
-    note: "Promoted from Software Engineer II in Dec 2024.",
+    note: "Promoted twice: Software Engineer II → Senior (Dec 2024) → Senior II (Jul 2026).",
     bullets: [
       "Lead frontend on bazaarapp.com (Next.js + NestJS BFF) — flagship customer web for Pakistan's largest B2C grocery platform.",
-      "Co-led the image + CDN pipeline: 40% LCP cut, CWV Passed, ~$5,400/yr CDN saving, organic search 0 → 156K total clicks.",
+      "Co-led the image + CDN pipeline: 40% LCP cut, INP into the good range, CWV Passed, ~$5,400/yr CDN saving, organic search 0 → 156K total clicks.",
       "Lead author of the Keenu One storefront — a multi-tenant ordering platform (Next.js 16 / React 19) I wrote the large majority of; first merchant live at sirocpk.com.",
       "Built end-to-end frontend flows on the Keenu One merchant dashboard (React + Vite) — the storefront-config / theming & branding editors, plus dashboard and POS-kiosk screens.",
       "Lead-authored the Keenu corporate site (keenu.pk) end-to-end — the public payments / POS marketing site, on Next.js + Tailwind.",
-      "Drove the MUI → Tailwind + Radix migration; built the PM-designed gamification feature — customer order value rose 47%.",
+      "Drove the MUI → Tailwind + Radix migration; built the PM-designed gamification feature — average order value (AOV) rose 47%.",
     ],
   },
   {
     period: "2021 — 2023",
-    title: "Senior Frontend Engineer · Frontend Team Lead",
+    title: "Senior Frontend Engineer",
     company: "Orcalo Holdings",
     bullets: [
-      "Directly led and mentored a team of 24 junior frontend developers across multiple client projects.",
+      "Led a team of 24 junior frontend engineers reporting to the Frontend Lead — interviewed and hired them, and owned their delivery and mentorship across multiple client projects.",
       "Introduced the Component-Container pattern across the FE codebase, separating UI from business logic.",
-      "Integrated React Query into legacy Redux-heavy projects, cutting redundant API calls.",
+      "Integrated React Query into legacy Redux-heavy projects, cutting redundant re-renders and API calls.",
     ],
   },
   {
@@ -65,28 +65,30 @@ const AboutMe = () => {
     >
       <div className="container-custom">
         <div className="grid md:grid-cols-[140px_1fr] gap-4 md:gap-10">
-          <p className="eyebrow pt-1">About</p>
+          <h2 className="eyebrow pt-1">About</h2>
           <div className="min-w-0">
             <div
               className="space-y-4 text-[0.975rem] md:text-base leading-relaxed max-w-2xl text-pretty"
               style={{ color: `rgb(var(--text-secondary))` }}
             >
               <p>
-                Senior Frontend Engineer with five years scaling B2C web apps on
-                Pakistani mobile networks. I co-led the image + CDN pipeline that
-                took Bazaar&apos;s flagship app to{" "}
+                Senior Frontend Engineer with nearly five years scaling B2C web
+                apps on Pakistani mobile networks — three of them at scale at
+                Bazaar. I co-led the image + CDN pipeline that took
+                Bazaar&apos;s flagship app to{" "}
                 <span style={{ color: `rgb(var(--text-primary))` }}>
                   Core Web Vitals: Passed
-                </span>
-                , Lighthouse 92, and grew organic search from ~0 to 156K total
-                clicks.
+                </span>{" "}
+                (INP 169&nbsp;ms, LCP down 40%, Lighthouse 92), and grew organic
+                search from ~0 to 156K total clicks.
               </p>
               <p>
                 I&apos;m also lead author of the Keenu One storefront — a
-                multi-tenant platform where one Next.js codebase is built to
-                serve many merchants on their own domains (first merchant live).
-                I use AI-assisted development to move fast, grounded in years of
-                shipping production React.
+                multi-tenant platform where one Next.js codebase serves many
+                merchants on their own domains (first merchant live). I use
+                AI-assisted development to direct and review changes across a
+                large codebase — I own the architecture, review every change, and
+                hold the quality bar with types, tests, and Lighthouse.
               </p>
             </div>
           </div>
@@ -94,7 +96,7 @@ const AboutMe = () => {
 
         {/* Skills */}
         <div className="mt-16 grid md:grid-cols-[140px_1fr] gap-4 md:gap-10">
-          <p className="eyebrow pt-1">Stack</p>
+          <h2 className="eyebrow pt-1">Stack</h2>
           <div className="space-y-4 max-w-2xl min-w-0">
             {skills.map((g) => (
               <div
@@ -117,7 +119,7 @@ const AboutMe = () => {
         <div
           className="mt-16 grid md:grid-cols-[140px_1fr] gap-4 md:gap-10"
         >
-          <p className="eyebrow pt-1">Experience</p>
+          <h2 className="eyebrow pt-1">Experience</h2>
           <div className="max-w-2xl min-w-0">
             {experiences.map((exp) => (
               <div

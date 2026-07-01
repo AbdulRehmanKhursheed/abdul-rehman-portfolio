@@ -41,6 +41,19 @@ function FeaturedRow({ project }: { project: Project }) {
         </span>
       </div>
 
+      {project.metric && (
+        <p
+          className="mt-2 font-mono text-xs tabular-nums"
+          style={{ color: `rgb(var(--accent))` }}
+        >
+          {project.metric.value}
+          <span style={{ color: `rgb(var(--text-tertiary))` }}>
+            {"  ·  "}
+            {project.metric.label}
+          </span>
+        </p>
+      )}
+
       <p
         className="mt-2.5 text-sm md:text-[0.95rem] leading-relaxed max-w-2xl text-pretty"
         style={{ color: `rgb(var(--text-secondary))` }}
@@ -172,7 +185,7 @@ const ProjectsSection = () => {
     >
       <div className="container-custom">
         <div className="grid md:grid-cols-[140px_1fr] gap-4 md:gap-10">
-          <p className="eyebrow pt-1">Selected work</p>
+          <h2 className="eyebrow pt-1">Selected work</h2>
           <div className="min-w-0">
             {featured.map((p) => (
               <FeaturedRow key={p.projectName} project={p} />

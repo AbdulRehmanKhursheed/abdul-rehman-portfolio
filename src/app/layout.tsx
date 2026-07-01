@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./globals.css";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title:
     "Malik Abdul Rehman Khursheed — Senior Frontend Engineer (Next.js · React · TypeScript)",
   description:
-    "Senior Frontend Engineer at Bazaar Technologies. Web performance for emerging-market users — Core Web Vitals: Passed, Lighthouse 92, organic search 0 → 156K total clicks. Lead author of the Keenu One storefront.",
+    "Senior Frontend Engineer at Bazaar Technologies. Web performance for emerging-market users — Core Web Vitals: Passed (INP 169ms, Lighthouse 92), organic search 0 → 156K total clicks. Lead author of the Keenu One storefront.",
   keywords: [
     "Senior Frontend Engineer",
     "Web Performance",
@@ -53,6 +53,12 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -63,10 +69,6 @@ export default function RootLayout({
       lang="en"
       className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <head>
-        <meta name="theme-color" content="#ffffff" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
       <body className="font-sans">
         <ConditionalHeader />
         {children}

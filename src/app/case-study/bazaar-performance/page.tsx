@@ -31,11 +31,12 @@ export const metadata: Metadata = {
 };
 
 const RECEIPTS = [
-  { value: "Passed", label: "Core Web Vitals (CrUX)" },
-  { value: "92", label: "Lighthouse Performance" },
+  { value: "Passed", label: "Core Web Vitals — field / CrUX" },
+  { value: "169 ms", label: "INP, mobile (CrUX)" },
   { value: "40%", label: "LCP cut" },
-  { value: "156K", label: "Total organic clicks" },
-  { value: "11.2M", label: "Monthly impressions" },
+  { value: "92", label: "Lighthouse Performance" },
+  { value: "156K", label: "Organic clicks (GSC, 12-mo)" },
+  { value: "11.2M", label: "Search impressions (GSC)" },
   { value: "$5,400/yr", label: "CDN cost reduction" },
 ];
 
@@ -63,7 +64,7 @@ export default function BazaarCaseStudy() {
           <header className="mb-12">
             <p className="eyebrow mb-5">Case study · Bazaar Technologies</p>
             <h1
-              className="font-display text-3xl md:text-[2.5rem] tracking-tight leading-[1.1] mb-5"
+              className="font-display text-h1 mb-5"
               style={{ color: `rgb(var(--text-primary))` }}
             >
               Web performance for the rest of the world.
@@ -73,18 +74,22 @@ export default function BazaarCaseStudy() {
               style={{ color: `rgb(var(--text-secondary))` }}
             >
               How we took Bazaar&apos;s flagship app from failing Core Web
-              Vitals to Passed — and grew organic search from zero to{" "}
+              Vitals to Passed —{" "}
+              <strong style={{ color: `rgb(var(--text-primary))` }}>
+                INP 169&nbsp;ms, LCP down 40%
+              </strong>{" "}
+              — and grew organic search from zero to{" "}
               <strong style={{ color: `rgb(var(--text-primary))` }}>
                 156K total clicks
-              </strong>{" "}
-              — under Pakistani 3G/4G network conditions.
+              </strong>
+              , under Pakistani 3G/4G network conditions.
             </p>
 
             <p
               className="mt-8 font-mono text-xs"
               style={{ color: `rgb(var(--text-tertiary))` }}
             >
-              Senior Software Engineer · Bazaar Technologies
+              Senior Software Engineer II · Bazaar Technologies
             </p>
           </header>
 
@@ -106,7 +111,7 @@ export default function BazaarCaseStudy() {
                   {r.label}
                 </span>
                 <span
-                  className="text-sm font-medium"
+                  className="text-sm font-medium tabular-nums"
                   style={{ color: `rgb(var(--text-primary))` }}
                 >
                   {r.value}
@@ -159,12 +164,42 @@ export default function BazaarCaseStudy() {
               <strong>$5,400/year</strong>.
             </p>
 
+            <h3 className="case-h3">Interactivity held its line</h3>
+            <p>
+              Because the fix leaned on the image pipeline and cache rather than
+              shipping more JavaScript, the main thread stayed light. Field{" "}
+              <strong>INP came in at 169&nbsp;ms on mobile</strong> (76&nbsp;ms
+              desktop) — comfortably inside the good range, which matters more
+              than ever now that INP is the most-failed Core Web Vital.
+            </p>
+
             <h3 className="case-h3">SEO foundations</h3>
             <p>
               Once the site was actually fast, the SEO basics had something to
               work with: structured product data, metadata hygiene, canonical
               URLs, sitemap reflecting the real category tree. Google rewards
               this slowly — but the curve was unmistakable once it kicked in.
+            </p>
+          </Section>
+
+          <Section title="What we rejected">
+            <p>
+              An <strong>SSR-everywhere rewrite</strong> would have been the
+              flashy fix, but the field data pointed at image bytes and cache,
+              not render strategy — so we spent the budget where the LCP actually
+              was and shipped incrementally, rather than blocking real wins
+              behind a long rewrite.
+            </p>
+            <p>
+              Aggressive <strong>JS code-splitting</strong> came later, not
+              first: on mid-tier Android the dominant cost was image weight over
+              slow radios, so trimming bundles would have moved the needle far
+              less than the image pipeline for the same effort.
+            </p>
+            <p>
+              We deliberately <strong>deferred</strong> a full design-system and
+              font migration until CWV was green — perf first, polish second — so
+              we never regressed the numbers we were there to fix.
             </p>
           </Section>
 
@@ -225,7 +260,7 @@ export default function BazaarCaseStudy() {
             style={{ borderColor: `rgb(var(--border))` }}
           >
             <h2
-              className="text-2xl md:text-3xl font-bold tracking-tight mb-4"
+              className="font-display text-h2 mb-4"
               style={{ color: `rgb(var(--text-primary))` }}
             >
               Want to talk about performance work for emerging markets?
@@ -272,7 +307,7 @@ function Section({
   return (
     <section className="mb-12">
       <h2
-        className="font-display text-xl md:text-2xl tracking-tight mb-4"
+        className="font-display text-h2 mb-4"
         style={{ color: `rgb(var(--text-primary))` }}
       >
         {title}
@@ -303,7 +338,7 @@ function Figure({
           width={1200}
           height={700}
           className="w-full h-auto"
-          unoptimized
+          sizes="(max-width: 768px) 100vw, 672px"
         />
       </div>
       <figcaption

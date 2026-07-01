@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     description:
       "One codebase, many merchant domains. Edge tenant-resolution, SSR + JSON-LD SEO, a manifest-driven theme system. Lead author.",
     type: "article",
+    images: [
+      {
+        url: "/case-study/keenu-desktop.webp",
+        width: 1800,
+        height: 1133,
+        alt: "Siroc storefront on desktop, served from the multi-tenant Keenu One codebase",
+      },
+    ],
   },
 };
 
@@ -44,7 +52,7 @@ export default function KeenuStorefrontCaseStudy() {
           <header className="mb-12">
             <p className="eyebrow mb-5">Case study · Keenu One</p>
             <h1
-              className="font-display text-3xl md:text-[2.5rem] leading-[1.1] tracking-tight mb-5"
+              className="font-display text-h1 mb-5"
               style={{ color: `rgb(var(--text-primary))` }}
             >
               One codebase, many merchant domains.
@@ -105,6 +113,12 @@ export default function KeenuStorefrontCaseStudy() {
               own domain (e.g. sirocpk.com), with their own branding, menu and
               configuration. No per-merchant forks.
             </p>
+            <p>
+              AI-assisted development was the execution multiplier here — it let
+              me lead-author a codebase this size while I owned the architecture
+              and reviewed every change. A force multiplier, not a substitute for
+              judgment.
+            </p>
           </Section>
 
           <Section title="Architecture">
@@ -138,6 +152,31 @@ export default function KeenuStorefrontCaseStudy() {
             </p>
           </Section>
 
+          <Section title="What we rejected">
+            <p>
+              <strong>Per-merchant forks</strong> were the fast way to ship the
+              first store, but every fork multiplies maintenance and drift. One
+              codebase with a manifest-driven theme system keeps a single surface
+              to secure, test and improve — the cost is a stricter theming
+              contract, which is the right trade for a platform meant to host
+              many.
+            </p>
+            <p>
+              Tenancy resolves from the host{" "}
+              <strong>at the edge into an HMAC-signed cookie</strong> rather than
+              trusting a subdomain or a client-supplied header — identity a
+              browser can&apos;t spoof, so one merchant can never read
+              another&apos;s data. Subdomain-only routing would have been simpler
+              but weaker.
+            </p>
+            <p>
+              Cart state runs on <strong>Zustand, scoped per-org</strong>, not
+              server state: a basket is cheap and shouldn&apos;t round-trip on
+              every tap over a slow connection. Server state earns its keep for
+              catalog and orders — not the cart.
+            </p>
+          </Section>
+
           <Section title="The storefront, live">
             <p>
               The first merchant — Siroc — running in production on{" "}
@@ -146,12 +185,12 @@ export default function KeenuStorefrontCaseStudy() {
               renders any merchant&apos;s theme from its manifest.
             </p>
             <Figure
-              src="/case-study/keenu-desktop.png"
+              src="/case-study/keenu-desktop.webp"
               alt="Siroc storefront on desktop — branded header, food carousel, category navigation and menu, served from the multi-tenant Keenu One codebase"
               caption="Desktop — sirocpk.com. Branded header, category nav and server-rendered menu, all driven by the merchant's theme manifest."
             />
             <Figure
-              src="/case-study/keenu-mobile.png"
+              src="/case-study/keenu-mobile.webp"
               alt="Siroc storefront on mobile — category cards, menu list with prices and add-to-cart, served from the multi-tenant Keenu One codebase"
               caption="Mobile — same codebase, same theme manifest, responsive down to the phone."
             />
@@ -218,7 +257,7 @@ function Section({
   return (
     <section className="mb-12">
       <h2
-        className="font-display text-xl md:text-2xl tracking-tight mb-4"
+        className="font-display text-h2 mb-4"
         style={{ color: `rgb(var(--text-primary))` }}
       >
         {title}
@@ -240,8 +279,8 @@ function Figure({
   // Portrait (mobile) shots are constrained so they don't dominate the column.
   const portrait = src.includes("mobile");
   const dims = portrait
-    ? { w: 1242, h: 2580 }
-    : { w: 2732, h: 1720 };
+    ? { w: 900, h: 1870 }
+    : { w: 1800, h: 1133 };
   return (
     <figure className="my-8">
       <div
@@ -256,7 +295,7 @@ function Figure({
           width={dims.w}
           height={dims.h}
           className="w-full h-auto"
-          unoptimized
+          sizes={portrait ? "300px" : "(max-width: 768px) 100vw, 672px"}
         />
       </div>
       <figcaption
