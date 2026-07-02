@@ -7,19 +7,28 @@ export const metadata: Metadata = {
   title: "Keenu One Storefront — Case Study | Malik Abdul Rehman Khursheed",
   description:
     "Lead-authoring a multi-tenant restaurant storefront: one Next.js 16 / React 19 codebase serving merchants on their own domains, with edge tenant-resolution, SSR + JSON-LD SEO, and a manifest-driven theme system. First merchant live at sirocpk.com.",
+  alternates: { canonical: "/case-study/keenu-storefront" },
   openGraph: {
     title: "Keenu One Storefront — Case Study",
     description:
       "One codebase, many merchant domains. Edge tenant-resolution, SSR + JSON-LD SEO, a manifest-driven theme system. Lead author.",
     type: "article",
+    url: "/case-study/keenu-storefront",
     images: [
       {
-        url: "/case-study/keenu-desktop.webp",
-        width: 1800,
-        height: 1133,
+        url: "/case-study/keenu-og.jpg",
+        width: 1200,
+        height: 630,
         alt: "Siroc storefront on desktop, served from the multi-tenant Keenu One codebase",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Keenu One Storefront — Case Study",
+    description:
+      "One codebase, many merchant domains. Edge tenant-resolution, SSR + JSON-LD SEO. Lead author.",
+    images: ["/case-study/keenu-og.jpg"],
   },
 };
 

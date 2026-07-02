@@ -256,6 +256,19 @@
   }
 }
 
+/* Entrance: transform-only so the SSR'd LCP text is never hidden. */
+@keyframes rise {
+  from {
+    transform: translateY(12px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.animate-rise {
+  animation: rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 /* Respect users who ask the OS to minimize motion. */
 @media (prefers-reduced-motion: reduce) {
   html {

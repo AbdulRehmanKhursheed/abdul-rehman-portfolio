@@ -1,66 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'favicon.im',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.google.com',
-        port: '',
-        pathname: '/s2/favicons/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.bazaarapp.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'bazaartech.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'personnellibrary.co.uk',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'mysitetech.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'studenthelpsquad.co.uk',
-        port: '',
-        pathname: '/**',
-      },
-    ],
-  },
-  // Ensure static files are properly served
   async headers() {
     return [
       {
-        source: '/pdf/:path*',
+        // The downloadable résumé PDF: cache briefly (it gets replaced in
+        // place), keep it out of search results.
+        source: '/pdf/:path*.pdf',
         headers: [
-          {
-            key: 'Content-Type',
-            value: 'application/pdf',
-          },
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
+          { key: 'Content-Type', value: 'application/pdf' },
+          { key: 'Cache-Control', value: 'public, max-age=3600, must-revalidate' },
+          { key: 'X-Robots-Tag', value: 'noindex' },
         ],
+      },
+      {
+        // The HTML source of the résumé is a build input, not a page.
+        source: '/pdf/:path*.html',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
       },
     ];
   },

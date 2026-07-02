@@ -17,7 +17,6 @@ export interface Project {
   year?: string;
   /** A single headline number for the card. */
   metric?: { value: string; label: string };
-  localIcon?: string;
 }
 
 const projects: Project[] = [
@@ -115,15 +114,14 @@ const projects: Project[] = [
   },
   {
     projectName: "Bazaar Grocery Delivery App",
-    tagline: "Pakistan's leading grocery delivery app — 1M+ downloads, 4.5★.",
+    tagline: "Pakistan's leading grocery delivery app — 1M+ downloads, 4.4★.",
     description:
-      "Pakistan's leading grocery delivery app, serving 1M+ downloads at a 4.5★ rating across Karachi, Lahore and Islamabad. I contributed customer-facing features cross-platform (web and Android), including the PM-designed gamification feature I built — average order value (AOV) rose 47%.",
+      "Pakistan's leading grocery delivery app, serving 1M+ downloads at a 4.4★ rating across Karachi, Lahore and Islamabad. I contributed customer-facing features cross-platform (web and Android), including the PM-designed gamification feature I built — average order value (AOV) rose 47%.",
     link: "https://play.google.com/store/apps/details?id=bazaar.tech.com&hl=en",
     technologies: ["Android", "Kotlin", "Jetpack Compose"],
     category: "Mobile App",
     role: "Feature contributor",
-    metric: { value: "1M+", label: "downloads · 4.5★" },
-    localIcon: "/images/app-icons/bazaarapplogo.webp",
+    metric: { value: "1M+", label: "downloads · 4.4★" },
   },
   {
     projectName: "Check My DBS",
@@ -145,7 +143,6 @@ const projects: Project[] = [
     technologies: ["Android", "Kotlin", "Offline Support"],
     category: "Mobile App",
     role: "Feature contributor",
-    localIcon: "/images/app-icons/bazaaragent.webp",
   },
   {
     projectName: "MYSITE Construction Platform",

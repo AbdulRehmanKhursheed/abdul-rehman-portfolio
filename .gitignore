@@ -34,3 +34,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.claude/
+.DS_Store
+tsconfig.tsbuildinfo
+docs/superpowers/

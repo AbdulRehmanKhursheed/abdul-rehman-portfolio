@@ -10,10 +10,10 @@ const siteUrl =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title:
-    "Malik Abdul Rehman Khursheed — Senior Frontend Engineer (Next.js · React · TypeScript)",
+  title: "Malik Abdul Rehman Khursheed — Senior Frontend Engineer",
   description:
-    "Senior Frontend Engineer at Bazaar Technologies. Web performance for emerging-market users — Core Web Vitals: Passed (INP 169ms, Lighthouse 92), organic search 0 → 156K total clicks. Lead author of the Keenu One storefront.",
+    "Web performance for emerging-market users — Core Web Vitals: Passed, INP 169ms, organic search 0 → 156K clicks. Lead author of a multi-tenant Next.js storefront.",
+  alternates: { canonical: "/" },
   keywords: [
     "Senior Frontend Engineer",
     "Web Performance",
@@ -34,6 +34,8 @@ export const metadata: Metadata = {
       "Web performance for emerging-market users. Core Web Vitals: Passed, Lighthouse 92, SEO 0 → 156K total clicks at Bazaar. Lead author of the Keenu One storefront.",
     type: "website",
     locale: "en_US",
+    siteName: "Malik Abdul Rehman Khursheed",
+    url: "/",
     images: [
       {
         url: "/og.png",

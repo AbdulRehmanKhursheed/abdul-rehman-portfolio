@@ -7,17 +7,19 @@ export const metadata: Metadata = {
   title: "Bazaar — Web Performance Case Study | Malik Abdul Rehman Khursheed",
   description:
     "How we took Bazaar's flagship web app from failing Core Web Vitals to Passed and grew organic search from zero to 156K total clicks — under Pakistani 3G/4G conditions.",
+  alternates: { canonical: "/case-study/bazaar-performance" },
   openGraph: {
     title: "Web performance for the rest of the world — Malik Abdul Rehman Khursheed",
     description:
       "Bazaar case study: Core Web Vitals from failing to Passed, Lighthouse 92, organic search 0 → 156K total clicks under Pakistani 3G/4G.",
     type: "article",
+    url: "/case-study/bazaar-performance",
     images: [
       {
-        url: "/case-study/lighthouse.png",
+        url: "/case-study/bazaar-og.jpg",
         width: 1200,
         height: 630,
-        alt: "Lighthouse: Performance 92, Accessibility 92, Best Practices 96, SEO 92",
+        alt: "Lighthouse report for bazaarapp.com — Performance 92",
       },
     ],
   },
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
     title: "Web performance for the rest of the world — Malik Abdul Rehman Khursheed",
     description:
       "Bazaar case study: CWV: Passed, Lighthouse 92, organic search 0 → 156K total clicks.",
-    images: ["/case-study/lighthouse.png"],
+    images: ["/case-study/bazaar-og.jpg"],
   },
 };
 
@@ -205,9 +207,19 @@ export default function BazaarCaseStudy() {
 
           <Section title="The receipts">
             <p>
-              Screenshots from the actual tools — Lighthouse, Search Console,
-              and PageSpeed Insights&apos; CrUX report — for{" "}
-              <strong>bazaarapp.com</strong>:
+              Screenshots from the actual tools (captured May 2026) —
+              Lighthouse, Search Console, and PageSpeed Insights&apos; CrUX
+              report — for <strong>bazaarapp.com</strong>. Don&apos;t take my
+              word for it:{" "}
+              <a
+                href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fwww.bazaarapp.com%2F"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-accent"
+              >
+                run PageSpeed Insights on bazaarapp.com yourself
+              </a>{" "}
+              — the CrUX field data is public.
             </p>
 
             <Figure

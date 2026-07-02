@@ -1,15 +1,13 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 
-const ease = [0.22, 1, 0.36, 1] as const;
-
 const HeroSection = () => {
-  const reduceMotion = useReducedMotion();
   const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({
-      behavior: reduceMotion ? "auto" : "smooth",
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
     });
 
   return (
@@ -19,16 +17,7 @@ const HeroSection = () => {
       style={{ background: `rgb(var(--surface-primary))` }}
     >
       <div className="container-custom">
-        <motion.div
-          {...(reduceMotion
-            ? {}
-            : {
-                initial: { opacity: 0, y: 12 },
-                animate: { opacity: 1, y: 0 },
-                transition: { duration: 0.5, ease },
-              })}
-          className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-8"
-        >
+        <div className="animate-rise flex flex-col sm:flex-row sm:items-start sm:justify-between gap-8">
           <div className="w-full sm:w-auto sm:max-w-2xl">
             <p className="eyebrow mb-3">Senior Frontend Engineer</p>
             <h1
@@ -140,7 +129,7 @@ const HeroSection = () => {
               style={{ border: `1px solid rgb(var(--border))` }}
             >
               <Image
-                src="/abdulrehman.png"
+                src="/abdulrehman-224.webp"
                 alt="Malik Abdul Rehman Khursheed"
                 fill
                 className="object-cover object-top"
@@ -148,7 +137,7 @@ const HeroSection = () => {
               />
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

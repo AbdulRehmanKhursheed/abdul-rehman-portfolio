@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 const NAV = [
   { name: "Work", id: "projects" },
@@ -13,32 +12,46 @@ const NAV = [
 
 const Header = () => {
   const router = useRouter();
-  const reduceMotion = useReducedMotion();
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 24);
-      const sections = ["hero", "about", "projects", "contact"];
-      const current = sections.find((section) => {
-        const el = document.getElementById(section);
-        if (!el) return false;
-        const r = el.getBoundingClientRect();
-        return r.top <= 120 && r.bottom >= 120;
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 24);
+        const sections = ["hero", "about", "projects", "contact"];
+        const current = sections.find((section) => {
+          const el = document.getElementById(section);
+          if (!el) return false;
+          const r = el.getBoundingClientRect();
+          return r.top <= 120 && r.bottom >= 120;
+        });
+        setActiveSection(current || "");
+        ticking = false;
       });
-      setActiveSection(current || "");
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: reduceMotion ? "auto" : "smooth",
-    });
     setIsMenuOpen(false);
+    const el = document.getElementById(id);
+    if (!el) {
+      // Not on the homepage — navigate there with the hash.
+      router.push(`/#${id}`);
+      return;
+    }
+    el.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+    });
   };
 
   return (
@@ -59,8 +72,8 @@ const Header = () => {
           <button
             type="button"
             onClick={() => {
-              router.push("/");
-              scrollToSection("hero");
+              if (pathname !== "/") router.push("/");
+              else scrollToSection("hero");
             }}
             className="flex items-baseline gap-2.5 group"
           >
@@ -85,7 +98,7 @@ const Header = () => {
                 type="button"
                 key={item.name}
                 onClick={() => scrollToSection(item.id)}
-                className="font-mono text-xs transition-colors flex items-center gap-1.5"
+                className="font-mono text-xs transition-colors flex items-center gap-1.5 py-2"
                 style={{
                   color:
                     activeSection === item.id
@@ -103,7 +116,7 @@ const Header = () => {
               href="/api/resume"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-mono text-xs underline underline-offset-4 decoration-1 transition-colors"
+              className="font-mono text-xs underline underline-offset-4 decoration-1 transition-colors py-2"
               style={{ color: `rgb(var(--accent))` }}
             >
               Résumé ↗
@@ -115,53 +128,48 @@ const Header = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2"
             aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
             style={{ color: `rgb(var(--text-primary))` }}
           >
             {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              className="md:hidden overflow-hidden border-t"
-              style={{
-                borderColor: `rgb(var(--border))`,
-                background: `rgb(var(--surface-primary))`,
-              }}
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: reduceMotion ? 0 : 0.2 }}
-            >
-              <div className="py-4 flex flex-col gap-1">
-                {NAV.map((item, i) => (
-                  <button
-                    type="button"
-                    key={item.name}
-                    onClick={() => scrollToSection(item.id)}
-                    className="font-mono text-sm text-left px-1 py-2.5 flex items-center gap-2"
-                    style={{ color: `rgb(var(--text-primary))` }}
-                  >
-                    <span style={{ color: `rgb(var(--text-tertiary))` }}>
-                      0{i + 1}
-                    </span>
-                    {item.name}
-                  </button>
-                ))}
-                <a
-                  href="/api/resume"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-sm px-1 py-2.5"
-                  style={{ color: `rgb(var(--accent))` }}
+        {isMenuOpen && (
+          <div
+            className="md:hidden border-t"
+            style={{
+              borderColor: `rgb(var(--border))`,
+              background: `rgb(var(--surface-primary))`,
+            }}
+          >
+            <div className="py-4 flex flex-col gap-1">
+              {NAV.map((item, i) => (
+                <button
+                  type="button"
+                  key={item.name}
+                  onClick={() => scrollToSection(item.id)}
+                  className="font-mono text-sm text-left px-1 py-2.5 flex items-center gap-2"
+                  style={{ color: `rgb(var(--text-primary))` }}
                 >
-                  Résumé ↗
-                </a>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+                  <span style={{ color: `rgb(var(--text-tertiary))` }}>
+                    0{i + 1}
+                  </span>
+                  {item.name}
+                </button>
+              ))}
+              <a
+                href="/api/resume"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-sm px-1 py-2.5"
+                style={{ color: `rgb(var(--accent))` }}
+              >
+                Résumé ↗
+              </a>
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );

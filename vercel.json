@@ -1,28 +1,7 @@
 {
   "functions": {
-    "src/app/**/*.{js,ts,tsx}": {
-      "maxDuration": 30
+    "src/app/api/**/*.ts": {
+      "maxDuration": 10
     }
-  },
-  "headers": [
-    {
-      "source": "/pdf/(.*)",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/pdf"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/pdf/:path*",
-      "destination": "/pdf/:path*"
-    }
-  ]
+  }
 }
