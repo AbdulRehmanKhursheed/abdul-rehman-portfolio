@@ -5,7 +5,7 @@ const skills = [
   },
   {
     group: "Backend / BFF",
-    items: "Node.js · NestJS · Express · REST APIs · MongoDB",
+    items: "Node.js · NestJS · Go (BFF) · Express · REST APIs · MongoDB",
   },
   {
     group: "Cloud / Infra",
@@ -26,7 +26,7 @@ const experiences = [
     bullets: [
       "Lead frontend on bazaarapp.com (Next.js + NestJS BFF) — flagship customer web for Pakistan's largest B2C grocery platform.",
       "Co-led the image + CDN pipeline: 40% LCP cut, INP into the good range, CWV Passed, ~$5,400/yr CDN saving, organic search 0 → 156K total clicks.",
-      "Lead author of the Keenu One storefront — a multi-tenant ordering platform (Next.js 16 / React 19) I wrote the large majority of; first merchant live at sirocpk.com.",
+      "Lead author of the Keenu One storefront — a multi-tenant ordering platform (Next.js 16 / React 19) I wrote the large majority of; top committer on its Go BFF and its CI/CD + staging deploys. First merchant live at sirocpk.com.",
       "Built end-to-end frontend flows on the Keenu One merchant dashboard (React + Vite) — the storefront-config / theming & branding editors, plus dashboard and POS-kiosk screens.",
       "Lead-authored the Keenu corporate site (keenu.pk) end-to-end — the public payments / POS marketing site, on Next.js + Tailwind.",
       "Drove the MUI → Tailwind + Radix migration; built the PM-designed gamification feature — average order value (AOV) rose 47%.",
@@ -72,8 +72,8 @@ const AboutMe = () => {
               style={{ color: `rgb(var(--text-secondary))` }}
             >
               <p>
-                Senior Frontend Engineer with nearly five years scaling B2C web
-                apps on Pakistani mobile networks — three of them at scale at
+                Senior Frontend Engineer with five and a half years scaling B2C
+                web apps on Pakistani mobile networks — three of them at scale at
                 Bazaar. I co-led the image + CDN pipeline that took
                 Bazaar&apos;s flagship app to{" "}
                 <span style={{ color: `rgb(var(--text-primary))` }}>
@@ -85,7 +85,8 @@ const AboutMe = () => {
               <p>
                 I&apos;m also lead author of the Keenu One storefront — a
                 multi-tenant platform where one Next.js codebase serves many
-                merchants on their own domains (first merchant live). I use
+                merchants on their own domains (first merchant live) — and top
+                committer on its Go BFF and staging deploys. I use
                 AI-assisted development to direct and review changes across a
                 large codebase — I own the architecture, review every change, and
                 hold the quality bar with types, tests, and Lighthouse.

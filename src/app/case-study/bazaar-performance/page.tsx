@@ -226,24 +226,32 @@ export default function BazaarCaseStudy() {
               src="/case-study/lighthouse.png"
               alt="Lighthouse report for bazaarapp.com — Performance 92, Accessibility 92, Best Practices 96, SEO 92"
               caption="Lighthouse — Performance 92, Accessibility 92, Best Practices 96, SEO 92."
+              width={2098}
+              height={1188}
             />
 
             <Figure
               src="/case-study/crux-mobile.png"
               alt="PageSpeed Insights / CrUX report for bazaarapp.com on mobile — Core Web Vitals: Passed"
               caption="CrUX, mobile — Core Web Vitals: Passed. LCP 2.2s, INP 169ms, CLS 0.01. Field-measured on real users, not a synthetic test."
+              width={2202}
+              height={1406}
             />
 
             <Figure
               src="/case-study/crux-desktop.png"
               alt="PageSpeed Insights / CrUX report for bazaarapp.com on desktop — Core Web Vitals: Passed"
               caption="CrUX, desktop — same story. LCP 2.0s, INP 76ms, CLS 0.01."
+              width={2196}
+              height={1410}
             />
 
             <Figure
               src="/case-study/gsc-growth.png"
               alt="Google Search Console for bazaarapp.com — 156K total clicks, 11.2M total impressions, 1.4% CTR, average position 7"
               caption="Google Search Console — from ~0 clicks/day in early 2025 to ~1K clicks/day by Q1 2026. 156K total clicks, 11.2M impressions, average position 7."
+              width={2276}
+              height={838}
             />
           </Section>
 
@@ -333,10 +341,14 @@ function Figure({
   src,
   alt,
   caption,
+  width,
+  height,
 }: {
   src: string;
   alt: string;
   caption: string;
+  width: number;
+  height: number;
 }) {
   return (
     <figure className="my-8">
@@ -347,8 +359,8 @@ function Figure({
         <Image
           src={src}
           alt={alt}
-          width={1200}
-          height={700}
+          width={width}
+          height={height}
           className="w-full h-auto"
           sizes="(max-width: 768px) 100vw, 672px"
         />

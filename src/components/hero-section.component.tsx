@@ -55,7 +55,7 @@ const HeroSection = () => {
                 Pakistani 3G/4G conditions.
               </p>
               <p>
-                On the side, I&apos;m lead author of the{" "}
+                Within the Bazaar group, I&apos;m also lead author of the{" "}
                 <a
                   href="https://sirocpk.com"
                   target="_blank"
@@ -65,7 +65,7 @@ const HeroSection = () => {
                   Keenu One storefront
                 </a>{" "}
                 — a multi-tenant ordering platform on Next.js 16 / React 19
-                (first merchant live).
+                (first merchant live) — and top committer on its Go BFF.
               </p>
             </div>
 

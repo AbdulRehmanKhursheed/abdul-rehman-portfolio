@@ -25,7 +25,7 @@ const projects: Project[] = [
     tagline:
       "Multi-tenant restaurant ordering platform — one codebase, many merchant domains.",
     description:
-      "Lead author / primary engineer — I wrote the large majority of the codebase. A single Next.js 16 / React 19 codebase built to serve many restaurants, each on their own branded domain. Tenancy is resolved at the edge (host → org, HMAC-signed cookies), and pages are server-rendered with structured JSON-LD for SEO. I architected a manifest-driven theme system — design tokens plus per-merchant config — built to host many themes; the first merchant, Siroc, is live in production at sirocpk.com. I built the menu, cart (Zustand), checkout and order tracking, integrated with a Go BFF. AI-assisted development let me lead-author this at scale while owning the architecture and reviewing every change.",
+      "Lead author / primary engineer — I wrote the large majority of the codebase. A single Next.js 16 / React 19 codebase built to serve many restaurants, each on their own branded domain. Tenancy is resolved at the edge (host → org, HMAC-signed cookies), and pages are server-rendered with structured JSON-LD for SEO. I architected a manifest-driven theme system — design tokens plus per-merchant config — built to host many themes; the first merchant, Siroc, is live in production at sirocpk.com. I built the menu, cart (Zustand), checkout and order tracking — and I'm the top committer on the storefront's Go BFF (bootstrap/config, menu and order flows) and on its CI/CD + staging deploys. AI-assisted development let me lead-author this at scale while owning the architecture and reviewing every change.",
     link: "https://sirocpk.com",
     caseStudyHref: "/case-study/keenu-storefront",
     technologies: [
@@ -34,6 +34,7 @@ const projects: Project[] = [
       "TypeScript",
       "Tailwind CSS 4",
       "Zustand",
+      "Go (BFF)",
       "SSR / JSON-LD",
       "Multi-tenant",
     ],

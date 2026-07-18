@@ -210,21 +210,25 @@ export default function KeenuStorefrontCaseStudy() {
               I&apos;m the <strong>lead author / primary engineer</strong> of
               the storefront — I wrote the large majority of it (the substance:
               menu, cart, checkout, order tracking, theming and SEO), with a few
-              other engineers contributing along the way. I don&apos;t claim the
-              whole Keenu One platform: the merchant dashboard, the Go BFF and
-              the backend services are the wider team&apos;s work — on the
-              merchant dashboard I built the storefront-config / theming editors.
-              One merchant is live today; the multi-theme system is built for
-              many and currently serves the first.
+              other engineers contributing along the way. On the storefront&apos;s{" "}
+              <strong>Go BFF</strong> I&apos;m the top committer — I built its
+              bootstrap/config, menu and order flows — though the majority of
+              that codebase is the wider platform team&apos;s. I also own the
+              storefront&apos;s CI/CD and staging deploys. I don&apos;t claim the
+              whole Keenu One platform: the merchant dashboard and the backend
+              services are the wider team&apos;s work — on the merchant dashboard
+              I built the storefront-config / theming editors. One merchant is
+              live today; the multi-theme system is built for many and currently
+              serves the first.
             </p>
           </Section>
 
           <Section title="Stack">
             <p>
               Next.js 16 (App Router, React Server Components), React 19,
-              TypeScript, Tailwind CSS 4, Zustand, TanStack Query. Server-side
-              integration with a Go BFF. SSR + JSON-LD for SEO. Self-hosted fonts
-              and a custom CDN image loader.
+              TypeScript, Tailwind CSS 4, Zustand. Server-side integration with
+              a Go BFF (top committer — bootstrap, menu and order flows). SSR +
+              JSON-LD for SEO. Self-hosted fonts and a custom CDN image loader.
             </p>
           </Section>
 
