@@ -6,12 +6,12 @@ import { ArrowLeft, ArrowUpRight, Mail } from "lucide-react";
 export const metadata: Metadata = {
   title: "Keenu One Storefront — Case Study | Malik Abdul Rehman Khursheed",
   description:
-    "Lead-authoring a multi-tenant restaurant storefront: one Next.js 16 / React 19 codebase serving merchants on their own domains, with edge tenant-resolution, SSR + JSON-LD SEO, and a manifest-driven theme system. First merchant live at sirocpk.com.",
+    "Primary engineer on a multi-tenant restaurant storefront: one Next.js 16 / React 19 codebase serving merchants on their own domains, with edge tenant-resolution, SSR + JSON-LD SEO, and a registry-driven theme system. Three brands live in production.",
   alternates: { canonical: "/case-study/keenu-storefront" },
   openGraph: {
     title: "Keenu One Storefront — Case Study",
     description:
-      "One codebase, many merchant domains. Edge tenant-resolution, SSR + JSON-LD SEO, a manifest-driven theme system. Lead author.",
+      "One codebase, three live merchant brands. Edge tenant-resolution, SSR + JSON-LD SEO, a registry-driven theme system. Primary engineer.",
     type: "article",
     url: "/case-study/keenu-storefront",
     images: [
@@ -27,15 +27,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Keenu One Storefront — Case Study",
     description:
-      "One codebase, many merchant domains. Edge tenant-resolution, SSR + JSON-LD SEO. Lead author.",
+      "One codebase, three live merchant brands. Edge tenant-resolution, SSR + JSON-LD SEO. Primary engineer.",
     images: ["/case-study/keenu-og.jpg"],
   },
 };
 
 const FACTS = [
-  { label: "ROLE", value: "Lead author" },
+  { label: "ROLE", value: "Primary engineer" },
   { label: "STACK", value: "Next.js 16 · React 19" },
-  { label: "LIVE", value: "sirocpk.com" },
+  { label: "LIVE", value: "3 brands in production" },
   { label: "SCOPE", value: "Menu · cart · checkout · theming" },
 ];
 
@@ -70,10 +70,10 @@ export default function KeenuStorefrontCaseStudy() {
               className="text-lg leading-relaxed"
               style={{ color: `rgb(var(--text-secondary))` }}
             >
-              I&apos;m lead author of the Keenu One storefront — a multi-tenant
-              ordering platform where a single Next.js codebase is built to serve
-              many restaurants, each on their own branded domain. The first
-              merchant is live at{" "}
+              I&apos;m the primary engineer on the Keenu One storefront — a
+              multi-tenant ordering platform where a single Next.js codebase
+              serves many restaurants, each on their own branded domain. Three
+              brands are live in production, the first at{" "}
               <a
                 href="https://sirocpk.com"
                 target="_blank"
@@ -123,10 +123,10 @@ export default function KeenuStorefrontCaseStudy() {
               configuration. No per-merchant forks.
             </p>
             <p>
-              AI-assisted development was the execution multiplier here — it let
-              me lead-author a codebase this size while I owned the architecture
-              and reviewed every change. A force multiplier, not a substitute for
-              judgment.
+              I run an agent-assisted workflow on this codebase, and the
+              interesting engineering is the scaffolding that makes it safe at
+              this scale: typed API clients, registry-driven parity suites,
+              design-token contracts and enforced review gates.
             </p>
           </Section>
 
@@ -207,10 +207,12 @@ export default function KeenuStorefrontCaseStudy() {
 
           <Section title="Honest scope">
             <p>
-              I&apos;m the <strong>lead author / primary engineer</strong> of
-              the storefront — I wrote the large majority of it (the substance:
-              menu, cart, checkout, order tracking, theming and SEO), with a few
-              other engineers contributing along the way. On the storefront&apos;s{" "}
+              I&apos;m the <strong>primary engineer</strong> on the storefront
+              — <strong>87% of the surviving source</strong> by git blame
+              (about 111,000 of 127,000 lines across 912 files), with the next
+              contributor under 3%. That covers the substance: menu, cart,
+              checkout, order tracking, theming and SEO. Other engineers have
+              contributed along the way. On the storefront&apos;s{" "}
               <strong>Go BFF</strong> I&apos;m the top committer — I built its
               bootstrap/config, menu and order flows — though the majority of
               that codebase is the wider platform team&apos;s. I also own the

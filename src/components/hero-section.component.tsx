@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { RESUME_PDF } from "../data/site";
 
 const HeroSection = () => {
   const scrollTo = (id: string) =>
@@ -19,7 +20,9 @@ const HeroSection = () => {
       <div className="container-custom">
         <div className="animate-rise flex flex-col sm:flex-row sm:items-start sm:justify-between gap-8">
           <div className="w-full sm:w-auto sm:max-w-2xl">
-            <p className="eyebrow mb-3">Senior Frontend Engineer</p>
+            <p className="eyebrow mb-3">
+              Senior Software Engineer · Full-stack
+            </p>
             <h1
               className="font-display text-display"
               style={{ color: `rgb(var(--text-primary))` }}
@@ -31,9 +34,8 @@ const HeroSection = () => {
               className="mt-5 text-lg md:text-xl leading-snug text-balance"
               style={{ color: `rgb(var(--text-primary))` }}
             >
-              I make web fast where the network isn&apos;t — performance for
-              emerging-market users, and lead author of a multi-tenant Next.js
-              storefront.
+              I build and run multi-tenant commerce platforms — one Next.js
+              codebase, many live merchant brands, measured on real traffic.
             </p>
 
             <div
@@ -41,37 +43,41 @@ const HeroSection = () => {
               style={{ color: `rgb(var(--text-secondary))` }}
             >
               <p>
-                At{" "}
-                <span style={{ color: `rgb(var(--text-primary))` }}>
-                  Bazaar Technologies
-                </span>{" "}
-                I co-led the work that took the flagship grocery app to Core Web
-                Vitals: Passed —{" "}
-                <span className="tabular-nums">INP 169&nbsp;ms</span>, LCP down{" "}
-                <span className="tabular-nums">40%</span>, Lighthouse{" "}
-                <span className="tabular-nums">92</span> — and grew organic
-                search from zero to{" "}
-                <span className="tabular-nums">156K</span> clicks, all under
-                Pakistani 3G/4G conditions.
-              </p>
-              <p>
-                Within the Bazaar group, I&apos;m also lead author of the{" "}
+                I&apos;m the primary engineer on the{" "}
                 <a
-                  href="https://sirocpk.com"
+                  href="https://www.sirocpk.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="link-accent"
                 >
                   Keenu One storefront
                 </a>{" "}
-                — a multi-tenant ordering platform on Next.js 16 / React 19
-                (first merchant live) — and top committer on its Go BFF.
+                — <span className="tabular-nums">87%</span> of a{" "}
+                <span className="tabular-nums">127,000</span>-line Next.js 16 /
+                React 19 codebase, with{" "}
+                <span className="tabular-nums">three</span> merchant brands live
+                on their own domains and two more in staging. I own the delivery
+                path around it too: the{" "}
+                <span className="tabular-nums">433</span>-file test suite,
+                Playwright browser journeys, the Prometheus and web-vitals
+                instrumentation, Docker, CI/CD and staging deploys.
+              </p>
+              <p>
+                I&apos;m also the top contributor to that storefront&apos;s{" "}
+                <span style={{ color: `rgb(var(--text-primary))` }}>Go</span>{" "}
+                backend-for-frontend, and before this I led frontend on
+                Pakistan&apos;s largest B2C grocery web app — Core Web Vitals:
+                Passed, <span className="tabular-nums">INP 169 ms</span>,
+                Lighthouse <span className="tabular-nums">92</span>, organic
+                search from zero to{" "}
+                <span className="tabular-nums">156K</span> clicks under
+                Pakistani 3G/4G conditions.
               </p>
             </div>
 
             {/* Primary + secondary actions */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a href="/case-study/bazaar-performance" className="button-primary">
+              <a href="/case-study/keenu-storefront" className="button-primary">
                 Read the case study →
               </a>
               <button
@@ -101,7 +107,7 @@ const HeroSection = () => {
                 LinkedIn
               </a>
               <a
-                href="/api/resume"
+                href={RESUME_PDF}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="nav-link"
@@ -118,7 +124,8 @@ const HeroSection = () => {
                 className="w-1.5 h-1.5 rounded-full"
                 style={{ background: `rgb(var(--accent))` }}
               />
-              Available for senior frontend roles — Islamabad, PK / remote
+              Available for senior full-stack / frontend roles — remote, or
+              Islamabad, Pakistan
             </p>
           </div>
 

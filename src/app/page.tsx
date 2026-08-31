@@ -12,13 +12,15 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Malik Abdul Rehman Khursheed",
-  jobTitle: "Senior Frontend Engineer",
+  jobTitle: "Senior Full-Stack Engineer",
   url: siteUrl,
   sameAs: [
     "https://github.com/AbdulRehmanKhursheed",
     "https://www.linkedin.com/in/malik-abdul-rehman/",
   ],
   knowsAbout: [
+    "Full-Stack Development",
+    "Go",
     "Web Performance",
     "Core Web Vitals",
     "Next.js",

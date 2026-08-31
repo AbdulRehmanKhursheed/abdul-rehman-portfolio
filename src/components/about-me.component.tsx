@@ -1,19 +1,28 @@
 const skills = [
   {
     group: "Frontend",
-    items: "Next.js · React · TypeScript · Redux / RTK · React Query · Tailwind · Radix · MUI",
+    items:
+      "Next.js 16 (App Router · RSC) · React 19 · React Compiler · TypeScript · Redux / RTK · React Query · Zustand · Zod · Tailwind 4 · Radix · MUI · design tokens",
   },
   {
     group: "Backend / BFF",
-    items: "Node.js · NestJS · Go (BFF) · Express · REST APIs · MongoDB",
+    items:
+      "Go · Node.js · NestJS · Express · REST · backend-for-frontend · MongoDB · OAuth2 / OIDC (Zitadel) · Firebase Auth · OpenAPI",
+  },
+  {
+    group: "Testing",
+    items:
+      "Vitest · Jest · React Testing Library · Playwright (e2e + visual regression) · contract tests · TDD",
   },
   {
     group: "Cloud / Infra",
-    items: "AWS (S3 · CloudFront · Lambda) · Vercel · Docker · CI/CD",
+    items:
+      "AWS (S3 · CloudFront · Lambda · Route 53) · Docker · GitHub Actions · CI/CD · Vercel · semantic-release",
   },
   {
     group: "Practice",
-    items: "Core Web Vitals (INP · LCP · CLS) · Image pipelines · Caching / CDN · Multi-tenant · TDD · Code review",
+    items:
+      "Core Web Vitals (INP · LCP · CLS) · Prometheus · RUM instrumentation · image pipelines · caching / CDN · multi-tenant SaaS · SSR / JSON-LD SEO · edge middleware · code review",
   },
 ];
 
@@ -24,12 +33,14 @@ const experiences = [
     company: "Bazaar Technologies",
     note: "Promoted twice: Software Engineer II → Senior (Dec 2024) → Senior II (Jul 2026).",
     bullets: [
-      "Lead frontend on bazaarapp.com (Next.js + NestJS BFF) — flagship customer web for Pakistan's largest B2C grocery platform.",
-      "Co-led the image + CDN pipeline: 40% LCP cut, INP into the good range, CWV Passed, ~$5,400/yr CDN saving, organic search 0 → 156K total clicks.",
-      "Lead author of the Keenu One storefront — a multi-tenant ordering platform (Next.js 16 / React 19) I wrote the large majority of; top committer on its Go BFF and its CI/CD + staging deploys. First merchant live at sirocpk.com.",
-      "Built end-to-end frontend flows on the Keenu One merchant dashboard (React + Vite) — the storefront-config / theming & branding editors, plus dashboard and POS-kiosk screens.",
-      "Lead-authored the Keenu corporate site (keenu.pk) end-to-end — the public payments / POS marketing site, on Next.js + Tailwind.",
-      "Drove the MUI → Tailwind + Radix migration; built the PM-designed gamification feature — average order value (AOV) rose 47%.",
+      "Primary engineer on the Keenu One storefront — 87% of a 127,000-line Next.js 16 / React 19 codebase (912 files), with the next contributor under 3%. Three merchant brands live on their own domains: sirocpk.com, ifyoulikecheese.com, downsouth.coffee — two more in staging.",
+      "Designed the theme architecture: four visually isolated themes behind a registry and typed config contract, tenant resolution in edge middleware, and ESLint-enforced module boundaries. Registry-driven parity suites fail a new theme by name until it complies.",
+      "Built the quality gate — 433 unit test files (Vitest), 19 Playwright browser journeys with visual-regression baselines, plus design-token contract and theme-parity checks running on every push.",
+      "Sole-authored the production performance instrumentation: a web-vitals RUM reporter, its collection endpoint, and the Prometheus metrics layer — so INP, LCP and CLS come from real merchant traffic, not synthetic runs.",
+      "Top contributor to the storefront's Go BFF (~a third of the Go codebase) and owner of its Docker image, Makefile tooling, GitHub Actions and staging deploys. In the Go identity service: merchant/admin endpoint gates, Zitadel IAM membership checks, service-account token caching, OpenAPI generation with a CI drift check.",
+      "Own the storefront-configuration surface in the Keenu One merchant portal (React 19 + Vite) at 78% of that feature's code — the theme, branding and SEO editors that drive every live storefront.",
+      "Lead author of the Keenu corporate site (keenu.pk) — the public payments / POS marketing site, on Next.js + Tailwind.",
+      "Earlier: lead frontend on bazaarapp.com (Next.js + NestJS BFF). Co-led the image + CDN pipeline — 40% p75 LCP cut, INP 169 ms, Core Web Vitals: Passed at Lighthouse 92, organic search 0 → 156K clicks on 11.2M impressions, ~$5,400/yr CDN saving. Built the PM-designed gamification feature and drove the MUI → Tailwind + Radix migration; average order value rose 47%. The platform was retired in 2026 when the company pivoted.",
     ],
   },
   {
@@ -72,24 +83,31 @@ const AboutMe = () => {
               style={{ color: `rgb(var(--text-secondary))` }}
             >
               <p>
-                Senior Frontend Engineer with five and a half years scaling B2C
-                web apps on Pakistani mobile networks — three of them at scale at
-                Bazaar. I co-led the image + CDN pipeline that took
-                Bazaar&apos;s flagship app to{" "}
+                Senior software engineer, nearly six years, building B2C web for
+                emerging-market users. Today I&apos;m the primary engineer on the
+                Keenu One storefront — a{" "}
                 <span style={{ color: `rgb(var(--text-primary))` }}>
-                  Core Web Vitals: Passed
+                  multi-tenant commerce platform
                 </span>{" "}
-                (INP 169&nbsp;ms, LCP down 40%, Lighthouse 92), and grew organic
-                search from ~0 to 156K total clicks.
+                where one Next.js 16 codebase serves many restaurant brands on
+                their own domains. I wrote 87% of its 127,000 lines; three brands
+                are live in production and two more are in staging.
               </p>
               <p>
-                I&apos;m also lead author of the Keenu One storefront — a
-                multi-tenant platform where one Next.js codebase serves many
-                merchants on their own domains (first merchant live) — and top
-                committer on its Go BFF and staging deploys. I use
-                AI-assisted development to direct and review changes across a
-                large codebase — I own the architecture, review every change, and
-                hold the quality bar with types, tests, and Lighthouse.
+                I don&apos;t stop at the browser. I&apos;m the top contributor to
+                that storefront&apos;s Go backend-for-frontend, I own its Docker,
+                CI/CD and staging deploys, and I built its performance
+                instrumentation — a web-vitals RUM reporter feeding Prometheus,
+                so the numbers come from real merchant traffic. Before this I led
+                frontend on Pakistan&apos;s largest B2C grocery web app and took
+                it to Core Web Vitals: Passed (INP 169 ms, LCP down 40%,
+                Lighthouse 92) with organic search from ~0 to 156K clicks.
+              </p>
+              <p>
+                I work with coding agents daily, and the part I care about is the
+                scaffolding that makes it safe: typed API clients, 433 test
+                files, registry-driven parity suites and lint-enforced module
+                boundaries. Architecture decisions and every merge stay mine.
               </p>
             </div>
           </div>

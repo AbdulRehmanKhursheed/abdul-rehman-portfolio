@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Malik Abdul Rehman Khursheed - <span class="nb">Front-End</span> Heavy <span class="nb">Full-Stack</span> Engineer (React, Next.js, TypeScript, Go)</title>
+<style>
+  @font-face { font-family:"Geist"; src:url("../fonts/geist/Geist-Regular.woff2") format("woff2"); font-weight:400; font-style:normal; }
+  @font-face { font-family:"Geist"; src:url("../fonts/geist/Geist-Medium.woff2") format("woff2"); font-weight:500; font-style:normal; }
+  @font-face { font-family:"Geist"; src:url("../fonts/geist/Geist-SemiBold.woff2") format("woff2"); font-weight:600; font-style:normal; }
+  @font-face { font-family:"Geist"; src:url("../fonts/geist/Geist-Bold.woff2") format("woff2"); font-weight:700; font-style:normal; }
+
+  :root { --ink:#111114; --body:#33333a; --muted:#5f5f68; --rule:#d9d9de; --accent:#1d5fa8; }
+  * { box-sizing:border-box; }
+  html, body { margin:0; padding:0; }
+  @page { size:A4; margin:10mm 12mm; }
+
+  body {
+    font-family:"Geist", Arial, Helvetica, sans-serif;
+    color:var(--body); font-size:10pt; line-height:1.32;
+    -webkit-font-smoothing:antialiased; print-color-adjust:exact;
+  }
+
+  /* Keep compounds off line breaks so the PDF text layer keeps the hyphen. */
+  .nb { white-space:nowrap; }
+
+  .header { padding-bottom:6pt; border-bottom:1.2px solid var(--rule); margin-bottom:7pt; }
+  .name { font-size:21pt; font-weight:700; letter-spacing:-0.025em; color:var(--ink); margin:0; line-height:1.06; }
+  .role { font-size:11pt; font-weight:500; color:var(--accent); margin:4pt 0 0 0; }
+  .contact { margin:6pt 0 0 0; font-size:9pt; color:var(--muted); }
+  .contact span { white-space:nowrap; }
+  .contact .bar { color:var(--rule); margin:0 5pt; }
+
+  /* No letter-spacing: wide tracking makes pdftotext insert false word breaks,
+     so "SUMMARY" extracts as "SU MMARY" and a parser cannot match the section. */
+  h2.section {
+    font-size:9.4pt; text-transform:uppercase; letter-spacing:0;
+    color:var(--ink); font-weight:700; margin:8pt 0 3.5pt 0;
+    padding-bottom:2.5pt; border-bottom:1px solid var(--rule);
+  }
+  section:first-of-type h2.section { margin-top:0; }
+
+  p { margin:0; }
+  .summary { color:var(--body); text-align:justify; }
+
+  .skill { margin:0 0 2.6pt 0; }
+  .skill:last-child { margin-bottom:0; }
+  .skill b { color:var(--ink); font-weight:600; }
+
+  .entry { margin-bottom:6pt; }
+  .entry:last-child { margin-bottom:0; }
+  .entry-head { display:flex; justify-content:space-between; align-items:baseline; gap:14pt; }
+  .entry-co { color:var(--ink); font-size:10.8pt; font-weight:600; }
+  .entry-co .loc { color:var(--muted); font-weight:400; font-size:9.4pt; }
+  .entry-dates { color:var(--muted); font-size:9.2pt; font-weight:500; white-space:nowrap; }
+  .entry-title { color:var(--ink); font-size:10pt; font-weight:500; margin:1.5pt 0 3pt 0; }
+
+  ul { list-style:none; margin:0; padding:0; }
+  li { position:relative; padding-left:11pt; margin-bottom:2.1pt; color:var(--body); }
+  li:last-child { margin-bottom:0; }
+  li::before { content:"•"; position:absolute; left:1pt; top:0; color:var(--accent); }
+  li b { color:var(--ink); font-weight:600; }
+
+  .edu-line { color:var(--body); }
+  .edu-line b { color:var(--ink); font-weight:600; }
+</style>
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="name">Malik Abdul Rehman Khursheed</h1>
+    <p class="role"><span class="nb">Front-End</span> Heavy <span class="nb">Full-Stack</span> Engineer (React, Next.js, TypeScript, Go)</p>
+    <p class="contact"><span>Remote (UTC+5)</span><span class="bar">|</span><span>Overlaps CET fully, US East mornings</span><span class="bar">|</span><span>+92 304 591 9454</span><span class="bar">|</span><span>malik.ali5560@gmail.com</span></p>
+    <p class="contact"><span>linkedin.com/in/<span class="nb">malik-abdul-rehman</span></span><span class="bar">|</span><span>github.com/AbdulRehmanKhursheed</span><span class="bar">|</span><span><span class="nb">abdul-rehman-portfolio-ecru</span>.vercel.app</span></p>
+  </header>
+
+  <section>
+    <h2 class="section">Summary</h2>
+    <p class="summary">Took a <span class="nb">multi-tenant</span> commerce platform from zero to three live merchant brands on Next.js 16 and React 19, behind 433 unit test files and Playwright visual regression. 6 years building B2C web for <span class="nb">high-latency</span> markets, where performance is a product requirement: I drove Pakistan's largest B2C grocery web app to a Core Web Vitals pass at INP 169 ms and Lighthouse 92, and grew organic search from zero to 156K clicks. Comfortable past the browser too, as top contributor to the storefront's Go <span class="nb">backend-for-frontend</span> and owner of its CI/CD and staging deploys.</p>
+  </section>
+
+  <section>
+        <h2 class="section">Key Achievements</h2>
+        <ul>
+          <li>Zero to three live merchant brands - Built and own the <span class="nb">multi-tenant</span> storefront platform behind sirocpk.com, ifyoulikecheese.com and downsouth.coffee. One Next.js 16 codebase, four themes, so a new brand ships as config rather than a fork.</li>
+          <li>Core Web Vitals: Passed - <span class="nb">Co-led</span> the image and CDN pipeline that cut p75 LCP 40% and held INP at 169 ms, at Lighthouse 92, on a flagship app with 100k+ active web users on Pakistani 3G and 4G.</li>
+          <li>Organic search from zero to 156K clicks - 11.2M impressions in Google Search Console, from structured data, metadata hygiene and a sitemap matching the real category tree.</li>
+          <li>$5,400 a year cut from CDN spend - <span class="nb">Per-asset</span> <span class="nb">cache-control</span> and TTL tuning plus origin shielding across web and Android, roughly $450 a month.</li>
+          <li>47% increase in average order value - Built the <span class="nb">product-designed</span> gamification feature <span class="nb">end-to-end</span> on the customer web app.</li>
+          <li>Hired and led a team of 24 - Interviewed, hired and ran delivery and mentoring for 24 junior frontend engineers across multiple client projects.</li>
+        </ul>
+      </section>
+
+  <section>
+    <h2 class="section">Technical Skills</h2>
+    <p class="skill"><b>Core:</b> TypeScript, JavaScript (ES2024), HTML5, CSS3, Next.js 16 (App Router, React Server Components), React 19, React Compiler</p>
+      <p class="skill"><b>State and data:</b> Redux and Redux Toolkit, React Query, Zustand, Zod, typed API clients, REST, OpenAPI</p>
+      <p class="skill"><b>Styling and design systems:</b> Tailwind CSS 4, Radix UI, MUI, SCSS, design tokens, theming, WCAG accessibility</p>
+      <p class="skill"><b>Testing and quality:</b> Vitest, Jest, React Testing Library, Playwright <span class="nb">end-to-end</span> and <span class="nb">visual-regression</span>, contract tests, TDD, code review</p>
+      <p class="skill"><b>Performance:</b> Core Web Vitals (INP, LCP, CLS), Lighthouse, CrUX, RUM and <span class="nb">web-vitals</span> instrumentation, image pipelines, CDN and caching strategy, Google Search Console</p>
+      <p class="skill"><b>Platform and delivery:</b> Go, Node.js, NestJS, <span class="nb">backend-for-frontend</span> pattern, Firebase Auth, OAuth2 and OIDC, Docker, GitHub Actions, CI/CD, AWS (S3, CloudFront, Lambda), Vercel, Prometheus</p>
+      <p class="skill"><b>Architecture and practice:</b> <span class="nb">Multi-tenant</span> SaaS, <span class="nb">front-end</span> architecture, <span class="nb">server-side</span> rendering and <span class="nb">JSON-LD</span> SEO, edge middleware, modular boundaries enforced in lint, <span class="nb">micro-frontend</span> boundaries, Clean Architecture, <span class="nb">Component-Container</span> pattern, SOLID, Agile, <span class="nb">agent-assisted</span> development, mentoring</p>
+  </section>
+
+  <section>
+    <h2 class="section">Professional Experience</h2>
+    <div class="entry">
+        <div class="entry-head">
+          <span class="entry-co">Bazaar Technologies (now Keenu One) <span class="loc">Islamabad, Pakistan</span></span>
+          <span class="entry-dates">Mar 2023 - Present</span>
+        </div>
+        <p class="entry-title">Senior Software Engineer II</p>
+        <ul>
+          <li>Took the Keenu One storefront from zero to three merchant brands live on their own domains, with two more in staging. One Next.js 16 and React 19 codebase serves all of them, so a new brand ships as a theme plus config rather than a fork. Primary engineer: 912 files, next contributor under 3%.</li>
+          <li>Designed the theme architecture that lets one codebase serve many brands: four visually isolated themes behind a registry and a typed config contract, tenant resolution in edge middleware, and <span class="nb">ESLint-enforced</span> module boundaries so themes never import each other. <span class="nb">Registry-driven</span> parity test suites fail a new theme by name until it complies.</li>
+          <li>Built the quality gate the platform ships behind: 433 unit test files in Vitest, 19 Playwright browser journeys with <span class="nb">visual-regression</span> baselines, plus custom <span class="nb">design-token</span> contract and <span class="nb">theme-parity</span> checks. CI runs format, lint, typecheck, the full suite, build and <span class="nb">end-to-end</span> journeys on every push.</li>
+          <li>Instrumented production performance <span class="nb">end-to-end</span>, sole authoring the <span class="nb">web-vitals</span> RUM reporter, its collection endpoint and the Prometheus metrics layer, so INP, LCP and CLS are measured on real merchant traffic instead of synthetic runs.</li>
+          <li>Own the <span class="nb">storefront-configuration</span> surface in the Keenu One merchant portal, a React 19 and Vite application, at 78% of that feature's code. These are the theme, branding and SEO editors that drive every live storefront.</li>
+          <li>Top contributor to the storefront's Go <span class="nb">backend-for-frontend</span>, roughly a third of the Go codebase, covering bootstrap and config, menu and order flows. Own its Docker image, Makefile tooling, GitHub Actions pipelines and staging deploys.</li>
+          <li>Built the guardrails that keep an <span class="nb">agent-assisted</span> workflow safe at this scale: typed API clients, <span class="nb">registry-driven</span> parity suites, <span class="nb">design-token</span> contracts and enforced review gates.</li>
+          <li>Led frontend on bazaarapp.com, Pakistan's largest B2C grocery web app, on Next.js with a NestJS <span class="nb">backend-for-frontend</span>. <span class="nb">Co-led</span> the image and CDN pipeline and the SEO foundations behind the Core Web Vitals, search and CDN results above.</li>
+          <li>Promoted twice in three years: Software Engineer II, to Senior in 2024, to Senior II in 2026.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-co">Orcalo Holdings <span class="loc">Rawalpindi, Pakistan</span></span>
+          <span class="entry-dates">Aug 2021 - Mar 2023</span>
+        </div>
+        <p class="entry-title">Senior Frontend Engineer, Junior Frontend Team Lead</p>
+        <ul>
+          <li>Led the team under the Frontend Lead across client projects in React, Next.js, Angular and Node.js.</li>
+          <li>Introduced the <span class="nb">Component-Container</span> pattern across the frontend codebase, separating UI from business logic and making shared behaviour testable.</li>
+          <li>Integrated React Query into legacy <span class="nb">Redux-heavy</span> applications, cutting redundant <span class="nb">re-renders</span> and duplicate API calls.</li>
+          <li>Joined as a Junior Node.js Developer building <span class="nb">server-side</span> APIs and <span class="nb">third-party</span> integrations across Airtable, Twilio SMS and SendGrid before moving into frontend leadership.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-co">Web Mekanics <span class="loc">Rawalpindi, Pakistan</span></span>
+          <span class="entry-dates">Nov 2020 - Jun 2021</span>
+        </div>
+        <p class="entry-title">Software Engineer Intern, Frontend and Python</p>
+        <ul>
+          <li>Built responsive frontends for automobile products.</li>
+          <li>Built REST APIs in Django serving <span class="nb">real-time</span> data insights.</li>
+        </ul>
+      </div>
+  </section>
+
+  <section>
+        <h2 class="section">Selected Projects</h2>
+        <ul>
+          <li>Keenu One Storefront, sirocpk.com, ifyoulikecheese.com and downsouth.coffee. <span class="nb">Multi-tenant</span> Next.js 16 platform, primary engineer, 87% of the code.</li>
+          <li>Keenu One Merchant Portal, console.keenu.one. React 19 and Vite operations dashboard, owner of the <span class="nb">storefront-configuration</span> surface.</li>
+          <li>Keenu Corporate Site, keenu.pk. Next.js and Tailwind marketing site for the payments and POS business, sole author.</li>
+          <li>Check My DBS - <span class="nb">certificate-verification</span> platform for UK companies, on React, Next.js, TypeScript and RTK Query.</li>
+          <li>Bazaar Grocery App, Android, 1M+ downloads on Google Play. <span class="nb">Customer-facing</span> features across web and Android.</li>
+          <li>Bazaar Web App, bazaarapp.com. Lead frontend on Pakistan's largest B2C grocery web app. Core Web Vitals pass at Lighthouse 92.</li>
+        </ul>
+      </section>
+
+  <section>
+    <h2 class="section">Education</h2>
+    <p class="edu-line"><b>BS Computer Science</b>, HITEC University, Taxila, 2017 - 2021. GPA 3.29 of 4.00</p>
+  </section>
+
+  <section>
+        <h2 class="section">Certifications and Awards</h2>
+        <p class="edu-line">AWS Certified Solutions Architect - Associate (in progress) | AWS Technical Essentials, Coursera | React with Redux and Next.js, Academind | Angular Mastery, Academind | Node.js, Code with Mosh | Microsoft MTA: Introduction to Python</p>
+        <p class="edu-line">Hackathon <span class="nb">Runner-Up</span>, Bazaar Technologies | Speed Programming <span class="nb">Runner-Up</span>, HITEC University</p>
+      </section>
+
+</body>
+</html>

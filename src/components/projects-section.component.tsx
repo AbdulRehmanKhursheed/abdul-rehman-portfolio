@@ -9,6 +9,18 @@ function prettyHost(url: string) {
   }
 }
 
+/**
+ * Some entries must not be clickable: login-gated internal tools, and products
+ * whose hosts are gone (Bazaar's web platform was decommissioned in 2026). A
+ * dead link on a portfolio reads as a false claim, so we label the state
+ * instead of shipping a 403.
+ */
+function unlinkedBadge(project: Project) {
+  if (project.retired) return "retired";
+  if (project.internal) return "internal";
+  return null;
+}
+
 function FeaturedRow({ project }: { project: Project }) {
   return (
     <article
@@ -29,7 +41,7 @@ function FeaturedRow({ project }: { project: Project }) {
                 background: `rgb(var(--accent-soft))`,
               }}
             >
-              lead author
+              primary engineer
             </span>
           )}
         </h3>
@@ -64,7 +76,7 @@ function FeaturedRow({ project }: { project: Project }) {
       <p className="tech-chip mt-3">{project.technologies.join("  ·  ")}</p>
 
       <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-        {project.internal ? (
+        {unlinkedBadge(project) ? (
           <span
             className="inline-flex items-center gap-1.5 font-mono text-xs"
             style={{ color: `rgb(var(--text-tertiary))` }}
@@ -74,7 +86,7 @@ function FeaturedRow({ project }: { project: Project }) {
               className="px-1.5 py-0.5 rounded"
               style={{ background: `rgb(var(--accent-soft))`, color: `rgb(var(--accent))` }}
             >
-              internal
+              {unlinkedBadge(project)}
             </span>
           </span>
         ) : (
@@ -104,7 +116,8 @@ function FeaturedRow({ project }: { project: Project }) {
 }
 
 function CompactRow({ project }: { project: Project }) {
-  const meta = project.internal ? (
+  const badge = unlinkedBadge(project);
+  const meta = badge ? (
     <span
       className="font-mono text-xs inline-flex items-center gap-1.5 shrink-0"
       style={{ color: `rgb(var(--text-tertiary))` }}
@@ -113,7 +126,7 @@ function CompactRow({ project }: { project: Project }) {
         className="px-1.5 py-0.5 rounded"
         style={{ background: `rgb(var(--accent-soft))`, color: `rgb(var(--accent))` }}
       >
-        internal
+        {badge}
       </span>
     </span>
   ) : (
@@ -146,7 +159,7 @@ function CompactRow({ project }: { project: Project }) {
     </>
   );
 
-  if (project.internal) {
+  if (badge) {
     return (
       <div
         className="flex items-baseline justify-between gap-4 py-3.5 border-t"

@@ -44,7 +44,9 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    font-size: 17px;
+    /* 100%, not a pinned px value: a reader who raises their browser's default
+       font size must still scale this whole rem-based type scale. */
+    font-size: 100%;
   }
 
   body {
@@ -52,7 +54,8 @@
     font-family: var(--font-geist-sans), system-ui, sans-serif;
     background: rgb(var(--background));
     color: rgb(var(--text-primary));
-    font-size: 1rem;
+    /* Scales with the reader's root size rather than overriding it. */
+    font-size: 1.0625rem;
     line-height: 1.6;
     letter-spacing: -0.006em;
   }
@@ -217,27 +220,6 @@
     margin: 1.85rem 0 0.6rem 0;
   }
 
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .line-clamp-4 {
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .gradient-text,
-  .heading-gradient {
-    color: rgb(var(--text-primary));
-  }
-  .gradient-text-secondary,
-  .text-gradient {
-    color: rgb(var(--text-secondary));
-  }
 }
 
 @layer utilities {
@@ -246,13 +228,6 @@
   }
   .text-pretty {
     text-wrap: pretty;
-  }
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
   }
 }
 

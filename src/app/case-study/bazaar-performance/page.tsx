@@ -209,17 +209,24 @@ export default function BazaarCaseStudy() {
             <p>
               Screenshots from the actual tools (captured May 2026) —
               Lighthouse, Search Console, and PageSpeed Insights&apos; CrUX
-              report — for <strong>bazaarapp.com</strong>. Don&apos;t take my
-              word for it:{" "}
-              <a
-                href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fwww.bazaarapp.com%2F"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-accent"
-              >
-                run PageSpeed Insights on bazaarapp.com yourself
-              </a>{" "}
-              — the CrUX field data is public.
+              report — for <strong>bazaarapp.com</strong>.
+            </p>
+            <p>
+              One thing to be straight about:{" "}
+              <strong>
+                Bazaar decommissioned this platform in 2026 when the company
+                pivoted to Keenu
+              </strong>
+              , so you can no longer re-run PageSpeed Insights against it and see
+              these numbers for yourself. That was true while it was live, and
+              it&apos;s the reason the receipts below are dated screenshots
+              rather than a link. If you want performance work you{" "}
+              <em>can</em> verify today, the{" "}
+              <Link href="/case-study/keenu-storefront" className="link-accent">
+                Keenu One storefront
+              </Link>{" "}
+              is live on three merchant domains and carries the web-vitals RUM
+              and Prometheus instrumentation I built for it.
             </p>
 
             <Figure

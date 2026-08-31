@@ -13,6 +13,8 @@ export interface Project {
   leadAuthor?: boolean;
   /** True when the live URL is internal / login-gated and shouldn't be a public clickable link. */
   internal?: boolean;
+  /** True when the product has been decommissioned and its host no longer serves. */
+  retired?: boolean;
   role?: string;
   year?: string;
   /** A single headline number for the card. */
@@ -25,32 +27,37 @@ const projects: Project[] = [
     tagline:
       "Multi-tenant restaurant ordering platform — one codebase, many merchant domains.",
     description:
-      "Lead author / primary engineer — I wrote the large majority of the codebase. A single Next.js 16 / React 19 codebase built to serve many restaurants, each on their own branded domain. Tenancy is resolved at the edge (host → org, HMAC-signed cookies), and pages are server-rendered with structured JSON-LD for SEO. I architected a manifest-driven theme system — design tokens plus per-merchant config — built to host many themes; the first merchant, Siroc, is live in production at sirocpk.com. I built the menu, cart (Zustand), checkout and order tracking — and I'm the top committer on the storefront's Go BFF (bootstrap/config, menu and order flows) and on its CI/CD + staging deploys. AI-assisted development let me lead-author this at scale while owning the architecture and reviewing every change.",
-    link: "https://sirocpk.com",
+      "Primary engineer — 87% of the surviving source (about 111,000 of 127,000 lines across 912 files); the next contributor accounts for under 3%. One Next.js 16 / React 19 codebase serves many restaurants, each on their own branded domain: tenancy resolves in edge middleware, pages are server-rendered with JSON-LD for SEO, and four visually isolated themes sit behind a registry and a typed config contract, with ESLint-enforced boundaries so themes never import each other. Cross-theme behaviour is held by registry-driven parity suites that fail a new theme by name until it complies. Three brands are live — Siroc, If You Like Cheese and Down South — with two more in staging. I built the menu, cart (Zustand), checkout and order tracking, the 433-file Vitest suite and 19 Playwright browser journeys with visual-regression baselines, and the performance instrumentation: a web-vitals RUM reporter feeding Prometheus. I'm also the top contributor to the storefront's Go BFF and own its Docker, CI/CD and staging deploys.",
+    link: "https://www.sirocpk.com",
     caseStudyHref: "/case-study/keenu-storefront",
     technologies: [
       "Next.js 16",
       "React 19",
+      "React Compiler",
       "TypeScript",
       "Tailwind CSS 4",
       "Zustand",
+      "Zod",
       "Go (BFF)",
+      "Vitest",
+      "Playwright",
+      "Prometheus",
       "SSR / JSON-LD",
       "Multi-tenant",
     ],
     category: "Web App",
     featured: true,
     leadAuthor: true,
-    role: "Lead author",
-    year: "2025—26",
-    metric: { value: "Multi-tenant", label: "SSR · 1 merchant live" },
+    role: "Primary engineer",
+    year: "2026",
+    metric: { value: "87% of 127k lines", label: "3 brands live · 4 themes · 433 test files" },
   },
   {
     projectName: "Keenu One Merchant Dashboard",
     tagline:
       "Operations dashboard for restaurants — menu, branches, delivery zones, POS.",
     description:
-      "The merchant-facing control panel for the Keenu One platform — a React 19 + Vite SPA. I built end-to-end frontend flows on its storefront-configuration surfaces (theme, branding and SEO editors that drive each merchant's storefront), plus dashboard and POS-kiosk screens. The wider app — built with the team — also covers catalog/menu management, branches, map-based delivery zones, a canvas floor-plan editor, promotions, role-based access and analytics.",
+      "The merchant-facing control panel for the Keenu One platform — a React 19 + Vite SPA. I own its storefront-configuration surface at 78% of that feature's code (9,299 of 11,964 lines): the theme, branding and SEO editors that drive every live storefront, plus dashboard and POS-kiosk screens. The wider app — built with the team — also covers catalog/menu management, branches, map-based delivery zones, a canvas floor-plan editor, promotions, role-based access and analytics.",
     link: "https://console.keenu.one",
     technologies: [
       "React 19",
@@ -62,17 +69,20 @@ const projects: Project[] = [
     ],
     category: "Web App",
     featured: true,
-    role: "Frontend — end-to-end flows",
-    year: "2025—26",
+    internal: true,
+    role: "Owner — storefront config",
+    year: "2026",
+    metric: { value: "78%", label: "of the storefront-config surface" },
   },
   {
     projectName: "Bazaar Web App",
     tagline:
       "Flagship B2C grocery web for Pakistan — performance & Core Web Vitals.",
     description:
-      "Flagship B2C e-commerce web for Pakistan's largest grocery platform (Next.js + NestJS). Co-led the image-optimization + CDN pipeline that took Core Web Vitals from failing to Passed (40% LCP cut, INP in the good range, Lighthouse 92) under Pakistani 3G/4G conditions. Organic search grew from ~0 to 156K total clicks / 11.2M impressions (Google Search Console). Cut CDN spend by ~$5,400/year. Drove the MUI → Tailwind + Radix migration on the same app.",
+      "Flagship B2C e-commerce web for Pakistan's largest grocery platform (Next.js + NestJS). Co-led the image-optimization + CDN pipeline that took Core Web Vitals from failing to Passed (40% p75 LCP cut, INP 169 ms, Lighthouse 92) under Pakistani 3G/4G conditions. Organic search grew from ~0 to 156K total clicks / 11.2M impressions (Google Search Console). Cut CDN spend by ~$5,400/year. Drove the MUI → Tailwind + Radix migration on the same app. The platform was decommissioned in 2026 when the company pivoted to Keenu — the case study keeps the captured receipts.",
     link: "https://www.bazaarapp.com",
     caseStudyHref: "/case-study/bazaar-performance",
+    retired: true,
     technologies: [
       "Next.js",
       "NestJS",
@@ -85,7 +95,7 @@ const projects: Project[] = [
     category: "Web App",
     featured: true,
     role: "Lead frontend",
-    year: "2023—Present",
+    year: "2023—26",
     metric: { value: "INP 169ms", label: "CWV Passed · Lighthouse 92" },
   },
   {
@@ -129,11 +139,11 @@ const projects: Project[] = [
     tagline: "DBS certificate verification platform for UK companies.",
     description:
       "DBS certificate verification platform for UK companies, allowing businesses to check and validate employee background checks online. Built with React, Next.js, TypeScript and RTK Query for a fast, secure verification workflow.",
-    link: "https://app-dev.checkmydbs.co.uk/login",
+    link: "https://checkmydbs.co.uk",
     technologies: ["React", "Next.js", "TypeScript", "RTK Query", "REST APIs"],
     category: "Web App",
     role: "Frontend",
-    internal: true,
+    retired: true,
   },
   {
     projectName: "Bazaar Agent App",
@@ -154,15 +164,6 @@ const projects: Project[] = [
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "AWS Amplify"],
     category: "Web App",
     role: "Frontend",
-  },
-  {
-    projectName: "Bazaar Website",
-    tagline: "Corporate site with dynamic job-postings integration.",
-    description:
-      "Corporate website with dynamic job-postings integration using WebFlow, HTML, CSS and Vanilla JavaScript. Responsive design with SEO optimization.",
-    link: "https://bazaartech.com",
-    technologies: ["WebFlow", "HTML", "CSS", "JavaScript", "SEO"],
-    category: "Web App",
   },
 ];
 

@@ -6,7 +6,7 @@ const siteUrl =
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: "*", allow: "/", disallow: ["/pdf/", "/api/", "/noor/"] },
+    rules: { userAgent: "*", allow: "/", disallow: ["/pdf/", "/noor/"] },
     sitemap: `${siteUrl}/sitemap.xml`,
   };
 }

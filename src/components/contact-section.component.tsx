@@ -1,9 +1,11 @@
+import { RESUME_PDF } from "../data/site";
+
 const LINKS = [
   { label: "Email", value: "malik.ali5560@gmail.com", href: "mailto:malik.ali5560@gmail.com" },
   { label: "WhatsApp", value: "+92 304 591 9454", href: "https://wa.me/923045919454" },
   { label: "GitHub", value: "AbdulRehmanKhursheed", href: "https://github.com/AbdulRehmanKhursheed" },
   { label: "LinkedIn", value: "malik-abdul-rehman", href: "https://www.linkedin.com/in/malik-abdul-rehman/" },
-  { label: "Résumé", value: "Download PDF", href: "/api/resume" },
+  { label: "Résumé", value: "View PDF", href: RESUME_PDF },
 ];
 
 const ContactSection = () => {
@@ -30,7 +32,7 @@ const ContactSection = () => {
 
             <div>
               {LINKS.map(({ label, value, href }) => {
-                const external = href.startsWith("http") || href === "/api/resume";
+                const external = href.startsWith("http") || href === RESUME_PDF;
                 return (
                 <a
                   key={label}

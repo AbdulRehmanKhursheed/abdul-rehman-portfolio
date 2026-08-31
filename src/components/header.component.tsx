@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useRouter, usePathname } from "next/navigation";
+import { RESUME_PDF } from "../data/site";
 
 const NAV = [
   { name: "Work", id: "projects" },
@@ -87,7 +88,7 @@ const Header = () => {
               className="hidden sm:inline font-mono text-[0.68rem]"
               style={{ color: `rgb(var(--text-tertiary))` }}
             >
-              {"// FE ENGINEER"}
+              {"// FULL-STACK ENGINEER"}
             </span>
           </button>
 
@@ -113,7 +114,7 @@ const Header = () => {
               </button>
             ))}
             <a
-              href="/api/resume"
+              href={RESUME_PDF}
               target="_blank"
               rel="noopener noreferrer"
               className="font-mono text-xs underline underline-offset-4 decoration-1 transition-colors py-2"
@@ -159,7 +160,7 @@ const Header = () => {
                 </button>
               ))}
               <a
-                href="/api/resume"
+                href={RESUME_PDF}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-mono text-sm px-1 py-2.5"
