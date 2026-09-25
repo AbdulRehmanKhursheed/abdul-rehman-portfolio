@@ -7,12 +7,12 @@ emerging-market users).
 - **Stack**: Next.js 14 (App Router), TypeScript, Tailwind, self-hosted Geist (SIL OFL).
 - **Perf/a11y**: fluid `clamp()` type scale, `prefers-reduced-motion` support, optimized
   WebP imagery, zero client-side animation library.
-- **Résumé pipeline**: one source of truth in `scripts/resume/content.mjs` →
-  `npm run generate:resume` (puppeteer-core + system Chrome) → two ATS-verified
-  PDFs in `public/pdf/`, a full-stack variant and a frontend-specialist variant.
-  The build asserts the PDF text layer: ASCII-only content, at most two pages,
-  hyphenated compounds intact, section headings unsplit, and the portfolio URL
-  present. It fails rather than shipping a résumé an ATS would misparse.
+- **Résumé pipeline**: one LaTeX source in `resume/` →
+  `npm run generate:resume` (pdfTeX, e.g. via TinyTeX) → an ATS-verified PDF in
+  `public/pdf/`. The build asserts the PDF text layer: at most two pages, contact
+  details present, no Unicode dashes or ligatures, hyphenated compounds intact
+  and section headings unsplit. It fails rather than shipping a résumé an ATS
+  would misparse.
 
 ## Develop
 
@@ -20,6 +20,5 @@ emerging-market users).
 npm install
 npm run dev        # local dev
 npm run build      # production build
-npm run generate:resume            # both résumé variants, with ATS verification
-npm run generate:resume frontend   # just one variant
+npm run generate:resume   # build the résumé PDF, with ATS verification
 ```

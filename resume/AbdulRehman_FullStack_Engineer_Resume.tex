@@ -1,0 +1,218 @@
+% Résumé of Malik Abdul Rehman Khursheed.
+%
+% Build:  npm run generate:resume   (Tectonic -> public/pdf/, then an ATS text-layer check)
+%
+% Layout follows Jake Gutierrez's résumé template (MIT), the format of the
+% March 2025 résumé that got the best response rate. Every number below was
+% re-verified against the KeenuOne repos with git blame on 2026-09-25:
+%   storefront: 137,532 of 190,522 src lines (72%); next contributor 7.8%
+%   unit tests: 555 of 661 test files first added by Abdul; 16 of 16 e2e suites
+%   themes: 8 in the registry, 6 written mostly by Abdul; 3 brands live
+%   storefront infra: devops 9/9, .github 14/17, Makefile 85/93 commits
+%   Go BFF: top contributor, 5,711 of 22,821 lines (25%)
+%   merchant portal storefront-config: 9,634 of 12,525 lines (77%)
+% Bazaar receipts (bazaarapp.com retired 2026): LCP -40%, Lighthouse 92,
+% INP 169 ms, 156K GSC clicks, ~$450/month CDN saving, +47% AOV.
+%
+% ATS rules: no hyphenation, no ligatures, no icon glyphs, plain hyphens in
+% date ranges, real URLs as link text.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+\usepackage{microtype}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+
+% Keep every word whole in the text layer: ATS keyword matching fails on
+% hyphenated line breaks ("perfor-mance") and on ligature glyphs ("fi").
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\DisableLigatures{encoding = *, family = *}
+% pdfTeX, not XeTeX: XeTeX writes Lato's hyphen as U+2010 in the text layer,
+% so a parser would miss "Mar 2023 - Present" and the portfolio URL.
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\hypersetup{
+  pdftitle={Malik Abdul Rehman Khursheed - Resume},
+  pdfauthor={Malik Abdul Rehman Khursheed},
+}
+
+\pagestyle{empty}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.55in}
+\addtolength{\textheight}{1.1in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{\vspace{-4pt}\raggedright\large}{}{0em}{}[\titlerule\vspace{-5pt}]
+
+% --- Building blocks ---------------------------------------------------------
+
+% One bullet.
+\newcommand{\resumeItem}[1]{\item\small{#1\vspace{-2pt}}}
+
+% Company line + role line: {company}{location}{role}{dates}.
+\newcommand{\resumeSubheading}[4]{
+  \vspace{3pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small#4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% A second role at the same company: {role}{dates}.
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small#2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% A bold label that groups bullets inside one role.
+\newcommand{\resumeGroup}[1]{\item[]\hspace{-12pt}\small\textbf{#1}\vspace{-2pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeBulletsStart}{\begin{itemize}[leftmargin=0.3in]}
+\newcommand{\resumeBulletsEnd}{\end{itemize}\vspace{-4pt}}
+
+% -----------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{center}
+  {\LARGE \textbf{Malik Abdul Rehman Khursheed}} \\ \vspace{3pt}
+  \textit{Front-End Heavy Full-Stack Engineer (React, Next.js, TypeScript, Node.js, Go)} \\ \vspace{3pt}
+  \small Islamabad, Pakistan (UTC+5), open to remote $|$
+  +92 304 591 9454 $|$
+  \href{mailto:malik.ali5560@gmail.com}{malik.ali5560@gmail.com} \\ \vspace{1pt}
+  \href{https://www.linkedin.com/in/malik-abdul-rehman}{linkedin.com/in/malik-abdul-rehman} $|$
+  \href{https://github.com/AbdulRehmanKhursheed}{github.com/AbdulRehmanKhursheed} $|$
+  \href{https://abdul-rehman-portfolio-ecru.vercel.app}{abdul-rehman-portfolio-ecru.vercel.app}
+\end{center}
+
+\vspace{-4pt}
+\small Senior software engineer with nearly 6 years of experience building and scaling high-traffic web
+applications. Specialized in React, Next.js and TypeScript, with backend experience in Node.js, NestJS
+and Go. Primary engineer of the Keenu One restaurant storefront, now live for three brands. Track record
+of improving web performance, cutting infrastructure costs and raising order value. Experienced in Agile,
+TDD and mentoring teams.
+
+%-----------KEY ACHIEVEMENTS-----------
+\section{KEY ACHIEVEMENTS}
+\resumeBulletsStart
+    \resumeItem{\textbf{Three restaurant brands live:} Primary engineer of the Keenu One storefront (\textbf{72\%} of the code). One Next.js codebase serves sirocpk.com, ifyoulikecheese.com and downsouth.coffee.}
+    \resumeItem{\textbf{Web Vitals improvement:} Co-led an image optimization and CDN pipeline on Bazaar's flagship web app that cut LCP by \textbf{40\%} and passed Core Web Vitals at Lighthouse \textbf{92}.}
+    \resumeItem{\textbf{\$450/month CDN cost saving:} Caching and asset optimization across web and Android, about \textbf{\$5,400} a year.}
+    \resumeItem{\textbf{Revenue impact:} Built the gamification feature that raised average order value by \textbf{47\%}.}
+    \resumeItem{\textbf{Organic growth:} Technical SEO work that grew Google organic search from near zero to \textbf{156K} clicks.}
+\resumeBulletsEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{TECHNICAL SKILLS}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages}: TypeScript, JavaScript, HTML, CSS, Go, Python (working knowledge) \\
+    \textbf{Frontend}: React, Next.js (App Router, Server Components), Redux Toolkit, React Query, Zustand, Zod, Tailwind CSS, SCSS, MUI, Radix UI \\
+    \textbf{Backend}: Node.js, NestJS, Express.js, Go, REST APIs, OpenAPI (Swagger), MongoDB, Firebase Auth, OAuth 2.0 and OIDC (Zitadel) \\
+    \textbf{Testing}: Vitest, Jest, React Testing Library, Playwright \\
+    \textbf{Cloud and DevOps}: AWS (S3, CloudFront, Lambda, Route 53), Docker, GitHub Actions, CI/CD, Vercel, Prometheus, Grafana \\
+    \textbf{Performance and SEO}: Core Web Vitals (LCP, INP, CLS), Lighthouse, real-user monitoring, CDN caching, image optimization, structured data \\
+    \textbf{Practices}: Agile, TDD, SOLID, Clean Architecture, micro-frontends, code review, mentoring, AI-assisted development
+  }}
+\end{itemize}
+\vspace{-12pt}
+
+%-----------EXPERIENCE-----------
+\section{EXPERIENCE}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Bazaar Technologies (now Keenu One)}{Islamabad, Pakistan}
+    {Senior Software Engineer II}{Mar 2023 - Present}
+    \resumeItemListStart
+      \resumeGroup{Keenu One restaurant commerce platform}
+      \resumeItem{Primary engineer of the Keenu One storefront (Next.js 16, React 19, TypeScript). Wrote \textbf{72\%} of the code and took it from first commit to \textbf{three live restaurant brands} in under four months.}
+      \resumeItem{Designed the multi-brand theme system: one codebase serves every restaurant, and a new brand ships as a theme plus config instead of a separate project. Built six of its eight themes.}
+      \resumeItem{Built the test suite the team ships behind: \textbf{550+} Vitest unit test files and all \textbf{16} Playwright end-to-end suites, run by GitHub Actions on every push.}
+      \resumeItem{Own the storefront's Docker image, CI/CD pipelines and staging deployments.}
+      \resumeItem{Added real-user performance monitoring (Web Vitals to Prometheus), so LCP, INP and CLS are measured on live customer traffic.}
+      \resumeItem{Top contributor to the storefront's \textbf{Go} backend-for-frontend (config, menu and order flows). In the Go identity service, added admin access checks (Zitadel), service-account token caching and OpenAPI generation.}
+      \resumeItem{Built the theme, branding and SEO settings in the merchant dashboard (React, Vite) that restaurants use to manage their storefronts.}
+      \resumeGroup{Bazaar Web App}
+      \resumeItem{Led frontend development of Bazaar's flagship B2C grocery web app (\textbf{Next.js, NestJS}) for 100k+ active users. The app was retired in 2026 when the company moved to Keenu.}
+      \resumeItem{Co-led the image and CDN optimization that cut LCP by 40\% and passed Core Web Vitals, and reduced CDN costs by \$450/month.}
+      \resumeItem{Built the gamification feature that raised average order value by 47\%, and drove the migration from MUI to Tailwind CSS and Radix UI.}
+      \resumeItem{Built the Partner Portal in React, and automated invoice generation and tax calculations that the Finance team used to do by hand.}
+      \resumeItem{Promoted twice: to Senior Software Engineer in Dec 2024 and to Senior Software Engineer II in Jul 2026.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Orcalo Holdings}{Rawalpindi, Pakistan}
+    {Senior Frontend Engineer and Junior Frontend Team Lead}{Oct 2021 - Mar 2023}
+    \resumeItemListStart
+      \resumeItem{Hired, mentored and managed a team of \textbf{24} junior frontend developers, reporting to the Frontend Lead.}
+      \resumeItem{Delivered client projects in React, Next.js and Angular.}
+      \resumeItem{Introduced the Component-Container pattern to separate UI from business logic, making components easier to test and maintain.}
+      \resumeItem{Added React Query to legacy Redux-heavy apps, cutting duplicate API calls and unnecessary re-renders.}
+    \resumeItemListEnd
+  \resumeSubSubheading
+    {Junior Node.js Developer}{Aug 2021 - Oct 2021}
+    \resumeItemListStart
+      \resumeItem{Built APIs and server-side integrations with Airtable, Twilio SMS and SendGrid.}
+      \resumeItem{Documented TypeScript processes, including database schemas.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Web Mekanics}{Rawalpindi, Pakistan}
+    {Software Engineer Intern (Frontend and Python)}{Nov 2020 - Jun 2021}
+    \resumeItemListStart
+      \resumeItem{Built responsive frontends for automobile products.}
+      \resumeItem{Built REST APIs in Django for real-time data insights.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{HIGHLIGHTED PROJECTS}
+\resumeBulletsStart
+    \resumeItem{\textbf{Keenu One Storefront}: \href{https://www.sirocpk.com}{sirocpk.com}, \href{https://www.ifyoulikecheese.com}{ifyoulikecheese.com}, \href{https://www.downsouth.coffee}{downsouth.coffee} $|$ Next.js 16, React 19, TypeScript, Go}
+    \resumeItem{\textbf{Keenu One Merchant Dashboard}: \href{https://console.keenu.one}{console.keenu.one} (login required) $|$ React 19, Vite, TypeScript}
+    \resumeItem{\textbf{Keenu Corporate Site}: \href{https://keenu.pk}{keenu.pk} $|$ Next.js, Tailwind CSS. Built end-to-end.}
+    \resumeItem{\textbf{Bazaar Grocery App}: \href{https://play.google.com/store/apps/details?id=bazaar.tech.com}{Google Play}, 1M+ downloads $|$ Contributed features on Android and web.}
+    \resumeItem{\textbf{MYSITE Construction Platform}: \href{https://mysitetech.com}{mysitetech.com} $|$ Next.js, TypeScript, Tailwind CSS, AWS Amplify}
+    \resumeItem{\textbf{Check My DBS}: DBS certificate verification platform for UK companies $|$ React, Next.js, TypeScript, RTK Query}
+\resumeBulletsEnd
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+\small BS Computer Science, HITEC University, Taxila $|$ 2017 - 2021 $|$ GPA 3.29 / 4.00
+
+%-----------CERTIFICATIONS-----------
+\section{CERTIFICATIONS AND COURSES}
+\small Microsoft Technology Associate (MTA): Introduction to Programming Using Python $|$
+React with Redux and Next.js (Academind) $|$ Angular Mastery (Academind) $|$
+AWS Technical Essentials $|$ Node.js (Code with Mosh)
+
+%-----------ACHIEVEMENTS-----------
+\section{ACHIEVEMENTS AND AWARDS}
+\resumeBulletsStart
+    \resumeItem{Hackathon Runner-Up, Bazaar Technologies}
+    \resumeItem{Runner-Up, Speed Programming Competition, HITEC University}
+\resumeBulletsEnd
+
+\end{document}

@@ -27,7 +27,7 @@ const projects: Project[] = [
     tagline:
       "Multi-tenant restaurant ordering platform — one codebase, many merchant domains.",
     description:
-      "Primary engineer — 87% of the surviving source (about 111,000 of 127,000 lines across 912 files); the next contributor accounts for under 3%. One Next.js 16 / React 19 codebase serves many restaurants, each on their own branded domain: tenancy resolves in edge middleware, pages are server-rendered with JSON-LD for SEO, and four visually isolated themes sit behind a registry and a typed config contract, with ESLint-enforced boundaries so themes never import each other. Cross-theme behaviour is held by registry-driven parity suites that fail a new theme by name until it complies. Three brands are live — Siroc, If You Like Cheese and Down South — with two more in staging. I built the menu, cart (Zustand), checkout and order tracking, the 433-file Vitest suite and 19 Playwright browser journeys with visual-regression baselines, and the performance instrumentation: a web-vitals RUM reporter feeding Prometheus. I'm also the top contributor to the storefront's Go BFF and own its Docker, CI/CD and staging deploys.",
+      "Primary engineer — 72% of the surviving source (about 137,000 of 190,000 lines across 1,312 files); the next contributor accounts for under 8%. One Next.js 16 / React 19 codebase serves many restaurants, each on their own branded domain: tenancy resolves in edge middleware, pages are server-rendered with JSON-LD for SEO, and eight visually isolated themes (six of them mine) sit behind a registry and a typed config contract, with ESLint-enforced boundaries so themes never import each other. Cross-theme behaviour is held by registry-driven parity suites that fail a new theme by name until it complies. Three brands are live — Siroc, If You Like Cheese and Down South — with more in progress. I built the menu, cart (Zustand), checkout and order tracking, 555 of the 661 Vitest test files and all 16 Playwright browser journeys, and the performance instrumentation: a web-vitals RUM reporter feeding Prometheus. I'm also the top contributor to the storefront's Go BFF, and I own the storefront's Docker, CI/CD and staging deploys.",
     link: "https://www.sirocpk.com",
     caseStudyHref: "/case-study/keenu-storefront",
     technologies: [
@@ -50,7 +50,7 @@ const projects: Project[] = [
     leadAuthor: true,
     role: "Primary engineer",
     year: "2026",
-    metric: { value: "87% of 127k lines", label: "3 brands live · 4 themes · 433 test files" },
+    metric: { value: "72% of 190k lines", label: "3 brands live · 8 themes · 661 test files" },
   },
   {
     projectName: "Keenu One Merchant Dashboard",

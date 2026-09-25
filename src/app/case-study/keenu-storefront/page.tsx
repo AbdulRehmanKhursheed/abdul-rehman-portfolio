@@ -156,8 +156,8 @@ export default function KeenuStorefrontCaseStudy() {
               declares its design tokens and capabilities in a manifest; the
               storefront reads that manifest and renders accordingly. It&apos;s
               built as a <strong>house of themes</strong> — architected to host
-              many — and today it ships and serves one production theme (Siroc)
-              live on sirocpk.com.
+              many — and today three brands run on it in production: Siroc,
+              If You Like Cheese and Down South.
             </p>
           </Section>
 
@@ -208,9 +208,9 @@ export default function KeenuStorefrontCaseStudy() {
           <Section title="Honest scope">
             <p>
               I&apos;m the <strong>primary engineer</strong> on the storefront
-              — <strong>87% of the surviving source</strong> by git blame
-              (about 111,000 of 127,000 lines across 912 files), with the next
-              contributor under 3%. That covers the substance: menu, cart,
+              — <strong>72% of the surviving source</strong> by git blame
+              (about 137,000 of 190,000 lines across 1,312 files), with the next
+              contributor under 8%. That covers the substance: menu, cart,
               checkout, order tracking, theming and SEO. Other engineers have
               contributed along the way. On the storefront&apos;s{" "}
               <strong>Go BFF</strong> I&apos;m the top committer — I built its
@@ -219,9 +219,9 @@ export default function KeenuStorefrontCaseStudy() {
               storefront&apos;s CI/CD and staging deploys. I don&apos;t claim the
               whole Keenu One platform: the merchant dashboard and the backend
               services are the wider team&apos;s work — on the merchant dashboard
-              I built the storefront-config / theming editors. One merchant is
-              live today; the multi-theme system is built for many and currently
-              serves the first.
+              I built the storefront-config / theming editors. Three merchants
+              are live today; the registry holds eight themes, six of them
+              mine.
             </p>
           </Section>
 

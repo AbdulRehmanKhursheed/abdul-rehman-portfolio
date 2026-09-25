@@ -1,57 +1,49 @@
-// Regenerate both résumé variants (HTML + PDF) from scripts/resume/content.mjs.
+// Build the résumé PDF from resume/AbdulRehman_FullStack_Engineer_Resume.tex.
 //
 // Usage:
-//   npm run generate:resume            # both variants
-//   npm run generate:resume frontend   # one variant
+//   npm run generate:resume
 //
-// Requires a local Chrome/Chromium (puppeteer-core does not bundle one).
-// Override with CHROME_PATH=/path/to/chrome.
+// Requires pdfTeX. Looked up via $PDFLATEX, then TinyTeX's default macOS path,
+// then PATH. pdfTeX rather than XeTeX/Tectonic: XeTeX writes Lato's hyphen as
+// U+2010 in the text layer, so parsers miss "Mar 2023 - Present" and the URLs.
 //
-// After each PDF is written, the text layer is verified with `pdftotext` when
-// it is on PATH: page count, the portfolio URL, and every hyphenated compound
-// surviving intact. A résumé that fails those checks is an ATS problem, so the
-// build fails rather than shipping it quietly.
+// After the build, the text layer is checked with pdftotext: at most two pages,
+// contact details present, no dash or ligature characters a parser could drop,
+// and every hyphenated compound in the source intact. A résumé that fails those
+// checks is an ATS problem, so the build fails rather than shipping it quietly.
 
-import puppeteer from "puppeteer-core";
-import { existsSync, writeFileSync, readFileSync } from "fs";
+import { copyFileSync, existsSync, mkdtempSync, readFileSync, rmSync } from "fs";
 import { execFileSync } from "child_process";
+import { homedir, tmpdir } from "os";
+import { basename, dirname, join } from "path";
 import { fileURLToPath } from "url";
-import { dirname, join } from "path";
 
-import { renderResume, SECTION_TITLES } from "./resume/template.mjs";
-import {
-  buildVariant,
-  variants,
-  contact,
-  keyAchievements,
-  projects,
-  education,
-  certifications,
-  achievements,
-} from "./resume/content.mjs";
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const root = join(__dirname, "..");
-const outDir = join(root, "public", "pdf");
-
-const CHROME_CANDIDATES = [
-  process.env.CHROME_PATH,
-  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-  "/Applications/Chromium.app/Contents/MacOS/Chromium",
-  "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
-  "/usr/bin/google-chrome",
-  "/usr/bin/chromium-browser",
-].filter(Boolean);
-
-const executablePath = CHROME_CANDIDATES.find((p) => existsSync(p));
-if (!executablePath) {
-  console.error("No Chrome/Chromium found. Set CHROME_PATH to your browser binary.");
-  process.exit(1);
-}
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const texPath = join(root, "resume", "AbdulRehman_FullStack_Engineer_Resume.tex");
+const pdfName = basename(texPath).replace(/\.tex$/, ".pdf");
+const outPath = join(root, "public", "pdf", pdfName);
 
 const MAX_PAGES = 2;
+const REQUIRED_TEXT = [
+  "malik.ali5560@gmail.com",
+  "abdul-rehman-portfolio-ecru.vercel.app",
+  "Mar 2023 - Present",
+];
+const SECTION_TITLES = [
+  "KEY ACHIEVEMENTS",
+  "TECHNICAL SKILLS",
+  "EXPERIENCE",
+  "HIGHLIGHTED PROJECTS",
+  "EDUCATION",
+  "CERTIFICATIONS AND COURSES",
+  "ACHIEVEMENTS AND AWARDS",
+];
+// Unicode dashes, arrows, no-break spaces and f-ligatures: parsers drop or
+// mis-tokenise them, so a keyword like "gamification" stops matching.
+const FORBIDDEN_CHARS = /[‐-―→ ﬀ-ﬆ]/g;
 
-function has(bin) {
+/** Returns true when `bin` is on PATH. */
+function onPath(bin) {
   try {
     execFileSync("which", [bin], { stdio: "ignore" });
     return true;
@@ -60,123 +52,94 @@ function has(bin) {
   }
 }
 
-// Every hyphenated compound in the document, so we can prove each one survived
-// into the PDF text layer with its hyphen intact.
-function compoundsIn(v) {
-  const strings = [
-    v.role,
-    v.summary,
-    ...v.skills.flat(),
-    ...keyAchievements,
-    ...v.experience.flatMap((j) => [j.company, j.title, ...j.bullets]),
-    ...projects,
-    education.degree,
-    education.school,
-    ...certifications,
-    ...achievements,
-  ];
-  const found = new Set();
-  for (const s of strings) {
-    for (const m of s.matchAll(/\b[A-Za-z0-9]+(?:-[A-Za-z0-9]+)+\b/g)) {
-      found.add(m[0]);
-    }
-  }
-  return [...found];
-}
-
-function verify(pdfPath, v) {
-  if (!has("pdftotext")) {
-    console.warn("   ! pdftotext not on PATH - skipped text-layer verification");
-    return;
-  }
-  const txt = execFileSync("pdftotext", ["-enc", "UTF-8", pdfPath, "-"], {
-    encoding: "utf8",
-  });
-  const problems = [];
-
-  const pages = (txt.match(/\f/g) || []).length;
-  if (pages > MAX_PAGES) {
-    problems.push(`${pages} pages (max ${MAX_PAGES})`);
-  }
-
-  if (!txt.includes(contact.portfolio)) {
-    problems.push(`portfolio URL "${contact.portfolio}" missing from text layer`);
-  }
-  if (!txt.includes(contact.email)) {
-    problems.push("email missing from text layer");
-  }
-
-  for (const ch of ["–", "—", "→", " "]) {
-    if (txt.includes(ch)) {
-      problems.push(
-        `text layer contains U+${ch.charCodeAt(0).toString(16).toUpperCase()} - parsers may drop it`
-      );
-    }
-  }
-
-  const broken = compoundsIn(v).filter((word) => !txt.includes(word));
-  if (broken.length) {
-    problems.push(`hyphen lost in text layer: ${broken.join(", ")}`);
-  }
-
-  // Wide letter-spacing on uppercase headings makes pdftotext split words
-  // ("SUMMARY" -> "SU MMARY"), which stops a parser finding the section at all.
-  const missingSections = SECTION_TITLES.filter(
-    (title) => !txt.includes(title.toUpperCase())
+/** Returns the pdflatex binary to use, or exits with an install hint. */
+function findPdflatex() {
+  const candidates = [
+    process.env.PDFLATEX,
+    join(homedir(), "Library/TinyTeX/bin/universal-darwin/pdflatex"),
+  ].filter(Boolean);
+  const found = candidates.find((p) => existsSync(p));
+  if (found) return found;
+  if (onPath("pdflatex")) return "pdflatex";
+  console.error(
+    "pdflatex not found. Install TinyTeX (https://yihui.org/tinytex/) and run\n" +
+      "  tlmgr install lato fontaxes titlesec enumitem preprint microtype\n" +
+      "or set PDFLATEX=/path/to/pdflatex."
   );
-  if (missingSections.length) {
-    problems.push(
-      `section heading split or missing in text layer: ${missingSections.join(", ")}`
-    );
-  }
-
-  if (problems.length) {
-    console.error(`   x ATS verification failed for ${pdfPath}:`);
-    for (const p of problems) console.error(`     - ${p}`);
-    process.exitCode = 1;
-    return;
-  }
-  console.log(`   ok ${pages} page(s), text layer clean`);
+  process.exit(1);
 }
 
-const requested = process.argv.slice(2);
-const keys = requested.length ? requested : Object.keys(variants);
-for (const key of keys) {
-  if (!variants[key]) {
-    console.error(`Unknown variant "${key}". Available: ${Object.keys(variants).join(", ")}`);
+/** Compiles the .tex into a temp dir and returns the path of the built PDF. */
+function compile(pdflatex, buildDir) {
+  try {
+    execFileSync(
+      pdflatex,
+      ["-interaction=nonstopmode", "-halt-on-error", `-output-directory=${buildDir}`, texPath],
+      { stdio: "pipe" }
+    );
+  } catch (err) {
+    const logPath = join(buildDir, pdfName.replace(/\.pdf$/, ".log"));
+    const log = existsSync(logPath) ? readFileSync(logPath, "utf8") : String(err.stdout ?? "");
+    console.error(`pdflatex failed on ${texPath}. Last lines of the log:\n`);
+    console.error(log.split("\n").slice(-30).join("\n"));
     process.exit(1);
   }
+  return join(buildDir, pdfName);
 }
 
-const browser = await puppeteer.launch({
-  executablePath,
-  headless: true,
-  args: ["--no-sandbox", "--font-render-hinting=none"],
-});
+/** Returns every hyphenated compound in the document body ("Front-End", "end-to-end"). */
+function hyphenatedCompounds() {
+  const tex = readFileSync(texPath, "utf8");
+  const body = tex.slice(tex.indexOf("\\begin{document}"));
+  const prose = body
+    .split("\n")
+    .filter((line) => !line.trimStart().startsWith("%"))
+    .join("\n");
+  return [...new Set(prose.match(/\b[A-Za-z0-9]+(?:-[A-Za-z0-9]+)+\b/g) ?? [])];
+}
 
-try {
-  for (const key of keys) {
-    const v = { ...buildVariant(key), contact, keyAchievements, projects, education, certifications, achievements };
-    const htmlPath = join(outDir, `resume-${v.slug}.html`);
-    const pdfPath = join(outDir, `${v.fileName}.pdf`);
+/** Lists every ATS problem found in the PDF's text layer (empty when clean). */
+function textLayerProblems(pdfPath) {
+  const text = execFileSync("pdftotext", ["-enc", "UTF-8", pdfPath, "-"], { encoding: "utf8" });
+  const problems = [];
 
-    writeFileSync(htmlPath, renderResume(v), "utf8");
+  const pages = (text.match(/\f/g) ?? []).length;
+  if (pages > MAX_PAGES) problems.push(`${pages} pages (max ${MAX_PAGES})`);
 
-    const page = await browser.newPage();
-    await page.goto("file://" + htmlPath, { waitUntil: "networkidle0" });
-    await page.pdf({
-      path: pdfPath,
-      format: "A4",
-      printBackground: true,
-      preferCSSPageSize: true,
-    });
-    await page.close();
-
-    console.log(`\n${key}:`);
-    console.log(`   ${htmlPath.replace(root + "/", "")}`);
-    console.log(`   ${pdfPath.replace(root + "/", "")}`);
-    verify(pdfPath, v);
+  for (const required of REQUIRED_TEXT) {
+    if (!text.includes(required)) problems.push(`"${required}" missing from text layer`);
   }
+  for (const title of SECTION_TITLES) {
+    if (!text.includes(title)) problems.push(`section heading "${title}" split or missing`);
+  }
+
+  const forbidden = [...new Set(text.match(FORBIDDEN_CHARS) ?? [])];
+  for (const ch of forbidden) {
+    const code = ch.codePointAt(0).toString(16).toUpperCase().padStart(4, "0");
+    problems.push(`text layer contains U+${code}, which parsers may drop`);
+  }
+
+  const broken = hyphenatedCompounds().filter((word) => !text.includes(word));
+  if (broken.length) problems.push(`hyphen lost in text layer: ${broken.join(", ")}`);
+
+  return { pages, problems };
+}
+
+const buildDir = mkdtempSync(join(tmpdir(), "resume-"));
+try {
+  const builtPdf = compile(findPdflatex(), buildDir);
+  if (!onPath("pdftotext")) {
+    console.error("pdftotext not on PATH (brew install poppler); refusing to publish an unverified résumé.");
+    process.exit(1);
+  }
+  const { pages, problems } = textLayerProblems(builtPdf);
+  if (problems.length) {
+    console.error("ATS verification failed:");
+    for (const p of problems) console.error(`  - ${p}`);
+    process.exit(1);
+  }
+  copyFileSync(builtPdf, outPath);
+  console.log(`ok  ${outPath.replace(root + "/", "")}  (${pages} pages, text layer clean)`);
 } finally {
-  await browser.close();
+  rmSync(buildDir, { recursive: true, force: true });
 }

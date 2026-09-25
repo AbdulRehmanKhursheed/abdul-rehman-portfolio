@@ -12,10 +12,16 @@ const nextConfig = {
           { key: 'X-Robots-Tag', value: 'noindex' },
         ],
       },
+    ];
+  },
+  async redirects() {
+    return [
       {
-        // The HTML source of the résumé is a build input, not a page.
-        source: '/pdf/:path*.html',
-        headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
+        // The frontend-variant PDF was retired for a single LaTeX résumé; keep
+        // links already sent to recruiters working.
+        source: '/pdf/AbdulRehman_Frontend_Engineer_Resume.pdf',
+        destination: '/pdf/AbdulRehman_FullStack_Engineer_Resume.pdf',
+        permanent: false,
       },
     ];
   },
