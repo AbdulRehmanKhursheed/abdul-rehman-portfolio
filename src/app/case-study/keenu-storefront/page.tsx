@@ -6,12 +6,12 @@ import { ArrowLeft, ArrowUpRight, Mail } from "lucide-react";
 export const metadata: Metadata = {
   title: "Keenu One Storefront — Case Study | Malik Abdul Rehman Khursheed",
   description:
-    "Primary engineer on a multi-tenant restaurant storefront: one Next.js 16 / React 19 codebase serving merchants on their own domains, with edge tenant-resolution, SSR + JSON-LD SEO, and a registry-driven theme system. Three brands live in production.",
+    "Primary engineer on a multi-tenant restaurant storefront: one Next.js 16 / React 19 codebase serving merchants on their own domains, with edge tenant-resolution, SSR + JSON-LD SEO, a registry-driven theme system and a visual builder merchants design their stores in. Seven brands live in production.",
   alternates: { canonical: "/case-study/keenu-storefront" },
   openGraph: {
     title: "Keenu One Storefront — Case Study",
     description:
-      "One codebase, three live merchant brands. Edge tenant-resolution, SSR + JSON-LD SEO, a registry-driven theme system. Primary engineer.",
+      "One codebase, seven live merchant brands. Edge tenant-resolution, SSR + JSON-LD SEO, a registry-driven theme system and a visual storefront builder. Primary engineer.",
     type: "article",
     url: "/case-study/keenu-storefront",
     images: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Keenu One Storefront — Case Study",
     description:
-      "One codebase, three live merchant brands. Edge tenant-resolution, SSR + JSON-LD SEO. Primary engineer.",
+      "One codebase, seven live merchant brands. Edge tenant-resolution, SSR + JSON-LD SEO, a visual storefront builder. Primary engineer.",
     images: ["/case-study/keenu-og.jpg"],
   },
 };
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
 const FACTS = [
   { label: "ROLE", value: "Primary engineer" },
   { label: "STACK", value: "Next.js 16 · React 19" },
-  { label: "LIVE", value: "3 brands in production" },
-  { label: "SCOPE", value: "Menu · cart · checkout · theming" },
+  { label: "LIVE", value: "7 brands in production" },
+  { label: "SCOPE", value: "Menu · cart · checkout · theming · builder" },
 ];
 
 export default function KeenuStorefrontCaseStudy() {
@@ -72,8 +72,9 @@ export default function KeenuStorefrontCaseStudy() {
             >
               I&apos;m the primary engineer on the Keenu One storefront — a
               multi-tenant ordering platform where a single Next.js codebase
-              serves many restaurants, each on their own branded domain. Three
-              brands are live in production, the first at{" "}
+              serves many restaurants, each on their own branded domain, and
+              merchants design their own store in a visual builder I built on
+              top of it. Seven brands are live in production, the first at{" "}
               <a
                 href="https://sirocpk.com"
                 target="_blank"
@@ -138,6 +139,10 @@ export default function KeenuStorefrontCaseStudy() {
               HMAC cookie, and forwards it on a header the browser can&apos;t
               spoof. Client-supplied identity headers are stripped and rebuilt
               server-side, so one merchant can never read another&apos;s data.
+              The host-to-merchant mapping itself is a custom-domains table I
+              built end to end — the Go migration and admin API, the BFF
+              resolver with a long-lived cache, and the admin screen where ops
+              attach a domain to a restaurant.
             </p>
 
             <h3 className="case-h3">Server-rendered, SEO-first</h3>
@@ -152,12 +157,31 @@ export default function KeenuStorefrontCaseStudy() {
 
             <h3 className="case-h3">A manifest-driven theme system</h3>
             <p>
-              The part I&apos;m most proud of. Each theme is a module that
-              declares its design tokens and capabilities in a manifest; the
-              storefront reads that manifest and renders accordingly. It&apos;s
-              built as a <strong>house of themes</strong> — architected to host
-              many — and today three brands run on it in production: Siroc,
-              If You Like Cheese and Down South.
+              Each theme is a module that declares its design tokens and
+              capabilities in a manifest; the storefront reads that manifest
+              and renders accordingly. It&apos;s built as a{" "}
+              <strong>house of themes</strong> — architected to host many — and
+              today seven brands run on it in production: Siroc, If You Like
+              Cheese, Down South, Caffè Praha, Cantina, Purple Cow and Braci,
+              with Cosmo on staging and launching next. The registry holds
+              ten themes.
+            </p>
+            <h3 className="case-h3">A parts catalog, and a builder on top</h3>
+            <p>
+              The part I&apos;m most proud of. Under every theme sits a{" "}
+              <strong>parts catalog</strong>: 29 shared parts — header, hero,
+              menu, cart, checkout, order pages, footer, and the blocks a
+              custom page is made of — each with several looks, styled only
+              through store tokens so any look wears any brand&apos;s palette.
+              A theme became a starting choice of looks rather than separate
+              code; a blank base theme is assembled from the catalog alone.
+              The merchant portal&apos;s <strong>visual builder</strong> opens
+              the real storefront on a canvas: click a word to reword it, click
+              a box to style its spacing, corners, borders, shadows and colours,
+              set phone-specific values, pick fonts, drag sections, build
+              custom pages, and publish — with drafts, version history, undo
+              and publish checks that warn about unreadable colours or broken
+              sections. Nothing deploys per merchant.
             </p>
           </Section>
 
@@ -208,29 +232,34 @@ export default function KeenuStorefrontCaseStudy() {
           <Section title="Honest scope">
             <p>
               I&apos;m the <strong>primary engineer</strong> on the storefront
-              — <strong>72% of the surviving source</strong> by git blame
-              (about 137,000 of 190,000 lines across 1,312 files), with the next
-              contributor under 8%. That covers the substance: menu, cart,
-              checkout, order tracking, theming and SEO. Other engineers have
-              contributed along the way. On the storefront&apos;s{" "}
-              <strong>Go BFF</strong> I&apos;m the top committer — I built its
-              bootstrap/config, menu and order flows — though the majority of
-              that codebase is the wider platform team&apos;s. I also own the
-              storefront&apos;s CI/CD and staging deploys. I don&apos;t claim the
-              whole Keenu One platform: the merchant dashboard and the backend
-              services are the wider team&apos;s work — on the merchant dashboard
-              I built the storefront-config / theming editors. Three merchants
-              are live today; the registry holds eight themes, six of them
-              mine.
+              — <strong>85% of the surviving source</strong> by git blame
+              (about 319,000 of 375,000 lines across 2,688 files), with the next
+              contributor under 6%. That covers the substance: menu, cart,
+              checkout, order tracking, theming, the parts catalog (98% mine)
+              and SEO. Other engineers have contributed along the way. On the
+              storefront&apos;s <strong>Go BFF</strong> I&apos;m the top
+              committer at 44% of the code — tenant resolution, menu, checkout
+              rules and order flows, and most of its tests — with the rest from
+              the wider platform team. I also own the storefront&apos;s CI/CD
+              and staging deploys. I don&apos;t claim the whole Keenu One
+              platform: the merchant dashboard and the backend services are the
+              wider team&apos;s work — on the merchant dashboard I built the
+              storefront builder and its theme, branding, SEO and domain
+              screens (84% of that feature), and in the Go merchants service I
+              added the custom-domains table and API. Seven merchants are live
+              today; the registry holds ten themes, eight of them mine.
             </p>
           </Section>
 
           <Section title="Stack">
             <p>
-              Next.js 16 (App Router, React Server Components), React 19,
-              TypeScript, Tailwind CSS 4, Zustand. Server-side integration with
-              a Go BFF (top committer — bootstrap, menu and order flows). SSR +
-              JSON-LD for SEO. Self-hosted fonts and a custom CDN image loader.
+              Next.js 16 (App Router, React Server Components), React 19 with
+              the React Compiler, TypeScript, Tailwind CSS 4, Zustand, Zod.
+              Vitest and Playwright with visual-regression baselines; a
+              Storybook gallery that doubles as the builder&apos;s picture
+              catalog. Server-side integration with a Go BFF (top committer —
+              tenant resolution, menu, checkout and order flows). SSR + JSON-LD
+              for SEO. Self-hosted fonts and a custom CDN image loader.
             </p>
           </Section>
 

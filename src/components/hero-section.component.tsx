@@ -52,15 +52,17 @@ const HeroSection = () => {
                 >
                   Keenu One storefront
                 </a>{" "}
-                — <span className="tabular-nums">72%</span> of a{" "}
-                <span className="tabular-nums">190,000</span>-line Next.js 16 /
+                — <span className="tabular-nums">85%</span> of a{" "}
+                <span className="tabular-nums">375,000</span>-line Next.js 16 /
                 React 19 codebase, with{" "}
-                <span className="tabular-nums">three</span> merchant brands live
-                on their own domains and more in progress. I own the delivery
-                path around it too: the{" "}
-                <span className="tabular-nums">661</span>-file test suite,
+                <span className="tabular-nums">seven</span> merchant brands live
+                on their own domains. I also built the visual storefront
+                builder merchants design those stores in — a parts catalog
+                under every theme, edited on a live canvas, published without
+                a deploy. I own the delivery path around it too: the{" "}
+                <span className="tabular-nums">1,145</span>-file test suite,
                 Playwright browser journeys, the Prometheus and web-vitals
-                instrumentation, Docker, CI/CD and staging deploys.
+                instrumentation, Docker, CI/CD, staging and production deploys.
               </p>
               <p>
                 I&apos;m also the top contributor to that storefront&apos;s{" "}

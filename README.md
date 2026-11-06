@@ -1,8 +1,8 @@
 # abdul-rehman-portfolio
 
 Personal portfolio + résumé of **Malik Abdul Rehman Khursheed** — Senior Software Engineer,
-full-stack (primary engineer on a multi-tenant Next.js commerce platform; web performance for
-emerging-market users).
+full-stack (primary engineer on a multi-tenant Next.js commerce platform and its visual storefront
+builder; web performance for emerging-market users).
 
 - **Stack**: Next.js 14 (App Router), TypeScript, Tailwind, self-hosted Geist (SIL OFL).
 - **Perf/a11y**: fluid `clamp()` type scale, `prefers-reduced-motion` support, optimized

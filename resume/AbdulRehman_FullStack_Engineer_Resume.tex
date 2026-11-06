@@ -4,13 +4,16 @@
 %
 % Layout follows Jake Gutierrez's résumé template (MIT), the format of the
 % March 2025 résumé that got the best response rate. Every number below was
-% re-verified against the KeenuOne repos with git blame on 2026-09-25:
-%   storefront: 137,532 of 190,522 src lines (72%); next contributor 7.8%
-%   unit tests: 555 of 661 test files first added by Abdul; 16 of 16 e2e suites
-%   themes: 8 in the registry, 6 written mostly by Abdul; 3 brands live
-%   storefront infra: devops 9/9, .github 14/17, Makefile 85/93 commits
-%   Go BFF: top contributor, 5,711 of 22,821 lines (25%)
-%   merchant portal storefront-config: 9,634 of 12,525 lines (77%)
+% re-verified against the KeenuOne repos with git blame on 2026-11-06:
+%   storefront: 318,682 of 375,133 src lines (85%); next contributor 5.8%
+%   unit tests: 993 of 1,145 test files first added by Abdul; 19 of 19 e2e suites
+%   themes: 10 in the registry, 8 written mostly by Abdul; 7 brands live (Cosmo on staging, launching next)
+%   parts catalog (src/catalog): 29 parts, 95,370 of 97,362 lines (98%)
+%   storefront infra: devops 10/10, .github 22/39, Makefile 85/123 commits
+%   Go BFF: top contributor, 19,302 of 44,103 lines (44%); 65 of 118 test files
+%   merchant portal storefront-config (builder): 22,413 of 26,523 lines (84%)
+%   custom domains: storefront_domains migration + API (merchants-service),
+%     BFF resolver, portal admin screen, storefront cookie - all Abdul's
 % Bazaar receipts (bazaarapp.com retired 2026): LCP -40%, Lighthouse 92,
 % INP 169 ms, 156K GSC clicks, ~$450/month CDN saving, +47% AOV.
 %
@@ -108,14 +111,14 @@
 \vspace{-4pt}
 \small Senior software engineer with nearly 6 years of experience building and scaling high-traffic web
 applications. Specialized in React, Next.js and TypeScript, with backend experience in Node.js, NestJS
-and Go. Architected and built the Keenu One restaurant storefront, now live for three brands. Track record
-of improving web performance, cutting infrastructure costs and raising order value. Experienced in Agile,
-TDD and mentoring teams.
+and Go. Architected and built the Keenu One restaurant storefront, now live for seven brands, and the
+visual builder merchants design their stores in. Track record of improving web performance, cutting
+infrastructure costs and raising order value. Experienced in Agile, TDD and mentoring teams.
 
 %-----------KEY ACHIEVEMENTS-----------
 \section{KEY ACHIEVEMENTS}
 \resumeBulletsStart
-    \resumeItem{\textbf{Three restaurant brands live:} Architected and built the Keenu One storefront, one Next.js codebase that serves sirocpk.com, ifyoulikecheese.com and downsouth.coffee.}
+    \resumeItem{\textbf{Seven restaurant brands live:} Architected and built the Keenu One storefront, one Next.js codebase that serves sirocpk.com, ifyoulikecheese.com, downsouth.coffee, caffepraha.com, cantinapk.com, purplecowpk.com and bracipk.com, plus the visual builder each merchant designs their store in.}
     \resumeItem{\textbf{Web Vitals improvement:} Co-led an image optimization and CDN pipeline on Bazaar's flagship web app that cut LCP by \textbf{40\%} and passed Core Web Vitals at Lighthouse \textbf{92}.}
     \resumeItem{\textbf{\$450/month CDN cost saving:} Caching and asset optimization across web and Android, about \textbf{\$5,400} a year.}
     \resumeItem{\textbf{Revenue impact:} Built the gamification feature that raised average order value by \textbf{47\%}.}
@@ -129,7 +132,7 @@ TDD and mentoring teams.
     \textbf{Languages}: TypeScript, JavaScript, HTML, CSS, Go, Python (working knowledge) \\
     \textbf{Frontend}: React, Next.js (App Router, Server Components), Redux Toolkit, React Query, Zustand, Zod, Tailwind CSS, SCSS, MUI, Radix UI \\
     \textbf{Backend}: Node.js, NestJS, Express.js, Go, REST APIs, OpenAPI (Swagger), MongoDB, PostgreSQL, Firebase Auth, OAuth 2.0 and OIDC (Zitadel) \\
-    \textbf{Testing}: Vitest, Jest, React Testing Library, Playwright \\
+    \textbf{Testing}: Vitest, Jest, React Testing Library, Playwright (end-to-end and visual regression), Go testing, Storybook \\
     \textbf{Cloud and DevOps}: AWS (S3, CloudFront, Lambda, Route 53), Docker, GitHub Actions, CI/CD, Vercel, Prometheus, Grafana \\
     \textbf{Performance and SEO}: Core Web Vitals (LCP, INP, CLS), Lighthouse, real-user monitoring, CDN caching, image optimization, structured data \\
     \textbf{Practices}: Agile, TDD, SOLID, Clean Architecture, micro-frontends, code review, mentoring, AI-assisted development
@@ -146,13 +149,13 @@ TDD and mentoring teams.
     {Senior Software Engineer II}{Mar 2023 - Present}
     \resumeItemListStart
       \resumeGroup{Keenu One restaurant commerce platform}
-      \resumeItem{Lead engineer of the Keenu One storefront (Next.js 16, React 19, TypeScript). Architected and built it, and took it from first commit to \textbf{three live restaurant brands} in under four months.}
-      \resumeItem{Designed the multi-brand theme system: one codebase serves every restaurant, and a new brand ships as a theme plus config instead of a separate project. Built six of its eight themes.}
-      \resumeItem{Built the test suite the team ships behind: \textbf{550+} Vitest unit test files and all \textbf{16} Playwright end-to-end suites, run by GitHub Actions on every push.}
-      \resumeItem{Own the storefront's Docker image, CI/CD pipelines and staging deployments.}
-      \resumeItem{Added real-user performance monitoring (Web Vitals to Prometheus), so LCP, INP and CLS are measured on live customer traffic.}
-      \resumeItem{Top contributor to the storefront's \textbf{Go} backend-for-frontend (config, menu and order flows). In the Go identity service, added admin access checks (Zitadel), service-account token caching and OpenAPI generation.}
-      \resumeItem{Built the theme, branding and SEO settings in the merchant dashboard (React, Vite) that restaurants use to manage their storefronts.}
+      \resumeItem{Lead engineer of the Keenu One storefront (Next.js 16, React 19, TypeScript). Architected and built it, took it from first commit to three live restaurant brands in under four months, and to \textbf{seven live brands} today.}
+      \resumeItem{Designed the multi-brand theme system: one codebase serves every restaurant, and a new brand ships as a theme plus config instead of a separate project. Built eight of its ten themes.}
+      \resumeItem{Built the \textbf{visual storefront builder}: a catalog of \textbf{29} shared parts (header, hero, menu, cart, checkout, orders, footer, custom-page blocks), each with several looks, under every theme. A merchant opens their real store on a canvas in the merchant dashboard (React, Vite), clicks any word to reword it, clicks any box to style it, sets phone-specific values, builds custom pages and publishes with no deploy, with drafts, version history, undo and publish checks.}
+      \resumeItem{Built custom-domain support end to end: the domains table and admin API in the Go merchants service, the cached resolver in the Go BFF, the per-restaurant domains screen in the dashboard and the storefront's tenant cookie.}
+      \resumeItem{Built the test suite the team ships behind: \textbf{990+} Vitest unit test files and all \textbf{19} Playwright end-to-end suites with visual-regression baselines, sharded on GitHub Actions on every push.}
+      \resumeItem{Own the storefront's Docker image, CI/CD pipelines, staging and production deployments. Added real-user performance monitoring (Web Vitals to Prometheus), so LCP, INP and CLS are measured on live customer traffic.}
+      \resumeItem{Top contributor to the storefront's \textbf{Go} backend-for-frontend (tenant resolution, menu, checkout rules and order flows). Wrote most of its tests, taking coverage from about 30\% to 99\%, and added race-detector runs to CI. In the Go identity service, added admin access checks (Zitadel), service-account token caching and OpenAPI generation.}
       \resumeGroup{Bazaar Web App}
       \resumeItem{Led frontend development of Bazaar's flagship B2C grocery web app (\textbf{Next.js, NestJS}) for 100k+ active users. The app was retired in 2026 when the company moved to Keenu.}
       \resumeItem{Co-led the image and CDN optimization that cut LCP by 40\% and passed Core Web Vitals, and reduced CDN costs by \$450/month.}
@@ -190,8 +193,8 @@ TDD and mentoring teams.
 %-----------PROJECTS-----------
 \section{HIGHLIGHTED PROJECTS}
 \resumeBulletsStart
-    \resumeItem{\textbf{Keenu One Storefront}: \href{https://www.sirocpk.com}{sirocpk.com}, \href{https://www.ifyoulikecheese.com}{ifyoulikecheese.com}, \href{https://www.downsouth.coffee}{downsouth.coffee} $|$ Next.js 16, React 19, TypeScript, Go}
-    \resumeItem{\textbf{Keenu One Merchant Dashboard}: \href{https://console.keenu.one}{console.keenu.one} (login required) $|$ React 19, Vite, TypeScript}
+    \resumeItem{\textbf{Keenu One Storefront}: \href{https://www.sirocpk.com}{sirocpk.com}, \href{https://www.ifyoulikecheese.com}{ifyoulikecheese.com}, \href{https://www.downsouth.coffee}{downsouth.coffee}, \href{https://www.caffepraha.com}{caffepraha.com}, \href{https://www.cantinapk.com}{cantinapk.com}, \href{https://www.purplecowpk.com}{purplecowpk.com}, \href{https://www.bracipk.com}{bracipk.com} $|$ Next.js 16, React 19, TypeScript, Go}
+    \resumeItem{\textbf{Keenu One Merchant Dashboard and Storefront Builder}: \href{https://console.keenu.one}{console.keenu.one} (login required) $|$ React 19, Vite, TypeScript}
     \resumeItem{\textbf{Keenu Corporate Site}: \href{https://keenu.pk}{keenu.pk} $|$ Next.js, Tailwind CSS. Built end-to-end.}
     \resumeItem{\textbf{Bazaar Grocery App}: \href{https://play.google.com/store/apps/details?id=bazaar.tech.com}{Google Play}, 1M+ downloads $|$ Contributed features on Android and web.}
     \resumeItem{\textbf{Check My DBS}: DBS certificate verification platform for UK companies $|$ React, Next.js, TypeScript, RTK Query}

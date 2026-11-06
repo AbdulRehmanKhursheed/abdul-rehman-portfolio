@@ -25,9 +25,9 @@ const projects: Project[] = [
   {
     projectName: "Keenu One Storefront",
     tagline:
-      "Multi-tenant restaurant ordering platform — one codebase, many merchant domains.",
+      "Multi-tenant restaurant ordering platform — one codebase, many merchant domains, merchant-designed.",
     description:
-      "Primary engineer — 72% of the surviving source (about 137,000 of 190,000 lines across 1,312 files); the next contributor accounts for under 8%. One Next.js 16 / React 19 codebase serves many restaurants, each on their own branded domain: tenancy resolves in edge middleware, pages are server-rendered with JSON-LD for SEO, and eight visually isolated themes (six of them mine) sit behind a registry and a typed config contract, with ESLint-enforced boundaries so themes never import each other. Cross-theme behaviour is held by registry-driven parity suites that fail a new theme by name until it complies. Three brands are live — Siroc, If You Like Cheese and Down South — with more in progress. I built the menu, cart (Zustand), checkout and order tracking, 555 of the 661 Vitest test files and all 16 Playwright browser journeys, and the performance instrumentation: a web-vitals RUM reporter feeding Prometheus. I'm also the top contributor to the storefront's Go BFF, and I own the storefront's Docker, CI/CD and staging deploys.",
+      "Primary engineer — 85% of the surviving source (about 319,000 of 375,000 lines across 2,688 files); the next contributor accounts for under 6%. One Next.js 16 / React 19 codebase serves many restaurants, each on their own branded domain: tenancy resolves in edge middleware against a custom-domains table I built end to end, pages are server-rendered with JSON-LD for SEO, and ten visually isolated themes (eight of them mine) sit behind a registry and a typed config contract, with ESLint-enforced boundaries so themes never import each other. Underneath the themes is a parts catalog I wrote — 29 shared parts (header, hero, menu, cart, checkout, orders, footer, custom-page blocks) with several looks each — so a merchant designs their store on a live canvas in the visual builder and publishes without a deploy; a blank base theme is assembled from those parts alone. Cross-theme behaviour is held by registry-driven parity suites that fail a new theme by name until it complies. Seven brands are live — Siroc, If You Like Cheese, Down South, Caffè Praha, Cantina, Purple Cow and Braci — with Cosmo on staging, launching next. I built the menu, cart (Zustand), checkout and order tracking, 993 of the 1,145 Vitest test files and all 19 Playwright browser journeys, and the performance instrumentation: a web-vitals RUM reporter feeding Prometheus. I'm also the top contributor to the storefront's Go BFF, and I own the storefront's Docker, CI/CD, staging and production deploys.",
     link: "https://www.sirocpk.com",
     caseStudyHref: "/case-study/keenu-storefront",
     technologies: [
@@ -42,6 +42,7 @@ const projects: Project[] = [
       "Vitest",
       "Playwright",
       "Prometheus",
+      "Storybook",
       "SSR / JSON-LD",
       "Multi-tenant",
     ],
@@ -50,14 +51,14 @@ const projects: Project[] = [
     leadAuthor: true,
     role: "Primary engineer",
     year: "2026",
-    metric: { value: "72% of 190k lines", label: "3 brands live · 8 themes · 661 test files" },
+    metric: { value: "85% of 375k lines", label: "7 brands live · 10 themes · 1,145 test files" },
   },
   {
     projectName: "Keenu One Merchant Dashboard",
     tagline:
-      "Operations dashboard for restaurants — menu, branches, delivery zones, POS.",
+      "Operations dashboard for restaurants — menu, branches, delivery zones, POS, and the storefront builder.",
     description:
-      "The merchant-facing control panel for the Keenu One platform — a React 19 + Vite SPA. I own its storefront-configuration surface at 78% of that feature's code (9,299 of 11,964 lines): the theme, branding and SEO editors that drive every live storefront, plus dashboard and POS-kiosk screens. The wider app — built with the team — also covers catalog/menu management, branches, map-based delivery zones, a canvas floor-plan editor, promotions, role-based access and analytics.",
+      "The merchant-facing control panel for the Keenu One platform — a React 19 + Vite SPA. I own its storefront builder at 84% of that feature's code (22,413 of 26,523 lines): a visual editor that opens the merchant's real storefront on a canvas, where they click any word to reword it, click any box to style it (spacing, corners, borders, shadows, colours), set phone-specific values, pick fonts, build their own pages from catalog parts, and publish — with drafts, version history, undo, a start-over path and publish checks that warn about unreadable colours or broken sections. The theme, branding, SEO and custom-domain screens are mine too. The wider app — built with the team — also covers catalog/menu management, branches, map-based delivery zones, a canvas floor-plan editor, promotions, role-based access and analytics.",
     link: "https://console.keenu.one",
     technologies: [
       "React 19",
@@ -70,9 +71,9 @@ const projects: Project[] = [
     category: "Web App",
     featured: true,
     internal: true,
-    role: "Owner — storefront config",
+    role: "Owner — storefront builder",
     year: "2026",
-    metric: { value: "78%", label: "of the storefront-config surface" },
+    metric: { value: "84%", label: "of the storefront builder · 26.5k lines" },
   },
   {
     projectName: "Bazaar Web App",

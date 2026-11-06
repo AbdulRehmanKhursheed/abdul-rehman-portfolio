@@ -12,7 +12,7 @@ const skills = [
   {
     group: "Testing",
     items:
-      "Vitest · Jest · React Testing Library · Playwright (e2e + visual regression) · contract tests · TDD",
+      "Vitest · Jest · React Testing Library · Playwright (e2e + visual regression) · Go behavioural tests · Storybook · contract tests · TDD",
   },
   {
     group: "Cloud / Infra",
@@ -33,12 +33,14 @@ const experiences = [
     company: "Bazaar Technologies",
     note: "Promoted twice: Software Engineer II → Senior (Dec 2024) → Senior II (Jul 2026).",
     bullets: [
-      "Primary engineer on the Keenu One storefront — 72% of a 190,000-line Next.js 16 / React 19 codebase (1,312 files), with the next contributor under 8%. Three merchant brands live on their own domains: sirocpk.com, ifyoulikecheese.com, downsouth.coffee — more in progress.",
-      "Designed the theme architecture: eight visually isolated themes (six of them mine) behind a registry and typed config contract, tenant resolution in edge middleware, and ESLint-enforced module boundaries. Registry-driven parity suites fail a new theme by name until it complies.",
-      "Built the quality gate — 555 of the 661 unit test files (Vitest) and all 16 Playwright browser journeys, plus design-token contract and theme-parity checks running on every push.",
+      "Primary engineer on the Keenu One storefront — 85% of a 375,000-line Next.js 16 / React 19 codebase (2,688 files), with the next contributor under 6%. Seven merchant brands live on their own domains — sirocpk.com, ifyoulikecheese.com, downsouth.coffee, caffepraha.com, cantinapk.com, purplecowpk.com, bracipk.com — with Cosmo on staging, launching next.",
+      "Designed the theme architecture: ten visually isolated themes (eight of them mine) behind a registry and typed config contract, tenant resolution in edge middleware, and ESLint-enforced module boundaries. Registry-driven parity suites fail a new theme by name until it complies.",
+      "Built the parts catalog and the visual storefront builder on top of it: 29 shared parts (header, hero, menu, cart, checkout, orders, footer, custom-page blocks) with several looks each, edited on the merchant's real storefront in a canvas — click a word to reword it, click a box to style it, phone-specific values, fonts, custom pages, drafts, version history, undo and publish checks. Nothing deploys per merchant; a blank base theme is built from the catalog alone.",
+      "Built custom-domain support end to end: the storefront_domains table and admin API in the Go merchants service, the BFF resolver with a 21-day cache, the per-restaurant domains screen in the portal, and the storefront's tenant cookie.",
+      "Built the quality gate — 993 of the 1,145 unit test files (Vitest) and all 19 Playwright browser journeys with visual-regression baselines, sharded on every push, plus design-token contract and theme-parity checks.",
       "Sole-authored the production performance instrumentation: a web-vitals RUM reporter, its collection endpoint, and the Prometheus metrics layer — so INP, LCP and CLS come from real merchant traffic, not synthetic runs.",
-      "Top contributor to the storefront's Go BFF (about a quarter of the Go codebase). Owner of the storefront's Docker image, Makefile tooling, GitHub Actions and staging deploys. In the Go identity service: merchant/admin endpoint gates, Zitadel IAM membership checks, service-account token caching, OpenAPI generation with a CI drift check.",
-      "Own the storefront-configuration surface in the Keenu One merchant portal (React 19 + Vite) at 77% of that feature's code — the theme, branding and SEO editors that drive every live storefront.",
+      "Top contributor to the storefront's Go BFF (44% of the Go codebase): tenant resolution, menu, checkout rules and order flows. Wrote 65 of its 118 test files, taking logic coverage from 54% to 99% and gateway-client coverage from 30% to 99%, and added go vet and race-detector runs to CI. Owner of the storefront's Docker image, Makefile tooling, GitHub Actions and staging deploys. In the Go identity service: merchant/admin endpoint gates, Zitadel IAM membership checks, service-account token caching, OpenAPI generation with a CI drift check.",
+      "Own the storefront builder in the Keenu One merchant portal (React 19 + Vite) at 84% of that feature's code — the visual editor plus the theme, branding, SEO and domain screens that drive every live storefront.",
       "Lead author of the Keenu corporate site (keenu.pk) — the public payments / POS marketing site, on Next.js + Tailwind.",
       "Earlier: lead frontend on bazaarapp.com (Next.js + NestJS BFF). Co-led the image + CDN pipeline — 40% p75 LCP cut, INP 169 ms, Core Web Vitals: Passed at Lighthouse 92, organic search 0 → 156K clicks on 11.2M impressions, ~$5,400/yr CDN saving. Built the PM-designed gamification feature and drove the MUI → Tailwind + Radix migration; average order value rose 47%. The platform was retired in 2026 when the company pivoted.",
     ],
@@ -90,22 +92,27 @@ const AboutMe = () => {
                   multi-tenant commerce platform
                 </span>{" "}
                 where one Next.js 16 codebase serves many restaurant brands on
-                their own domains. I wrote 72% of its 190,000 lines; three brands
-                are live in production and more are in progress.
+                their own domains. I wrote 85% of its 375,000 lines; seven brands
+                are live in production and an eighth is on staging. This autumn I built the part I&apos;m
+                proudest of: a parts catalog under every theme and a visual
+                builder on top, so a merchant designs their own store on a
+                live canvas and publishes without a deploy.
               </p>
               <p>
                 I don&apos;t stop at the browser. I&apos;m the top contributor to
-                that storefront&apos;s Go backend-for-frontend, I own the
-                storefront&apos;s Docker, CI/CD and staging deploys, and I built its performance
-                instrumentation — a web-vitals RUM reporter feeding Prometheus,
-                so the numbers come from real merchant traffic. Before this I led
+                that storefront&apos;s Go backend-for-frontend, I built
+                custom-domain support across the Go services, the portal and
+                the storefront, I own the storefront&apos;s Docker, CI/CD and
+                staging deploys, and I built its performance instrumentation —
+                a web-vitals RUM reporter feeding Prometheus, so the numbers
+                come from real merchant traffic. Before this I led
                 frontend on Pakistan&apos;s largest B2C grocery web app and took
                 it to Core Web Vitals: Passed (INP 169 ms, LCP down 40%,
                 Lighthouse 92) with organic search from ~0 to 156K clicks.
               </p>
               <p>
                 I work with coding agents daily, and the part I care about is the
-                scaffolding that makes it safe: typed API clients, 661 test
+                scaffolding that makes it safe: typed API clients, 1,145 test
                 files, registry-driven parity suites and lint-enforced module
                 boundaries. Architecture decisions and every merge stay mine.
               </p>

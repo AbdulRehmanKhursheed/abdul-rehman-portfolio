@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Malik Abdul Rehman Khursheed — Senior Full-Stack Engineer",
   description:
-    "Primary engineer on a multi-tenant Next.js 16 commerce platform serving three live merchant brands, and top contributor to its Go BFF. Web performance for emerging-market users: Core Web Vitals Passed, INP 169ms, organic search 0 → 156K clicks.",
+    "Primary engineer on a multi-tenant Next.js 16 commerce platform serving seven live merchant brands, builder of its visual storefront editor, and top contributor to its Go BFF. Web performance for emerging-market users: Core Web Vitals Passed, INP 169ms, organic search 0 → 156K clicks.",
   alternates: { canonical: "/" },
   keywords: [
     "Senior Full-Stack Engineer",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Malik Abdul Rehman Khursheed — Senior Full-Stack Engineer",
     description:
-      "Primary engineer on the Keenu One storefront — a multi-tenant Next.js 16 platform with three merchant brands live — and top contributor to its Go BFF. Previously: Core Web Vitals Passed, Lighthouse 92, organic search 0 → 156K clicks at Bazaar.",
+      "Primary engineer on the Keenu One storefront — a multi-tenant Next.js 16 platform with seven merchant brands live and a visual builder merchants design their stores in — and top contributor to its Go BFF. Previously: Core Web Vitals Passed, Lighthouse 92, organic search 0 → 156K clicks at Bazaar.",
     type: "website",
     locale: "en_US",
     siteName: "Malik Abdul Rehman Khursheed",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Malik Abdul Rehman Khursheed — Senior Full-Stack Engineer",
     description:
-      "Primary engineer on a multi-tenant Next.js 16 commerce platform, three brands live. Core Web Vitals Passed, Lighthouse 92, organic search 0 → 156K clicks.",
+      "Primary engineer on a multi-tenant Next.js 16 commerce platform, seven brands live, with a visual storefront builder. Core Web Vitals Passed, Lighthouse 92, organic search 0 → 156K clicks.",
     images: ["/og.png"],
   },
   robots: { index: true, follow: true },
